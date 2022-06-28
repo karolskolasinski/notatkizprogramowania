@@ -1,10 +1,10 @@
 import React from 'react';
-import './App.css';
+import './Root.css';
 import Header from './Header/Header';
 import Main from './Main/Main';
 import Footer from './Footer/Footer';
 
-const App = () => (
+const Root = () => (
     <>
         <Header />
         <Main />
@@ -12,4 +12,4 @@ const App = () => (
     </>
 );
 
-export default App;
+export default Root;
