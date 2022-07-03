@@ -2,13 +2,13 @@
     {
         "title": "HTML",
         "fileName": "HTMLCategory",
-        "img": "",
-        "path": "/html-category"
+        "path": "/html-category",
+        "img": ""
     },
     {
         "title": "CSS",
         "fileName": "CSSCategory",
-        "img": "",
-        "path": "/css-category"
+        "path": "/css-category",
+        "img": ""
     }
 ]

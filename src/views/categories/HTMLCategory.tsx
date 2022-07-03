@@ -1,18 +1,17 @@
 import React from 'react';
-import htmlArticles from '../../db/html-subcategory.json';
+import htmlArticles from '../../db/html-articles.json';
 import { Link, Route, Routes } from 'react-router-dom';
-
-const SemanticHTML = React.lazy(() => import('../articles/SemanticHTML'));
+import { createLazyElement } from '../utils';
 
 const HTMLCategory = () => {
     return (
         <main className="main">
-            {htmlArticles.map((article, index) => <Link to={article.url} key={index}>{article.title}</Link>)}
+            {htmlArticles.map((article, index) => <Link to={article.path} key={index}>{article.title}</Link>)}
 
             <Routes>
-                <Route path={'semantic-html'} element={<SemanticHTML />} />
+                {htmlArticles.map(({ path, fileName }) =>
+                    <Route path={path + '/*'} element={createLazyElement('./articles/' + fileName)} key={path} />)}
             </Routes>
-
         </main>
     );
 };
