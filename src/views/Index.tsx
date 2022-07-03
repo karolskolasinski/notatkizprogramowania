@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Index = () => (
     <>
-        {categories.map((category, index) => <Link to={category.path} key={index}>{category.name}</Link>)}
+        {categories.map((category, index) => <Link to={category.path} key={index}>{category.title}</Link>)}
     </>
 );
 

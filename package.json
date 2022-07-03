@@ -1,6 +1,6 @@
 {
   "homepage": "https://karolskolasinski.github.io/notatkizprogramowania",
-  "name": "notatkizprogramowania",
+  "title": "notatkizprogramowania",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

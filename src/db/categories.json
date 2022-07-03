@@ -1,12 +1,12 @@
 [
     {
-        "name": "HTML",
+        "title": "HTML",
         "fileName": "HTMLCategory",
         "img": "",
         "path": "/html-category"
     },
     {
-        "name": "CSS",
+        "title": "CSS",
         "fileName": "CSSCategory",
         "img": "",
         "path": "/css-category"

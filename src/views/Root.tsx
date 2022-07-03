@@ -4,9 +4,7 @@ import './Root.css';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import Index from './Index';
-
-const HTMLCategory = React.lazy(() => import('./categories/HTMLCategory'));
-const CSSCategory = React.lazy(() => import('./categories/CSSCategory'));
+import categories from '../db/categories.json';
 
 const Root = () => {
     return (
@@ -14,17 +12,20 @@ const Root = () => {
             <Header />
             <Routes>
                 <Route path="/" element={<Index />} />
-                <Route path="/html-category/*" element={<React.Suspense fallback={<h1>...</h1>}>
-                    <HTMLCategory />
-                </React.Suspense>} />
-                <Route path="/css-category/*" element={<React.Suspense fallback={<h1>...</h1>}>
-                    <CSSCategory />
-                </React.Suspense>} />
+                {categories.map((category, index) =>
+                    <Route path={category.path + '/*'} element={createElement(category.fileName)} key={index} />)}
                 <Route path="*" element={<h1>NO MATCH</h1>} />
             </Routes>
             <Footer />
         </>
     );
+};
+
+const createElement = (fileName: string) => {
+    const LazyComponent = React.lazy(() => import('./categories/' + fileName));
+    return <React.Suspense fallback={<h1>...loading...</h1>}>
+        <LazyComponent />
+    </React.Suspense>;
 };
 
 export default Root;
