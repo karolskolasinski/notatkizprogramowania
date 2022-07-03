@@ -1,3 +1,7 @@
+:root {
+  --bg-color: #171717;
+}
+
 .root {
   display: flex;
   flex-direction: column;

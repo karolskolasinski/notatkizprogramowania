@@ -1,0 +1,14 @@
+[
+    {
+        "name": "HTML",
+        "fileName": "HTMLCategory",
+        "img": "",
+        "path": "/html-category"
+    },
+    {
+        "name": "CSS",
+        "fileName": "CSSCategory",
+        "img": "",
+        "path": "/css-category"
+    }
+]

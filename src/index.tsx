@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Root from './views/Root';
 import reportWebVitals from './reportWebVitals';
+import { HashRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
     <React.StrictMode>
-        <Root />
+        <HashRouter>
+            <Root />
+        </HashRouter>
     </React.StrictMode>
 );
 
