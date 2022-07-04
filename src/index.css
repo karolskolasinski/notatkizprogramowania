@@ -1,3 +1,7 @@
+:root {
+    --accent-color-1: #F6BE00;
+}
+
 *, ::before, ::after {
     box-sizing: border-box;
 }

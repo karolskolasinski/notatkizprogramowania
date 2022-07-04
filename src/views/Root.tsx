@@ -13,8 +13,10 @@ const Root = () => {
             <Header />
             <Routes>
                 <Route path="/" element={<Index />} />
-                {categories.map(({ fileName, path }) =>
-                    <Route path={path + '/*'} element={createLazyElement('./categories/' + fileName)} key={path} />)}
+
+                {categories.map(({ filePath, path }) =>
+                    <Route path={path} element={createLazyElement(filePath)} key={path} />)}
+
                 <Route path="*" element={<h1>NO MATCH</h1>} />
             </Routes>
             <Footer />

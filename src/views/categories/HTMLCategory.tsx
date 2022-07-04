@@ -9,8 +9,8 @@ const HTMLCategory = () => {
             {htmlArticles.map((article, index) => <Link to={article.path} key={index}>{article.title}</Link>)}
 
             <Routes>
-                {htmlArticles.map(({ path, fileName }) =>
-                    <Route path={path + '/*'} element={createLazyElement('./articles/' + fileName)} key={path} />)}
+                {htmlArticles.map(({ path, filePath }) =>
+                    <Route path={path} element={createLazyElement(filePath)} key={path} />)}
             </Routes>
         </main>
     );

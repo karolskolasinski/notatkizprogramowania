@@ -1,8 +1,9 @@
 import React from 'react';
+import Loader from '../components/Loader/Loader';
 
-export const createLazyElement = (fileName: string) => {
-    const LazyComponent = React.lazy(() => import('' + fileName));
-    return <React.Suspense fallback={<h1>...loading...</h1>}>
+export const createLazyElement = (filePath: string) => {
+    const LazyComponent = React.lazy(() => import(`${filePath}`));
+    return <React.Suspense fallback={<Loader/>}>
         <LazyComponent />
     </React.Suspense>;
 };

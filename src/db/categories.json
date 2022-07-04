@@ -1,14 +1,16 @@
 [
     {
         "title": "HTML",
-        "fileName": "HTMLCategory",
-        "path": "/html-category",
+        "filePath": "./categories/HTMLCategory",
+        "path": "/html-category/*",
+        "to": "/html-category",
         "img": ""
     },
     {
         "title": "CSS",
-        "fileName": "CSSCategory",
-        "path": "/css-category",
+        "filePath": "./categories/CSSCategory",
+        "path": "/css-category/*",
+        "to": "/css-category",
         "img": ""
     }
 ]
