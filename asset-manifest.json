@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/notatkizprogramowania/static/css/main.7ae84e51.css",
-    "main.js": "/notatkizprogramowania/static/js/main.6341100b.js",
-    "static/js/757.a4d0548a.chunk.js": "/notatkizprogramowania/static/js/757.a4d0548a.chunk.js",
+    "main.css": "/notatkizprogramowania/static/css/main.4b07f716.css",
+    "main.js": "/notatkizprogramowania/static/js/main.bbf4a647.js",
+    "static/js/757.28c6a942.chunk.js": "/notatkizprogramowania/static/js/757.28c6a942.chunk.js",
     "static/js/736.5facd123.chunk.js": "/notatkizprogramowania/static/js/736.5facd123.chunk.js",
     "static/js/259.9508b597.chunk.js": "/notatkizprogramowania/static/js/259.9508b597.chunk.js",
-    "static/js/710.66a72759.chunk.js": "/notatkizprogramowania/static/js/710.66a72759.chunk.js",
+    "static/js/710.0ac940e1.chunk.js": "/notatkizprogramowania/static/js/710.0ac940e1.chunk.js",
     "static/js/787.7efd31bd.chunk.js": "/notatkizprogramowania/static/js/787.7efd31bd.chunk.js",
     "static/js/607.5ecbc883.chunk.js": "/notatkizprogramowania/static/js/607.5ecbc883.chunk.js",
     "index.html": "/notatkizprogramowania/index.html",
-    "main.7ae84e51.css.map": "/notatkizprogramowania/static/css/main.7ae84e51.css.map",
-    "main.6341100b.js.map": "/notatkizprogramowania/static/js/main.6341100b.js.map",
-    "757.a4d0548a.chunk.js.map": "/notatkizprogramowania/static/js/757.a4d0548a.chunk.js.map",
+    "main.4b07f716.css.map": "/notatkizprogramowania/static/css/main.4b07f716.css.map",
+    "main.bbf4a647.js.map": "/notatkizprogramowania/static/js/main.bbf4a647.js.map",
+    "757.28c6a942.chunk.js.map": "/notatkizprogramowania/static/js/757.28c6a942.chunk.js.map",
     "736.5facd123.chunk.js.map": "/notatkizprogramowania/static/js/736.5facd123.chunk.js.map",
     "259.9508b597.chunk.js.map": "/notatkizprogramowania/static/js/259.9508b597.chunk.js.map",
-    "710.66a72759.chunk.js.map": "/notatkizprogramowania/static/js/710.66a72759.chunk.js.map",
+    "710.0ac940e1.chunk.js.map": "/notatkizprogramowania/static/js/710.0ac940e1.chunk.js.map",
     "787.7efd31bd.chunk.js.map": "/notatkizprogramowania/static/js/787.7efd31bd.chunk.js.map",
     "607.5ecbc883.chunk.js.map": "/notatkizprogramowania/static/js/607.5ecbc883.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7ae84e51.css",
-    "static/js/main.6341100b.js"
+    "static/css/main.4b07f716.css",
+    "static/js/main.bbf4a647.js"
   ]
 }
