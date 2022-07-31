@@ -3,7 +3,6 @@
         "title": "Semantic HTML",
         "filePath": "./articles/SemanticHTML",
         "path": "semantic-html/*",
-        "to": "semantic-html",
-        "img": ""
+        "to": "semantic-html"
     }
 ]

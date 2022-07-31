@@ -3,7 +3,7 @@ import './Footer.css';
 
 const Footer = () => (
     <footer className="footer">
-        Footer
+        2022 © Created by: <a href={'https://github.com/karolskolasinski'}>karolskolasinski</a>
     </footer>
 );
 

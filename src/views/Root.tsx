@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import './Root.css';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
-import Index from './Index';
+import Contents from './contents/Contents';
 import categories from '../db/categories.json';
 import { createLazyElement } from './utils';
 
@@ -12,7 +12,7 @@ const Root = () => {
         <>
             <Header />
             <Routes>
-                <Route path="/" element={<Index />} />
+                <Route path="/" element={<Contents />} />
 
                 {categories.map(({ filePath, path }) =>
                     <Route path={path} element={createLazyElement(filePath)} key={path} />)}

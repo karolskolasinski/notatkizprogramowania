@@ -4,3 +4,13 @@ footer {
     color: white;
     background: var(--bg-color);
 }
+
+footer a {
+    color: #f6be00;
+    display: inline-block;
+    transition: all 0.1s linear;
+}
+
+footer a:hover {
+    color: #ffc501;
+}

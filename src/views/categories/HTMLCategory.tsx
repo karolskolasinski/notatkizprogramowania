@@ -6,8 +6,7 @@ import { createLazyElement } from '../utils';
 const HTMLCategory = () => {
     return (
         <main className="main">
-            {htmlArticles.map((article, index) =>
-                <CustomLink to={article.path} key={index}>{article.title}</CustomLink>)}
+            {htmlArticles.map(({ path, title, to }) => <CustomLink to={path} key={to}>{title}</CustomLink>)}
 
             <Routes>
                 {htmlArticles.map(({ path, filePath }) =>
@@ -17,10 +16,10 @@ const HTMLCategory = () => {
     );
 };
 
-function CustomLink({ to, children }: { to: string, children: React.ReactNode }) {
+const CustomLink = ({ to, children }: { to: string, children: React.ReactNode }) => {
     const resolvedPath = useResolvedPath(to);
     const isActive = useMatch({ path: resolvedPath.pathname, end: true });
-    return isActive ? <></> : <Link to={to}>{children}</Link>;
-}
+    return isActive ? <></> : <Link className={'link'} to={to}>{children}</Link>;
+};
 
 export default HTMLCategory;

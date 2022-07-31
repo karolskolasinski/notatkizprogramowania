@@ -1,0 +1,28 @@
+main {
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 14rem;
+    background-size: cover;
+    border: 1px solid ghostwhite;
+    box-shadow: rgba(9, 30, 66, 0.25) 0 4px 8px -2px, rgba(9, 30, 66, 0.08) 0 0 0 1px;
+}
+
+.category span {
+    font-weight: bold;
+    font-size: 2.5rem;
+    background: white;
+    color: black;
+    mix-blend-mode: screen;
+    text-transform: uppercase;
+    word-break: break-all;
+    max-width: 80%;
+    line-height: 2.2rem;
+}
