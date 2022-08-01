@@ -1,5 +1,33 @@
 :root {
-    --accent-color-1: #F6BE00;
+    --accent-color-1: #f6be00;
+}
+
+[data-color=html] {
+    --accent-color-1: #f2672e;
+}
+
+[data-color=css] {
+    --accent-color-1: #31a9dd;
+}
+
+[data-color=js] {
+    --accent-color-1: #f2bf26;
+}
+
+[data-color=english] {
+    --accent-color-1: #b31751;
+}
+
+[data-color=java] {
+    --accent-color-1: #4f4f4f;
+}
+
+[data-color=dev] {
+    --accent-color-1: #aacc00;
+}
+
+[data-color=env] {
+    --accent-color-1: #8338ec;
 }
 
 *, ::before, ::after {

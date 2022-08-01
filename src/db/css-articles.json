@@ -1,0 +1,8 @@
+[
+    {
+        "title": "CSS",
+        "filePath": "./articles/SemanticHTML",
+        "path": "semantic-html/*",
+        "to": "semantic-html"
+    }
+]
