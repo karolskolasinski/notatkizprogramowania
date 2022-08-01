@@ -8,8 +8,9 @@ const Contents = () => (
         <main className="main">
             {categories.map(({ title, to, img }) =>
                 <Link to={to} key={to}>
-                    <div className={'category'} style={{ backgroundImage: `url(${require('../../' + img)})` }}>
-                        <span>{title}</span>
+                    <div className={'category-wrapper'}>
+                        <div className={'category'} style={{ backgroundImage: `url(${require('../../' + img)})` }}/>
+                        <span className={'title'}>{title}</span>
                     </div>
                 </Link>
             )}
