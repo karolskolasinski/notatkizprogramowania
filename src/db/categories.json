@@ -12,5 +12,33 @@
         "path": "/css-category/*",
         "to": "/css-category",
         "img": "img/cover-css.webp"
+    },
+    {
+        "title": "CSS",
+        "filePath": "./categories/CSSCategory",
+        "path": "/css-category/*",
+        "to": "/css-categorys",
+        "img": "img/cover-css.webp"
+    },
+    {
+        "title": "CSS",
+        "filePath": "./categories/CSSCategory",
+        "path": "/css-category/*",
+        "to": "/css-categorys",
+        "img": "img/cover-css.webp"
+    },
+    {
+        "title": "CSS",
+        "filePath": "./categories/CSSCategory",
+        "path": "/css-category/*",
+        "to": "/css-categorys",
+        "img": "img/cover-css.webp"
+    },
+    {
+        "title": "CSS",
+        "filePath": "./categories/CSSCategory",
+        "path": "/css-category/*",
+        "to": "/css-categorys",
+        "img": "img/cover-css.webp"
     }
 ]

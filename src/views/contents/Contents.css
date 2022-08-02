@@ -1,8 +1,16 @@
 main {
     padding: 0 1rem;
     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+article {
+    max-width: 1000px;
+    flex-grow: 1;
     flex-direction: column;
     gap: 2rem;
+    display: flex;
 }
 
 .category-wrapper {
@@ -23,8 +31,7 @@ main {
 }
 
 .category:hover {
-    filter: blur(1px) opacity(0.95);
-    transform: scale(1.002);
+    box-shadow: rgba(6, 24, 44, 0.4) 0 0 0 2px, rgba(6, 24, 44, 0.65) 0 4px 6px -1px, rgba(255, 255, 255, 0.08) 0 1px 0 inset;
 }
 
 .title {
@@ -41,4 +48,26 @@ main {
     word-break: break-all;
     max-width: 80%;
     line-height: 2.2rem;
+}
+
+@media all and (min-width: 576px) {
+    article {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0;
+    }
+
+    article a {
+        padding: .5rem;
+        width: calc(100% / 2);
+    }
+}
+
+@media all and (min-width: 768px) {
+    article a {
+        width: calc(100% / 3);
+    }
+}
+
+@media all and (min-width: 992px) {
 }
