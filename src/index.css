@@ -64,6 +64,7 @@ a {
 
 .link {
     padding: 1rem 1rem 1rem 2rem;
+    width: 45%;
     display: inline-block;
     border: 2px solid #333333;
     border-radius: 2% 6% 5% 4%/1% 1% 2% 4%;
@@ -97,4 +98,10 @@ a {
 .link:hover,
 .link:hover::after {
     border-color: var(--accent-color-1);
+}
+
+@media all and (min-width: 768px) {
+    .link {
+        width: 30%;
+    }
 }
