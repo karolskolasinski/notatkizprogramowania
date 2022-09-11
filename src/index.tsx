@@ -1,15 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Root from './views/Root';
 import reportWebVitals from './reportWebVitals';
-import { HashRouter } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import Contents from './views/contents/Contents';
+import categories from './db/categories.json';
+import { createLazyElement } from './views/utils';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
     <React.StrictMode>
         <HashRouter>
-            <Root />
+            <Header />
+            <Routes>
+                <Route path="/" element={<Contents />} />
+
+                {categories.map(({ filePath, path }) =>
+                    <Route path={path} element={createLazyElement(filePath)} key={path} />)}
+
+                <Route path="*" element={<h1>NO MATCH</h1>} />
+            </Routes>
+            <Footer />
         </HashRouter>
     </React.StrictMode>
 );

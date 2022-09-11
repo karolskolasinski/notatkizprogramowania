@@ -7,10 +7,10 @@ const Contents = () => (
     <>
         <main className="main">
             <article className={'article'}>
-                {categories.map(({ title, to, img }) =>
+                {categories.map(({ title, to, cover }) =>
                     <Link to={to} key={to}>
                         <div className={'category-wrapper'}>
-                            <div className={'category'} style={{ backgroundImage: `url(${require('../../' + img)})` }}/>
+                            <div className={'category'} style={{ backgroundImage: `url(${require('../../' + cover)})` }}/>
                             <span className={'title'}>{title}</span>
                         </div>
                     </Link>

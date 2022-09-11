@@ -4,41 +4,13 @@
         "filePath": "./categories/HTMLCategory",
         "path": "/html-category/*",
         "to": "/html-category",
-        "img": "img/cover-html.webp"
+        "cover": "img/cover-html.webp"
     },
     {
         "title": "CSS",
         "filePath": "./categories/CSSCategory",
         "path": "/css-category/*",
         "to": "/css-category",
-        "img": "img/cover-css.webp"
-    },
-    {
-        "title": "CSS",
-        "filePath": "./categories/CSSCategory",
-        "path": "/css-category/*",
-        "to": "/css-categorys",
-        "img": "img/cover-css.webp"
-    },
-    {
-        "title": "CSS",
-        "filePath": "./categories/CSSCategory",
-        "path": "/css-category/*",
-        "to": "/css-categorys",
-        "img": "img/cover-css.webp"
-    },
-    {
-        "title": "CSS",
-        "filePath": "./categories/CSSCategory",
-        "path": "/css-category/*",
-        "to": "/css-categorys",
-        "img": "img/cover-css.webp"
-    },
-    {
-        "title": "CSS",
-        "filePath": "./categories/CSSCategory",
-        "path": "/css-category/*",
-        "to": "/css-categorys",
-        "img": "img/cover-css.webp"
+        "cover": "img/cover-css.webp"
     }
 ]
