@@ -1,19 +1,28 @@
 {
   "files": {
-    "main.css": "/notatkizprogramowania/static/css/main.99b5d54f.css",
-    "main.js": "/notatkizprogramowania/static/js/main.867d8225.js",
+    "main.css": "/notatkizprogramowania/static/css/main.58c07522.css",
+    "main.js": "/notatkizprogramowania/static/js/main.3c05c42b.js",
     "static/js/787.7efd31bd.chunk.js": "/notatkizprogramowania/static/js/787.7efd31bd.chunk.js",
-    "static/media/cover-html.webp": "/notatkizprogramowania/static/media/cover-html.e1ed455c665ea900a647.webp",
-    "static/media/cover-css.webp": "/notatkizprogramowania/static/media/cover-css.c5254c6e0f8f4a20d1f4.webp",
+    "static/media/cover-html.webp": "/notatkizprogramowania/static/media/cover-html.87fc0c49ea434b5cead0.webp",
+    "static/media/cover-8.webp": "/notatkizprogramowania/static/media/cover-8.4e2fcbe117a0fda3b943.webp",
+    "static/media/cover-4.webp": "/notatkizprogramowania/static/media/cover-4.6c80bbc5b2506749392f.webp",
+    "static/media/cover-1.webp": "/notatkizprogramowania/static/media/cover-1.ea2d3f062d6d43bc22f9.webp",
+    "static/media/cover-3.webp": "/notatkizprogramowania/static/media/cover-3.199af74173b0eaa5029e.webp",
+    "static/media/cover-6.webp": "/notatkizprogramowania/static/media/cover-6.1d1268728d7cc526cc61.webp",
+    "static/media/cover-5.webp": "/notatkizprogramowania/static/media/cover-5.fdacaa96380154859fb2.webp",
+    "static/media/cover-2.webp": "/notatkizprogramowania/static/media/cover-2.bdab66b13ea3d2e6cc3b.webp",
+    "static/media/cover-css.webp": "/notatkizprogramowania/static/media/cover-css.8e285455c9457503b826.webp",
+    "static/media/cover-nodejs.webp": "/notatkizprogramowania/static/media/cover-nodejs.33b2ccf6101ffbec7097.webp",
+    "static/media/cover-7.webp": "/notatkizprogramowania/static/media/cover-7.0b0028694038e5f9d296.webp",
     "static/media/github-original.svg": "/notatkizprogramowania/static/media/github-original.62c6428a2c816c119d52272189f0ad6c.svg",
     "index.html": "/notatkizprogramowania/index.html",
     "static/media/linkedin-original.svg": "/notatkizprogramowania/static/media/linkedin-original.15f0337078f13db400acab3639711ec7.svg",
-    "main.99b5d54f.css.map": "/notatkizprogramowania/static/css/main.99b5d54f.css.map",
-    "main.867d8225.js.map": "/notatkizprogramowania/static/js/main.867d8225.js.map",
+    "main.58c07522.css.map": "/notatkizprogramowania/static/css/main.58c07522.css.map",
+    "main.3c05c42b.js.map": "/notatkizprogramowania/static/js/main.3c05c42b.js.map",
     "787.7efd31bd.chunk.js.map": "/notatkizprogramowania/static/js/787.7efd31bd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.99b5d54f.css",
-    "static/js/main.867d8225.js"
+    "static/css/main.58c07522.css",
+    "static/js/main.3c05c42b.js"
   ]
 }
