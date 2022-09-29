@@ -3,6 +3,12 @@
     --accent-color-1: #f6be00;
 }
 
+::selection {
+    text-shadow: none;
+    color: #000;
+    background: #FFF9CD;
+}
+
 [data-color=html] {
     --accent-color-1: #f2672e;
 }
@@ -68,6 +74,7 @@ a {
 
 .link {
     padding: 1rem 1rem 1rem 2rem;
+    width: 45%;
     display: inline-block;
     border: 2px solid #333333;
     border-radius: 2% 6% 5% 4%/1% 1% 2% 4%;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SemanticHTML = () => {
+const HTMLTemplate = () => {
     return (
         <article className="article">
             <h1>HTML ARTICLE</h1>
@@ -8,4 +8,4 @@ const SemanticHTML = () => {
     );
 };
 
-export default SemanticHTML;
+export default HTMLTemplate;

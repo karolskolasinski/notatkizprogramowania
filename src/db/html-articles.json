@@ -1,8 +1,8 @@
 [
     {
-        "title": "Semantic HTML",
-        "filePath": "./articles/SemanticHTML",
-        "path": "semantic-html/*",
-        "to": "semantic-html"
+        "title": "HTML template",
+        "filePath": "./articles/HTMLTemplate",
+        "path": "html-template/*",
+        "to": "html-template"
     }
 ]
