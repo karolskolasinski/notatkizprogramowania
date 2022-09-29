@@ -20,7 +20,7 @@ root.render(
                 {categories.map(({ filePath, path }) =>
                     <Route path={path} element={createLazyElement(filePath)} key={path} />)}
 
-                <Route path="*" element={<h1>NO MATCH</h1>} />
+                <Route path="*" element={<main className={'main main-404'}><h1>404</h1></main>} />
             </Routes>
             <Footer />
         </HashRouter>

@@ -3,7 +3,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 5rem;
+    height: 7rem;
     color: white;
     background: var(--bg-color);
 }

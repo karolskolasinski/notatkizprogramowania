@@ -56,6 +56,10 @@ a {
     color: #171717;
 }
 
+.main-404 {
+    height: calc(100vh - 4rem - 7rem - 4rem);
+}
+
 .root {
     display: flex;
     flex-direction: column;
@@ -64,7 +68,6 @@ a {
 
 .link {
     padding: 1rem 1rem 1rem 2rem;
-    width: 45%;
     display: inline-block;
     border: 2px solid #333333;
     border-radius: 2% 6% 5% 4%/1% 1% 2% 4%;
