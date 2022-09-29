@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.css';
-import github from '../../img/github-original.svg';
-import linkedin from '../../img/linkedin-original.svg';
+import github from '../../img/icons/github-original.svg';
+import linkedin from '../../img/icons/linkedin-original.svg';
 
 const Footer = () => (
     <footer className="footer">
