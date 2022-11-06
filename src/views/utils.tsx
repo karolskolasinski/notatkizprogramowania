@@ -4,7 +4,7 @@ import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 
 export const createLazyElement = (filePath: string) => {
     const LazyComponent = React.lazy(() => import(`${filePath}`));
-    return <React.Suspense fallback={<Loader/>}>
+    return <React.Suspense fallback={<Loader />}>
         <LazyComponent />
     </React.Suspense>;
 };

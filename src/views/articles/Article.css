@@ -1,3 +1,33 @@
+.cover-wrapper {
+    position: absolute;
+    top: 4rem;
+    width: 100%;
+    height: 25rem;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.cover {
+    width: 100%;
+    height: 25rem;
+    object-fit: cover;
+    filter: blur(5px);
+    transform: scale(1.1);
+}
+
 .article {
     display: block;
+    margin-top: 8rem;
+    padding: 2rem;
+    border-radius: .25rem;
+    background: white;
+}
+
+.article-img-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.article-img {
+    width: 50%;
 }

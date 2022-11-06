@@ -3,6 +3,7 @@
         "title": "CSS",
         "filePath": "./articles/SemanticHTML",
         "path": "semantic-html/*",
-        "to": "semantic-html"
+        "to": "semantic-html",
+        "cover": "img/cover/cover-css.webp"
     }
 ]

@@ -5,7 +5,7 @@ import './Contents.css';
 
 const Contents = () => (
     <main className="main">
-        <article className={'article'}>
+        <article>
             {categories.map(({ title, to, cover }) =>
                 <Link to={to} key={to}>
                     <div className={'category-wrapper'}>
