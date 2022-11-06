@@ -19,7 +19,7 @@
     display: block;
     margin-top: 8rem;
     padding: 2rem;
-    border-radius: .25rem;
+    border-radius: .5rem;
     background: white;
 }
 
@@ -30,4 +30,28 @@
 
 .article-img {
     width: 50%;
+}
+
+.article-link {
+    color: #0f95a1;
+    position: relative;
+    padding: initial;
+}
+
+.article-link:hover {
+    background: linear-gradient(111.3deg, #00bcd4 9.6%, #9c27b0 93.6%);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.article-link:hover::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: linear-gradient(111.3deg, #00bcd4 9.6%, #9c27b0 93.6%);
 }
