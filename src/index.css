@@ -39,7 +39,6 @@
 
 *, ::before, ::after {
     box-sizing: border-box;
-    font-family: Inter, sans-serif;
 }
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
@@ -55,6 +54,7 @@ nav, output, ruby, section, summary, time, mark, audio, video {
 
 body {
     background: #f4f4f4;
+    font-family: Inter, sans-serif;
 }
 
 a {
@@ -108,6 +108,35 @@ a {
 .link:hover,
 .link:hover::after {
     border-color: var(--accent-color-1);
+}
+
+.snippet {
+    padding: 3px 5px;
+    border: none;
+    font-family: monospace;
+    font-weight: 400;
+    color: #111;
+    border-radius: 4px;
+    background: rgba(0,0,0,.06)
+}
+
+.keyboard {
+    border: 1px solid #aaa;
+    -moz-border-radius: 0.2em;
+    -webkit-border-radius: 0.2em;
+    border-radius: 0.2em;
+    -moz-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1);
+    box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1);
+    background-color: #f9f9f9;
+    background-image: -moz-linear-gradient(top, #eee, #f9f9f9, #eee);
+    background-image: -o-linear-gradient(top, #eee, #f9f9f9, #eee);
+    background-image: -webkit-linear-gradient(top, #eee, #f9f9f9, #eee);
+    background-image: linear-gradient(to bottom, #eee, #f9f9f9, #eee);
+    color: #000;
+    padding: 0.1em 0.3em;
+    font-family: inherit;
+    font-size: 0.85em;
 }
 
 @media all and (min-width: 768px) {
