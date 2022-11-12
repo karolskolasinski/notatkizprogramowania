@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/notatkizprogramowania/static/css/main.2827da81.css",
-    "main.js": "/notatkizprogramowania/static/js/main.b078325a.js",
+    "main.css": "/notatkizprogramowania/static/css/main.0094573f.css",
+    "main.js": "/notatkizprogramowania/static/js/main.de8abca4.js",
     "static/js/787.7efd31bd.chunk.js": "/notatkizprogramowania/static/js/787.7efd31bd.chunk.js",
-    "static/media/template.jpg": "/notatkizprogramowania/static/media/template.dc26d5b203ec62454840.jpg",
+    "static/media/semantic.jpg": "/notatkizprogramowania/static/media/semantic.dc26d5b203ec62454840.jpg",
     "static/media/cover-8.webp": "/notatkizprogramowania/static/media/cover-8.4e2fcbe117a0fda3b943.webp",
     "static/media/cover-4.webp": "/notatkizprogramowania/static/media/cover-4.6c80bbc5b2506749392f.webp",
     "static/media/cover-html.webp": "/notatkizprogramowania/static/media/cover-html.ea2d3f062d6d43bc22f9.webp",
@@ -17,12 +17,12 @@
     "static/media/github-original.svg": "/notatkizprogramowania/static/media/github-original.62c6428a2c816c119d52272189f0ad6c.svg",
     "index.html": "/notatkizprogramowania/index.html",
     "static/media/linkedin-original.svg": "/notatkizprogramowania/static/media/linkedin-original.15f0337078f13db400acab3639711ec7.svg",
-    "main.2827da81.css.map": "/notatkizprogramowania/static/css/main.2827da81.css.map",
-    "main.b078325a.js.map": "/notatkizprogramowania/static/js/main.b078325a.js.map",
+    "main.0094573f.css.map": "/notatkizprogramowania/static/css/main.0094573f.css.map",
+    "main.de8abca4.js.map": "/notatkizprogramowania/static/js/main.de8abca4.js.map",
     "787.7efd31bd.chunk.js.map": "/notatkizprogramowania/static/js/787.7efd31bd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2827da81.css",
-    "static/js/main.b078325a.js"
+    "static/css/main.0094573f.css",
+    "static/js/main.de8abca4.js"
   ]
 }
