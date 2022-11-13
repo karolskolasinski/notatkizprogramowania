@@ -52,8 +52,8 @@ const HTMLTemplate = () => {
             </div>
             <article className={'article'}>
                 <h1>Uniwersalny template</h1>
-                <pre className={'line-numbers'}>
-                    <code className={'language-html'}>{universalTemplate}</code>
+                <pre className={'line-numbers language-html'}>
+                    <code>{universalTemplate}</code>
                 </pre>
 
                 <h3>Opis:</h3>

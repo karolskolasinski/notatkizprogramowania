@@ -21,7 +21,7 @@ root.render(
                                 <div className={'category-wrapper'}>
                                     <div className={'category'}
                                         style={{ backgroundImage: `url(${require(`${cover}`)})` }} />
-                                    <span className={'title'}>{title}</span>
+                                    <span className={'title bold'}>{title}</span>
                                 </div>
                             </Link>
                         )}

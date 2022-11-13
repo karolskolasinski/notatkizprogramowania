@@ -52,34 +52,6 @@ nav, output, ruby, section, summary, time, mark, audio, video {
     border: 0;
 }
 
-body {
-    background: #f4f4f4;
-    font-family: Inter, sans-serif;
-}
-
-.root {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-main {
-    padding: 0 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.main-404 {
-    height: calc(100vh - 4rem - 7rem - 4rem);
-}
-
-article {
-    width: 1200px;
-    display: flex;
-    flex-direction: column;
-}
-
 a {
     padding: .3rem;
     text-decoration: none;
@@ -124,14 +96,52 @@ a {
     border-color: var(--accent-color-1);
 }
 
+h1, h2, h3, h4, h5, h6, .bold {
+    font-family: "Mulish", sans-serif;
+    font-weight: 1000;
+}
+
+hr {
+    margin: 2rem 0;
+}
+
+body {
+    background: #f4f4f4;
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.8rem;
+}
+
+.root {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+main {
+    padding: 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.main-404 {
+    height: calc(100vh - 4rem - 7rem - 4rem);
+}
+
+article {
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+}
+
 .snippet {
     padding: 3px 5px;
     border: none;
-    font-family: monospace;
+    font-family: "Consolas", monospace;
     font-weight: 400;
     color: #111;
     border-radius: 4px;
-    background: rgba(0,0,0,.06)
+    background: rgba(0, 0, 0, .06)
 }
 
 .keyboard {
@@ -139,9 +149,9 @@ a {
     -moz-border-radius: 0.2em;
     -webkit-border-radius: 0.2em;
     border-radius: 0.2em;
-    -moz-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1);
-    -webkit-box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1);
-    box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1);
+    -moz-box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.1);
+    box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.1);
     background-color: #f9f9f9;
     background-image: -moz-linear-gradient(top, #eee, #f9f9f9, #eee);
     background-image: -o-linear-gradient(top, #eee, #f9f9f9, #eee);

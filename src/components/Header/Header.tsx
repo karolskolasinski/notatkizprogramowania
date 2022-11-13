@@ -7,7 +7,7 @@ const Header = () => {
         <>
             <header className={'header'}>
                 <nav>
-                    <Link to={'/'} className={'header-title'}>
+                    <Link to={'/'} className={'header-title bold'}>
                         notatki
                         <span className={'header-accent'}>z</span>
                         programowania</Link>
