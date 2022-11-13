@@ -4,13 +4,13 @@
         "filePath": "./categories/HTMLCategory",
         "path": "/html-category/*",
         "to": "/html-category",
-        "cover": "img/cover/cover-html.webp"
+        "cover": "./img/cover/cover-html.webp"
     },
     {
         "title": "CSS",
         "filePath": "./categories/CSSCategory",
         "path": "/css-category/*",
         "to": "/css-category",
-        "cover": "img/cover/cover-css.webp"
+        "cover": "./img/cover/cover-css.webp"
     }
 ]
