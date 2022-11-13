@@ -15,7 +15,7 @@ root.render(
             <Header />
             <Routes>
                 <Route path="/" element={<main className="main">
-                    <article>
+                    <article className={'article'}>
                         {categories.map(({ title, to, cover }) =>
                             <Link to={to} key={to}>
                                 <div className={'category-wrapper'}>
