@@ -52,6 +52,24 @@ nav, output, ruby, section, summary, time, mark, audio, video {
     border: 0;
 }
 
+.pt1 {
+    padding-top: 1rem;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    margin: .5rem 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 /*ELEMENTS*/
 a {
     padding: .3rem;
@@ -60,13 +78,15 @@ a {
 }
 
 .link {
+    margin: .5rem;
     padding: 1rem 1rem 1rem 2rem;
     width: 45%;
+    position: relative;
     display: inline-block;
     border: 2px solid #333333;
     border-radius: 2% 6% 5% 4%/1% 1% 2% 4%;
     background: #f4f4f4;
-    position: relative;
+    font-weight: bold;
 }
 
 .link:before {
@@ -98,6 +118,7 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6, .bold {
+    padding-bottom: .25rem;
     font-family: "Mulish", sans-serif;
     font-weight: 1000;
 }
@@ -180,6 +201,7 @@ main {
     color: #0f95a1;
     position: relative;
     padding: initial;
+    overflow-wrap: anywhere;
 }
 
 .article-link:hover {
@@ -200,7 +222,8 @@ main {
     background: linear-gradient(111.3deg, #00bcd4 9.6%, #9c27b0 93.6%);
 }
 
-.snippet {
+.snippet,
+.snippet-list li span {
     padding: 3px 5px;
     border: none;
     font-family: "Consolas", monospace;
@@ -284,5 +307,16 @@ main {
 
     .link {
         width: 30%;
+    }
+
+    .video-container {
+        padding-bottom: 0;
+        margin: 0;
+    }
+
+    .video-container iframe {
+        position: initial;
+        width: 560px;
+        height: 315px;
     }
 }

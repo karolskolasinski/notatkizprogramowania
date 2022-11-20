@@ -4,5 +4,11 @@
         "filePath": "./articles/HTMLTemplate",
         "path": "html-template/*",
         "to": "html-template"
+    },
+    {
+        "title": "Tagi HTML",
+        "filePath": "./articles/HTMLTags",
+        "path": "html-tags/*",
+        "to": "html-tags"
     }
 ]

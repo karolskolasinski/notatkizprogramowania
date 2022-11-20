@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import semanticImg from '../../img/html/semantic.jpg';
 import cover from '../../img/cover/cover-html.webp';
-import './Article.css';
 // @ts-ignore
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
@@ -11,7 +10,15 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 const HTMLTemplate = () => {
     useEffect(() => Prism.highlightAll(), []);
 
-    const universalTemplate = `<!DOCTYPE html>
+    return (
+        <>
+            <div className={'cover-wrapper'}>
+                <img src={cover} alt={'html cover'} className={'cover'} />
+            </div>
+            <article className={'article article-content'}>
+                <h1>Uniwersalny template</h1>
+                <pre className={'line-numbers language-html'}>
+                    <code>{`<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -43,17 +50,7 @@ const HTMLTemplate = () => {
     
     <script src="function.js" type="text/javascript"></script>
 </body>
-</html>`;
-
-    return (
-        <>
-            <div className={'cover-wrapper'}>
-                <img src={cover} alt={'html cover'} className={'cover'} />
-            </div>
-            <article className={'article article-content'}>
-                <h1>Uniwersalny template</h1>
-                <pre className={'line-numbers language-html'}>
-                    <code>{universalTemplate}</code>
+</html>`}</code>
                 </pre>
 
                 <h3>Opis:</h3>
@@ -101,7 +98,7 @@ const HTMLTemplate = () => {
 
                 <h1>Semantic HTML</h1>
                 <p>A semantic element clearly describes its meaning to both the browser and the developer.</p>
-                <div className="article-img-wrapper">
+                <div className={'article-img-wrapper'}>
                     <img src={semanticImg} alt={'HTML Semantic'} className={'article-img'} />
                 </div>
                 <h4>Źródło:</h4>
