@@ -9,13 +9,6 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 const HTMLTemplate = () => {
     useEffect(() => Prism.highlightAll(), []);
 
-    const a = `<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/308367/cat-500.jpg"
-srcset="https://s3-us-west-2.amazonaws.com/s.cdpn.io/308367/cat-500.jpg 500w,
-https://s3-us-west-2.amazonaws.com/s.cdpn.io/308367/cat-1000.jpg 1000w"
-sizes="(min-width: 600px) 50vw, 100vw"
-alt="">`;
-
-
     return (
         <>
             <div className={'cover-wrapper'}>
@@ -33,16 +26,16 @@ alt="">`;
                     Przeznaczone są do tworzenia graficznych elementów HTML lub symboli na stronie. Dlatego niesparowane
                     tagi HTML składają się tylko z tagów początkowych.</p>
                 <h3 className={'pt1'}>HTML:</h3>
-                <ul>
-                    <li><span className={'snippet'}>&lt;br&gt;</span></li>
-                    <li><span className={'snippet'}>&lt;hr&gt;</span></li>
-                    <li><span className={'snippet'}>&lt;meta&gt;</span></li>
+                <ul className={'snippet-list'}>
+                    <li><span>&lt;br&gt;</span></li>
+                    <li><span>&lt;hr&gt;</span></li>
+                    <li><span>&lt;meta&gt;</span></li>
                 </ul>
                 <h3 className={'pt1'}>XHTML:</h3>
                 <ul>
-                    <li><span className={'snippet'}>&lt;br /&gt;</span></li>
-                    <li><span className={'snippet'}>&lt;hr /&gt;</span></li>
-                    <li><span className={'snippet'}>&lt;meta /&gt;</span></li>
+                    <li><span>&lt;br /&gt;</span></li>
+                    <li><span>&lt;hr /&gt;</span></li>
+                    <li><span>&lt;meta /&gt;</span></li>
                 </ul>
                 <h4 className={'pt1'}>Źródło:</h4>
                 <a href={'https://info.sice.indiana.edu/~hrosenba/Demo/Demo.html#12'}
@@ -91,7 +84,7 @@ alt="">`;
                     className={'article-link'}>
                     https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements#Elements</a>
 
-                <hr/>
+                <hr />
 
                 <h1 className={'pt1'}>Elementy liniowe</h1>
                 <p>Mogą zawierać tylko dane i inne elementy wbudowane. Wyjątkiem od tej reguły jest tag <span
@@ -130,19 +123,23 @@ alt="">`;
                     <li><span>&lt;i&gt;</span></li>
                     <li><span>&lt;iframe&gt;</span></li>
                     <li><span>&lt;img&gt;</span> korzystanie z atrybutów <span>srcset</span> i <span>size</span>:</li>
-                    <pre className="line-numbers language-html"><code>{`<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/308367/cat-500.jpg"
+                    <pre className="line-numbers language-html">
+                        <code>
+{`<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/308367/cat-500.jpg"
      srcset="https://s3-us-west-2.amazonaws.com/s.cdpn.io/308367/cat-500.jpg 500w,
              https://s3-us-west-2.amazonaws.com/s.cdpn.io/308367/cat-1000.jpg 1000w"
      sizes="(min-width: 600px) 50vw, 100vw"
-     alt="cat">`}</code></pre>
+     alt="cat">`}
+                        </code>
+                    </pre>
                     <div className={'video-container'}>
-                        <iframe src={'https://www.youtube.com/embed/2QYpkrX2N48'}
-                            width={'100%'} height={'315'} frameBorder={'0'} allowFullScreen
+                        <iframe src={'https://www.youtube.com/embed/2QYpkrX2N48'} width={'100%'} height={'315'}
+                            frameBorder={'0'} allowFullScreen title={'srcset and sizes attributes'}
                             allow={'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'}
                         />
                     </div>
-                    <p><strong>Image spacing</strong> - gdy pod obrazkiem jest kilka dodatkowych pixeli, należy dodać do
-                        obrazka właściwość CSS:</p>
+                    <p className={'pb0'}><strong>Image spacing</strong> - gdy pod obrazkiem jest kilka dodatkowych
+                        pixeli, należy dodać do obrazka właściwość CSS:</p>
                     <pre className="line-numbers language-css"><code>{`img {
     display: block;
 }`}</code></pre>

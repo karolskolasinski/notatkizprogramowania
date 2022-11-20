@@ -6,8 +6,10 @@ import { createLazyElement, CustomLink } from '../utils';
 const HTMLCategory = () => {
     return (
         <main className="main">
-            {useLocation().pathname === '/html-category' && htmlArticles.map(({ path, title, to }) =>
-                <CustomLink to={path} key={to} color={'html'}>{title}</CustomLink>)}
+            {useLocation().pathname === '/html-category' && <div className={'link-wrapper'}>
+                {htmlArticles.map(({ path, title, to }) =>
+                    <CustomLink to={path} key={to} color={'html'}>{title}</CustomLink>)}
+            </div>}
 
             <Routes>
                 {htmlArticles.map(({ path, filePath }) =>

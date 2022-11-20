@@ -10,5 +10,23 @@
         "filePath": "./articles/HTMLTags",
         "path": "html-tags/*",
         "to": "html-tags"
+    },
+    {
+        "title": "DOM",
+        "filePath": "./articles/HTMLDOM",
+        "path": "html-dom/*",
+        "to": "html-dom"
+    },
+    {
+        "title": "Form",
+        "filePath": "./articles/HTMLForm",
+        "path": "html-form/*",
+        "to": "html-form"
+    },
+    {
+        "title": "List",
+        "filePath": "./articles/HTMLList",
+        "path": "html-list/*",
+        "to": "html-list"
     }
 ]

@@ -18,7 +18,8 @@ const HTMLTemplate = () => {
             <article className={'article article-content'}>
                 <h1>Uniwersalny template</h1>
                 <pre className={'line-numbers language-html'}>
-                    <code>{`<!DOCTYPE html>
+                    <code>
+{`<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -50,54 +51,46 @@ const HTMLTemplate = () => {
     
     <script src="function.js" type="text/javascript"></script>
 </body>
-</html>`}</code>
+</html>`}
+                    </code>
                 </pre>
 
                 <h3>Opis:</h3>
-                <ul>
-                    <li>
-                        <span className={'snippet'}>&lt;!DOCTYPE html&gt;</span> - dokument w formacie HTML5. element
-                        ten określa typ bieżącego dokumentu: DTD (Document Type Definition). Konieczne jest, aby
-                        przeglądarka rozumiała, według jakiego standardu HTML ma wyświetlać stronę internetową. Jak
-                        widać, jest to jeden z tagów, które nie są sparowane
+                <ul className={'snippet-list pb0'}>
+                    <li><span>&lt;!DOCTYPE html&gt;</span> - dokument w formacie HTML5. element ten określa typ
+                        bieżącego dokumentu: DTD (Document Type Definition). Konieczne jest, aby przeglądarka rozumiała,
+                        według jakiego standardu HTML ma wyświetlać stronę internetową. Jak widać, jest to jeden z
+                        tagów, które nie są sparowane
                     </li>
-                    <li>
-                        <span className={'snippet'}>&lt;html&gt;</span> - znacznik wskazuje, że jest to dokument HTML
+                    <li><span>&lt;html&gt;</span> - znacznik wskazuje, że jest to dokument HTML</li>
+                    <li><span>lang="en"</span> - używany przez stronę język</li>
+                    <li><span>&lt;head&gt;</span> - znacznik jest przeznaczony do przechowywania elementów, które
+                        pomagają przeglądarkom i wyszukiwarkom w pracy z danymi
                     </li>
-                    <li>
-                        <span className={'snippet'}>lang="en"</span> - używany przez stronę język
+                    <li><span>charset="utf-8"</span> - zestaw znaków używany na stronie, sposób kodowania znaków (zapis
+                        index.html bez BOM). Jeśli atrybut nie zostanie określony, niektóre przeglądarki mogą wyświetlać
+                        niejasne znaki zamiast tekstu
                     </li>
-                    <li>
-                        <span className={'snippet'}>&lt;head&gt;</span> - znacznik jest przeznaczony do przechowywania
-                        elementów, które pomagają przeglądarkom i wyszukiwarkom w pracy z danymi
+                    <li><span>name="description"</span> - opis strony w wyszukiwarce (150 - 160 znaków)
                     </li>
-                    <li>
-                        <span className={'snippet'}>charset="utf-8"</span> - zestaw znaków używany na stronie, sposób
-                        kodowania znaków (zapis index.html bez BOM). Jeśli atrybut nie zostanie określony, niektóre
-                        przeglądarki mogą wyświetlać niejasne znaki zamiast tekstu
+                    <li><span>name="keywords"</span> - słowa kluczowe</li>
+                    <li><span>http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"</span> - prawidłowe wyświetlanie w
+                        przeglądarkach IE
                     </li>
-                    <li>
-                        <span className={'snippet'}>name="description"</span> - opis strony w wyszukiwarce (150 - 160
-                        znaków)
+                    <li>dołączając skrypty w HTML4, musieliśmy im ustawiać atrybut <span>type="text/javascript"</span>:
                     </li>
-                    <li>
-                        <span className={'snippet'}>name="keywords"</span> - słowa kluczowe
-                    </li>
-                    <li>
-                        <span className={'snippet'}>http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"</span> -
-                        prawidłowe wyświetlanie w przeglądarkach IE
-                    </li>
-                    <li>dołączając skrypty w HTML4, musieliśmy im ustawiać atrybut <span
-                        className={'snippet'}>type="text/javascript"</span>:
-                        <pre className="line-numbers"><code className="language-html">{`<script src="super-script.js"
-                            type="text/javascript"></script>`}</code></pre> W nowym HTML atrybut ten domyślnie ma taką
-                        wartość więc nie musimy go podawać.
-                    </li>
+                    <pre className="line-numbers language-html">
+                        <code>
+                            {`<script src="super-script.js" type="text/javascript"></script>`}
+                        </code>
+                    </pre>
+                    <p className={'pb0'}>W nowym HTML atrybut ten domyślnie ma taką wartość więc nie musimy go
+                        podawać.</p>
                 </ul>
                 <hr />
 
                 <h1>Semantic HTML</h1>
-                <p>A semantic element clearly describes its meaning to both the browser and the developer.</p>
+                <p className={'pb0'}>A semantic element clearly describes its meaning to both the browser and the developer.</p>
                 <div className={'article-img-wrapper'}>
                     <img src={semanticImg} alt={'HTML Semantic'} className={'article-img'} />
                 </div>
