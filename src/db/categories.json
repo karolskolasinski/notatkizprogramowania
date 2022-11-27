@@ -1,16 +1,16 @@
 [
     {
         "title": "HTML",
-        "filePath": "./categories/HTMLCategory",
-        "path": "/html-category/*",
-        "to": "/html-category",
+        "filePath": "./categories/HTML",
+        "path": "/html/*",
+        "to": "/html",
         "cover": "./img/cover/cover-html.webp"
     },
     {
         "title": "CSS",
-        "filePath": "./categories/CSSCategory",
-        "path": "/css-category/*",
-        "to": "/css-category",
+        "filePath": "./categories/CSS",
+        "path": "/css/*",
+        "to": "/css",
         "cover": "./img/cover/cover-css.webp"
     }
 ]

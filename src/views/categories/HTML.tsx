@@ -3,10 +3,10 @@ import htmlArticles from '../../db/html-articles.json';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { createLazyElement, CustomLink } from '../utils';
 
-const HTMLCategory = () => {
+const HTML = () => {
     return (
         <main className="main">
-            {useLocation().pathname === '/html-category' && <div className={'link-wrapper'}>
+            {useLocation().pathname === '/html' && <div className={'link-wrapper'}>
                 {htmlArticles.map(({ path, title, to }) =>
                     <CustomLink to={path} key={to} color={'html'}>{title}</CustomLink>)}
             </div>}
@@ -19,4 +19,4 @@ const HTMLCategory = () => {
     );
 };
 
-export default HTMLCategory;
+export default HTML;

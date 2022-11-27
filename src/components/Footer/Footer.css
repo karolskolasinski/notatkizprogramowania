@@ -1,9 +1,9 @@
 footer {
     padding: 1rem;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
-    height: 7rem;
+    height: 15rem;
     color: white;
     background: var(--bg-color);
 }

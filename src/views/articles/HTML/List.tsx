@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import cover from '../../img/cover/cover-html.webp';
+import cover from '../../../img/cover/cover-html.webp';
 // @ts-ignore
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';

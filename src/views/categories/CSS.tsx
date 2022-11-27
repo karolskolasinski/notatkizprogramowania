@@ -1,13 +1,15 @@
 import React from 'react';
 import cssArticles from '../../db/css-articles.json';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import { createLazyElement, CustomLink } from '../utils';
 
-const CSSCategory = () => {
+const CSS = () => {
     return (
         <main className="main">
-            {cssArticles.map(({ path, title, to }) =>
-                <CustomLink to={path} key={to} color={'css'}>{title}</CustomLink>)}
+            {useLocation().pathname === '/css' && <div className={'link-wrapper'}>
+                {cssArticles.map(({ path, title, to }) =>
+                    <CustomLink to={path} key={to} color={'css'}>{title}</CustomLink>)}
+            </div>}
 
             <Routes>
                 {cssArticles.map(({ path, filePath }) =>
@@ -17,4 +19,4 @@ const CSSCategory = () => {
     );
 };
 
-export default CSSCategory;
+export default CSS;

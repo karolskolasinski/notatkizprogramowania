@@ -1,9 +1,9 @@
 [
     {
-        "title": "CSS",
-        "filePath": "./articles/SemanticHTML",
-        "path": "semantic-html/*",
-        "to": "semantic-html",
+        "title": "Media Query breakpoints",
+        "filePath": "./articles/CSS/Breakpoints",
+        "path": "breakpoints/*",
+        "to": "breakpoints",
         "cover": "img/cover/cover-css.webp"
     }
 ]

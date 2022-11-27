@@ -50,6 +50,7 @@ nav, output, ruby, section, summary, time, mark, audio, video {
     margin: 0;
     padding: 0;
     border: 0;
+    vertical-align: baseline;
 }
 
 .video-container {
@@ -131,8 +132,24 @@ ul.nested-list > li {
     padding-left: 1rem;
 }
 
-p, ul, ol {
+p, ul, ol, table {
     padding: 0 0 1rem 0;
+}
+
+.table {
+    width: 100%;
+}
+
+th {
+    text-align: initial;
+    padding: .5rem 0 .5rem 0;
+    border-bottom: 1px dashed var(--bg-color);
+}
+
+td {
+    text-align: initial;
+    padding: .5rem 0 .5rem 0;
+    border-bottom: 1px solid #dee2e6;
 }
 
 /*ELEMENTS-END*/

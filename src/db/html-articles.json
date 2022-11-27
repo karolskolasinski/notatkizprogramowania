@@ -1,32 +1,32 @@
 [
     {
         "title": "HTML template",
-        "filePath": "./articles/HTMLTemplate",
-        "path": "html-template/*",
-        "to": "html-template"
+        "filePath": "./articles/HTML/Template",
+        "path": "template/*",
+        "to": "template"
     },
     {
         "title": "Tagi HTML",
-        "filePath": "./articles/HTMLTags",
-        "path": "html-tags/*",
-        "to": "html-tags"
+        "filePath": "./articles/HTML/Tags",
+        "path": "tags/*",
+        "to": "tags"
     },
     {
         "title": "DOM",
-        "filePath": "./articles/HTMLDOM",
-        "path": "html-dom/*",
-        "to": "html-dom"
+        "filePath": "./articles/HTML/DOM",
+        "path": "dom/*",
+        "to": "dom"
     },
     {
         "title": "Form",
-        "filePath": "./articles/HTMLForm",
-        "path": "html-form/*",
-        "to": "html-form"
+        "filePath": "./articles/HTML/Form",
+        "path": "form/*",
+        "to": "form"
     },
     {
         "title": "List",
-        "filePath": "./articles/HTMLList",
-        "path": "html-list/*",
-        "to": "html-list"
+        "filePath": "./articles/HTML/List",
+        "path": "list/*",
+        "to": "list"
     }
 ]

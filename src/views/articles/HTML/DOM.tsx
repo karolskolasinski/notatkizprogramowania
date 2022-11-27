@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
-import cover from '../../img/cover/cover-html.webp';
-import domImg from '../../img/html/dom.png';
+import cover from '../../../img/cover/cover-html.webp';
+import domImg from '../../../img/html/dom.png';
 // @ts-ignore
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.js';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 
-const HTMLTemplate = () => {
+const DOM = () => {
     useEffect(() => Prism.highlightAll(), []);
 
     return (
@@ -42,4 +42,4 @@ const HTMLTemplate = () => {
     );
 };
 
-export default HTMLTemplate;
+export default DOM;
