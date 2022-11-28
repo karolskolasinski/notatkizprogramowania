@@ -5,5 +5,26 @@
         "path": "breakpoints/*",
         "to": "breakpoints",
         "cover": "img/cover/cover-css.webp"
+    },
+    {
+        "title": "Code Guide",
+        "filePath": "./articles/CSS/CodeGuide",
+        "path": "code-guide/*",
+        "to": "code-guide",
+        "cover": "img/cover/cover-css.webp"
+    },
+    {
+        "title": "Properties",
+        "filePath": "./articles/CSS/Properties",
+        "path": "properties/*",
+        "to": "properties",
+        "cover": "img/cover/cover-css.webp"
+    },
+    {
+        "title": "Box Model",
+        "filePath": "./articles/CSS/BoxModel",
+        "path": "box-model/*",
+        "to": "box-model",
+        "cover": "img/cover/cover-css.webp"
     }
 ]

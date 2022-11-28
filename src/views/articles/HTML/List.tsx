@@ -6,7 +6,7 @@ import 'prismjs/themes/prism-tomorrow.css';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.js';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 
-const HTMLTemplate = () => {
+const List = () => {
     useEffect(() => Prism.highlightAll(), []);
 
     return (
@@ -75,4 +75,4 @@ A. Third`}
     );
 };
 
-export default HTMLTemplate;
+export default List;

@@ -140,9 +140,13 @@ const Tags = () => {
                     </div>
                     <p className={'pb0'}><strong>Image spacing</strong> - gdy pod obrazkiem jest kilka dodatkowych
                         pixeli, należy dodać do obrazka właściwość CSS:</p>
-                    <pre className="line-numbers language-css"><code>{`img {
+                    <pre className="line-numbers language-css">
+                        <code>
+{`img {
     display: block;
-}`}</code></pre>
+}`}
+                        </code>
+                    </pre>
                     <li><span>&lt;input&gt;</span></li>
                     <li><span>&lt;ins&gt;</span></li>
                     <li><span>&lt;kbd&gt;</span></li>

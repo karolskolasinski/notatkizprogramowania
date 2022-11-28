@@ -18,7 +18,8 @@ const DOM = () => {
             <article className={'article article-content'}>
                 <h1>DOM (Document Object Model)</h1>
                 <pre className={'line-numbers language-html'}>
-                    <code>{`<!DOCTYPE html>
+                    <code>
+{`<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>DOM</title>
@@ -28,7 +29,9 @@ const DOM = () => {
     <h1>What is DOM?</h1>
     <p>DOM is...</p>
 </body>
-</html>`}</code></pre>
+</html>`}
+                    </code>
+                </pre>
 
                 <div className={'article-img-wrapper'}>
                     <img src={domImg} alt={'HTML Semantic'} className={'article-img'} />
