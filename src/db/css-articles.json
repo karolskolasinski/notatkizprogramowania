@@ -1,6 +1,6 @@
 [
     {
-        "title": "Media Query breakpoints",
+        "title": "Bootstrap breakpoints",
         "filePath": "./articles/CSS/Breakpoints",
         "path": "breakpoints/*",
         "to": "breakpoints",
@@ -25,6 +25,20 @@
         "filePath": "./articles/CSS/BoxModel",
         "path": "box-model/*",
         "to": "box-model",
+        "cover": "img/cover/cover-css.webp"
+    },
+    {
+        "title": "Text Shadow",
+        "filePath": "./articles/CSS/TextShadow",
+        "path": "text-shadow/*",
+        "to": "text-shadow",
+        "cover": "img/cover/cover-css.webp"
+    },
+    {
+        "title": "Cheat Sheets",
+        "filePath": "./articles/CSS/CheatSheets",
+        "path": "cheat-sheets/*",
+        "to": "cheat-sheets",
         "cover": "img/cover/cover-css.webp"
     }
 ]

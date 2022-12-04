@@ -19,10 +19,11 @@ const CodeGuide = () => {
                 <a href={'https://github.com/stormwarning/stylelint-config-recess-order/blob/main/index.js'}
                     className={'article-link'}>
                     https://github.com/stormwarning/stylelint-config-recess-order/blob/main/index.js</a>
-                <hr/>
+                <hr />
                 <h1>Properties order</h1>
                 <pre className={'line-numbers language-javascript'}>
-                    <code>{`'use strict';
+                    <code>
+{`'use strict';
 
 module.exports = {
   'extends': [

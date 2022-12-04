@@ -67,6 +67,11 @@ nav, output, ruby, section, summary, time, mark, audio, video {
     height: 100%;
 }
 
+.pdf {
+    width: 100%;
+    height: 80vh;
+}
+
 /*ELEMENTS*/
 a {
     padding: .3rem;

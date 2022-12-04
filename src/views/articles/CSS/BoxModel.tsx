@@ -17,7 +17,6 @@ const BoxModel = () => {
                 <img src={cover} alt={'html cover'} className={'cover'} />
             </div>
             <article className={'article article-content'}>
-
                 <h1>padding & margin</h1>
                 <div className={'article-img-wrapper'}>
                     <img src={paddingMarginImg} alt={'padding and margin'} className={'article-img'} />
