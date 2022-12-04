@@ -1,0 +1,14 @@
+[
+    {
+        "title": "Types",
+        "filePath": "./articles/Java/Types",
+        "path": "types/*",
+        "to": "types"
+    },
+    {
+        "title": "Reference",
+        "filePath": "./articles/Java/Reference",
+        "path": "reference/*",
+        "to": "reference"
+    }
+]

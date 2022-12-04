@@ -40,5 +40,12 @@
         "path": "cheat-sheets/*",
         "to": "cheat-sheets",
         "cover": "img/cover/cover-css.webp"
+    },
+    {
+        "title": "Inheritance And Specificity",
+        "filePath": "./articles/CSS/InheritanceAndSpecificity",
+        "path": "inheritance-and-specificity/*",
+        "to": "inheritance-and-specificity",
+        "cover": "img/cover/cover-css.webp"
     }
 ]

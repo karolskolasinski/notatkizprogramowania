@@ -12,5 +12,12 @@
         "path": "/css/*",
         "to": "/css",
         "cover": "./img/cover/cover-css.webp"
+    },
+    {
+        "title": "Java",
+        "filePath": "./categories/Java",
+        "path": "/java/*",
+        "to": "/java",
+        "cover": "./img/cover/cover-java.webp"
     }
 ]

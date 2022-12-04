@@ -22,11 +22,11 @@
 }
 
 [data-color=english] {
-    --accent-color-1: #b31751;
+    --accent-color-1: #393868;
 }
 
 [data-color=java] {
-    --accent-color-1: #4f4f4f;
+    --accent-color-1: #eb2121;
 }
 
 [data-color=dev] {
@@ -43,7 +43,7 @@
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
 blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins,
-kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd,
+kbd, q, s, samp, small, strike, strong, tt, var, b, u, i, center, dl, dt, dd,
 ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu,
 nav, output, ruby, section, summary, time, mark, audio, video {
@@ -69,7 +69,11 @@ nav, output, ruby, section, summary, time, mark, audio, video {
 
 .pdf {
     width: 100%;
-    height: 80vh;
+    height: 70vh;
+}
+
+.mp4 {
+    width: 100%;
 }
 
 /*ELEMENTS*/
