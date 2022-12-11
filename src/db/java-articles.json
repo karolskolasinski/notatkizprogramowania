@@ -10,5 +10,41 @@
         "filePath": "./articles/Java/Reference",
         "path": "reference/*",
         "to": "reference"
+    },
+    {
+        "title": "JVM",
+        "filePath": "./articles/Java/JVM",
+        "path": "jvm/*",
+        "to": "jvm"
+    },
+    {
+        "title": "AccessModifiers",
+        "filePath": "./articles/Java/AccessModifiers",
+        "path": "access-modifiers/*",
+        "to": "access-modifiers"
+    },
+    {
+        "title": "Abstract",
+        "filePath": "./articles/Java/Abstract",
+        "path": "abstract/*",
+        "to": "abstract"
+    },
+    {
+        "title": "Generics",
+        "filePath": "./articles/Java/Generics",
+        "path": "generics/*",
+        "to": "generics"
+    },
+    {
+        "title": "Collections",
+        "filePath": "./articles/Java/Collections",
+        "path": "collections/*",
+        "to": "collections"
+    },
+    {
+        "title": "OOP",
+        "filePath": "./articles/Java/OOP",
+        "path": "oop/*",
+        "to": "oop"
     }
 ]

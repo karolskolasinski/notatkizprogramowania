@@ -28,5 +28,11 @@
         "filePath": "./articles/HTML/List",
         "path": "list/*",
         "to": "list"
+    },
+    {
+        "title": "XML",
+        "filePath": "./articles/HTML/XML",
+        "path": "xml/*",
+        "to": "xml"
     }
 ]

@@ -18,7 +18,7 @@ const Types = () => {
                 <img src={cover} alt={'html cover'} className={'cover'} />
             </div>
             <article className={'article article-content'}>
-                <h1>8 typów prostych:</h1>
+                <h1>Typy proste:</h1>
                 <ol className={'snippet-list'}>
                     <li><span>char</span> - reprezentuje litery (wielkie i małe), cyfry i inne symbole. Każdy znak to
                         tylko jedna litera ujęta w pojedyncze cudzysłowy. Ten typ ma taki sam rozmiar

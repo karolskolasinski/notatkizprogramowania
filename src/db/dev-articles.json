@@ -1,0 +1,8 @@
+[
+    {
+        "title": "Regex",
+        "filePath": "./articles/dev/Regex",
+        "path": "regex/*",
+        "to": "regex"
+    }
+]
