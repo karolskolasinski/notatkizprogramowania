@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/notatkizprogramowania/static/css/main.ca35369c.css",
-    "main.js": "/notatkizprogramowania/static/js/main.a899a4b9.js",
+    "main.js": "/notatkizprogramowania/static/js/main.3d182ce9.js",
     "static/js/787.7efd31bd.chunk.js": "/notatkizprogramowania/static/js/787.7efd31bd.chunk.js",
     "static/media/inheritance-and-specificity.mp4": "/notatkizprogramowania/static/media/inheritance-and-specificity.69db80cf1e4dc82adeaf.mp4",
     "static/media/css-selectors-cheat-sheet-light.pdf": "/notatkizprogramowania/static/media/css-selectors-cheat-sheet-light.fe9c541b67adb65664d5.pdf",
@@ -9,6 +9,8 @@
     "static/media/css-cheat-sheet-pl.pdf": "/notatkizprogramowania/static/media/css-cheat-sheet-pl.f7187b786bfb6d891a75.pdf",
     "static/media/css-cheat-sheet.pdf": "/notatkizprogramowania/static/media/css-cheat-sheet.a9ede2b5c15224c0a22a.pdf",
     "static/media/semantic.jpg": "/notatkizprogramowania/static/media/semantic.dc26d5b203ec62454840.jpg",
+    "static/media/jvm-jre-jdk.png": "/notatkizprogramowania/static/media/jvm-jre-jdk.6478401a555f3f75019d.png",
+    "static/media/protected_m.png": "/notatkizprogramowania/static/media/protected_m.de7b1c0ff391f14f17d7.png",
     "static/media/assignment.png": "/notatkizprogramowania/static/media/assignment.ae2e02bbda45ee4b6e93.png",
     "static/media/stack-heap.png": "/notatkizprogramowania/static/media/stack-heap.d0dd9693b967618f3617.png",
     "static/media/type-conversion.png": "/notatkizprogramowania/static/media/type-conversion.a7e7b27340c74f937927.png",
@@ -16,7 +18,7 @@
     "static/media/cover-8.webp": "/notatkizprogramowania/static/media/cover-8.4e2fcbe117a0fda3b943.webp",
     "static/media/cover-4.webp": "/notatkizprogramowania/static/media/cover-4.6c80bbc5b2506749392f.webp",
     "static/media/cover-html.webp": "/notatkizprogramowania/static/media/cover-html.ea2d3f062d6d43bc22f9.webp",
-    "static/media/cover-3.webp": "/notatkizprogramowania/static/media/cover-3.199af74173b0eaa5029e.webp",
+    "static/media/cover-dev.webp": "/notatkizprogramowania/static/media/cover-dev.199af74173b0eaa5029e.webp",
     "static/media/cover-6.webp": "/notatkizprogramowania/static/media/cover-6.1d1268728d7cc526cc61.webp",
     "static/media/cover-5.webp": "/notatkizprogramowania/static/media/cover-5.fdacaa96380154859fb2.webp",
     "static/media/cover-java.webp": "/notatkizprogramowania/static/media/cover-java.bdab66b13ea3d2e6cc3b.webp",
@@ -28,11 +30,11 @@
     "index.html": "/notatkizprogramowania/index.html",
     "static/media/linkedin-original.svg": "/notatkizprogramowania/static/media/linkedin-original.15f0337078f13db400acab3639711ec7.svg",
     "main.ca35369c.css.map": "/notatkizprogramowania/static/css/main.ca35369c.css.map",
-    "main.a899a4b9.js.map": "/notatkizprogramowania/static/js/main.a899a4b9.js.map",
+    "main.3d182ce9.js.map": "/notatkizprogramowania/static/js/main.3d182ce9.js.map",
     "787.7efd31bd.chunk.js.map": "/notatkizprogramowania/static/js/787.7efd31bd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ca35369c.css",
-    "static/js/main.a899a4b9.js"
+    "static/js/main.3d182ce9.js"
   ]
 }
