@@ -4,5 +4,11 @@
         "filePath": "./articles/dev/Regex",
         "path": "regex/*",
         "to": "regex"
+    },
+    {
+        "title": "Git",
+        "filePath": "./articles/dev/Git",
+        "path": "git/*",
+        "to": "git"
     }
 ]
