@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/notatkizprogramowania/static/css/main.ca35369c.css",
-    "main.js": "/notatkizprogramowania/static/js/main.45142ced.js",
+    "main.js": "/notatkizprogramowania/static/js/main.768acecf.js",
     "static/js/787.7efd31bd.chunk.js": "/notatkizprogramowania/static/js/787.7efd31bd.chunk.js",
     "static/media/inheritance-and-specificity.mp4": "/notatkizprogramowania/static/media/inheritance-and-specificity.69db80cf1e4dc82adeaf.mp4",
     "static/media/css-selectors-cheat-sheet-light.pdf": "/notatkizprogramowania/static/media/css-selectors-cheat-sheet-light.fe9c541b67adb65664d5.pdf",
@@ -31,11 +31,11 @@
     "index.html": "/notatkizprogramowania/index.html",
     "static/media/linkedin-original.svg": "/notatkizprogramowania/static/media/linkedin-original.15f0337078f13db400acab3639711ec7.svg",
     "main.ca35369c.css.map": "/notatkizprogramowania/static/css/main.ca35369c.css.map",
-    "main.45142ced.js.map": "/notatkizprogramowania/static/js/main.45142ced.js.map",
+    "main.768acecf.js.map": "/notatkizprogramowania/static/js/main.768acecf.js.map",
     "787.7efd31bd.chunk.js.map": "/notatkizprogramowania/static/js/787.7efd31bd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ca35369c.css",
-    "static/js/main.45142ced.js"
+    "static/js/main.768acecf.js"
   ]
 }
