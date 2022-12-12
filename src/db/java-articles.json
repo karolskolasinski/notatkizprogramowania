@@ -46,5 +46,23 @@
         "filePath": "./articles/Java/OOP",
         "path": "oop/*",
         "to": "oop"
+    },
+    {
+        "title": "Optional",
+        "filePath": "./articles/Java/Optional",
+        "path": "optional/*",
+        "to": "optional"
+    },
+    {
+        "title": "Hash Code",
+        "filePath": "./articles/Java/HashCode",
+        "path": "hash-code/*",
+        "to": "hash-code"
+    },
+    {
+        "title": "Exceptions",
+        "filePath": "./articles/Java/Exceptions",
+        "path": "exceptions/*",
+        "to": "exceptions"
     }
 ]

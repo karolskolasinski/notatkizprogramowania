@@ -14,17 +14,17 @@
         "cover": "./img/cover/cover-css.webp"
     },
     {
-        "title": "Java",
-        "filePath": "./categories/Java",
-        "path": "/java/*",
-        "to": "/java",
-        "cover": "./img/cover/cover-java.webp"
-    },
-    {
         "title": "dev",
         "filePath": "./categories/Dev",
         "path": "/dev/*",
         "to": "/dev",
         "cover": "./img/cover/cover-dev.webp"
+    },
+    {
+        "title": "Java",
+        "filePath": "./categories/Java",
+        "path": "/java/*",
+        "to": "/java",
+        "cover": "./img/cover/cover-java.webp"
     }
 ]
