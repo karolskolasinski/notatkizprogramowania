@@ -1,0 +1,56 @@
+[
+    {
+        "title": "Defer",
+        "filePath": "./articles/JavaScript/Defer",
+        "path": "defer/*",
+        "to": "defer"
+    },
+    {
+        "title": "Event Listener",
+        "filePath": "./articles/JavaScript/EventListener",
+        "path": "event-listener/*",
+        "to": "event-listener"
+    },
+    {
+        "title": "Array Functions",
+        "filePath": "./articles/JavaScript/ArrayFunctions",
+        "path": "array-functions/*",
+        "to": "array-functions"
+    },
+    {
+        "title": "Set Timeout & Set Interval",
+        "filePath": "./articles/JavaScript/SetTimeoutSetInterval",
+        "path": "set-timeout-set-interval/*",
+        "to": "set-timeout-set-interval"
+    },
+    {
+        "title": "var vs. let",
+        "filePath": "./articles/JavaScript/VarLet",
+        "path": "var-let/*",
+        "to": "var-let"
+    },
+    {
+        "title": "console.log();",
+        "filePath": "./articles/JavaScript/ConsoleLog",
+        "path": "console-log/*",
+        "to": "console-log"
+    },
+    {
+        "title": "Async/Await",
+        "filePath": "./articles/JavaScript/AsyncAwait",
+        "path": "async-await/*",
+        "to": "async-await"
+    },
+    {
+        "title": "Truthy/Falsy",
+        "filePath": "./articles/JavaScript/TruthyFalsy",
+        "path": "truthy-falsy/*",
+        "to": "truthy-falsy"
+    },
+    {
+        "title": "Fetch",
+        "filePath": "./articles/JavaScript/Fetch",
+        "path": "fetch/*",
+        "to": "fetch"
+    }
+]

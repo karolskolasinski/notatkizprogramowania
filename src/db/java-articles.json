@@ -64,5 +64,17 @@
         "filePath": "./articles/Java/Exceptions",
         "path": "exceptions/*",
         "to": "exceptions"
+    },
+    {
+        "title": "Stream",
+        "filePath": "./articles/Java/Stream",
+        "path": "stream/*",
+        "to": "stream"
+    },
+    {
+        "title": "Implementacje",
+        "filePath": "./articles/Java/Implementacje",
+        "path": "implementacje/*",
+        "to": "implementacje"
     }
 ]

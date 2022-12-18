@@ -25,7 +25,7 @@ const Types = () => {
                     prawie zawsze niezależny od platformy. Obecnie istnieje wiele implementacji <b>JVM</b>, na
                     przykład <b>HotSpot</b> jest główną referencyjną implementacją maszyny wirtualnej Java.</p>
                 <p>W skład maszyny wirtualnej Java wchodzą następujące elementy:</p>
-                <ul>
+                <ul className={'snippet-list'}>
                     <li><b>Interpreter</b> – wykonuje krok po kroku instrukcje programu zapisane w postaci kodu
                         bajtowego
                     </li>
@@ -34,7 +34,14 @@ const Types = () => {
                         być one wykonywane bezpośrednio przez procesor komputera. Pozwala na zwiększenie wydajności
                     </li>
                     <li><b>Zarządca pamięci</b> – zarządza stertą, na której przechowywane wszystkie obiekty wykonywanej
-                        aplikacji oraz zapewnia automatyczne zwalnianie nieużywanej pamięci
+                        aplikacji oraz zapewnia automatyczne zwalnianie nieużywanej pamięci.
+                        Garbage Collector to program, którego głównym zadaniem jest usuwanie z pamięci nieużywanych
+                        obiektów. Gdyby nie jego działanie, sterta, na którą trafiają nowo tworzone obiekty, szybko by
+                        się zapełniała i tym samym uniemożliwiała dalsze funkcjonowanie aplikacji. Sprawdza czy dany
+                        obiekt nie ma żadnych referencji. Garbage Collector skanuje Scope i Stos zaznaczając wszystkie
+                        obiekty jako widoczne, jeżeli mają jakieś referencje. W pierwszej kolejności zwraca uwagę
+                        na <span>static</span> i referencje wgłąb, oznaczając jako nie do usunięcia (<span>static</span>z
+                        definicji jest czymś, do czego zawsze jest dostęp i z automatu nie może być usunięte).
                     </li>
                     <li><b>Weryfikator kodu bajtowego</b> – kluczowym dla bezpieczeństwa aspektem jest weryfikacja kodu
                         bajtowego przed jego uruchomieniem, której celem jest sprawdzenie poprawności wszystkich odwołań
