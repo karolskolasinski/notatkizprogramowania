@@ -323,8 +323,6 @@ main {
     color: black;
     mix-blend-mode: screen;
     text-transform: uppercase;
-    word-break: break-all;
-    max-width: 80%;
     line-height: 2.2rem;
 }
 

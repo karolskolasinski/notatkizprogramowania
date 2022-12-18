@@ -28,10 +28,24 @@
         "cover": "./img/cover/cover-dev.webp"
     },
     {
+        "title": "English",
+        "filePath": "./categories/English",
+        "path": "/english/*",
+        "to": "/english",
+        "cover": "./img/cover/cover-english.webp"
+    },
+    {
         "title": "Java",
         "filePath": "./categories/Java",
         "path": "/java/*",
         "to": "/java",
         "cover": "./img/cover/cover-java.webp"
+    },
+    {
+        "title": "Template Engines",
+        "filePath": "./categories/TemplateEngines",
+        "path": "/template-engines/*",
+        "to": "/template-engines",
+        "cover": "./img/cover/cover-template-engines.webp"
     }
 ]

@@ -52,5 +52,11 @@
         "filePath": "./articles/JavaScript/Fetch",
         "path": "fetch/*",
         "to": "fetch"
+    },
+    {
+        "title": "Node.js",
+        "filePath": "./articles/JavaScript/NodeJs",
+        "path": "node-js/*",
+        "to": "node-js"
     }
 ]
