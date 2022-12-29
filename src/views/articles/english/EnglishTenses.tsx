@@ -1,5 +1,5 @@
 import React from 'react';
-import cover from '../../../img/cover/cover-english.webp';
+import cover from '../../../img/cover/cover-template-engines.webp';
 import czasyAngielskie from '../../../img/english/czasy-angielskie.jpg';
 import englishTenses from '../../../img/english/english-tenses.jpg';
 
