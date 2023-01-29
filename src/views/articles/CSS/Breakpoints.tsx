@@ -14,6 +14,7 @@ const Breakpoints = () => {
             <div className={'cover-wrapper'}>
                 <img src={cover} alt={'html cover'} className={'cover'} />
             </div>
+
             <article className={'article article-content'}>
                 <h1>Bootstrap breakpoints</h1>
                 <table className="table">
@@ -27,32 +28,32 @@ const Breakpoints = () => {
                     <tbody>
                         <tr>
                             <td>X-Small</td>
-                            <td><em>None</em></td>
+                            <td><em>none</em></td>
                             <td>&lt;576px</td>
                         </tr>
                         <tr>
                             <td>Small</td>
-                            <td><code>sm</code></td>
+                            <td>sm</td>
                             <td>≥576px</td>
                         </tr>
                         <tr>
                             <td>Medium</td>
-                            <td><code>md</code></td>
+                            <td>md</td>
                             <td>≥768px</td>
                         </tr>
                         <tr>
                             <td>Large</td>
-                            <td><code>lg</code></td>
+                            <td>lg</td>
                             <td>≥992px</td>
                         </tr>
                         <tr>
                             <td>Extra large</td>
-                            <td><code>xl</code></td>
+                            <td>xl</td>
                             <td>≥1200px</td>
                         </tr>
                         <tr>
                             <td>Extra extra large</td>
-                            <td><code>xxl</code></td>
+                            <td>xxl</td>
                             <td>≥1400px</td>
                         </tr>
                     </tbody>

@@ -14,12 +14,8 @@ const CodeGuide = () => {
             <div className={'cover-wrapper'}>
                 <img src={cover} alt={'html cover'} className={'cover'} />
             </div>
+
             <article className={'article article-content'}>
-                <h1>Code Guide</h1>
-                <a href={'https://github.com/stormwarning/stylelint-config-recess-order/blob/main/index.js'}
-                    className={'article-link'}>
-                    https://github.com/stormwarning/stylelint-config-recess-order/blob/main/index.js</a>
-                <hr />
                 <h1>Properties order</h1>
                 <pre className={'line-numbers language-javascript'}>
                     <code>
@@ -299,10 +295,10 @@ module.exports = {
 };`}
                     </code>
                 </pre>
+
                 <h4>Źródło:</h4>
                 <a href={'https://github.com/stormwarning/stylelint-config-recess-order/blob/main/index.js'}
-                    className={'article-link'}>
-                    https://github.com/stormwarning/stylelint-config-recess-order/blob/main/index.js</a>
+                    className={'article-link'}>https://github.com/stormwarning/stylelint-config-recess-order/blob/main/index.js</a>
             </article>
         </>
     );

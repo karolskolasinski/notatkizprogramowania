@@ -10,9 +10,19 @@ const CheatSheets = () => {
             <div className={'cover-wrapper'}>
                 <img src={cover} alt={'html cover'} className={'cover'} />
             </div>
+
             <article className={'article article-content'}>
+                <h1>MMC School</h1>
                 <iframe src={cheatSheetPl} title="cheat sheet pl" className={'pdf'} />
+
+                <hr />
+
+                <h1>Web Dev Simplified (light)</h1>
                 <iframe src={cheatSheetEnLight} title="cheat sheet en light" className={'pdf'} />
+
+                <hr />
+
+                <h1>Web Dev Simplified (dark)</h1>
                 <iframe src={cheatSheetEnDark} title="cheat sheet en dark" className={'pdf'} />
             </article>
         </>

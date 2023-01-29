@@ -28,13 +28,6 @@
         "cover": "img/cover/cover-css.webp"
     },
     {
-        "title": "Text Shadow",
-        "filePath": "./articles/CSS/TextShadow",
-        "path": "text-shadow/*",
-        "to": "text-shadow",
-        "cover": "img/cover/cover-css.webp"
-    },
-    {
         "title": "Cheat Sheets",
         "filePath": "./articles/CSS/CheatSheets",
         "path": "cheat-sheets/*",

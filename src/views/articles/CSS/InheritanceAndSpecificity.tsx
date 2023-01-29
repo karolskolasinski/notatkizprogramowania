@@ -1,6 +1,6 @@
 import React from 'react';
 import cover from '../../../img/cover/cover-css.webp';
-import inheritanceAndSepcificity from '../../../mp4/inheritance-and-specificity.mp4';
+import inheritanceAndSpecificity from '../../../mp4/inheritance-and-specificity.mp4';
 
 const CheatSheets = () => {
     return (
@@ -10,7 +10,7 @@ const CheatSheets = () => {
             </div>
             <article className={'article article-content'}>
                 <video controls className={'mp4'}>
-                    <source src={inheritanceAndSepcificity} type="video/mp4" />
+                    <source src={inheritanceAndSpecificity} type="video/mp4" />
                 </video>
             </article>
         </>
