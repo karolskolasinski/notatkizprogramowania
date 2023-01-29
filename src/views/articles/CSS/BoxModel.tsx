@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react';
 import cover from '../../../img/cover/cover-css.webp';
-import paddingMarginImg from '../../../img/css/padding-margin.png';
-import borders from '../../../img/css/borders.png';
 // @ts-ignore
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
