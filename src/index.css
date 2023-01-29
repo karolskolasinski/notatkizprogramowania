@@ -76,7 +76,10 @@ nav, output, ruby, section, summary, time, mark, audio, video {
     width: 100%;
 }
 
-/*ELEMENTS*/
+/************************************/
+/* HTML ELEMENTS
+/************************************/
+
 a {
     padding: .3rem;
     text-decoration: none;
@@ -146,22 +149,17 @@ p, ul, ol, table {
 }
 
 .table {
+    margin: 1rem 0 0 0;
     width: 100%;
+    border-collapse: collapse;
 }
 
-th {
-    text-align: initial;
-    padding: .5rem 0 .5rem 0;
-    border-bottom: 1px dashed var(--bg-color);
-}
-
+th,
 td {
     text-align: initial;
-    padding: .5rem 0 .5rem 0;
-    border-bottom: 1px solid #dee2e6;
+    padding: .25rem .5rem;
+    border: dotted 1px #bdc3c7;
 }
-
-/*ELEMENTS-END*/
 
 body {
     background: #f4f4f4;
@@ -169,17 +167,21 @@ body {
     line-height: 1.8rem;
 }
 
+main {
+    padding: 0 .25rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/************************************/
+/* END of HTML ELEMENTS
+/************************************/
+
 .root {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-}
-
-main {
-    padding: 0 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
 .main-404 {
@@ -187,11 +189,11 @@ main {
 }
 
 .link-wrapper {
-    width: 1200px;
+    width: 1000px;
 }
 
 .article {
-    width: 1200px;
+    width: 1000px;
     display: flex;
     flex-direction: column;
 }
@@ -217,7 +219,7 @@ main {
     display: block;
     max-width: 100%;
     margin-top: 8rem;
-    padding: 2rem;
+    padding: 2rem .5rem;
     border-radius: .5rem;
     background: white;
 }
@@ -326,7 +328,20 @@ main {
     line-height: 2.2rem;
 }
 
+.example-form {
+    padding: 1rem;
+    border: 1px solid var(--bg-color);
+}
+
+.example-form h1 {
+    font-size: initial;
+}
+
 @media all and (min-width: 576px) {
+    main {
+        padding: 0 1rem;
+    }
+
     .article {
         flex-direction: row;
         flex-wrap: wrap;
@@ -334,6 +349,10 @@ main {
 
     .article a {
         width: calc(100% / 2);
+    }
+
+    .article-content {
+        padding: 2rem;
     }
 }
 

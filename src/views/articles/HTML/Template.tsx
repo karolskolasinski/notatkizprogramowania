@@ -15,6 +15,7 @@ const Template = () => {
             <div className={'cover-wrapper'}>
                 <img src={cover} alt={'html cover'} className={'cover'} />
             </div>
+
             <article className={'article article-content'}>
                 <h1>Uniwersalny template</h1>
                 <pre className={'line-numbers language-html'}>
@@ -81,7 +82,7 @@ const Template = () => {
                     </li>
                     <pre className="line-numbers language-html">
                         <code>
-                            {`<script src="super-script.js" type="text/javascript"></script>`}
+                            {`<script src="script.js" type="text/javascript"></script>`}
                         </code>
                     </pre>
                     <p className={'pb0'}>W nowym HTML atrybut ten domyślnie ma taką wartość więc nie musimy go
@@ -94,6 +95,7 @@ const Template = () => {
                 <div className={'article-img-wrapper'}>
                     <img src={semanticImg} alt={'HTML Semantic'} className={'article-img'} />
                 </div>
+
                 <h4>Źródło:</h4>
                 <a href={'https://internetingishard.netlify.app/html-and-css/semantic-html/index.html#summary'}
                     className={'article-link'}>

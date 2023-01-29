@@ -14,14 +14,15 @@ const Template = () => {
             <div className={'cover-wrapper'}>
                 <img src={cover} alt={'html cover'} className={'cover'} />
             </div>
+
             <article className={'article article-content'}>
                 <h1>Znaki specjale w formacie XML:</h1>
-                <table>
+                <table className={'table'}>
                     <thead>
                         <tr>
-                            <th>Znak</th>
-                            <th>Zapis XML</th>
-                            <th>Opis</th>
+                            <th><h3>Znak</h3></th>
+                            <th><h3>Zapis XML</h3></th>
+                            <th><h3>Opis</h3></th>
                         </tr>
                     </thead>
                     <tbody>

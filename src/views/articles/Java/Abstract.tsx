@@ -5,6 +5,7 @@ import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.js';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
+import 'prismjs/components/prism-java'
 
 const Types = () => {
     useEffect(() => Prism.highlightAll(), []);
@@ -101,7 +102,7 @@ const Types = () => {
                             <summary>Przykład</summary>
                             <p>Mamy w programie taką oto klasę abstrakcyjną:</p>
 
-                            <pre className={'line-numbers language-js'}>
+                            <pre className={'line-numbers language-java'}>
                     <code>
 {`abstract class MySwingWorker<T, V> extends SwingWorker<T, V> { 
     public final void myPublish(V... args) {

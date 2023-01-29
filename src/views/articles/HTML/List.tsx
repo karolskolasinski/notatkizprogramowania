@@ -14,6 +14,7 @@ const List = () => {
             <div className={'cover-wrapper'}>
                 <img src={cover} alt={'html cover'} className={'cover'} />
             </div>
+
             <article className={'article article-content'}>
                 <h1>Listy</h1>
                 <ul className={'snippet-list pb0'}>

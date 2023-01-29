@@ -14,6 +14,7 @@ const Tags = () => {
             <div className={'cover-wrapper'}>
                 <img src={cover} alt={'html cover'} className={'cover'} />
             </div>
+
             <article className={'article article-content'}>
                 <h1>Pełna lista tagów HTML</h1>
                 <a href={'https://www.w3schools.com/tags/'}
@@ -39,7 +40,7 @@ const Tags = () => {
                 </ul>
                 <h4 className={'pt1'}>Źródło:</h4>
                 <a href={'https://info.sice.indiana.edu/~hrosenba/Demo/Demo.html#12'}
-                    className={'article-link'}> https://info.sice.indiana.edu/~hrosenba/Demo/Demo.html#12</a>
+                    className={'article-link'}>https://info.sice.indiana.edu/~hrosenba/Demo/Demo.html#12</a>
 
                 <hr />
 
@@ -94,7 +95,7 @@ const Tags = () => {
 
                 <ul className={'snippet-list'}>
                     <li>
-                        <span>&lt;a&gt;</span> jest prawdopodobnie jednym z najważniejszych elementów HTML; jest
+                        <span>&lt;a&gt;</span> jest prawdopodobnie jednym z najważniejszych elementów HTML. Jest
                         przeznaczony do tworzenia linków. Ten znacznik jest często używany z atrybutem <span>href</span>,
                         który wskazuje ścieżkę do pliku / strony internetowej, do której się odwołuje. Tekst zawinięty w
                         tym tagu jest podkreślony i wyróżniony kolorem. Po kliknięciu zostaniesz przeniesiony pod adres
@@ -167,20 +168,19 @@ const Tags = () => {
                     <li><span>&lt;select&gt;</span></li>
                     <li><span>&lt;slot&gt;</span></li>
                     <li><span>&lt;small&gt;</span></li>
-                    <li><span>&lt;span&gt;</span> w tym sparowanym tagu możesz zawijać tekst lub
-                        jego część. Ten tag w żaden sposób nie wpływa na wyświetlanie tekstu. Prawdopodobnie masz
-                        logiczne pytanie: dlaczego i w jakich sytuacjach używać tego tagu? Znacznik ten jest często
-                        stosowany, gdy trzeba zmienić wygląd części tekstu przy użyciu CSS.
+                    <li><span>&lt;span&gt;</span> w tym sparowanym tagu możesz zawijać tekst lub jego część. Ten tag w
+                        żaden sposób nie wpływa na wyświetlanie tekstu. Prawdopodobnie masz logiczne pytanie: dlaczego i
+                        w jakich sytuacjach używać tego tagu? Znacznik ten jest często stosowany, gdy trzeba zmienić
+                        wygląd części tekstu przy użyciu CSS.
                     </li>
                     <li><span>&lt;strong&gt;</span></li>
-                    <li><span>&lt;sub&gt;</span> ten znacznik służy do tworzenia tekstu indeksu
-                        dolnego: to znaczy, że tekst wewnątrz tego sparowanego znacznika zostanie przesunięty w dół i
-                        zmniejszony. Ten tag przydaje się, gdy musisz napisać wzór chemiczny.
+                    <li><span>&lt;sub&gt;</span> ten znacznik służy do tworzenia tekstu indeksu dolnego: to znaczy, że
+                        tekst wewnątrz tego sparowanego znacznika zostanie przesunięty w dół i zmniejszony. Ten tag
+                        przydaje się, gdy musisz napisać wzór chemiczny.
                     </li>
-                    <li><span>&lt;sup&gt;</span> ten tag definiuje tekst w indeksie górnym. Jest
-                        podobny do poprzedniego, z tą różnicą, że
-                        tekst zawarty w tym tagu zostanie przesunięty w górę. Dzięki niemu możesz wyświetlać
-                        interesujące równania matematyczne na swojej stronie internetowej.
+                    <li><span>&lt;sup&gt;</span> ten tag definiuje tekst w indeksie górnym. Jest podobny do
+                        poprzedniego, z tą różnicą, że tekst zawarty w tym tagu zostanie przesunięty w górę. Dzięki
+                        niemu możesz wyświetlać interesujące równania matematyczne na swojej stronie internetowej.
                     </li>
                     <li><span>&lt;svg&gt;</span></li>
                     <li><span>&lt;template&gt;</span></li>
@@ -192,10 +192,10 @@ const Tags = () => {
                     <li><span>&lt;video&gt;</span></li>
                     <li><span>&lt;wbr&gt;</span></li>
                 </ul>
+
                 <h4 className={'pt1'}>Źródło:</h4>
                 <a href={'https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements#Elements'}
-                    className={'article-link'}>
-                    https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements#Elements</a>
+                    className={'article-link'}>https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements#Elements</a>
             </article>
         </>
     );
