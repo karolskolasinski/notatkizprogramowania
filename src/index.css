@@ -238,14 +238,16 @@ main {
     width: 100%;
 }
 
-.article-link {
+.article-link,
+.snippet-list a {
     color: #0f95a1;
     position: relative;
     padding: initial;
     overflow-wrap: anywhere;
 }
 
-.article-link:hover {
+.article-link:hover,
+.snippet-list a:hover {
     background: linear-gradient(111.3deg, #00bcd4 9.6%, #9c27b0 93.6%);
     background-size: 100%;
     background-repeat: repeat;
@@ -253,7 +255,8 @@ main {
     -webkit-text-fill-color: transparent;
 }
 
-.article-link:hover::after {
+.article-link:hover::after,
+.snippet-list a:hover::after {
     content: "";
     position: absolute;
     width: 100%;
@@ -264,7 +267,8 @@ main {
 }
 
 .snippet,
-.snippet-list li span {
+.snippet-list li span,
+p.snippets span {
     padding: 3px 5px;
     border: none;
     font-family: "Consolas", monospace;
@@ -371,6 +375,10 @@ main {
 
     .article-img {
         width: 40%;
+    }
+
+    .article-img-desktop {
+        width: 70%;
     }
 
     .video-container {

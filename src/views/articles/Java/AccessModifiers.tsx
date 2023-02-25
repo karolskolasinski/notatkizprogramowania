@@ -103,10 +103,9 @@ const Types = () => {
                 <hr />
 
                 <iframe src={'https://www.youtube.com/embed/x3iFRehjpQk'} width={'100%'} height={'315'}
-                    frameBorder={'0'} allowFullScreen title={'access modifiers'}
+                    allowFullScreen title={'access modifiers'}
                     allow={'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'}
                 />
-
             </article>
         </>
     );

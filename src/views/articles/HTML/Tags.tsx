@@ -135,7 +135,7 @@ const Tags = () => {
                     </pre>
                     <div className={'video-container'}>
                         <iframe src={'https://www.youtube.com/embed/2QYpkrX2N48'} width={'100%'} height={'315'}
-                            frameBorder={'0'} allowFullScreen title={'srcset and sizes attributes'}
+                            allowFullScreen title={'srcset and sizes attributes'}
                             allow={'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'}
                         />
                     </div>
