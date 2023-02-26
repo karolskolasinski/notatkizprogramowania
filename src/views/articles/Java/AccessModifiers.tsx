@@ -17,23 +17,20 @@ const Types = () => {
                 <img src={cover} alt={'html cover'} className={'cover'} />
             </div>
             <article className={'article article-content'}>
-
-
-                <p><h2>4 Modyfikatory dostępu:</h2></p>
+                <h1>4 Modyfikatory dostępu:</h1>
                 <ul className={'snippet-list'}>
-                    <li><span>public</span> : dostępny z każdego miejsca</li>
-                    <li><span>protected</span> : dostępne dla klas z tego samego pakietu i klas rozszerzających</li>
-                    <li><span>default</span> : dostępne dla klas z tego samego pakietu (= package-private)</li>
-                    <li><span>private</span> : dostępne tylko dla samej klasy</li>
+                    <li><span>public</span>: dostępny z każdego miejsca</li>
+                    <li><span>protected</span>: dostępne dla klas z tego samego pakietu i klas rozszerzających</li>
+                    <li><span>default</span>: dostępne dla klas z tego samego pakietu (= package-private)</li>
+                    <li><span>private</span>: dostępne tylko dla samej klasy</li>
                 </ul>
-
 
                 <hr />
 
-                <p><h2>Modyfikatory dla klas:</h2></p>
+                <h1>Modyfikatory dla klas:</h1>
                 <ul className={'snippet-list'}>
-                    <li><span>public</span></li>
-                    <li>brak ( <span>pakcage-private</span> ) - modyfikator domyślny</li>
+                    <li><span>public</span>: publiczna</li>
+                    <li>brak (package-private): modyfikator domyślny</li>
                 </ul>
                 <p>Klasa nie mogła by być <span>private</span>, ponieważ nie było by do niej dostępu a jej
                     funkcjonalność mogła by wykonywać tylko ona sama.
@@ -41,71 +38,59 @@ const Types = () => {
 
                 <hr />
 
-                <p><h2>Modyfikatory dla pól i metod:</h2></p>
-
+                <h1>Modyfikatory dla pól i metod:</h1>
                 <div className="article-img-wrapper">
-                    <img src={modifiers} alt={'jvm'} className={'article-img'} />
+                    <img src={modifiers} alt={'jvm'} className={'article-img article-img-desktop'} />
                 </div>
-
-                <span><i>*no modifier</i></span> = <span>package-private</span>
-
+                <p><i>*no modifier</i> = package-private</p>
 
                 <hr />
 
-
-                <p><h1>public</h1></p>
-                <p>
-                    <span>public</span>
-                    jest najszerszym poziomem widoczności – klasy, pola i metody oznaczone w ten sposób są
-                    widoczne dla wszystkich innych klas.
+                <h3>public</h3>
+                <p><span>public</span> jest najszerszym poziomem widoczności – klasy, pola i metody oznaczone w ten
+                    sposób są widoczne dla wszystkich innych klas.
                 </p>
 
-
-                <hr />
-
-                <p><h1>protected</h1></p>
-                <p>Drugi w kolejności – <span>protected</span> – jest dostępny dla klasy
-                    zdefiniowanej w tej samej paczce oraz w klasach dziedziczących (extends) po klasie,
-                    która zawiera pola czy metody oznaczone jako <span>protected</span>.
+                <h3>protected</h3>
+                <p>Drugi w kolejności – <span className={'snippet'}>protected</span> – jest dostępny dla klasy
+                    zdefiniowanej w tej samej paczce oraz w klasach dziedziczących (<span
+                        className={'snippet'}>extends</span>) po klasie, która zawiera pola czy metody oznaczone
+                    jako <span className={'snippet'}>protected</span>.
                 </p>
                 <ul>
                     <li>dostępność w tym samym pakiecie</li>
-                    <li>dostępność w innym pakiecie poprzez <span>super</span>, pod warunkiem, że
+                    <li>dostępność w innym pakiecie poprzez <span className={'snippet'}>super</span>, pod warunkiem, że
                         klasa rozszerza główną klasę ze zmienną/metodą
                     </li>
                 </ul>
 
                 <div className="article-img-wrapper">
-                    <img src={protectedImg} alt={'jvm'} className={'article-img'} />
+                    <img src={protectedImg} alt={'jvm'} className={'article-img article-img-desktop'} />
                 </div>
 
-                <hr />
-
-                <p><h1>no modifier = pakcage-private</h1></p>
-                <p>Package, będący domyślnym poziomem widoczności nieposiadającym własnego
-                    modyfikatora, ogranicza widoczność do klas z tej samej paczki.</p>
+                <h3>no modifier = package-private</h3>
+                <p>Package, będący domyślnym poziomem widoczności nieposiadającym własnego modyfikatora, ogranicza
+                    widoczność do klas z tej samej paczki.</p>
                 <ul>
                     <li>dostępność <u>tylko</u> w tym samym pakiecie</li>
-                    <li>nie ma znaczenia czy klasa rozszerza rozszerza główną klasę ze
-                        zmienną/metodą
-                    </li>
+                    <li>nie ma znaczenia czy klasa rozszerza rozszerza główną klasę ze zmienną/metodą</li>
                 </ul>
 
-                <hr />
-
-                <p><h1>private</h1></p>
-                <p>Finalnie mamy <span>private</span> – czyli prywatne. Jak sama nazwa
-                    wskazuje elementy z dostępem na poziomie prywatnym są widoczne tylko dla
-                    struktur zdefiniowanych w tej samej klasie.
+                <h3>private</h3>
+                <p>Finalnie mamy <span className={'snippet'}>private</span> – czyli prywatne. Jak sama nazwa wskazuje
+                    elementy z dostępem na poziomie prywatnym są widoczne tylko dla struktur zdefiniowanych w tej samej
+                    klasie.
                 </p>
 
-
                 <hr />
 
-                <iframe src={'https://www.youtube.com/embed/x3iFRehjpQk'} width={'100%'} height={'315'}
-                    allowFullScreen title={'access modifiers'}
-                    allow={'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'}
-                />
+                <h1>Java - modyfikatory dostępu</h1>
+                <div className={'video-container'}>
+                    <iframe src={'https://www.youtube.com/embed/x3iFRehjpQk'} width={'100%'} height={'315'}
+                        allowFullScreen title={'srcset and sizes attributes'}
+                        allow={'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'}
+                    />
+                </div>
             </article>
         </>
     );

@@ -8,7 +8,8 @@ const Tests = () => {
                 <img src={cover} alt={'html cover'} className={'cover'} />
             </div>
             <article className={'article article-content'}>
-                <h1>Dlaczego pisze się testy?</h1>
+                <h1>Testy</h1>
+                <h3>Dlaczego pisze się testy?</h3>
                 <ul>
                     <li>aby podnieść jakość tworzonego przez nas kodu</li>
                     <li>aby udowodnić, że kod robi to co myślimy, że robi</li>
@@ -19,11 +20,10 @@ const Tests = () => {
 
                 <hr />
 
-                <h1>Podział testów</h1>
+                <h3>Podział testów</h3>
                 <ul>
-
                     <li>jednostkowe</li>
-                    <ul>
+                    <ul className={'nested-list'}>
                         <li>testujemy izolowany element (np. metoda, klasa) bez zależności</li>
                         <li>tylko jedno potencjalne miejsce awarii</li>
                         <li>szybkie wykonanie testów (&lt;1s)</li>
@@ -33,7 +33,7 @@ const Tests = () => {
                     </ul>
 
                     <li>integracyjne</li>
-                    <ul>
+                    <ul className={'nested-list'}>
                         <li>testują wytworzone oprogramowanie poprzez weryfikację zachowania kompletnej aplikacji pod
                             kątem wymagań biznesowych za pomocą różnego rodzaju interfejsu udostępnianego użytkownikom.
                         </li>
@@ -42,38 +42,36 @@ const Tests = () => {
                     </ul>
                 </ul>
 
-
                 <hr />
 
-                <h1>Cykl życia testów</h1>
+                <h3>Cykl życia testów</h3>
                 <ul className={'snippet-list'}>
-                    <li><b>@BeforeEach</b> np. napisanie metody, do której można wydzielić przygotowanie instancji
-                        klasy, z której korzystają testy.
+                    <li><strong>@BeforeEach</strong> np. napisanie metody, do której można wydzielić przygotowanie
+                        instancji klasy, z której korzystają testy.
                     </li>
-                    <li><b>@AfterEach</b> np. wyczyszczenie, usunięcie jakichś niepotrzebnych danych, aby np.
+                    <li><strong>@AfterEach</strong> np. wyczyszczenie, usunięcie jakichś niepotrzebnych danych, aby np.
                         zwolnić zasoby
                     </li>
-                    <li><b>@BeforeAll</b> (metoda musi być <span>static</span>) np. kod który służy do
-                        otwarcia pliku, w którym będziemy zapisywać, albo do zainicjalizowania połączenia z bazą
-                        danych
+                    <li><strong>@BeforeAll</strong> (metoda musi być <span>static</span>) np. kod który służy do
+                        otwarcia pliku, w którym będziemy zapisywać, albo do zainicjalizowania połączenia z bazą danych
                     </li>
-                    <li><b>@AfterAll</b> (metoda musi być <span>static</span>) np. zamknięcie tego połączenia
+                    <li><strong>@AfterAll</strong> (metoda musi być <span>static</span>) np. zamknięcie tego połączenia
                         lub pliku
                     </li>
                 </ul>
 
                 <hr />
 
-                <h1>BDD - Behavior-driven development</h1>
+                <h3>BDD - Behavior-driven development</h3>
                 <p>jest to zbiór dobrych praktyk przy tworzeniu testów jednostkowych, które testują realną
-                    funkcjonalność aplikacji a nie każdą metodę. Jedną z powszechnie stosowanych praktyk BDD
-                    jest podział kodu tesu na 3 sekcje:</p>
+                    funkcjonalność aplikacji a nie każdą metodę. Jedną z powszechnie stosowanych praktyk BDD jest
+                    podział kodu testu na 3 sekcje:</p>
                 <ol>
-                    <li><b>//given</b> - tworzymy założenia wstępne, tworzymy instancje obiektów i ich stan
+                    <li><strong>//given</strong> - tworzymy założenia wstępne, tworzymy instancje obiektów i ich stan
                         początkowy
                     </li>
-                    <li><b>//when</b> - wykonujemy wywołanie metody, którą chcemy przetestować</li>
-                    <li><b>//then</b> - sprawdzamy nasze oczekiwania z rzeczywistymi rezultatami, najczęściej
+                    <li><strong>//when</strong> - wykonujemy wywołanie metody, którą chcemy przetestować</li>
+                    <li><strong>//then</strong> - sprawdzamy nasze oczekiwania z rzeczywistymi rezultatami, najczęściej
                         wykorzystując asercje
                     </li>
                 </ol>
@@ -81,12 +79,11 @@ const Tests = () => {
 
                 <hr />
 
-                <h1>Pokrycie kodu | code coverage</h1>
-                <p>oznacza ile procent linijek kodu (nie licząc klamer, deklaracji itp.) jest realnie
-                    wykonywanych podczas wszystkich testów. Innymi słowy, wyniki wykonania jakiej części
-                    kodu weryfikujemy (w teorii). Dobrą wartością jest 70–85% pokrycia (w zależności od
-                    technologii, logiki biznesowej, złożoności itp.). Pokrycie poniżej 40% jest z kolei
-                    przeważnie bardzo złym sygnałem.</p>
+                <h3>Pokrycie kodu (code coverage)</h3>
+                <p>oznacza ile procent linijek kodu (nie licząc klamer, deklaracji itp.) jest realnie wykonywanych
+                    podczas wszystkich testów. Innymi słowy, wyniki wykonania jakiej części kodu weryfikujemy (w
+                    teorii). Dobrą wartością jest 70–85% pokrycia (w zależności od technologii, logiki biznesowej,
+                    złożoności itp.). Pokrycie poniżej 40% jest z kolei przeważnie bardzo złym sygnałem.</p>
             </article>
         </>
     );

@@ -8,7 +8,8 @@ const EnglishLevels = () => {
                 <img src={cover} alt={'html cover'} className={'cover'} />
             </div>
             <article className={'article article-content'}>
-                <h1>Level B1 - Low-Intermediate – Intermediate</h1>
+                <h1>Levels</h1>
+                <h3>Level B1 - Low-Intermediate – Intermediate</h3>
                 <ul>
                     <li>Can understand simple texts on familiar/every-day subjects and discuss them</li>
                     <li>Can understand enough native spoken language to hold a conversation, and thus can communicate
@@ -22,9 +23,9 @@ const EnglishLevels = () => {
                     <li>Able to express own views, explain simple concepts and inform of plans/past events</li>
                 </ul>
 
-                <hr/>
+                <hr />
 
-                <h1>Level B2 - Upper-Intermediate</h1>
+                <h3>Level B2 - Upper-Intermediate</h3>
                 <ul>
                     <li>Can understand more complicated texts with some abstract terms, including texts in their
                         professional field, and discuss them in more detail
@@ -42,30 +43,27 @@ const EnglishLevels = () => {
                     </li>
                 </ul>
 
-                <hr/>
+                <hr />
 
-                <h1>Level C1 - Advanced</h1>
+                <h3>Level C1 - Advanced</h3>
                 <ul>
                     <li>Understands texts on wide range of subjects, both in their professional field and outside of it;
                         able to draw conclusions and analyse information; can discuss text/ideas freely using abstract
-                        terms and
-                        understanding the implicit meaning
+                        terms and understanding the implicit meaning
                     </li>
-                    <li>Speaks fluently, without pausing to search for a required phrase or word, using broad
-                        vocabulary
+                    <li>Speaks fluently, without pausing to search for a required phrase or word, using broad vocabulary
                     </li>
                     <li>Has a good knowledge of idioms and every-day expressions</li>
                     <li>Can create accurate, thorough texts on complex issues for both professional and personal
                         purposes
                     </li>
-                    <li>Able to explain own views, plans, professional matters using longer, more complicated
-                        sentences
+                    <li>Able to explain own views, plans, professional matters using longer, more complicated sentences
                     </li>
                 </ul>
 
-                <hr/>
+                <hr />
 
-                <h1>Level C2 - Proficient</h1>
+                <h3>Level C2 - Proficient</h3>
                 <ul>
                     <li>Can understand, analyse and discuss any text or a spoken word, with an excellent knowledge of
                         technical vocabulary in their professional field

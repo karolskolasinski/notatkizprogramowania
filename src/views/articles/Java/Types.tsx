@@ -8,6 +8,7 @@ import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.js';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
+import 'prismjs/components/prism-java';
 
 const Types = () => {
     useEffect(() => Prism.highlightAll(), []);
@@ -18,7 +19,7 @@ const Types = () => {
                 <img src={cover} alt={'html cover'} className={'cover'} />
             </div>
             <article className={'article article-content'}>
-                <h1>Typy proste:</h1>
+                <h1>Typy proste</h1>
                 <ol className={'snippet-list'}>
                     <li><span>char</span> - reprezentuje litery (wielkie i małe), cyfry i inne symbole. Każdy znak to
                         tylko jedna litera ujęta w pojedyncze cudzysłowy. Ten typ ma taki sam rozmiar
@@ -34,13 +35,13 @@ const Types = () => {
                     </li>
                     <li><span>int</span> - rozmiar 32 bity (4 bajty), zakres od -2 147 483 648 do 2 147 483 647</li>
                     <li><span>long</span> - rozmiar 64 bity (8 bajtów), zakres od - (2<sup>63</sup>) do (2<sup>63</sup>)
-                        -1 (posiadają przyrostek <b>L</b>, lub <b>l</b>)
+                        -1 (posiadają przyrostek <strong>L</strong>, lub <strong>l</strong>)
                     </li>
                     <li><span>float</span> - reprezentuje wartości pojedynczej precyzji (32 bity, precyzja do 7 cyfr)
-                        (posiadają przyrostek <b>F</b>, lub <b>f</b>)
+                        (posiadają przyrostek <strong>F</strong>, lub <strong>f</strong>)
                     </li>
                     <li><span>double</span> - reprezentuje wartości podwójnej precyzji (64 bity, precyzja do 16 cyfr)
-                        (posiadają przyrostek <b>D</b>, lub <b>d</b>)
+                        (posiadają przyrostek <strong>D</strong>, lub <strong>d</strong>)
                     </li>
                 </ol>
 
@@ -58,7 +59,7 @@ const Types = () => {
                     się dane. Dane można przedstawić jako złożoną strukturę, która zawiera inne typy danych jako ich
                     części.</p>
                 <p>Poniższy rysunek po prostu pokazuje tę różnicę. Istnieją dwie główne przestrzenie pamięci: stos i
-                    sterta . Wszystkie wartości typów pierwotnych są przechowywane w pamięci stosu, ale zmienne typów
+                    sterta. Wszystkie wartości typów pierwotnych są przechowywane w pamięci stosu, ale zmienne typów
                     referencyjnych przechowują adresy obiektów znajdujących się w pamięci sterty.</p>
 
                 <div className="article-img-wrapper">
@@ -73,7 +74,7 @@ const Types = () => {
                 </ul>
 
                 <p>Oto fragment kodu i obraz, który to demonstruje.</p>
-                <pre className={'line-numbers language-js'}>
+                <pre className={'line-numbers language-java'}>
                     <code>
 {`int a = 100;
 int b = a; // 100 is copied to b
@@ -83,9 +84,10 @@ String java = language;`}
                     </code>
                 </pre>
 
-                <p>Zmienna <span>b</span> ma kopię wartości przechowywanej w zmiennej <span>a</span>. Ale
-                    zmienne <span>language</span> i <span>java</span> odniesienie do tej samej wartości,
-                    zamiast je kopiować. Poniższy rysunek wyraźnie pokazuje różnicę.
+                <p>Zmienna <span className={'snippet'}>b</span> ma kopię wartości przechowywanej w zmiennej <span
+                    className={'snippet'}>a</span>. Ale zmienne <span
+                    className={'snippet'}>language</span> i <span className={'snippet'}>java</span> odniesienie do
+                    tej samej wartości, zamiast je kopiować. Poniższy rysunek wyraźnie pokazuje różnicę.
                 </p>
 
                 <div className="article-img-wrapper">
@@ -99,7 +101,7 @@ String java = language;`}
 
                 <h1>Konwersja typów</h1>
                 <div className="article-img-wrapper">
-                    <img src={typeConversion} alt={'assignment'} className={'article-img'} />
+                    <img src={typeConversion} alt={'assignment'} className={'article-img article-img-desktop'} />
                 </div>
 
                 <hr />
@@ -120,7 +122,7 @@ String java = language;`}
                         <span>%d</span> wstawia <span>int</span>, <span>short</span>, <span>byte</span>, <span>long</span>
                     </li>
                     <li><span>%2f</span> wstawia <span>double</span>, <span>float</span> do 2 miejsc po przecinku</li>
-                    <li><span>%n</span> wstawia <b>newline</b></li>
+                    <li><span>%n</span> wstawia nową linię (newline)</li>
                 </ul>
             </article>
         </>

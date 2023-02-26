@@ -11,14 +11,16 @@ const EnglishTenses = () => {
             </div>
             <article className={'article article-content'}>
                 <h1>Zestawienie czasów angielskich</h1>
-                <a href="https://www.ang.pl/gramatyka/czasy-angielskie/zestawienie-czasow">https://www.ang.pl/gramatyka/czasy-angielskie/zestawienie-czasow</a>
+                <a href="https://www.ang.pl/gramatyka/czasy-angielskie/zestawienie-czasow"
+                    className={'article-link'}>https://www.ang.pl/gramatyka/czasy-angielskie/zestawienie-czasow</a>
 
                 <div className={'article-img-wrapper'}>
-                    <img src={czasyAngielskie} alt={'padding and margin'} className={'article-img'} />
+                    <img src={czasyAngielskie} alt={'padding and margin'}
+                        className={'article-img article-img-desktop'} />
                 </div>
 
                 <div className={'article-img-wrapper'}>
-                    <img src={englishTenses} alt={'padding and margin'} className={'article-img'} />
+                    <img src={englishTenses} alt={'padding and margin'} className={'article-img article-img-desktop'} />
                 </div>
             </article>
         </>
