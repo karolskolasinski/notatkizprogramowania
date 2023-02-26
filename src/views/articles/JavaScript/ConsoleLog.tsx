@@ -15,8 +15,7 @@ const ConsoleLog = () => {
                 <img src={cover} alt={'html cover'} className={'cover'} />
             </div>
             <article className={'article article-content'}>
-                <h1><span className={'snippet'}>console.log();</span></h1>
-                <p>Przykłady użycia:</p>
+                <h1>console.log();</h1>
                 <pre className={'line-numbers language-js'}>
                     <code>
 {`// Variables within the log 
@@ -40,7 +39,7 @@ for(i = 0; i < 10; i++) {
 console.countReset('Counter 1')
 
 // Style
-console.log("%c This is yellow text on a blue background.", "color:yellow; background-color:blue")
+console.log("%c This is red text on a blue background.", "color:red; background-color:blue")
 
 // pokaże w konsoli ładnie sformatowaną tabelę
 console.table([1,2,3,4,5]);
@@ -61,7 +60,6 @@ console.time("test 1"); // rozpoczyna test - zaczyna liczyć czas
 for (let i = 0; i < 10000; i++) {
     ...
 }
-
 console.timeEnd("test 1"); // kończy test`}
                     </code>
                 </pre>

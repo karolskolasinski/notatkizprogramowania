@@ -7,6 +7,7 @@ const CSS = () => {
     return (
         <main className="main">
             {useLocation().pathname === '/css' && <div className={'link-wrapper'}>
+                <h1 className={'category-header'}>CSS</h1>
                 {cssArticles.map(({ path, title, to }) =>
                     <CustomLink to={path} key={to} color={'css'}>{title}</CustomLink>)}
             </div>}

@@ -309,6 +309,10 @@ p.snippets span {
     position: relative;
 }
 
+.category-header {
+    padding: .5rem;
+}
+
 .category {
     width: 100%;
     height: 100%;

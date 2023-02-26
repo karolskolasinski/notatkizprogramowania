@@ -7,6 +7,7 @@ const Java = () => {
     return (
         <main className="main">
             {useLocation().pathname === '/java' && <div className={'link-wrapper'}>
+                <h1 className={'category-header'}>Java</h1>
                 {javaArticles.map(({ path, title, to }) =>
                     <CustomLink to={path} key={to} color={'java'}>{title}</CustomLink>)}
             </div>}

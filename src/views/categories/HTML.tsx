@@ -7,6 +7,7 @@ const HTML = () => {
     return (
         <main className="main">
             {useLocation().pathname === '/html' && <div className={'link-wrapper'}>
+                <h1 className={'category-header'}>HTML</h1>
                 {htmlArticles.map(({ path, title, to }) =>
                     <CustomLink to={path} key={to} color={'html'}>{title}</CustomLink>)}
             </div>}

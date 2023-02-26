@@ -18,7 +18,7 @@
         "to": "array-functions"
     },
     {
-        "title": "Set Timeout & Set Interval",
+        "title": "setTimeout / setInterval",
         "filePath": "./articles/JavaScript/SetTimeoutSetInterval",
         "path": "set-timeout-set-interval/*",
         "to": "set-timeout-set-interval"
@@ -36,19 +36,19 @@
         "to": "console-log"
     },
     {
-        "title": "Async/Await",
+        "title": "async / await",
         "filePath": "./articles/JavaScript/AsyncAwait",
         "path": "async-await/*",
         "to": "async-await"
     },
     {
-        "title": "Truthy/Falsy",
+        "title": "truthy / falsy",
         "filePath": "./articles/JavaScript/TruthyFalsy",
         "path": "truthy-falsy/*",
         "to": "truthy-falsy"
     },
     {
-        "title": "Fetch",
+        "title": "fetch",
         "filePath": "./articles/JavaScript/Fetch",
         "path": "fetch/*",
         "to": "fetch"

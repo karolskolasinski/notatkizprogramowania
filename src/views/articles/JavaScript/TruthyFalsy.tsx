@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 import cover from '../../../img/cover/cover-javascript.webp';
 // @ts-ignore
 import Prism from 'prismjs';
@@ -12,12 +12,12 @@ const TruthyFalsy = () => {
     return (
         <>
             <div className={'cover-wrapper'}>
-                <img src={cover} alt={'html cover'} className={'cover'} />
+                <img src={cover} alt={'html cover'} className={'cover'}/>
             </div>
             <article className={'article article-content'}>
-                <h1>Wartości falsy</h1>
-                Tworząc warunki, nie musimy porównywać ze sobą dwóch wartości. Wartością false staje się każda z
-                poniższych wartości. Są to tak zwane wartości falsy:
+                <h1>truthy / falsy</h1>
+                <p>Tworząc warunki, nie musimy porównywać ze sobą dwóch wartości. Wartością false staje się każda z
+                    poniższych wartości. Są to tak zwane wartości falsy:</p>
                 <pre className={'line-numbers language-js'}>
                     <code>
 {`if (false) {...}
@@ -31,8 +31,7 @@ if (document.all) {...}`}
                 </pre>
 
                 <p>Dla nas oznacza to tyle, że tworząc warunki możemy wykonywać kod w zależności od stanu danej
-                    zmiennej,
-                    ale też wartości wpisanej ręcznie w nawias:</p>
+                    zmiennej, ale też wartości wpisanej ręcznie w nawias:</p>
                 <pre className={'line-numbers language-js'}>
                     <code>
 {`const a = 20;
