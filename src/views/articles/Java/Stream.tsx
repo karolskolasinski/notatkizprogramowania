@@ -19,12 +19,12 @@ const Stream = () => {
                 <p>Stream w największym skrócie oznacza sekwencję elementów. Stosuje się po to aby zapewnić więcej
                     czytelności oraz łatwiej i szybciej móc napisać kod wykonujący bardziej skomplikowane operacje na
                     dużych zbiorach danych. Kod co prawda jest krótszy, ale nie jest szybszy niż np. pętla, ponieważ do
-                    każdego elementu kolekcji, na którym operujemy <b>tworzony</b> jest obiekt, który
-                    musi <b>przetworzyć</b> dane, a na koniec GarbageCollector musi go <b>pochłonąć</b>. Tworzą się
-                    klasy anonimowe, po zakończeniu streama nie mają już żadnej referencji, więc można je usunąć.</p>
-                <strong>Przykład</strong>
-                <p>Taki zapis:</p>
-
+                    każdego elementu kolekcji, na którym operujemy <strong>tworzony</strong> jest obiekt, który
+                    musi <strong>przetworzyć</strong> dane, a na koniec GarbageCollector musi
+                    go <strong>pochłonąć</strong>. Tworzą się klasy anonimowe, po zakończeniu streama nie mają już
+                    żadnej referencji, więc można je usunąć.
+                </p>
+                <p>Na przykład taki zapis:</p>
                 <pre className={'line-numbers language-java'}>
                     <code>
 {`public static void printAllArcadeNames(List<Arcade> arcades) {
@@ -57,36 +57,35 @@ const Stream = () => {
                 </pre>
 
                 <hr />
+
                 <h1>Metody</h1>
                 <ul className={'snippet-list'}>
-                    <li><span>.map(Function&lt;T, R&gt;)</span> - używamy po to, by "mapować" obiekty, czyli przekształcać
-                        jeden obiekt w inny.
+                    <li><span>.map(Function&lt;T, R&gt;)</span> - używamy po to, by "mapować" obiekty, czyli
+                        przekształcać jeden obiekt w inny.
                     </li>
                     <pre className={'line-numbers language-java'}>
-                    <code>
+                        <code>
 {`List<String> letters = Arrays.asList("a", "b", "c", "d");
 List<String> collect = letters.stream()
     .map(String::toUpperCase)
     .collect(Collectors.toList());
     
 System.out.println(collect); //[A, B, C, D]`}
-                    </code>
-                </pre>
-                    <p>W tym przykładzie stworzyliśmy nową listę, w której Stringi zostały zmapowane na Stringi
-                        pisane wielką literą.</p>
+                        </code>
+                    </pre>
+                    <p>W tym przykładzie stworzyliśmy nową listę, w której Stringi zostały zmapowane na Stringi pisane
+                        wielką literą.</p>
 
-                    <li><span>.filter(Predicate&lt;T&gt;)</span> - będziemy używać do "filtrowania" naszego streama, czyli
-                        wybierania tylko pożądanych
-                        elementów.
+                    <li><span>.filter(Predicate&lt;T&gt;)</span> - będziemy używać do "filtrowania" naszego streama,
+                        czyli wybierania tylko pożądanych elementów.
                     </li>
                     <pre className={'line-numbers language-java'}>
-                    <code>
+                        <code>
 {`List<Person> persons = ...
 Stream<Person> personsOver18 = persons.stream()
     .filter(p -> p.getAge() > 18);`}
-                    </code>
-                </pre>
-
+                       </code>
+                    </pre>
                     <p>W tym przykładzie otrzymaliśmy stream z osobami powyżej 18 lat.</p>
 
                     <li><span>.flatMap(Function&lt;T, R&gt;)</span> - ta metoda używana jest do "spłaszczania" streama
@@ -94,7 +93,7 @@ Stream<Person> personsOver18 = persons.stream()
                     </li>
 
                     <pre className={'line-numbers language-java'}>
-                    <code>
+                        <code>
 {`List<String> pinkFloyd = Arrays.asList("Gilmour", "Waters", "Wright", "Mason", "Barrett");
 List<String> ledZeppelin = Arrays.asList("Page", "Plant", "Jones", "Bonham");
 List<List<String>> woodstockBands = new ArrayList<>();
@@ -104,17 +103,18 @@ List<List<String>> woodstockBands = new ArrayList<>();
 List<String> lineUp = woodstockBands.stream()
     .flatMap(x -> x.stream())
     .collect(Collectors.toList());`}
-                    </code>
-                </pre>
-                    <p>W tym przykładzie "spłaszczyliśmy" listę list na jedną listę. Wynikiem jest lista
-                        Stringów zawierająca wszystkie Stringi z listy źródłowej.</p>
+                        </code>
+                    </pre>
+                    <p>W tym przykładzie "spłaszczyliśmy" listę list na jedną listę. Wynikiem jest lista Stringów
+                        zawierająca wszystkie Stringi z listy źródłowej.
+                    </p>
+
                     <li><span>collect(Collector&lt;T, A, R&gt;)</span> - tej metody można użyć do "zebrania" streama w
-                        kolekcję, która nas interesuje.
-                        Stream trzeba w jakiś sposób zamknąć. Najczęściej będziemy oczekiwać kolekcji, ale mogą to być
-                        pojedyncze obiekty. Poniżej przykłady:
+                        kolekcję, która nas interesuje. Stream trzeba w jakiś sposób zamknąć. Najczęściej będziemy
+                        oczekiwać kolekcji, ale mogą to być pojedyncze obiekty. Poniżej przykłady:
                     </li>
                     <pre className={'line-numbers language-java'}>
-                    <code>
+                        <code>
 {`List<String> result = givenList.stream()
     .collect(toList());
 
@@ -132,39 +132,47 @@ String result = givenList.stream()
 
 Long result = givenList.stream()
     .collect(counting());`}
-                    </code>
-                </pre>
+                        </code>
+                    </pre>
                 </ul>
 
                 <hr />
 
                 <h1>Czym są lambdy?</h1>
-                <p>Java to obiektowy język programowania, jednak lambdy pozwalają na pisanie kodu w sposób
-                    funkcyjny. Oznacza to, że zamiast operować na stanach obiektów możemy bezpośrednio
-                    deklarować, co chcemy zrobić. Odnosząc lambdy do programowania obiektowego, możemy o nich
-                    myśleć jak o klasach tymczasowych zawierających jedną metodę. Lambdy to obiekty, zawierające
-                    fragment kodu: funkcję, a także specyficzne atrybuty i parametry ważne dla nich (środowisko,
-                    w ramach którego operuje funkcja). Wyrażenia lambda wykorzystują koncept, który nazywa
-                    się <i>deferred execution</i>, czyli takie, które są wykonywanie z odroczeniem.</p>
-                <strong>Przykład</strong>
+                <p>Java to obiektowy język programowania, jednak lambdy pozwalają na pisanie kodu w sposób funkcyjny.
+                    Oznacza to, że zamiast operować na stanach obiektów możemy bezpośrednio deklarować, co chcemy
+                    zrobić. Odnosząc lambdy do programowania obiektowego, możemy o nich myśleć jak o klasach
+                    tymczasowych zawierających jedną metodę. Lambdy to obiekty, zawierające fragment kodu: funkcję, a
+                    także specyficzne atrybuty i parametry ważne dla nich (środowisko, w ramach którego operuje
+                    funkcja). Wyrażenia lambda wykorzystują koncept, który nazywa się <i>deferred execution</i>, czyli
+                    takie, które są wykonywanie z odroczeniem.
+                </p>
+                <p>Przykład</p>
                 <pre className={'line-numbers language-java'}>
-                    <code>{`c -> c.canSing();`}</code>
+                    <code>
+{`c -> c.canSing();`}
+                    </code>
                 </pre>
-                <p>Taki zapis mówi Javie, że ma wywołać metodę z Celebrity jako parametrem i zwrócić
-                    boolean jako wynik <span className={'snippet'}>c.canSing()</span>. Równoważny zapis poniżej:</p>
+                <p className={'snippets'}>Taki zapis mówi Javie, że ma wywołać metodę z Celebrity jako parametrem i
+                    zwrócić boolean jako wynik <span>c.canSing()</span>. Równoważny zapis poniżej:
+                </p>
                 <pre className={'line-numbers language-java'}>
-                    <code>{`(Celebrity c) -> { return c.canSing(); }`}</code>
+                    <code>
+{`(Celebrity c) -> { return c.canSing(); }`}
+                    </code>
                 </pre>
 
-                <p>To co jeszcze warto wiedzieć o lambdach, to to, że mają one dostęp do zmiennych. Warto
-                    pamiętać, że wyrażenia lambda mają dostęp do pól klasy oraz statycznych zmiennych. Jeśli
-                    chodzi o parametry metody i zmienne lokalne, to ten dostęp jest możliwy tylko wtedy, gdy
-                    nie przypisujemy do nich nowych wartości. Czyli:</p>
-
+                <p>To co jeszcze warto wiedzieć o lambdach, to to, że mają one dostęp do zmiennych. Warto pamiętać, że
+                    wyrażenia lambda mają dostęp do pól klasy oraz statycznych zmiennych. Jeśli chodzi o parametry
+                    metody i zmienne lokalne, to ten dostęp jest możliwy tylko wtedy, gdy nie przypisujemy do nich
+                    nowych wartości. Czyli:
+                </p>
                 <pre className={'line-numbers language-java'}>
-                    <code>{`(a, b) -> { int a = 0; return 5;}  // kod się nie skompiluje
+                    <code>
+{`(a, b) -> { int a = 0; return 5;}  // kod się nie skompiluje
                     
-(a, b) -> { int c = 0; return 5; } // to jest ok`}</code>
+(a, b) -> { int c = 0; return 5; } // to jest ok`}
+                    </code>
                 </pre>
             </article>
         </>

@@ -18,14 +18,12 @@ const Types = () => {
             <article className={'article article-content'}>
                 <h1>Klasa abstrakcyjna a Interfejs - różnice</h1>
 
-                <table>
+                <table className={'table'}>
                     <tbody>
                         <tr>
-                            <td></td>
-                            <td>
-                                <b>Klasa abstrakcyjna</b></td>
-                            <td>
-                                <b>Interfejs</b></td>
+                            <td />
+                            <td><strong>Klasa abstrakcyjna</strong></td>
+                            <td><strong>Interfejs</strong></td>
                         </tr>
                         <tr>
                             <td>pola</td>
@@ -33,15 +31,9 @@ const Types = () => {
                             <td>❌</td>
                         </tr>
                         <tr>
-                            <td>pola -
-                                wyjątek
-                            </td>
-                            <td>
-                                <span>final</span>
-                            </td>
-                            <td>
-                                <span>public static final</span>
-                            </td>
+                            <td>pola - wyjątek</td>
+                            <td><span>final</span></td>
+                            <td><span>public static final</span></td>
                         </tr>
                         <tr>
                             <td>konstruktor</td>
@@ -49,12 +41,9 @@ const Types = () => {
                             <td>❌</td>
                         </tr>
                         <tr>
-                            <td>dziedziczenie po
-                            </td>
-                            <td>1(<span>extends</span>)
-                            </td>
-                            <td>∞(<span>implements</span>)
-                            </td>
+                            <td>dziedziczenie po</td>
+                            <td>1(<span>extends</span>)</td>
+                            <td>∞(<span>implements</span>)</td>
                         </tr>
                         <tr>
                             <td>instancja</td>
@@ -63,65 +52,52 @@ const Types = () => {
                         </tr>
                         <tr>
                             <td>metody</td>
-                            <td><span>abstract</span> + inne
-                            </td>
-                            <td>
-                                <span>public abstract</span>
-                            </td>
+                            <td><span>abstract</span> + inne</td>
+                            <td><span>public abstract</span></td>
                         </tr>
                         <tr>
-                            <td>metoda
-                                abstrakcyjna - ciało
-                            </td>
+                            <td>metoda abstrakcyjna - ciało</td>
                             <td>brak</td>
                             <td>brak</td>
                         </tr>
                         <tr>
-                            <td>metoda
-                                abstrakcyjna - ciało - wyjątek
-                            </td>
+                            <td>metoda abstrakcyjna - ciało - wyjątek</td>
                             <td>brak</td>
-                            <td>
-                                <span>default</span>
-                            </td>
+                            <td><span>default</span></td>
                         </tr>
-
                     </tbody>
                 </table>
 
-
                 <hr />
 
-
                 <h1>abstract class</h1>
-                <ul>
+                <ul className={'snippet-list'}>
                     <li>tworzą warstwę abstrakcji, która jest mało precyzyjna</li>
                     <li>mają upraszczać rzeczywistość</li>
-                    <li>nie można stworzyć instancji klasy abstrakcyjnej
-                        <details>
-                            <summary>Przykład</summary>
-                            <p>Mamy w programie taką oto klasę abstrakcyjną:</p>
-
-                            <pre className={'line-numbers language-java'}>
-                    <code>
+                    <li>nie można stworzyć instancji klasy abstrakcyjnej</li>
+                    <details>
+                        <summary>Przykład</summary>
+                        <p>Mamy w programie taką oto klasę abstrakcyjną:</p>
+                        <pre className={'line-numbers language-java'}>
+                            <code>
 {`abstract class MySwingWorker<T, V> extends SwingWorker<T, V> { 
     public final void myPublish(V... args) {
         publish(args);
     }
 }`}
-                    </code>
-                </pre>
+                            </code>
+                        </pre>
 
-                            <p>Wewnątrz klasy uruchomieniowej nie uda się stworzyć instancji takiego obiektu:</p>
-                            <pre className={'line-numbers language-js'}>
-                    <code>
+                        <p>Wewnątrz klasy uruchomieniowej nie uda się stworzyć instancji takiego obiektu:</p>
+                        <pre className={'line-numbers language-js'}>
+                            <code>
 {`MySwingWorker worker = new MySwingWorker(); // Error:(6, 25) java: org.path.MySwingWorker is abstract; cannot be instantiated`}
-                    </code>
-                </pre>
+                            </code>
+                        </pre>
 
-                            <p>Możesz utworzyć konkretną inplementację:</p>
-                            <pre className={'line-numbers language-js'}>
-                    <code>
+                        <p>Możesz utworzyć konkretną implementację:</p>
+                        <pre className={'line-numbers language-js'}>
+                            <code>
 {`worker = new MySwingWorker<Void, Integer>() {
     @Override
     protected Void doInBackground() {
@@ -132,18 +108,17 @@ const Types = () => {
         return null;
     }
 `}
-                    </code>
-                </pre>
+                            </code>
+                        </pre>
 
+                        <p>Jest to "anonimowa" implementacja <span className={'snippet'}>MySwingWorker</span>, gdzie
+                            (jedyna, jak z tego wynika) abstrakcyjna metoda <span
+                                className={'snippet'}>doInBackground</span> została zaimplementowana.</p>
+                    </details>
 
-                            <p>Jest to "anonimowa" implementacja <span>MySwingWorker</span>, gdzie (jedyna, jak z tego
-                                wynika) abstrakcyjna metoda <span>doInBackground</span> została zaimplementowana.</p>
-                        </details>
-                    </li>
                     <li>nie może istnieć klasa abstrakcyjna finalna <span>final</span></li>
-                    <li>każda klasa jest abstrakcyjna jeśli posiada chociaż jedną <b>metodę abstrakcyjną</b>, która:
-                    </li>
-                    <ul>
+                    <li>każda klasa jest abstrakcyjna jeśli posiada chociaż jedną metodę abstrakcyjną, która:</li>
+                    <ul className={'nested-list'}>
                         <li>posiada nazwę</li>
                         <li>posiada typ zwracany</li>
                         <li>może posiadać przyjmowane argumenty</li>
@@ -158,21 +133,17 @@ const Types = () => {
                     <li>można dziedziczyć tylko po jednej klasie</li>
                 </ul>
 
-
                 <hr />
 
                 <h1>interface</h1>
-                <ul>
+                <ul className={'snippet-list'}>
                     <li>nie mogą posiadać pól (wyjątkiem jest pole <span>public static final</span>)</li>
                     <li>nie ma konstruktora i nie można go stworzyć</li>
-                    <li>wszystkie metody w interfejsach są domyślnie publiczne i abstrakcyjne i nie może być
-                        innych
-                    </li>
+                    <li>wszystkie metody w interfejsach są domyślnie publiczne i abstrakcyjne i nie może być innych</li>
                     <li>metody nie posiadają ciała (wyjątkiem jest metoda <span>default</span>)</li>
                     <li>interfejsy się implementuje, a nie dziedziczy</li>
                     <li>można implementować nieskończenie wiele interfejsów</li>
                 </ul>
-
 
                 <hr />
 
@@ -183,8 +154,6 @@ const Types = () => {
                     <li>jeżeli metoda jest finalna, to nie można jej nadpisać</li>
                     <li>jeżeli klasa jest finalna, to nie można po niej dziedziczyć</li>
                 </ul>
-
-
             </article>
         </>
     );

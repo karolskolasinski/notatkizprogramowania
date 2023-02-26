@@ -5,10 +5,12 @@ import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.js';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
+import 'prismjs/components/prism-java';
 
 const Implementacje = () => {
     useEffect(() => Prism.highlightAll(), []);
 
+    // language=JAVA
     return (
         <>
             <div className={'cover-wrapper'}>
@@ -200,7 +202,7 @@ const Implementacje = () => {
                 <hr />
 
                 <h1>BubbleSort</h1>
-                <a href={'https://www.youtube.com/watch?v=4s44rXRdmhQ'} className={'article-link'}> VIDEO</a>
+                <a href={'https://www.youtube.com/watch?v=4s44rXRdmhQ'} className={'article-link'}>video</a>
                 <pre className={'line-numbers language-java'}>
                     <code>
 {`public class BubbleSort {
@@ -262,7 +264,7 @@ const Implementacje = () => {
                 </pre>
 
                 <h1>InsertionSort</h1>
-                <a href="https://www.youtube.com/watch?v=8RkE7MbqVl8" className={'article-link'}>VIDEO</a>
+                <a href="https://www.youtube.com/watch?v=8RkE7MbqVl8" className={'article-link'}>video</a>
                 <pre className={'line-numbers language-java'}>
                     <code>
 {`public class InsertionSort {
@@ -285,7 +287,7 @@ const Implementacje = () => {
                 </pre>
 
                 <h1>SelectionSort</h1>
-                <a href="https://www.youtube.com/watch?v=GUhWeJyHBCU" className={'article-link'}>VIDEO</a>
+                <a href="https://www.youtube.com/watch?v=GUhWeJyHBCU" className={'article-link'}>video</a>
                 <pre className={'line-numbers language-java'}>
                     <code>
 {`public class SelectionSort {
@@ -306,7 +308,7 @@ const Implementacje = () => {
                 </pre>
 
                 <h1>QuickSort</h1>
-                <a href="https://www.youtube.com/watch?v=82XxdhRCMbI" className={'article-link'}>VIDEO</a>
+                <a href="https://www.youtube.com/watch?v=82XxdhRCMbI" className={'article-link'}>video</a>
                 <pre className={'line-numbers language-java'}>
                     <code>
 {`public class QuickSort {
@@ -340,7 +342,7 @@ const Implementacje = () => {
                 <hr />
 
                 <h1>MergeSort</h1>
-                <a href="https://www.youtube.com/watch?v=iJyUFvvdfUg" className={'article-link'}>VIDEO</a>
+                <a href="https://www.youtube.com/watch?v=iJyUFvvdfUg" className={'article-link'}>video</a>
                 <pre className={'line-numbers language-java'}>
                     <code>
 {`public class MergeSort {
