@@ -10,7 +10,6 @@ import 'prismjs/components/prism-java';
 const Implementacje = () => {
     useEffect(() => Prism.highlightAll(), []);
 
-    // language=JAVA
     return (
         <>
             <div className={'cover-wrapper'}>
