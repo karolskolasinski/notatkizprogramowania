@@ -4,13 +4,13 @@ import cover from '../../../img/cover/cover-dev.webp';
 const Bash = () => {
     return (
         <>
-            <div className={'cover-wrapper'}>
-                <img src={cover} alt={'html cover'} className={'cover'} />
+            <div className='cover-wrapper'>
+                <img src={cover} alt='dev cover' className='cover' />
             </div>
-            <article className={'article article-content'}>
+            <article className='article article-content'>
                 <h1>Polecenia bash</h1>
                 <h3>Nawigacja</h3>
-                <ul className={'terminal-list'}>
+                <ul className='terminal-list'>
                     <li><span>/</span> - Root directory</li>
                     <li><span>.</span> - This location</li>
                     <li><span>..</span> - Up a directory</li>
@@ -20,7 +20,7 @@ const Bash = () => {
                 </ul>
 
                 <h3>Polecenia związane z użytkownikami, grupami, loginami i zamykaniem systemu</h3>
-                <ul className={'terminal-list'}>
+                <ul className='terminal-list'>
                     <li><span>shutdown</span> - zamykamy Linuxa</li>
                     <li><span>adduser</span> - dodajemy nowego użytkownika</li>
                     <li><span>newgrp</span> - dodajemy nową grupę</li>
@@ -44,7 +44,7 @@ const Bash = () => {
                 </ul>
 
                 <h3>Polecenia związane z katalogami</h3>
-                <ul className={'terminal-list'}>
+                <ul className='terminal-list'>
                     <li><span>ls</span> - pokazuje nam zawartość katalogu</li>
                     <li><span>dir</span> - okrojona wersja ls, pochodząca z msdos'a</li>
                     <li><span>pwd</span> - pokazuje nam katalog w którym się znajdujemy</li>
@@ -54,32 +54,32 @@ const Bash = () => {
                 </ul>
 
                 <h3>Polecenia związane z plikami</h3>
-                <ul className={'terminal-list'}>
+                <ul className='terminal-list'>
                     <li><span>cat</span> - edytowanie tekstu</li>
                     <li><span>rm</span> - usuwamy plik-i</li>
                 </ul>
 
                 <h3>Polecenia związane z kopiowaniem i przenoszeniem, plików i katalogów</h3>
-                <ul className={'terminal-list'}>
+                <ul className='terminal-list'>
                     <li><span>mv</span> - przenosimy plik lub zmieniamy jego nazwę</li>
                     <li><span>cp</span> - kopiujemy plik</li>
                     <li><span>mvdir</span> - przenosimy katalog lub zmieniamy jego nazwę</li>
                 </ul>
 
                 <h3>Polecenia związane z procesami</h3>
-                <ul className={'terminal-list'}>
+                <ul className='terminal-list'>
                     <li><span>ps</span> - pokazuje nam jakie procesy są aktualnie wykonywane</li>
                     <li><span>kill</span> - zabijamy procesy</li>
                 </ul>
 
                 <h3>Polecenia związane z pomocą</h3>
-                <ul className={'terminal-list'}>
+                <ul className='terminal-list'>
                     <li><span>help</span> - wyświetla nam wszystkie polecenia w Linuxie</li>
                     <li><span>man</span> - pokazuje nam pomoc do programu</li>
                 </ul>
 
                 <h3>Polecenia związane z kompresją i archiwilizacją</h3>
-                <ul className={'terminal-list'}>
+                <ul className='terminal-list'>
                     <li><span>gzip</span> - kompresuje nam archiwum *.gz</li>
                     <li><span>tar</span> -archiwizuje nam archiwum *.tar</li>
                 </ul>
@@ -87,7 +87,7 @@ const Bash = () => {
                 <hr />
 
                 <h1>Polecenia CLI</h1>
-                <a href={'https://ss64.com/bash/'} className={'article-link'}> https://ss64.com/bash/</a>
+                <a href='https://ss64.com/bash/' className='article-link'> https://ss64.com/bash/</a>
             </article>
         </>
     );

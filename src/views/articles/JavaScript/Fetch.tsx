@@ -11,12 +11,12 @@ const Fetch = () => {
 
     return (
         <>
-            <div className={'cover-wrapper'}>
-                <img src={cover} alt={'html cover'} className={'cover'} />
+            <div className='cover-wrapper'>
+                <img src={cover} alt='html cover' className='cover' />
             </div>
-            <article className={'article article-content'}>
+            <article className='article article-content'>
                 <h1>Fetch API</h1>
-                <pre className={'line-numbers language-js'}>
+                <pre className='line-numbers language-js'>
                     <code>
 {`fetch("your-URL", {
     method: 'POST', // GET, POST, PUT, DELETE, etc.

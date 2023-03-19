@@ -12,13 +12,13 @@ const Types = () => {
 
     return (
         <>
-            <div className={'cover-wrapper'}>
-                <img src={cover} alt={'html cover'} className={'cover'} />
+            <div className='cover-wrapper'>
+                <img src={cover} alt='java cover' className='cover' />
             </div>
-            <article className={'article article-content'}>
+            <article className='article article-content'>
                 <h1>Klasa abstrakcyjna a Interfejs - różnice</h1>
 
-                <table className={'table'}>
+                <table className='table'>
                     <tbody>
                         <tr>
                             <td />
@@ -71,14 +71,15 @@ const Types = () => {
                 <hr />
 
                 <h1>abstract class</h1>
-                <ul className={'snippet-list'}>
+                <ul className='snippet-list'>
                     <li>tworzą warstwę abstrakcji, która jest mało precyzyjna</li>
                     <li>mają upraszczać rzeczywistość</li>
                     <li>nie można stworzyć instancji klasy abstrakcyjnej</li>
+
                     <details>
                         <summary>Przykład</summary>
                         <p>Mamy w programie taką oto klasę abstrakcyjną:</p>
-                        <pre className={'line-numbers language-java'}>
+                        <pre className='line-numbers language-java'>
                             <code>
 {`abstract class MySwingWorker<T, V> extends SwingWorker<T, V> { 
     public final void myPublish(V... args) {
@@ -89,14 +90,14 @@ const Types = () => {
                         </pre>
 
                         <p>Wewnątrz klasy uruchomieniowej nie uda się stworzyć instancji takiego obiektu:</p>
-                        <pre className={'line-numbers language-js'}>
+                        <pre className='line-numbers language-js'>
                             <code>
 {`MySwingWorker worker = new MySwingWorker(); // Error:(6, 25) java: org.path.MySwingWorker is abstract; cannot be instantiated`}
                             </code>
                         </pre>
 
                         <p>Możesz utworzyć konkretną implementację:</p>
-                        <pre className={'line-numbers language-js'}>
+                        <pre className='line-numbers language-js'>
                             <code>
 {`worker = new MySwingWorker<Void, Integer>() {
     @Override
@@ -111,23 +112,28 @@ const Types = () => {
                             </code>
                         </pre>
 
-                        <p>Jest to "anonimowa" implementacja <span className={'snippet'}>MySwingWorker</span>, gdzie
-                            (jedyna, jak z tego wynika) abstrakcyjna metoda <span
-                                className={'snippet'}>doInBackground</span> została zaimplementowana.</p>
+                        <p className='snippets'>
+                            Jest to "anonimowa" implementacja <span>MySwingWorker</span>, gdzie (jedyna, jak z tego
+                            wynika) abstrakcyjna metoda <span>doInBackground</span> została zaimplementowana.
+                        </p>
                     </details>
 
                     <li>nie może istnieć klasa abstrakcyjna finalna <span>final</span></li>
                     <li>każda klasa jest abstrakcyjna jeśli posiada chociaż jedną metodę abstrakcyjną, która:</li>
-                    <ul className={'nested-list'}>
+
+                    <ul className='nested-list'>
                         <li>posiada nazwę</li>
                         <li>posiada typ zwracany</li>
                         <li>może posiadać przyjmowane argumenty</li>
                         <li>posiada modyfikator dostępu</li>
                         <li>nie posiada ciała metody, czyli robi nic</li>
                     </ul>
-                    <li>jeżeli klasy dziedziczą <span>extends</span> po klasie abstrakcyjnej, to klasa abstrakcyjna
+
+                    <li>
+                        jeżeli klasy dziedziczą <span>extends</span> po klasie abstrakcyjnej, to klasa abstrakcyjna
                         wymusza na nich implementację metod abstrakcyjnych
                     </li>
+
                     <li>mogą posiadać metody nieabstrakcyjne</li>
                     <li>mogą posiadać pola</li>
                     <li>można dziedziczyć tylko po jednej klasie</li>
@@ -136,7 +142,7 @@ const Types = () => {
                 <hr />
 
                 <h1>interface</h1>
-                <ul className={'snippet-list'}>
+                <ul className='snippet-list'>
                     <li>nie mogą posiadać pól (wyjątkiem jest pole <span>public static final</span>)</li>
                     <li>nie ma konstruktora i nie można go stworzyć</li>
                     <li>wszystkie metody w interfejsach są domyślnie publiczne i abstrakcyjne i nie może być innych</li>

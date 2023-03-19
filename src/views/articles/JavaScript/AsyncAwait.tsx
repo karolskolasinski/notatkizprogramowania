@@ -11,14 +11,14 @@ const AsyncAwait = () => {
 
     return (
         <>
-            <div className={'cover-wrapper'}>
-                <img src={cover} alt={'html cover'} className={'cover'}/>
+            <div className='cover-wrapper'>
+                <img src={cover} alt='html cover' className='cover'/>
             </div>
-            <article className={'article article-content'}>
+            <article className='article article-content'>
                 <h1>async / await</h1>
                 <ul>
                     <li>callback hell:</li>
-                    <pre className={'line-numbers language-js'}>
+                    <pre className='line-numbers language-js'>
                         <code>
 {`get(function () {
     send(function() {
@@ -31,7 +31,7 @@ const AsyncAwait = () => {
                     </pre>
 
                     <li>then:</li>
-                    <pre className={'line-numbers language-js'}>
+                    <pre className='line-numbers language-js'>
                         <code>
 {`get()
     .then(function () {
@@ -44,7 +44,7 @@ const AsyncAwait = () => {
                     </pre>
 
                     <li>async / await:</li>
-                    <pre className={'line-numbers language-js'}>
+                    <pre className='line-numbers language-js'>
                         <code>
 {`(async function () {
     await get();

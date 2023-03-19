@@ -12,19 +12,19 @@ const Pug = () => {
 
     return (
         <>
-            <div className={'cover-wrapper'}>
-                <img src={cover} alt={'html cover'} className={'cover'} />
+            <div className='cover-wrapper'>
+                <img src={cover} alt='html cover' className='cover' />
             </div>
-            <article className={'article article-content'}>
+            <article className='article article-content'>
                 <h1>Pug</h1>
                 <h3>Pug in 5 minutes tutorial</h3>
                 <a href="https://dev.to/jh3y/pug-in-5-minutes-272k"
-                    className={'article-link'}>https://dev.to/jh3y/pug-in-5-minutes-272k</a>
+                    className='article-link'>https://dev.to/jh3y/pug-in-5-minutes-272k</a>
 
                 <hr />
 
                 <h3>(double) Loop with "if" example</h3>
-                <pre className={'line-numbers language-pug'}>
+                <pre className='line-numbers language-pug'>
                     <code>
 {`each tag in tags
     div.pt-5

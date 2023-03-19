@@ -12,14 +12,14 @@ const VarLet = () => {
 
     return (
         <>
-            <div className={'cover-wrapper'}>
-                <img src={cover} alt={'html cover'} className={'cover'}/>
+            <div className='cover-wrapper'>
+                <img src={cover} alt='html cover' className='cover'/>
             </div>
-            <article className={'article article-content'}>
+            <article className='article article-content'>
                 <h1>Pętla zdarzeń</h1>
                 <ul>
                     <li>Przykład operacji blokowania:</li>
-                    <pre className={'line-numbers language-js'}>
+                    <pre className='line-numbers language-js'>
                         <code>
 {`let loop = (i, max) => {
     while (i < max) i++
@@ -34,7 +34,7 @@ loop(0, 1e+12)`}
                     </pre>
 
                     <li>Nieblokujący przykład operacji we / wy:</li>
-                    <pre className={'line-numbers language-js'}>
+                    <pre className='line-numbers language-js'>
                         <code>
 {`let i = 0
 
@@ -59,22 +59,26 @@ tick(1e+8)`}
                     </pre>
                 </ul>
 
-                <div className={'article-img-wrapper'}>
-                    <img src={theNodeJsSystem} alt={'padding and margin'}
-                        className={'article-img article-img-desktop'}/>
+                <div className='article-img-wrapper'>
+                    <img src={theNodeJsSystem} alt='padding and margin'
+                        className='article-img article-img-desktop'/>
                 </div>
 
-                <p>Mówiąc prościej, Pętla zdarzeń jest jednowątkowym mechanizmem kolejki, który wykonuje kod związany z
-                    procesorem do końca jego wykonania oraz kod związany z operacjami we / wy w sposób nieblokujący.</p>
+                <p>
+                    Mówiąc prościej, Pętla zdarzeń jest jednowątkowym mechanizmem kolejki, który wykonuje kod związany z
+                    procesorem do końca jego wykonania oraz kod związany z operacjami we / wy w sposób nieblokujący.
+                </p>
 
                 <hr/>
 
                 <h1>Uwagi dotyczące wydajności</h1>
-                <p>Operacje nieblokujące nie blokują kolejki i nie wpływają na wydajność pętli. Jednak operacje związane
+                <p>
+                    Operacje nieblokujące nie blokują kolejki i nie wpływają na wydajność pętli. Jednak operacje związane
                     z procesorem zablokują kolejkę, dlatego należy zachować ostrożność, aby nie wykonywać operacji
                     związanych z procesorem w kodzie Node.js. Node.js nieblokuje We / Wy, ponieważ odciąża pracę do
                     jądra systemu operacyjnego, a gdy operacja we / wy dostarcza dane (jako zdarzenie), powiadomi Twój
-                    kod o dostarczonych wywołaniach zwrotnych.</p>
+                    kod o dostarczonych wywołaniach zwrotnych.
+                </p>
             </article>
         </>
     );

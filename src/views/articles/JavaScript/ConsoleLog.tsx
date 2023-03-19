@@ -11,12 +11,12 @@ const ConsoleLog = () => {
 
     return (
         <>
-            <div className={'cover-wrapper'}>
-                <img src={cover} alt={'html cover'} className={'cover'} />
+            <div className='cover-wrapper'>
+                <img src={cover} alt='html cover' className='cover' />
             </div>
-            <article className={'article article-content'}>
+            <article className='article article-content'>
                 <h1>console.log();</h1>
-                <pre className={'line-numbers language-js'}>
+                <pre className='line-numbers language-js'>
                     <code>
 {`// Variables within the log 
 console.log("%s is %d years old.", "John", 29);

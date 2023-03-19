@@ -11,34 +11,42 @@ const Form = () => {
 
     return (
         <>
-            <div className={'cover-wrapper'}>
-                <img src={cover} alt={'html cover'} className={'cover'} />
+            <div className='cover-wrapper'>
+                <img src={cover} alt='html cover' className='cover' />
             </div>
 
-            <article className={'article article-content'}>
+            <article className='article article-content'>
                 <h1>Formularz</h1>
-                <p>Aby stworzyć swój formularz, powinieneś użyć sparowanego tagu z dość sugestywną nazwą <span
-                    className={'snippet'}>&lt;form&gt;</span>. Elementy do wprowadzania informacji są umieszczone
-                    wewnątrz tego znacznika. Ma dwie ważne cechy:</p>
-                <ul className={'snippet-list'}>
-                    <li><span>action</span> określa adres programu lub dokumentu przetwarzającego dane formularza
-                    </li>
-                    <li><span>method</span> informuje serwer o metodzie żądania</li>
-                </ul>
-                <p>Metody <span className={'snippet'}>get</span> i <span className={'snippet'}>post</span> są
-                    wykorzystywane do przekazywania danych z formularza do serwera. Jeśli atrybut metody nie zostanie
-                    określony, <span className={'snippet'}>get</span> będzie używany domyślnie.
-                </p>
-                <p><span className={'snippet'}>&lt;label&gt;</span> łączy tekst z elementem formularza. Znacznik nie
-                    pokazuje się wizualnie, więc aby zrozumieć, czy jest powiązany, czy nie, kliknij w tekst. Jeżeli
-                    aktywuje pobliski element formularza, oznacza to, że <span
-                        className={'snippet'}>&lt;label&gt;</span>działa.
+
+                <p className='snippets'>
+                    Aby stworzyć swój formularz, powinieneś użyć sparowanego tagu z dość sugestywną nazwą
+                    <span>&lt;form&gt;</span>. Elementy do wprowadzania informacji są umieszczone wewnątrz tego
+                    znacznika. Ma dwie ważne cechy:
                 </p>
 
-                <pre className="line-numbers language-html">
+                <ul className='snippet-list'>
+                    <li>
+                        <span>action</span> określa adres programu lub dokumentu przetwarzającego dane formularza
+                    </li>
+
+                    <li><span>method</span> informuje serwer o metodzie żądania</li>
+                </ul>
+
+                <p className='snippets'>
+                    Metody <span>get</span> i <span>post</span> są wykorzystywane do przekazywania danych z formularza
+                    do serwera. Jeśli atrybut metody nie zostanie określony, <span>get</span> będzie używany domyślnie.
+                </p>
+
+                <p className='snippets'>
+                    <span>&lt;label&gt;</span> łączy tekst z elementem formularza. Znacznik nie pokazuje się wizualnie,
+                    więc aby zrozumieć, czy jest powiązany, czy nie, kliknij w tekst. Jeżeli aktywuje pobliski element
+                    formularza, oznacza to, że <span>&lt;label&gt;</span>działa.
+                </p>
+
+                <pre className='line-numbers language-html'>
                     <code>
 {`<!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
     <title>HTML Forms</title>
 </head>
@@ -87,7 +95,7 @@ const Form = () => {
                 </pre>
 
                 <h3>Wynik:</h3>
-                <form action="[value]" method="post" className={'example-form'}>
+                <form action="[value]" method="post" className='example-form'>
                     <label>
                         <h1>First Name:</h1>
                         <input type="text" name="firstName" />

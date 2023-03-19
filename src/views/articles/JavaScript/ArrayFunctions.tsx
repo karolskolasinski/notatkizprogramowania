@@ -12,12 +12,12 @@ const ArrayFunctions = () => {
 
     return (
         <>
-            <div className={'cover-wrapper'}>
-                <img src={cover} alt={'html cover'} className={'cover'}/>
+            <div className='cover-wrapper'>
+                <img src={cover} alt='html cover' className='cover'/>
             </div>
-            <article className={'article article-content'}>
+            <article className='article article-content'>
                 <h1>funkcje tablic</h1>
-                <ul className={'snippet-list'}>
+                <ul className='snippet-list'>
                     <li>
                         <span>
                             <a href="https://kursjs.pl/kurs/super-podstawy/tablice.php#merge">concat()</a>
@@ -165,7 +165,7 @@ const ArrayFunctions = () => {
                         elementy sekwencji. Możesz określić drugi indeks jako ujemny: będzie to również oznaczać
                         przesunięcie od końca sekwencji:
                     </li>
-                    <pre className={'line-numbers language-js'}>
+                    <pre className='line-numbers language-js'>
                         <code>
 {`let fibNums = [0, 1, 1, 2, 3, 5, 8, 13, 21];
 
@@ -211,9 +211,9 @@ console.log(fibNums.slice(3, -2)); // [2, 3, 5, 8]`}
                 <hr/>
 
                 <h1>push(), pop(), unshift(), shift()</h1>
-                <div className={'article-img-wrapper'}>
-                    <img src={pushPopUnshiftShift} alt={'event code, event key'}
-                         className={'article-img article-img-desktop'}/>
+                <div className='article-img-wrapper'>
+                    <img src={pushPopUnshiftShift} alt='event code, event key'
+                         className='article-img article-img-desktop'/>
                 </div>
             </article>
         </>

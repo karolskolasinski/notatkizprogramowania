@@ -11,13 +11,13 @@ const Breakpoints = () => {
 
     return (
         <>
-            <div className={'cover-wrapper'}>
-                <img src={cover} alt={'html cover'} className={'cover'} />
+            <div className='cover-wrapper'>
+                <img src={cover} alt='css cover' className='cover' />
             </div>
 
-            <article className={'article article-content'}>
+            <article className='article article-content'>
                 <h1>Bootstrap breakpoints</h1>
-                <table className="table">
+                <table className='table'>
                     <thead>
                         <tr>
                             <th>Breakpoint</th>
@@ -60,9 +60,10 @@ const Breakpoints = () => {
                 </table>
 
                 <h4>Źródło:</h4>
-                <a href={'https://getbootstrap.com/docs/5.0/layout/breakpoints/#available-breakpoints'}
-                    className={'article-link'}>
-                    https://getbootstrap.com/docs/5.0/layout/breakpoints/#available-breakpoints</a>
+                <a href='https://getbootstrap.com/docs/5.0/layout/breakpoints/#available-breakpoints'
+                    className='article-link'>
+                    https://getbootstrap.com/docs/5.0/layout/breakpoints/#available-breakpoints
+                </a>
             </article>
         </>
     );

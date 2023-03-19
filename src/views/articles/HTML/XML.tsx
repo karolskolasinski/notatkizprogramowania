@@ -11,13 +11,13 @@ const Template = () => {
 
     return (
         <>
-            <div className={'cover-wrapper'}>
-                <img src={cover} alt={'html cover'} className={'cover'} />
+            <div className='cover-wrapper'>
+                <img src={cover} alt='html cover' className='cover' />
             </div>
 
-            <article className={'article article-content'}>
+            <article className='article article-content'>
                 <h1>Znaki specjale w formacie XML:</h1>
-                <table className={'table'}>
+                <table className='table'>
                     <thead>
                         <tr>
                             <th><h3>Znak</h3></th>

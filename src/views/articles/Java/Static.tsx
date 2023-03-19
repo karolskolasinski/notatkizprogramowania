@@ -11,31 +11,36 @@ const Types = () => {
 
     return (
         <>
-            <div className={'cover-wrapper'}>
-                <img src={cover} alt={'html cover'} className={'cover'} />
+            <div className='cover-wrapper'>
+                <img src={cover} alt='java cover' className='cover' />
             </div>
-            <article className={'article article-content'}>
-                <p>Metoda statyczna może mieć argumenty takie jak zwykła metoda lub nie mieć żadnych argumentów. Jednak
-                    w przeciwieństwie do zwykłych metod, metody statyczne mają kilka specjalnych cech:</p>
-                <ul>
-                    <li>metoda statyczna może uzyskać dostęp tylko do pól statycznych, nie może uzyskać dostępu do pól
+            <article className='article article-content'>
+                <p>
+                    Metoda statyczna może mieć argumenty takie jak zwykła metoda lub nie mieć żadnych argumentów. Jednak
+                    w przeciwieństwie do zwykłych metod, metody statyczne mają kilka specjalnych cech:
+                </p>
+
+                <ul className='snippet-list'>
+                    <li>
+                        metoda statyczna może uzyskać dostęp tylko do pól statycznych, nie może uzyskać dostępu do pól
                         niestatycznych (z wnętrza metody statycznej nie możemy odwoływać się do pól i metod nie
                         zadeklarowanych jako statyczne)
                     </li>
+
                     <li>metoda statyczna może wywołać inną metodę statyczną, ale nie może wywołać metody instancji</li>
-                    <li>metoda statyczna nie może odwoływać się do słowa kluczowego <span
-                        className={'snippet'}>this</span>, ponieważ w
+                    <li>
+                        metoda statyczna nie może odwoływać się do słowa kluczowego <span>this</span>, ponieważ w
                         kontekście statycznym nie ma instancji
                     </li>
                 </ul>
-                <p>Zwykłe metody mogą jednak uzyskać dostęp do pól i metod statycznych. Dodatkowo metody i zmienne
-                    zadeklarowane jako <span className={'snippet'}>static</span> związane są z konkretną klasą, a nie
-                    jej instancją -
-                    obiektem. <span className={'snippet'}>static</span> oznacza, że coś istnieje zawsze. Nie trzeba
-                    tworzyć instancji
+
+                <p className='snippets'>
+                    Zwykłe metody mogą jednak uzyskać dostęp do pól i metod statycznych. Dodatkowo metody i zmienne
+                    zadeklarowane jako <span>static</span> związane są z konkretną klasą, a nie jej instancją -
+                    obiektem. <span>static</span> oznacza, że coś istnieje zawsze. Nie trzeba tworzyć instancji
                     klasy, żeby wywołać metodę statyczną. Na przykład, zamiast:
                 </p>
-                <pre className={'line-numbers language-js'}>
+                <pre className='line-numbers language-js'>
                     <code>
 {`package sample;
 
@@ -57,9 +62,8 @@ class Matematyka {
                     </code>
                 </pre>
 
-                <p>można zastosować <span className={'snippet'}>static</span> i zmienić na coś takiego:</p>
-
-                <pre className={'line-numbers language-js'}>
+                <p className='snippets'>można zastosować <span>static</span> i zmienić na coś takiego:</p>
+                <pre className='line-numbers language-js'>
                     <code>
 {`package sample;
 

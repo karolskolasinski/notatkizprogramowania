@@ -11,21 +11,23 @@ const Stream = () => {
 
     return (
         <>
-            <div className={'cover-wrapper'}>
-                <img src={cover} alt={'html cover'} className={'cover'} />
+            <div className='cover-wrapper'>
+                <img src={cover} alt='java cover' className='cover' />
             </div>
-            <article className={'article article-content'}>
+            <article className='article article-content'>
                 <h1>Stream</h1>
-                <p>Stream w największym skrócie oznacza sekwencję elementów. Stosuje się po to aby zapewnić więcej
+                <p>
+                    Stream w największym skrócie oznacza sekwencję elementów. Stosuje się po to aby zapewnić więcej
                     czytelności oraz łatwiej i szybciej móc napisać kod wykonujący bardziej skomplikowane operacje na
                     dużych zbiorach danych. Kod co prawda jest krótszy, ale nie jest szybszy niż np. pętla, ponieważ do
-                    każdego elementu kolekcji, na którym operujemy <strong>tworzony</strong> jest obiekt, który
-                    musi <strong>przetworzyć</strong> dane, a na koniec GarbageCollector musi
-                    go <strong>pochłonąć</strong>. Tworzą się klasy anonimowe, po zakończeniu streama nie mają już
-                    żadnej referencji, więc można je usunąć.
+                    każdego elementu kolekcji, na którym operujemy <strong>tworzony</strong> jest obiekt, który musi
+                    <strong>przetworzyć</strong> dane, a na koniec GarbageCollector musi go <strong>pochłonąć</strong>.
+                    Tworzą się klasy anonimowe, po zakończeniu streama nie mają już żadnej referencji, więc można je
+                    usunąć.
                 </p>
+
                 <p>Na przykład taki zapis:</p>
-                <pre className={'line-numbers language-java'}>
+                <pre className='line-numbers language-java'>
                     <code>
 {`public static void printAllArcadeNames(List<Arcade> arcades) {
     arcades.stream()
@@ -35,8 +37,8 @@ const Stream = () => {
                     </code>
                 </pre>
 
-                <p>Jest tym samym co:</p>
-                <pre className={'line-numbers language-java'}>
+                <p>jest tym samym co:</p>
+                <pre className='line-numbers language-java'>
                     <code>
 {`public static void printAllArcadeNames(List<Arcade> arcades) {
     arcades.stream()
@@ -59,11 +61,12 @@ const Stream = () => {
                 <hr />
 
                 <h1>Metody</h1>
-                <ul className={'snippet-list'}>
-                    <li><span>.map(Function&lt;T, R&gt;)</span> - używamy po to, by "mapować" obiekty, czyli
+                <ul className='snippet-list'>
+                    <li>
+                        <span>.map(Function&lt;T, R&gt;)</span> - używamy po to, by "mapować" obiekty, czyli
                         przekształcać jeden obiekt w inny.
                     </li>
-                    <pre className={'line-numbers language-java'}>
+                    <pre className='line-numbers language-java'>
                         <code>
 {`List<String> letters = Arrays.asList("a", "b", "c", "d");
 List<String> collect = letters.stream()
@@ -73,26 +76,31 @@ List<String> collect = letters.stream()
 System.out.println(collect); //[A, B, C, D]`}
                         </code>
                     </pre>
-                    <p>W tym przykładzie stworzyliśmy nową listę, w której Stringi zostały zmapowane na Stringi pisane
-                        wielką literą.</p>
 
-                    <li><span>.filter(Predicate&lt;T&gt;)</span> - będziemy używać do "filtrowania" naszego streama,
+                    <p>
+                        W tym przykładzie stworzyliśmy nową listę, w której Stringi zostały zmapowane na Stringi pisane
+                        wielką literą.
+                    </p>
+
+                    <li>
+                        <span>.filter(Predicate&lt;T&gt;)</span> - będziemy używać do "filtrowania" naszego streama,
                         czyli wybierania tylko pożądanych elementów.
                     </li>
-                    <pre className={'line-numbers language-java'}>
+                    <pre className='line-numbers language-java'>
                         <code>
 {`List<Person> persons = ...
 Stream<Person> personsOver18 = persons.stream()
     .filter(p -> p.getAge() > 18);`}
                        </code>
                     </pre>
+
                     <p>W tym przykładzie otrzymaliśmy stream z osobami powyżej 18 lat.</p>
 
-                    <li><span>.flatMap(Function&lt;T, R&gt;)</span> - ta metoda używana jest do "spłaszczania" streama
+                    <li>
+                        <span>.flatMap(Function&lt;T, R&gt;)</span> - ta metoda używana jest do "spłaszczania" streama
                         streamów.
                     </li>
-
-                    <pre className={'line-numbers language-java'}>
+                    <pre className='line-numbers language-java'>
                         <code>
 {`List<String> pinkFloyd = Arrays.asList("Gilmour", "Waters", "Wright", "Mason", "Barrett");
 List<String> ledZeppelin = Arrays.asList("Page", "Plant", "Jones", "Bonham");
@@ -105,15 +113,18 @@ List<String> lineUp = woodstockBands.stream()
     .collect(Collectors.toList());`}
                         </code>
                     </pre>
-                    <p>W tym przykładzie "spłaszczyliśmy" listę list na jedną listę. Wynikiem jest lista Stringów
+
+                    <p>
+                        W tym przykładzie "spłaszczyliśmy" listę list na jedną listę. Wynikiem jest lista Stringów
                         zawierająca wszystkie Stringi z listy źródłowej.
                     </p>
 
-                    <li><span>collect(Collector&lt;T, A, R&gt;)</span> - tej metody można użyć do "zebrania" streama w
+                    <li>
+                        <span>collect(Collector&lt;T, A, R&gt;)</span> - tej metody można użyć do "zebrania" streama w
                         kolekcję, która nas interesuje. Stream trzeba w jakiś sposób zamknąć. Najczęściej będziemy
                         oczekiwać kolekcji, ale mogą to być pojedyncze obiekty. Poniżej przykłady:
                     </li>
-                    <pre className={'line-numbers language-java'}>
+                    <pre className='line-numbers language-java'>
                         <code>
 {`List<String> result = givenList.stream()
     .collect(toList());
@@ -139,7 +150,8 @@ Long result = givenList.stream()
                 <hr />
 
                 <h1>Czym są lambdy?</h1>
-                <p>Java to obiektowy język programowania, jednak lambdy pozwalają na pisanie kodu w sposób funkcyjny.
+                <p>
+                    Java to obiektowy język programowania, jednak lambdy pozwalają na pisanie kodu w sposób funkcyjny.
                     Oznacza to, że zamiast operować na stanach obiektów możemy bezpośrednio deklarować, co chcemy
                     zrobić. Odnosząc lambdy do programowania obiektowego, możemy o nich myśleć jak o klasach
                     tymczasowych zawierających jedną metodę. Lambdy to obiekty, zawierające fragment kodu: funkcję, a
@@ -147,27 +159,30 @@ Long result = givenList.stream()
                     funkcja). Wyrażenia lambda wykorzystują koncept, który nazywa się <i>deferred execution</i>, czyli
                     takie, które są wykonywanie z odroczeniem.
                 </p>
+
                 <p>Przykład</p>
-                <pre className={'line-numbers language-java'}>
+                <pre className='line-numbers language-java'>
                     <code>
 {`c -> c.canSing();`}
                     </code>
                 </pre>
-                <p className={'snippets'}>Taki zapis mówi Javie, że ma wywołać metodę z Celebrity jako parametrem i
-                    zwrócić boolean jako wynik <span>c.canSing()</span>. Równoważny zapis poniżej:
+                <p className='snippets'>
+                    Taki zapis mówi Javie, że ma wywołać metodę z Celebrity jako parametrem i zwrócić boolean jako
+                    wynik <span>c.canSing()</span>. Równoważny zapis poniżej:
                 </p>
-                <pre className={'line-numbers language-java'}>
+                <pre className='line-numbers language-java'>
                     <code>
 {`(Celebrity c) -> { return c.canSing(); }`}
                     </code>
                 </pre>
 
-                <p>To co jeszcze warto wiedzieć o lambdach, to to, że mają one dostęp do zmiennych. Warto pamiętać, że
+                <p>
+                    To co jeszcze warto wiedzieć o lambdach, to to, że mają one dostęp do zmiennych. Warto pamiętać, że
                     wyrażenia lambda mają dostęp do pól klasy oraz statycznych zmiennych. Jeśli chodzi o parametry
                     metody i zmienne lokalne, to ten dostęp jest możliwy tylko wtedy, gdy nie przypisujemy do nich
                     nowych wartości. Czyli:
                 </p>
-                <pre className={'line-numbers language-java'}>
+                <pre className='line-numbers language-java'>
                     <code>
 {`(a, b) -> { int a = 0; return 5;}  // kod się nie skompiluje
                     

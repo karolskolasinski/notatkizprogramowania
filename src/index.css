@@ -357,6 +357,7 @@ p.snippets span {
     mix-blend-mode: screen;
     text-transform: uppercase;
     line-height: 2.2rem;
+    text-align: center;
 }
 
 .example-form {

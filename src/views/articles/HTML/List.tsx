@@ -11,21 +11,25 @@ const List = () => {
 
     return (
         <>
-            <div className={'cover-wrapper'}>
-                <img src={cover} alt={'html cover'} className={'cover'} />
+            <div className='cover-wrapper'>
+                <img src={cover} alt='html cover' className='cover' />
             </div>
 
-            <article className={'article article-content'}>
+            <article className='article article-content'>
                 <h1>Listy</h1>
-                <ul className={'snippet-list pb0'}>
-                    <li><span>&lt;ol&gt;</span> jako atrybut <span>type</span> może przyjmować:
-                        <ul className={'pb0 nested-list'}>
+
+                <ul className='snippet-list pb0'>
+                    <li>
+                        <span>&lt;ol&gt;</span> jako atrybut <span>type</span> może przyjmować:
+
+                        <ul className='pb0 nested-list'>
                             <li><span>1</span> - domyślnie, numeracja dziesiętna (1, 2, 3, 4...)</li>
                             <li><span>A</span> - w porządku alfabetycznym, dużymi literami (A, B, C, D...)</li>
                             <li><span>a</span> - w kolejności alfabetycznej, małe litery (a, b, c, d...)</li>
                             <li><span>I</span> - cyframi rzymskimi (I, II, III, IV)</li>
                         </ul>
                     </li>
+
                     <pre className="line-numbers language-html">
                         <code>
 {`<ol type="A" start="3" reversed></ol>
@@ -35,11 +39,13 @@ A. Third`}
                         </code>
                     </pre>
 
-                    <hr/>
+                    <hr />
 
-                    <li><span>&lt;ul&gt;</span> jako wartość właściwości CSS <span>list-style-type</span> może
+                    <li>
+                        <span>&lt;ul&gt;</span> jako wartość właściwości CSS <span>list-style-type</span> może
                         przyjmować:
-                        <ul className={'nested-list'}>
+
+                        <ul className='nested-list'>
                             <li><span>disc</span> - domyślnie</li>
                             <li><span>circle</span></li>
                             <li><span>square</span></li>
@@ -47,17 +53,22 @@ A. Third`}
                         </ul>
                     </li>
 
-                    <hr/>
+                    <hr />
 
-                    <li><span>&lt;dl&gt;</span> oznacza description list i zawiera:
-                        <ul className={'nested-list pb0'}>
+                    <li>
+                        <span>&lt;dl&gt;</span> oznacza description list i zawiera:
+
+                        <ul className='nested-list pb0'>
                             <li><span>&lt;dt&gt;</span> - description term</li>
                             <li><span>&lt;dd&gt;</span> - description definition</li>
                         </ul>
                     </li>
-                    <p className={'pb0'}>Gdy konieczne jest nadanie wielu definicji jednemu obiektowi, wybierz listę
-                        definicji.</p>
-                    <pre className="line-numbers language-html">
+
+                    <p className='pb0'>
+                        Gdy konieczne jest nadanie wielu definicji jednemu obiektowi, wybierz listę definicji.
+                    </p>
+
+                    <pre className='line-numbers language-html'>
                         <code>
 {`<dl>
     <dt>Recipe:</dt>

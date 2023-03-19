@@ -6,7 +6,7 @@ import 'prismjs/themes/prism-tomorrow.css';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.js';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 
-const BoxModel = () => {
+const List = () => {
     useEffect(() => Prism.highlightAll(), []);
 
     return (
@@ -16,11 +16,15 @@ const BoxModel = () => {
             </div>
 
             <article className='article article-content'>
-                <h1>Box Model</h1>
-                <p>...</p>
+                <h1>Input</h1>
+
+                <h4 className='pt1'>Pure CSS Custom Checkbox Style</h4>
+                <a href='https://moderncss.dev/pure-css-custom-checkbox-style/' className='article-link'>
+                    https://moderncss.dev/pure-css-custom-checkbox-style/
+                </a>
             </article>
         </>
     );
 };
 
-export default BoxModel;
+export default List;

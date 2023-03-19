@@ -5,12 +5,12 @@ import inheritanceAndSpecificity from '../../../mp4/inheritance-and-specificity.
 const CheatSheets = () => {
     return (
         <>
-            <div className={'cover-wrapper'}>
-                <img src={cover} alt={'html cover'} className={'cover'} />
+            <div className='cover-wrapper'>
+                <img src={cover} alt='css cover' className='cover' />
             </div>
-            <article className={'article article-content'}>
-                <video controls className={'mp4'}>
-                    <source src={inheritanceAndSpecificity} type="video/mp4" />
+            <article className='article article-content'>
+                <video controls className='mp4'>
+                    <source src={inheritanceAndSpecificity} type='video/mp4' />
                 </video>
             </article>
         </>

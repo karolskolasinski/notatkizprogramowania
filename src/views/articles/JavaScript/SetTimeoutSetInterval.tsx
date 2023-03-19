@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import cover from '../../../img/cover/cover-javascript.webp';
 // @ts-ignore
 import Prism from 'prismjs';
@@ -11,13 +11,13 @@ const SetTimeoutSetInterval = () => {
 
     return (
         <>
-            <div className={'cover-wrapper'}>
-                <img src={cover} alt={'html cover'} className={'cover'}/>
+            <div className='cover-wrapper'>
+                <img src={cover} alt='html cover' className='cover' />
             </div>
-            <article className={'article article-content'}>
+            <article className='article article-content'>
                 <h1>setTimeout() / setInterval()</h1>
-                <span className={'snippet'}>setTimeout()</span> jest wykonywany dopiero po określonym czasie:
-                <pre className={'line-numbers language-js'}>
+                <p className='snippets'><span>setTimeout()</span> jest wykonywany dopiero po określonym czasie: </p>
+                <pre className='line-numbers language-js'>
                         <code>
 {`function welcome(name) {
     console.log(name + ", welcome to our website! You have a special discount today!");
@@ -29,9 +29,10 @@ clearTimeout(timerId);`}
                     </code>
                 </pre>
 
-                <span className={'snippet'}>setInterval()</span> wywołuje funkcję ponownie i ponownie po określonym
-                czasie:
-                <pre className={'line-numbers language-js'}>
+                <p className='snippets'>
+                    <span>setInterval()</span> wywołuje funkcję ponownie i ponownie po określonym czasie:
+                </p>
+                <pre className='line-numbers language-js'>
                         <code>
 {`function alarm(time) {
     console.log("Wake up! It's " + time + " o'clock!");
@@ -50,13 +51,13 @@ clearInterval(intervalId);`}
                     <li>argumenty funkcji do wywołania</li>
                 </ul>
 
-                <p className={'snippets'}>Po uruchomieniu licznika czasu przeglądarka wykonuje zadanie w nieskończoność,
-                    a tym samym zużywa zasoby. Aby tego uniknąć, powinniśmy zatrzymać niepotrzebne timery. Uruchamiasz
+                <p className='snippets'>
+                    Po uruchomieniu licznika czasu przeglądarka wykonuje zadanie w nieskończoność, a tym samym zużywa
+                    zasoby. Aby tego uniknąć, powinniśmy zatrzymać niepotrzebne timery. Uruchamiasz
                     timer <span>setTimeout()</span> lub <span>setInterval()</span>, a aby go zatrzymać, powinieneś użyć
                     odpowiednio <span>clearTimeout()</span> lub <span>clearInterval()</span>. W takim przypadku
-                    powinieneś znać identyfikator timera, który chcesz
-                    zatrzymać. <span>setTimeout()</span> i <span>setInterval()</span> zwraca identyfikator timera, który
-                    został utworzony.
+                    powinieneś znać identyfikator timera, który chcesz zatrzymać. <span>setTimeout()</span> i
+                    <span>setInterval()</span> zwraca identyfikator timera, który został utworzony.
                 </p>
             </article>
         </>

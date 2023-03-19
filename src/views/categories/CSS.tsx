@@ -6,10 +6,10 @@ import { createLazyElement, CustomLink } from '../utils';
 const CSS = () => {
     return (
         <main className="main">
-            {useLocation().pathname === '/css' && <div className={'link-wrapper'}>
-                <h1 className={'category-header'}>CSS</h1>
+            {useLocation().pathname === '/css' && <div className='link-wrapper'>
+                <h1 className='category-header'>CSS</h1>
                 {cssArticles.map(({ path, title, to }) =>
-                    <CustomLink to={path} key={to} color={'css'}>{title}</CustomLink>)}
+                    <CustomLink to={path} key={to} color='css'>{title}</CustomLink>)}
             </div>}
 
             <Routes>

@@ -3,42 +3,42 @@
         "title": "Bootstrap breakpoints",
         "filePath": "./articles/CSS/Breakpoints",
         "path": "breakpoints/*",
-        "to": "breakpoints",
-        "cover": "img/cover/cover-css.webp"
+        "to": "breakpoints"
     },
     {
         "title": "Code Guide",
         "filePath": "./articles/CSS/CodeGuide",
         "path": "code-guide/*",
-        "to": "code-guide",
-        "cover": "img/cover/cover-css.webp"
+        "to": "code-guide"
     },
     {
         "title": "Properties",
         "filePath": "./articles/CSS/Properties",
         "path": "properties/*",
-        "to": "properties",
-        "cover": "img/cover/cover-css.webp"
+        "to": "properties"
     },
     {
         "title": "Box Model",
         "filePath": "./articles/CSS/BoxModel",
         "path": "box-model/*",
-        "to": "box-model",
-        "cover": "img/cover/cover-css.webp"
+        "to": "box-model"
+    },
+    {
+        "title": "Input",
+        "filePath": "./articles/CSS/Input",
+        "path": "input/*",
+        "to": "input"
     },
     {
         "title": "Cheat Sheets",
         "filePath": "./articles/CSS/CheatSheets",
         "path": "cheat-sheets/*",
-        "to": "cheat-sheets",
-        "cover": "img/cover/cover-css.webp"
+        "to": "cheat-sheets"
     },
     {
         "title": "Inheritance And Specificity",
         "filePath": "./articles/CSS/InheritanceAndSpecificity",
         "path": "inheritance-and-specificity/*",
-        "to": "inheritance-and-specificity",
-        "cover": "img/cover/cover-css.webp"
+        "to": "inheritance-and-specificity"
     }
 ]

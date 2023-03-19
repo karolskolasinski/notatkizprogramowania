@@ -12,5 +12,5 @@ export const createLazyElement = (filePath: string) => {
 export const CustomLink = ({ to, children, color }: { to: string, children: React.ReactNode, color: string }) => {
     const resolvedPath = useResolvedPath(to);
     const isActive = useMatch({ path: resolvedPath.pathname, end: true });
-    return isActive ? <></> : <Link className={'link'} to={to} data-color={color}>{children}</Link>;
+    return isActive ? <></> : <Link className='link' to={to} data-color={color}>{children}</Link>;
 };

@@ -12,12 +12,12 @@ const Implementacje = () => {
 
     return (
         <>
-            <div className={'cover-wrapper'}>
-                <img src={cover} alt={'java cover'} className={'cover'} />
+            <div className='cover-wrapper'>
+                <img src={cover} alt='java cover' className='cover' />
             </div>
-            <article className={'article article-content'}>
+            <article className='article article-content'>
                 <h1>ArrayList&lt;T&gt;</h1>
-                <pre className={'line-numbers language-java'}>
+                <pre className='line-numbers language-java'>
                     <code>
 {`public class MyArrayList<T> { 
     private final static int INITIAL_ARRAYLIST_SIZE = 10;
@@ -139,7 +139,7 @@ const Implementacje = () => {
                 <hr />
 
                 <h1>Stack&lt;T&gt;</h1>
-                <pre className={'line-numbers language-java'}>
+                <pre className='line-numbers language-java'>
                     <code>
 {`public class Stack<T> {
     private Object[] elementy;
@@ -201,8 +201,8 @@ const Implementacje = () => {
                 <hr />
 
                 <h1>BubbleSort</h1>
-                <a href={'https://www.youtube.com/watch?v=4s44rXRdmhQ'} className={'article-link'}>video</a>
-                <pre className={'line-numbers language-java'}>
+                <a href='https://www.youtube.com/watch?v=4s44rXRdmhQ' className='article-link'>video</a>
+                <pre className='line-numbers language-java'>
                     <code>
 {`public class BubbleSort {
     public static void sort(int[] tablica) {
@@ -239,7 +239,7 @@ const Implementacje = () => {
 
 
                 <h1>CountingSort</h1>
-                <pre className={'line-numbers language-java'}>
+                <pre className='line-numbers language-java'>
                     <code>
 {`public class CountingSort {
     public static void sort(int[] tablica, int maxLiczba) {
@@ -263,8 +263,8 @@ const Implementacje = () => {
                 </pre>
 
                 <h1>InsertionSort</h1>
-                <a href="https://www.youtube.com/watch?v=8RkE7MbqVl8" className={'article-link'}>video</a>
-                <pre className={'line-numbers language-java'}>
+                <a href="https://www.youtube.com/watch?v=8RkE7MbqVl8" className='article-link'>video</a>
+                <pre className='line-numbers language-java'>
                     <code>
 {`public class InsertionSort {
     public static void sort(int[] tablica) {
@@ -286,8 +286,8 @@ const Implementacje = () => {
                 </pre>
 
                 <h1>SelectionSort</h1>
-                <a href="https://www.youtube.com/watch?v=GUhWeJyHBCU" className={'article-link'}>video</a>
-                <pre className={'line-numbers language-java'}>
+                <a href='https://www.youtube.com/watch?v=GUhWeJyHBCU' className='article-link'>video</a>
+                <pre className='line-numbers language-java'>
                     <code>
 {`public class SelectionSort {
     public static void sort(int[] tablica) {
@@ -307,8 +307,8 @@ const Implementacje = () => {
                 </pre>
 
                 <h1>QuickSort</h1>
-                <a href="https://www.youtube.com/watch?v=82XxdhRCMbI" className={'article-link'}>video</a>
-                <pre className={'line-numbers language-java'}>
+                <a href='https://www.youtube.com/watch?v=82XxdhRCMbI' className='article-link'>video</a>
+                <pre className='line-numbers language-java'>
                     <code>
 {`public class QuickSort {
     public static void sort(int[] tablica) {
@@ -341,8 +341,8 @@ const Implementacje = () => {
                 <hr />
 
                 <h1>MergeSort</h1>
-                <a href="https://www.youtube.com/watch?v=iJyUFvvdfUg" className={'article-link'}>video</a>
-                <pre className={'line-numbers language-java'}>
+                <a href="https://www.youtube.com/watch?v=iJyUFvvdfUg" className='article-link'>video</a>
+                <pre className='line-numbers language-java'>
                     <code>
 {`public class MergeSort {
     public static void sort(int[] tablica) {
@@ -392,7 +392,7 @@ const Implementacje = () => {
                 <hr />
 
                 <h1>BinnaryTree</h1>
-                <pre className={'line-numbers language-java'}>
+                <pre className='line-numbers language-java'>
                     <code>
 {`public class BST {
     private BSTNode root;
@@ -489,7 +489,7 @@ const Implementacje = () => {
                     </code>
                 </pre>
 
-                <pre className={'line-numbers language-java'}>
+                <pre className='line-numbers language-java'>
                         <code>
 {`public class BSTNode {
     private int value;

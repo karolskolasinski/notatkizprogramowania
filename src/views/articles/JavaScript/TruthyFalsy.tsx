@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import cover from '../../../img/cover/cover-javascript.webp';
 // @ts-ignore
 import Prism from 'prismjs';
@@ -11,14 +11,16 @@ const TruthyFalsy = () => {
 
     return (
         <>
-            <div className={'cover-wrapper'}>
-                <img src={cover} alt={'html cover'} className={'cover'}/>
+            <div className='cover-wrapper'>
+                <img src={cover} alt='html cover' className='cover' />
             </div>
-            <article className={'article article-content'}>
+            <article className='article article-content'>
                 <h1>truthy / falsy</h1>
-                <p>Tworząc warunki, nie musimy porównywać ze sobą dwóch wartości. Wartością false staje się każda z
-                    poniższych wartości. Są to tak zwane wartości falsy:</p>
-                <pre className={'line-numbers language-js'}>
+                <p>
+                    Tworząc warunki, nie musimy porównywać ze sobą dwóch wartości. Wartością false staje się każda z
+                    poniższych wartości. Są to tak zwane wartości falsy:
+                </p>
+                <pre className='line-numbers language-js'>
                     <code>
 {`if (false) {...}
 if (null) {...}
@@ -30,9 +32,11 @@ if (document.all) {...}`}
                     </code>
                 </pre>
 
-                <p>Dla nas oznacza to tyle, że tworząc warunki możemy wykonywać kod w zależności od stanu danej
-                    zmiennej, ale też wartości wpisanej ręcznie w nawias:</p>
-                <pre className={'line-numbers language-js'}>
+                <p>
+                    Dla nas oznacza to tyle, że tworząc warunki możemy wykonywać kod w zależności od stanu danej
+                    zmiennej, ale też wartości wpisanej ręcznie w nawias:
+                </p>
+                <pre className='line-numbers language-js'>
                     <code>
 {`const a = 20;
 const b = 0;
@@ -56,9 +60,11 @@ if (false) { //to się nie wykona bo false to false
                     </code>
                 </pre>
 
-                <p>Każda inna wartość daje w rezultacie true. Możemy to sprawdzić konwertując dane wartości na <span
-                    className={'snippet'}>Boolean</span>:</p>
-                <pre className={'line-numbers language-js'}>
+                <p className='snippets'>
+                    Każda inna wartość daje w rezultacie true. Możemy to sprawdzić konwertując dane wartości
+                    na <span>Boolean</span>:
+                </p>
+                <pre className='line-numbers language-js'>
                     <code>
 {`Boolean(false); //false
 Boolean(null); //false
@@ -78,7 +84,7 @@ Boolean(x); //false bo x nie ma wartości czyli undefined`}
                 </pre>
 
                 <p>Powyższe sprawia, że dość często spotkasz zapisy jak poniżej:</p>
-                <pre className={'line-numbers language-js'}>
+                <pre className='line-numbers language-js'>
                     <code>
 {`if (nr) { //kod się wykona jeżeli wartość liczby nr jest różna od falsy
     ...

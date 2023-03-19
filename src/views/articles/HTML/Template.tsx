@@ -12,13 +12,13 @@ const Template = () => {
 
     return (
         <>
-            <div className={'cover-wrapper'}>
-                <img src={cover} alt={'html cover'} className={'cover'} />
+            <div className='cover-wrapper'>
+                <img src={cover} alt='html cover' className='cover' />
             </div>
 
-            <article className={'article article-content'}>
+            <article className='article article-content'>
                 <h1>Uniwersalny template</h1>
-                <pre className={'line-numbers language-html'}>
+                <pre className='line-numbers language-html'>
                     <code>
 {`<!DOCTYPE html>
 <html lang="en">
@@ -57,48 +57,65 @@ const Template = () => {
                 </pre>
 
                 <h3>Opis:</h3>
-                <ul className={'snippet-list pb0'}>
-                    <li><span>&lt;!DOCTYPE html&gt;</span> - dokument w formacie HTML5. element ten określa typ
+                <ul className='snippet-list pb0'>
+                    <li>
+                        <span>&lt;!DOCTYPE html&gt;</span> - dokument w formacie HTML5. element ten określa typ
                         bieżącego dokumentu: DTD (Document Type Definition). Konieczne jest, aby przeglądarka rozumiała,
                         według jakiego standardu HTML ma wyświetlać stronę internetową. Jak widać, jest to jeden z
                         tagów, które nie są sparowane
                     </li>
+
                     <li><span>&lt;html&gt;</span> - znacznik wskazuje, że jest to dokument HTML</li>
                     <li><span>lang="en"</span> - używany przez stronę język</li>
-                    <li><span>&lt;head&gt;</span> - znacznik jest przeznaczony do przechowywania elementów, które
+
+                    <li>
+                        <span>&lt;head&gt;</span> - znacznik jest przeznaczony do przechowywania elementów, które
                         pomagają przeglądarkom i wyszukiwarkom w pracy z danymi
                     </li>
-                    <li><span>charset="utf-8"</span> - zestaw znaków używany na stronie, sposób kodowania znaków (zapis
+
+                    <li>
+                        <span>charset="utf-8"</span> - zestaw znaków używany na stronie, sposób kodowania znaków (zapis
                         index.html bez BOM). Jeśli atrybut nie zostanie określony, niektóre przeglądarki mogą wyświetlać
                         niejasne znaki zamiast tekstu
                     </li>
-                    <li><span>name="description"</span> - opis strony w wyszukiwarce (150 - 160 znaków)
-                    </li>
+
+                    <li><span>name="description"</span> - opis strony w wyszukiwarce (150 - 160 znaków)</li>
                     <li><span>name="keywords"</span> - słowa kluczowe</li>
-                    <li><span>http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"</span> - prawidłowe wyświetlanie w
+
+                    <li>
+                        <span>http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"</span> - prawidłowe wyświetlanie w
                         przeglądarkach IE
                     </li>
-                    <li>dołączając skrypty w HTML4, musieliśmy im ustawiać atrybut <span>type="text/javascript"</span>:
+
+                    <li>
+                        dołączając skrypty w HTML4, musieliśmy im ustawiać atrybut <span>type="text/javascript"</span>:
                     </li>
-                    <pre className="line-numbers language-html">
+
+                    <pre className='line-numbers language-html'>
                         <code>
                             {`<script src="script.js" type="text/javascript"></script>`}
                         </code>
                     </pre>
-                    <p className={'pb0'}>W nowym HTML atrybut ten domyślnie ma taką wartość więc nie musimy go
-                        podawać.</p>
+
+                    <p className='pb0'>
+                        W nowym HTML atrybut ten domyślnie ma taką wartość więc nie musimy go podawać.
+                    </p>
                 </ul>
+
                 <hr />
 
                 <h1>Semantic HTML</h1>
-                <p className={'pb0'}>A semantic element clearly describes its meaning to both the browser and the developer.</p>
-                <div className={'article-img-wrapper'}>
-                    <img src={semanticImg} alt={'HTML Semantic'} className={'article-img'} />
+                <p className='pb0'>
+                    A semantic element clearly describes its meaning to both the browser and the developer.
+                </p>
+
+                <div className='article-img-wrapper'>
+                    <img src={semanticImg} alt='HTML Semantic' className='article-img' />
                 </div>
 
                 <h4>Źródło:</h4>
-                <a href={'https://internetingishard.netlify.app/html-and-css/semantic-html/index.html#summary'}
-                    className={'article-link'}>
+                <a href='https://internetingishard.netlify.app/html-and-css/semantic-html/index.html#summary'
+                    className='article-link'>
                     https://internetingishard.netlify.app/html-and-css/semantic-html/index.html#summary</a>
             </article>
         </>

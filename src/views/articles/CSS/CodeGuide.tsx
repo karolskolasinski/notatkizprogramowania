@@ -11,13 +11,13 @@ const CodeGuide = () => {
 
     return (
         <>
-            <div className={'cover-wrapper'}>
-                <img src={cover} alt={'html cover'} className={'cover'} />
+            <div className='cover-wrapper'>
+                <img src={cover} alt='css cover' className='cover' />
             </div>
 
-            <article className={'article article-content'}>
+            <article className='article article-content'>
                 <h1>Properties order</h1>
-                <pre className={'line-numbers language-javascript'}>
+                <pre className='line-numbers language-javascript'>
                     <code>
 {`'use strict';
 
@@ -297,8 +297,9 @@ module.exports = {
                 </pre>
 
                 <h4>Źródło:</h4>
-                <a href={'https://github.com/stormwarning/stylelint-config-recess-order/blob/main/index.js'}
-                    className={'article-link'}>https://github.com/stormwarning/stylelint-config-recess-order/blob/main/index.js</a>
+                <a href='https://github.com/stormwarning/stylelint-config-recess-order/blob/main/index.js'
+                    className='article-link'>https://github.com/stormwarning/stylelint-config-recess-order/blob/main/index.js
+                </a>
             </article>
         </>
     );
