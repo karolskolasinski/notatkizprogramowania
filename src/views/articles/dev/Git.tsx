@@ -229,7 +229,10 @@ build.js.map`}
                         poprawić w ostatnim commit
                     </li>
 
-                    <li><span>git log</span> - sprawdza listę commitów</li>
+                    <li>
+                        <span>git log</span> - pokazuje listę commitów, aby wyjść
+                        z <span>git log</span> wpisz <span>q</span> lub <span>z</span>
+                    </li>
                 </ul>
 
                 <h3>Praca z gałęziami:</h3>

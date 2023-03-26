@@ -118,7 +118,6 @@ const Properties = () => {
                     dodawania cieni. Jeśli chcesz mieć więcej kolorów, możesz również wskazać kilka cieni podzielonych
                     przecinkami.
                 </p>
-
                 <pre className='line-numbers language-css'>
                     <code>
 {`h1 {
@@ -131,13 +130,11 @@ h2 {
                     </code>
                 </pre>
 
-                <h4>CSS Reference</h4>
-                <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/Reference' className='article-link'>
-                    https://developer.mozilla.org/en-US/docs/Web/CSS/Reference</a>
+                <hr />
 
-                <h4>CSS Properties</h4>
-                <a href='https://qhmit.com/css/properties/' className='article-link'>
-                    https://qhmit.com/css/properties/</a>
+                <h1>CSS Properties</h1>
+                <a href='https://qhmit.com/css/properties/'
+                    className='article-link'>https://qhmit.com/css/properties/</a>
             </article>
         </>
     );

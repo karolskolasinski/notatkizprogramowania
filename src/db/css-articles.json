@@ -36,6 +36,12 @@
         "to": "list"
     },
     {
+        "title": "Reset",
+        "filePath": "./articles/CSS/Reset",
+        "path": "reset/*",
+        "to": "reset"
+    },
+    {
         "title": "Cheat Sheets",
         "filePath": "./articles/CSS/CheatSheets",
         "path": "cheat-sheets/*",
