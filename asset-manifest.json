@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.47851bff.css",
-    "main.js": "/static/js/main.e755d5d8.js",
+    "main.js": "/static/js/main.792002f7.js",
     "static/js/787.7efd31bd.chunk.js": "/static/js/787.7efd31bd.chunk.js",
     "static/media/inheritance-and-specificity.mp4": "/static/media/inheritance-and-specificity.69db80cf1e4dc82adeaf.mp4",
     "static/media/css-selectors-cheat-sheet-light.pdf": "/static/media/css-selectors-cheat-sheet-light.fe9c541b67adb65664d5.pdf",
@@ -37,11 +37,11 @@
     "index.html": "/index.html",
     "static/media/linkedin-original.svg": "/static/media/linkedin-original.15f0337078f13db400acab3639711ec7.svg",
     "main.47851bff.css.map": "/static/css/main.47851bff.css.map",
-    "main.e755d5d8.js.map": "/static/js/main.e755d5d8.js.map",
+    "main.792002f7.js.map": "/static/js/main.792002f7.js.map",
     "787.7efd31bd.chunk.js.map": "/static/js/787.7efd31bd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.47851bff.css",
-    "static/js/main.e755d5d8.js"
+    "static/js/main.792002f7.js"
   ]
 }
