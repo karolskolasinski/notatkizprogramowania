@@ -245,7 +245,7 @@ build.js.map`}
                 </ul>
 
                 <h3>Integrowanie zmian (merge):</h3>
-                <ul>
+                <ul className='terminal-list'>
                     <li>
                         <span>git merge feature/1</span> - scalenie zmian z gałęzi <span>feature/1</span> do aktualnej
                         gałęzi (tworzy się nowy commit)
@@ -255,6 +255,22 @@ build.js.map`}
                         <span>git rebase develop</span> - zmiana bazy rewizji, aplikowanie zmian zatwierdzonych w gałęzi
                         <span>develop</span> do aktualnej gałęzi (nie używaj tego polecenia na gałęziach, które są
                         publiczne!
+                    </li>
+
+                    <li>
+                        <strong>
+                            Jak całkowicie zastąpić gałąź główną (<span>master</span>) z innej gałęzi
+                            (np. <span>seotweaks</span>
+                        </strong>
+                        <p>use the “ours” merge strategy to overwrite master with seotweaks like this:</p>
+                        <ul className='nested-list'>
+                            <li><span>git checkout master</span></li>
+                            <li><span>git pull</span></li>
+                            <li><span>git checkout seotweaks</span></li>
+                            <li><span>git merge -s ours master</span></li>
+                            <li><span>git checkout master</span></li>
+                            <li><span>git merge seotweaks</span></li>
+                        </ul>
                     </li>
                 </ul>
 
@@ -321,6 +337,41 @@ build.js.map`}
                         chcesz je odzyskać z repozytorium. Możesz zadeklarować, że chcesz przywrócić tylko jeden
                         konkretny plik. To polecenie nie zrobi nic na danym branchu czy gałęzi. Jeśli więc chcesz cofnąć
                         swoje zmiany na lokalnym dysku, to jest to najlepsze polecenie.
+                    </li>
+
+                    <li>
+                        <strong>usunięcie ostatniego commita z ze zdalnego repozytorium</strong>
+                        <p>
+                            Be careful that this will create an "alternate reality" for people who have already
+                            fetch/pulled/cloned from the remote repository. But in fact, it's quite simple:
+                        </p>
+                        <ul className='nested-list'>
+                            <li><span>git reset HEAD^</span> # remove commit locally</li>
+                            <li><span>git push origin +HEAD</span> # force-push the new HEAD commit</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>jak sprawić, by Git zapomniał o pliku, który był śledzony, ale jest teraz w <span
+                            className='snippet'>.gitignore</span>
+                        </strong>
+                        <ul className='nested-list'>
+                            <li>
+                                To stop tracking a file, we must remove it from the
+                                index: <span>git rm --cached &lt;file&gt;</span>
+                            </li>
+
+                            <li>
+                                To remove a folder and all files in the folder
+                                recursively: <span>git rm -r --cached &lt;folder&gt;</span>
+                            </li>
+                        </ul>
+
+                        <p>The removal of the file from the head revision will happen on the next commit.</p>
+                        <p>
+                            WARNING: While this will not remove the physical file from your local machine, it will
+                            remove the files from other developers' machines on their next <span>git pull</span>.
+                        </p>
                     </li>
                 </ul>
             </article>

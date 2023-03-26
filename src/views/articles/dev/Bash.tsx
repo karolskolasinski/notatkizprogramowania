@@ -69,7 +69,12 @@ const Bash = () => {
                 <h3>Polecenia związane z procesami</h3>
                 <ul className='terminal-list'>
                     <li><span>ps</span> - pokazuje nam jakie procesy są aktualnie wykonywane</li>
-                    <li><span>kill</span> - zabijamy procesy</li>
+                    <li><span>kill</span> - zabija procesy</li>
+                    <li>Aby zabić proces na konkretnym porcie:</li>
+                    <ul className='terminal-list nested-list'>
+                        <li><span>fuser 8080/tcp</span> will print you PID of process bound on that port</li>
+                        <li><span>fuser -k 8080/tcp</span> will kill that process</li>
+                    </ul>
                 </ul>
 
                 <h3>Polecenia związane z pomocą</h3>

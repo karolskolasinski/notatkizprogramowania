@@ -30,6 +30,12 @@
         "to": "input"
     },
     {
+        "title": "List",
+        "filePath": "./articles/CSS/List",
+        "path": "list/*",
+        "to": "list"
+    },
+    {
         "title": "Cheat Sheets",
         "filePath": "./articles/CSS/CheatSheets",
         "path": "cheat-sheets/*",

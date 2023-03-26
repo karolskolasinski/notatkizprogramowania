@@ -42,7 +42,7 @@ const Tags = () => {
                     <li><span>&lt;meta /&gt;</span></li>
                 </ul>
 
-                <h4 className='pt1'>Źródło:</h4>
+                <h4>Źródło:</h4>
                 <a href='https://info.sice.indiana.edu/~hrosenba/Demo/Demo.html#12'
                     className='article-link'>https://info.sice.indiana.edu/~hrosenba/Demo/Demo.html#12</a>
 
@@ -90,7 +90,7 @@ const Tags = () => {
                     <li><span>&lt;ul&gt;</span> Unordered list</li>
                 </ul>
 
-                <h4 className='pt1'>Źródło:</h4>
+                <h4>Źródło:</h4>
                 <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements#Elements'
                     className='article-link'>
                     https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements#Elements</a>
@@ -156,6 +156,16 @@ const Tags = () => {
                         />
                     </div>
 
+                    <div className='video-container'>
+                        <iframe src='https://www.youtube.com/embed/fUnGbptARlo' width='100%' height='315'
+                            allowFullScreen title='Better HTML Images for Users & Developers | Web Dev Office Hours'
+                            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                        />
+                    </div>
+                    <a href='https://austingil.com/better-html-images/' className='article-link'>
+                        6 Steps to Improve HTML Images
+                    </a>
+
                     <p className='pb0'>
                         <strong>Image spacing</strong> - gdy pod obrazkiem jest kilka dodatkowych pixeli, należy dodać
                         do obrazka właściwość CSS:</p>
@@ -219,7 +229,7 @@ const Tags = () => {
                     <li><span>&lt;wbr&gt;</span></li>
                 </ul>
 
-                <h4 className='pt1'>Źródło:</h4>
+                <h4>Źródło:</h4>
                 <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements#Elements'
                     className='article-link'>https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements#Elements</a>
             </article>
