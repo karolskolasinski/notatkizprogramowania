@@ -309,7 +309,10 @@ build.js.map`}
                         intact
                     </li>
 
-                    <li><span>git remote set-url &#123;remote URL&#125;</span> - zmienia URL zdalnego repozytorium</li>
+                    <li><span>git remote set-url origin &#123;remote URL&#125;</span> - zmienia URL zdalnego
+                        repozytorium (origin)
+                    </li>
+
                     <li><span>git remote -v</span> - jw. ale pokazuje też URL</li>
 
                     <li>
