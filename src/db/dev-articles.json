@@ -40,5 +40,11 @@
         "filePath": "./articles/dev/URL",
         "path": "url/*",
         "to": "url"
+    },
+    {
+        "title": "Docker",
+        "filePath": "./articles/dev/Docker",
+        "path": "docker/*",
+        "to": "docker"
     }
 ]
