@@ -72,8 +72,9 @@ const Bash = () => {
                     <li><span>kill</span> - zabija procesy</li>
                     <li>Aby zabić proces na konkretnym porcie:</li>
                     <ul className='terminal-list nested-list'>
-                        <li><span>fuser 8080/tcp</span> will print you PID of process bound on that port</li>
-                        <li><span>fuser -k 8080/tcp</span> will kill that process</li>
+                        <li><span>fuser 8080/tcp</span> - will print you PID of process bound on that port</li>
+                        <li><span>lsof -i :8000</span> - to polecenie wyświetli informacje o procesie nasłuchującym na porcie 8000, wraz z identyfikatorem procesu (PID)</li>
+                        <li><span>fuser -k 8080/tcp</span> - will kill that process</li>
                     </ul>
                 </ul>
 
