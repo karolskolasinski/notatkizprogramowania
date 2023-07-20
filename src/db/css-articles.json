@@ -52,5 +52,11 @@
         "filePath": "./articles/CSS/InheritanceAndSpecificity",
         "path": "inheritance-and-specificity/*",
         "to": "inheritance-and-specificity"
+    },
+    {
+        "title": "Flexbox",
+        "filePath": "./articles/CSS/Flexbox",
+        "path": "flexbox/*",
+        "to": "flexbox"
     }
 ]
