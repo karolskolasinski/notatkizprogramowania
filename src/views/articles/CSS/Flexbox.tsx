@@ -1,6 +1,5 @@
 import React from "react";
 import cover from "../../../img/cover/cover-css.webp";
-import inheritanceAndSpecificity from "../../../mp4/inheritance-and-specificity.mp4";
 
 const Flexbox = () => {
   return (

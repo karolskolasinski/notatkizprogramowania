@@ -1,24 +1,24 @@
-import React, { useEffect } from 'react';
-import cover from '../../../img/cover/cover-css.webp';
+import React, { useEffect } from "react";
+import cover from "../../../img/cover/cover-css.webp";
 // @ts-ignore
-import Prism from 'prismjs';
-import 'prismjs/themes/prism-tomorrow.css';
-import 'prismjs/plugins/line-numbers/prism-line-numbers.js';
-import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
+import Prism from "prismjs";
+import "prismjs/themes/prism-tomorrow.css";
+import "prismjs/plugins/line-numbers/prism-line-numbers.js";
+import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 
 const CodeGuide = () => {
-    useEffect(() => Prism.highlightAll(), []);
+  useEffect(() => Prism.highlightAll(), []);
 
-    return (
-        <>
-            <div className='cover-wrapper'>
-                <img src={cover} alt='css cover' className='cover' />
-            </div>
+  return (
+    <>
+      <div className="cover-wrapper">
+        <img src={cover} alt="css cover" className="cover" />
+      </div>
 
-            <article className='article article-content'>
-                <h1>Properties order</h1>
-                <pre className='line-numbers language-javascript'>
-                    <code>
+      <article className="article article-content">
+        <h1>Properties order</h1>
+        <pre className="line-numbers language-javascript">
+          <code>
 {`'use strict';
 
 module.exports = {
@@ -293,16 +293,16 @@ module.exports = {
     'value-no-vendor-prefix': true
   }
 };`}
-                    </code>
-                </pre>
+          </code>
+        </pre>
 
-                <h4>Źródło:</h4>
-                <a href='https://github.com/stormwarning/stylelint-config-recess-order/blob/main/index.js'
-                    className='article-link'>https://github.com/stormwarning/stylelint-config-recess-order/blob/main/index.js
-                </a>
-            </article>
-        </>
-    );
+        <h4>Źródło:</h4>
+        <a href="https://github.com/stormwarning/stylelint-config-recess-order/blob/main/index.js"
+          className="article-link">https://github.com/stormwarning/stylelint-config-recess-order/blob/main/index.js
+        </a>
+      </article>
+    </>
+  );
 };
 
 export default CodeGuide;

@@ -1,24 +1,24 @@
-import React, { useEffect } from 'react';
-import cover from '../../../img/cover/cover-html.webp';
-import dom from '../../../img/html/dom.png';
+import React, { useEffect } from "react";
+import cover from "../../../img/cover/cover-html.webp";
+import dom from "../../../img/html/dom.png";
 // @ts-ignore
-import Prism from 'prismjs';
-import 'prismjs/themes/prism-tomorrow.css';
-import 'prismjs/plugins/line-numbers/prism-line-numbers.js';
-import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
+import Prism from "prismjs";
+import "prismjs/themes/prism-tomorrow.css";
+import "prismjs/plugins/line-numbers/prism-line-numbers.js";
+import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 
 const DOM = () => {
-    useEffect(() => Prism.highlightAll(), []);
+  useEffect(() => Prism.highlightAll(), []);
 
-    return (
-        <>
-            <div className='cover-wrapper'>
-                <img src={cover} alt='html cover' className='cover' />
-            </div>
-            <article className='article article-content'>
-                <h1>DOM (Document Object Model)</h1>
+  return (
+    <>
+      <div className="cover-wrapper">
+        <img src={cover} alt="html cover" className="cover" />
+      </div>
+      <article className="article article-content">
+        <h1>DOM (Document Object Model)</h1>
 
-                <pre className='line-numbers language-html'>
+        <pre className="line-numbers language-html">
                     <code>
 {`<!DOCTYPE html>
 <html lang="en">
@@ -34,18 +34,20 @@ const DOM = () => {
                     </code>
                 </pre>
 
-                <div className='article-img-wrapper'>
-                    <img src={dom} alt='DOM' className='article-img' />
-                </div>
+        <div className="article-img-wrapper">
+          <img src={dom} alt="DOM" className="article-img" />
+        </div>
 
-                <p>
-                    Each tree node, including the root, is an HTML document element. It has zero or more children nodes
-                    (nested elements). A node that does not have children is called a leaf. These leaves can be text
-                    strings, images, videos and so on.
-                </p>
-            </article>
-        </>
-    );
+        <p>
+          Each tree node, including the root, is an HTML document element. It has zero or more
+          children nodes
+          (nested elements). A node that does not have children is called a leaf. These leaves can be
+          text
+          strings, images, videos and so on.
+        </p>
+      </article>
+    </>
+  );
 };
 
 export default DOM;

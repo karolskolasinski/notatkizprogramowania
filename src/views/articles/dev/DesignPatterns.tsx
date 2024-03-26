@@ -1,76 +1,81 @@
-import React, { useEffect } from 'react';
-import cover from '../../../img/cover/cover-dev.webp';
+import React, { useEffect } from "react";
+import cover from "../../../img/cover/cover-dev.webp";
 // @ts-ignore
-import Prism from 'prismjs';
-import 'prismjs/themes/prism-tomorrow.css';
-import 'prismjs/plugins/line-numbers/prism-line-numbers.js';
-import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
-import 'prismjs/components/prism-java';
+import Prism from "prismjs";
+import "prismjs/themes/prism-tomorrow.css";
+import "prismjs/plugins/line-numbers/prism-line-numbers.js";
+import "prismjs/plugins/line-numbers/prism-line-numbers.css";
+import "prismjs/components/prism-java";
 
 const DesignPatterns = () => {
-    useEffect(() => Prism.highlightAll(), []);
+  useEffect(() => Prism.highlightAll(), []);
 
-    return (
-        <>
-            <div className='cover-wrapper'>
-                <img src={cover} alt='dev cover' className='cover' />
-            </div>
-            <article className='article article-content'>
-                <h1>Wzorce projektowe (design patterns)</h1>
-                <p>
-                    Zbiór przemyślanych, uniwersalnych, łatwych do utrzymania i sprawdzonych w praktyce rozwiązań w
-                    programowaniu obiektowym dla często pojawiających się, powtarzalnych problemów projektowych. Jest
-                    opisem rozwiązania, a nie jego implementacją. Wzorce projektowe stosowane są w projektach
-                    wykorzystujących programowanie obiektowe. Dodatkowo wyróżniamy podstawowy podział wzorców na cztery
-                    kategorie:
-                </p>
-                <ul>
-                    <li><b>🏗️ creational</b> - opisują, w jaki sposób obiekty są tworzone</li>
-                    <li><b>⚙️ behavioral</b> - opisują zachowanie obiektów</li>
-                    <li><b>🔱 structural</b> - opisują sposób, w jaki obiekty są zbudowane</li>
-                    <li><b>👷 architektoniczne</b> - opisują bardziej abstrakcyjne wzorce jak np. MVC
-                    </li>
-                </ul>
+  return (
+    <>
+      <div className="cover-wrapper">
+        <img src={cover} alt="dev cover" className="cover" />
+      </div>
+      <article className="article article-content">
+        <h1>Wzorce projektowe (design patterns)</h1>
+        <p>
+          Zbiór przemyślanych, uniwersalnych, łatwych do utrzymania i sprawdzonych w praktyce
+          rozwiązań w programowaniu obiektowym dla często pojawiających się, powtarzalnych problemów
+          projektowych. Jest opisem rozwiązania, a nie jego implementacją. Wzorce projektowe
+          stosowane są w projektach wykorzystujących programowanie obiektowe. Dodatkowo wyróżniamy
+          podstawowy podział wzorców na cztery kategorie:
+        </p>
+        <ul>
+          <li><b>🏗️ creational</b> - opisują, w jaki sposób obiekty są tworzone</li>
+          <li><b>⚙️ behavioral</b> - opisują zachowanie obiektów</li>
+          <li><b>🔱 structural</b> - opisują sposób, w jaki obiekty są zbudowane</li>
+          <li><b>👷 architektoniczne</b> - opisują bardziej abstrakcyjne wzorce jak np. MVC
+          </li>
+        </ul>
 
-                <hr />
+        <hr />
 
-                <h3>🏗️ Builder</h3>
-                <p>Dzięki niemu nie musimy pisać konstruktorów N parametrowych.</p>
-                <ul className='snippet-list'>
-                    <li>pozwala na tworzenie obiektów w których możemy w kolejności ustawiać parametry</li>
-                    <li>nie musimy tworzyć kombinacji konstruktorów dla parametrów które są opcjonalne</li>
-                    <li>
-                        można go wygenerować: dopisać wewnętrzną klasę
-                        <span>public static class Builder &#123;&#125;</span> i na pełnym konstruktorze klasy
-                        wygenerować z IntelliJ (Refactor -&gt; Replace Constructor with Builder)
-                    </li>
-                </ul>
+        <h3>🏗️ Builder</h3>
+        <p>Dzięki niemu nie musimy pisać konstruktorów N parametrowych.</p>
+        <ul className="snippet-list">
+          <li>pozwala na tworzenie obiektów w których możemy w kolejności ustawiać parametry</li>
+          <li>nie musimy tworzyć kombinacji konstruktorów dla parametrów które są opcjonalne</li>
+          <li>
+            można go wygenerować: dopisać wewnętrzną klasę
+            <span>public static class Builder &#123;&#125;</span> i na pełnym konstruktorze
+            klasy wygenerować z IntelliJ (Refactor -&gt; Replace Constructor with Builder)
+          </li>
+        </ul>
 
-                <p>
-                    Budowniczy ma za zadanie rozwiązać pewien powtarzający się problem programistyczny – konkretniej
-                    zapewnia oddzielenie procesu inicjalizacji obiektu od jego reprezentacji. Decydując się na użycie
-                    tego wzorca można osiągnąć następujące korzyści:
-                </p>
-                <ul>
-                    <li>logika mówiąca o tym jak obiekt ma być zbudowany będzie oddzielona od implementacji tej
-                        logiki
-                    </li>
-                    <li>spełnia zasadę otwarty na rozbudowę, zamknięty na modyfikacje (open/closed principle) –
-                        łatwo dodać do kodu nowych budowniczych
-                    </li>
-                    <li>spełnia zasadę odwrócenia zależności (dependency inversion principle)</li>
-                    <li>sprzyja samodokumentującemu się kodowi (widząc poszczególnych budowniczych wiemy, co
-                        dostarczą)
-                    </li>
-                    <li>daje doskonałą kontrolę nad etapami budowania kompozytu (np. hermetyzacja obsługi błędów
-                        dla danego kroku)
-                    </li>
-                </ul>
+        <p>
+          Budowniczy ma za zadanie rozwiązać pewien powtarzający się problem programistyczny –
+          konkretniej zapewnia oddzielenie procesu inicjalizacji obiektu od jego reprezentacji.
+          Decydując się na użycie tego wzorca można osiągnąć następujące korzyści:
+        </p>
 
-                <details>
-                    <summary>Przykład</summary>
-                    <pre className='line-numbers language-java'>
-                        <code>
+        <ul>
+          <li>
+            logika mówiąca o tym jak obiekt ma być zbudowany będzie oddzielona od implementacji tej
+            logiki
+          </li>
+          <li>
+            spełnia zasadę otwarty na rozbudowę, zamknięty na modyfikacje (open/closed principle) –
+            łatwo dodać do kodu nowych budowniczych
+          </li>
+          <li>spełnia zasadę odwrócenia zależności (dependency inversion principle)</li>
+          <li>
+            sprzyja samodokumentującemu się kodowi (widząc poszczególnych budowniczych wiemy, co
+            dostarczą)
+          </li>
+          <li>
+            daje doskonałą kontrolę nad etapami budowania kompozytu (np. hermetyzacja obsługi
+            błędów dla danego kroku)
+          </li>
+        </ul>
+
+        <details>
+          <summary>Przykład</summary>
+          <pre className="line-numbers language-java">
+            <code>
 {`public class Hero {
     private String param1, param2, param3, param4, param5;
     private int param6, param7, param8, param9, param10;
@@ -155,11 +160,11 @@ const DesignPatterns = () => {
         }
     }
 }`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <pre className="line-numbers language-java">
+            <code>
 {`public class Main {
     public static void main(String[] args) {
         Hero hero1 = new Hero.Builder()
@@ -177,26 +182,27 @@ const DesignPatterns = () => {
             .build();
     }
 }`}
-                        </code>
-                    </pre>
-                </details>
+            </code>
+          </pre>
+        </details>
 
-                <hr />
+        <hr />
 
-                <h3>🏗️ Abstract Factory</h3>
-                <p>
-                    Jest to kreacyjny wzorzec projektowy, którego celem jest dostarczenie interfejsu do tworzenia
-                    różnych obiektów jednego typu (tej samej rodziny). Pozwala na tworzenie kodu, który będzie
-                    uzależniony od abstrakcji, a nie od implementacji konkretnych klas. Abstract Factory różni się od
-                    Buildera tym, że kładzie nacisk na tworzenie produktów z konkretnej rodziny, a Builder kładzie
-                    nacisk na sposób tworzenia obiektów. Zwróć uwagę na słowo kluczowe <span>abstract</span> oraz na
-                    package. Klasa <span>Button</span> i <span>ButtonFactory</span> znajdują się w oddzielnym package.
-                </p>
+        <h3>🏗️ Abstract Factory</h3>
+        <p>
+          Jest to kreacyjny wzorzec projektowy, którego celem jest dostarczenie interfejsu do
+          tworzenia różnych obiektów jednego typu (tej samej rodziny). Pozwala na tworzenie kodu,
+          który będzie uzależniony od abstrakcji, a nie od implementacji konkretnych klas. Abstract
+          Factory różni się od Buildera tym, że kładzie nacisk na tworzenie produktów z konkretnej
+          rodziny, a Builder kładzie nacisk na sposób tworzenia obiektów. Zwróć uwagę na słowo
+          kluczowe <span>abstract</span> oraz na package.
+          Klasa <span>Button</span> i <span>ButtonFactory</span> znajdują się w oddzielnym package.
+        </p>
 
-                <details>
-                    <summary>Przykład</summary>
-                    <pre className='line-numbers language-java'>
-                        <code>
+        <details>
+          <summary>Przykład</summary>
+          <pre className="line-numbers language-java">
+            <code>
 {`package example.abstract_button.button_factory;
 
 import lombok.AllArgsConstructor;
@@ -207,11 +213,11 @@ public class Button {
     private int height;
     private int width;
 }`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <pre className="line-numbers language-java">
+            <code>
 {`package example.abstract_button.button_factory;
 
 public abstract class ButtonFactory {
@@ -223,11 +229,11 @@ public abstract class ButtonFactory {
         return new Button('Red', height, width);
     }
 }`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <pre className="line-numbers language-java">
+            <code>
 {`package example.abstract_button;
 
 import example.abstract_button.button_factory.Button;
@@ -239,46 +245,46 @@ public class Main {
         Button redButton = ButtonFactory.createRedButton(120, 300);
     }
 }`}
-                        </code>
-                    </pre>
-                </details>
+            </code>
+          </pre>
+        </details>
 
-                <hr />
+        <hr />
 
-                <h3>🏗️ Singleton</h3>
-                <p>
-                    Jest to kreacyjny wzorzec projektowy, którego celem jest ograniczenie możliwości tworzenia obiektów
-                    danej klasy do jednej instancji oraz zapewnienie globalnego dostępu do stworzonego obiektu.
-                    Instancja ma być stworzona w odpowiednim momencie, odpowiednio zainicjalizowana oraz tak, aby nie
-                    można jej było nadpisać. Każde użycie takiej klasy odnosi się do tej samej instancji. Niektórzy
-                    programiści uznają go za antywzorzec, ponieważ łamie zasady projektowania obiektowego, często bywa
-                    nadużywany.
-                </p>
+        <h3>🏗️ Singleton</h3>
+        <p>
+          Jest to kreacyjny wzorzec projektowy, którego celem jest ograniczenie możliwości tworzenia
+          obiektów danej klasy do jednej instancji oraz zapewnienie globalnego dostępu do stworzonego
+          obiektu. Instancja ma być stworzona w odpowiednim momencie, odpowiednio zainicjalizowana
+          oraz tak, aby nie można jej było nadpisać. Każde użycie takiej klasy odnosi się do tej
+          samej instancji. Niektórzy programiści uznają go za antywzorzec, ponieważ łamie zasady
+          projektowania obiektowego, często bywa nadużywany.
+        </p>
 
-                <details>
-                    <summary>Przykład</summary>
-                    <p>
-                        Przykład wykorzystania to jedno połączenie z bazą danych. Innym przykładem może być
-                        wczytywanie pliku konfiguracyjnego. Chcemy aby istniała tylko jedna klasa zajmująca
-                        się odczytem lub zapisem do takiego pliku. Nie może istnieć więcej niż jeden obiekt,
-                        który edytuje ten sam plik, ponieważ np.:
-                    </p>
-                    <ul>
-                        <li>
-                            kiedy zasób nie będzie zamknięty (edycja pliku), a w tym samym momencie ktoś będzie go
-                            chciał usunąć, to pojawi się komunikat systemowy, że plik jest używany i nie można tego
-                            zrobić
-                        </li>
+        <details>
+          <summary>Przykład</summary>
+          <p>
+            Przykład wykorzystania to jedno połączenie z bazą danych. Innym przykładem może być
+            wczytywanie pliku konfiguracyjnego. Chcemy aby istniała tylko jedna klasa zajmująca
+            się odczytem lub zapisem do takiego pliku. Nie może istnieć więcej niż jeden obiekt,
+            który edytuje ten sam plik, ponieważ np.:
+          </p>
+          <ul>
+            <li>
+              kiedy zasób nie będzie zamknięty (edycja pliku), a w tym samym momencie ktoś będzie go
+              chciał usunąć, to pojawi się komunikat systemowy, że plik jest używany i nie można tego
+              zrobić
+            </li>
 
-                        <li>
-                            jeżeli dwie instancje zapisywały by coś do pliku, mógłby powstać konflikt i jedna zacznie
-                            nadpisywać treść drugiej
-                        </li>
-                    </ul>
+            <li>
+              jeżeli dwie instancje zapisywały by coś do pliku, mógłby powstać konflikt i jedna
+              zacznie nadpisywać treść drugiej
+            </li>
+          </ul>
 
-                    <h4>version 1 - eager (tworzy się w momencie załadowania klasy)</h4>
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <h4>version 1 - eager (tworzy się w momencie załadowania klasy)</h4>
+          <pre className="line-numbers language-java">
+            <code>
 {`public class ConfigFileManager {
     //eager
     public static final ConfigFileManager INSTANCE = new ConfigFileManager();
@@ -295,35 +301,35 @@ public class Main {
         System.out.println('static method launched!');
     }
 }`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <pre className="line-numbers language-java">
+            <code>
 {`public class Main {
     public static void main(String[] args) {
         // ConfigFileManager.INSTANCE.someMethod();
         ConfigFileManager.someStaticMethod();
     }
 }`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <pre className="line-numbers language-java">
+            <code>
 {`//output:
 //created!
 //static method launched!`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <p className='snippets'>
-                        Komunikat "created!" z <span>INSTANCE</span> wywoła się już przy wywołaniu klasy.
-                    </p>
+          <p className="snippets">
+            Komunikat "created!" z <span>INSTANCE</span> wywoła się już przy wywołaniu klasy.
+          </p>
 
-                    <h4>version 2 - eager (tworzy się w momencie załadowania klasy)</h4>
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <h4>version 2 - eager (tworzy się w momencie załadowania klasy)</h4>
+          <pre className="line-numbers language-java">
+            <code>
 {`public class ConfigFileManager {
     //eager
     private static final ConfigFileManager INSTANCE = new ConfigFileManager();
@@ -340,22 +346,22 @@ public class Main {
         System.out.println('method launched!');
     }
 }`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <pre className="line-numbers language-java">
+            <code>
 {`public class Main {
     public static void main(String[] args) {
         ConfigFileManager.getInstance().someMethod();
     }
 }`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <h4>version 3 - lazy, synchronized, Thread Safe (tworzy się w momencie jego użycia)</h4>
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <h4>version 3 - lazy, synchronized, Thread Safe (tworzy się w momencie jego użycia)</h4>
+          <pre className="line-numbers language-java">
+            <code>
 {`public class ConfigFileManager {
     // lazy
     private static ConfigFileManager INSTANCE;
@@ -384,38 +390,38 @@ public class Main {
         System.out.println('static method launched!');
     }
 }`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <pre className="line-numbers language-java">
+            <code>
 {`public class Main {
     public static void main(String[] args) {
         // ConfigFileManager.getInstance().someMethod();
         ConfigFileManager.someStaticMethod();
     }
 }`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <pre className="line-numbers language-java">
+            <code>
 {`//output:
 //static method launched!`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <p className='snippets'>
-                        Komunikat "created!" z <span>INSTANCE</span> wywoła się tylko przy stworzeniu instancji
-                        Singletona
-                    </p>
+          <p className="snippets">
+            Komunikat "created!" z <span>INSTANCE</span> wywoła się tylko przy stworzeniu instancji
+            Singletona
+          </p>
 
-                    <h4>
-                        version 4 - eager, synchronized, Thread Safe (synchronizacja oraz unikatowość zapewniona przez
-                        JVM)
-                    </h4>
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <h4>
+            version 4 - eager, synchronized, Thread Safe (synchronizacja oraz unikatowość zapewniona
+            przez JVM)
+          </h4>
+          <pre className="line-numbers language-java">
+            <code>
 {`public enum ConfigFileManager {
     //eager
     INSTANCE;
@@ -428,34 +434,34 @@ public class Main {
         System.out.println('method launched!');
     }
 }`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <pre className="line-numbers language-java">
+            <code>
 {`public class Main {
     public static void main(String[] args) {
         ConfigFileManager.INSTANCE.someMethod();
     }
 }`}
-                        </code>
-                    </pre>
-                </details>
+            </code>
+          </pre>
+        </details>
 
-                <hr />
+        <hr />
 
-                <h3>⚙️ Observer</h3>
-                <p>
-                    Wzorzec obserwator jest wzorcem behawioralnym. Jak sama nazwa mówi jest to wzorzec do
-                    obserwowania/nasłuchiwania na jakieś zdarzenie (np. zmianę stanu). Jeśli to zdarzenie wystąpi,
-                    wszystkie obiekty które “zapisały” się do nasłuchiwania na ten event zostaną o tym fakcie
-                    poinformowane. Tworzy się tu relacja jeden-do-wielu, która łączy ze sobą grupę obiektów, które
-                    zostaną poinformowane o zmianie stanu.
-                </p>
-                <details>
-                    <summary>Przykład</summary>
-                    <pre className='line-numbers language-java'>
-                        <code>
+        <h3>⚙️ Observer</h3>
+        <p>
+          Wzorzec obserwator jest wzorcem behawioralnym. Jak sama nazwa mówi jest to wzorzec do
+          obserwowania/nasłuchiwania na jakieś zdarzenie (np. zmianę stanu). Jeśli to zdarzenie
+          wystąpi, wszystkie obiekty które “zapisały” się do nasłuchiwania na ten event zostaną o tym
+          fakcie poinformowane. Tworzy się tu relacja jeden-do-wielu, która łączy ze sobą grupę
+          obiektów, które zostaną poinformowane o zmianie stanu.
+        </p>
+        <details>
+          <summary>Przykład</summary>
+          <pre className="line-numbers language-java">
+            <code>
 {`public class NewsStation {
     private List&ltObserver&gt observers = new ArrayList&lt&gt();
     public News currentNews;
@@ -473,11 +479,11 @@ public class Main {
         observers.forEach(observer -&gt observer.notifyAboutNews(news));
     }
 }`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <pre className="line-numbers language-java">
+            <code>
 {`public class News {
     private String content;
     
@@ -489,11 +495,11 @@ public class Main {
         this.content = content;
     }
 }`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <pre className="line-numbers language-java">
+            <code>
 {`public class Observer {
     private String name;
     
@@ -505,11 +511,11 @@ public class Main {
         System.out.println(name + ' received: ' + news.getContent());
     }
 }`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <pre className="line-numbers language-java">
+            <code>
 {`public class Main {
     public static void main(String[] args) {
         NewsStation newsStation = new NewsStation();
@@ -521,41 +527,42 @@ public class Main {
         newsStation.notifyObservers(new News('News 1'));
     }
 }`}
-                        </code>
-                    </pre>
-                </details>
+            </code>
+          </pre>
+        </details>
 
-                <hr />
+        <hr />
 
-                <h3>⚙️Strategy</h3>
-                <p>
-                    Wzorzec ten pochodzi on z grupy wzorców behawioralnych, czyli służy do opisywania konkretnych
-                    zachowań. Realizuje wszystkie zasady SOLID. W dużym uproszczeniu można powiedzieć, że strategia ma
-                    za zadanie w zależności od danych/kontekstu wykorzystać odpowiedni proces z puli algorytmów, które
-                    łączy wspólny interfejs.
-                </p>
+        <h3>⚙️Strategy</h3>
+        <p>
+          Wzorzec ten pochodzi on z grupy wzorców behawioralnych, czyli służy do opisywania
+          konkretnych zachowań. Realizuje wszystkie zasady SOLID. W dużym uproszczeniu można
+          powiedzieć, że strategia ma za zadanie w zależności od danych/kontekstu wykorzystać
+          odpowiedni proces z puli algorytmów, które łączy wspólny interfejs.
+        </p>
 
-                <details>
-                    <summary>Przykład</summary>
-                    <p>
-                        W strategii definiujemy wspólny interfejs, dla obsługiwanych algorytmów, posiadający dozwolone
-                        metody. W kolejnym kroku implementujemy poszczególne strategie w poszczególnych klasach.
-                        Następnie budujemy klasę klienta, która będzie pozwalała na określenie strategii (na przykład
-                        poprzez jej wstrzyknięcie) oraz będzie posiadała referencję do aktualnie wybranej strategii.
-                        Klient współpracuje z wybraną strategią w celu wykonania określonego zadania.
-                    </p>
-                    <pre className='line-numbers language-java'>
-                        <code>
+        <details>
+          <summary>Przykład</summary>
+          <p>
+            W strategii definiujemy wspólny interfejs, dla obsługiwanych algorytmów, posiadający
+            dozwolone metody. W kolejnym kroku implementujemy poszczególne strategie w poszczególnych
+            klasach. Następnie budujemy klasę klienta, która będzie pozwalała na określenie strategii
+            (na przykład poprzez jej wstrzyknięcie) oraz będzie posiadała referencję do aktualnie
+            wybranej strategii. Klient współpracuje z wybraną strategią w celu wykonania określonego
+            zadania.
+          </p>
+          <pre className="line-numbers language-java">
+            <code>
 {`package behavioral.strategy.strategies;
 
 public interface IFontFormatter {
     String substituteText(String textToChange);
 }`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <pre className="line-numbers language-java">
+            <code>
 {`package behavioral.strategy.strategies;
 
 public class FontFormatterLower implements IFontFormatter {
@@ -564,11 +571,11 @@ public class FontFormatterLower implements IFontFormatter {
         return textToChange.toLowerCase();
     }
 }`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <pre className="line-numbers language-java">
+            <code>
 {`package behavioral.strategy.strategies;
 
 public class FontFormatterUpper implements IFontFormatter {
@@ -577,11 +584,11 @@ public class FontFormatterUpper implements IFontFormatter {
         return textToChange.toUpperCase();
     }
 }`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <pre className="line-numbers language-java">
+            <code>
 {`package behavioral.strategy.strategies;
 
 public class FontFormatterReverse implements IFontFormatter {
@@ -590,11 +597,11 @@ public class FontFormatterReverse implements IFontFormatter {
         return new StringBuilder(textToChange).reverse().toString();
     }
 }`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <pre className="line-numbers language-java">
+            <code>
 {`package behavioral.strategy;
 
 import behavioral.strategy.strategies.FontFormatterLower;
@@ -624,11 +631,11 @@ class Printer {
         changeText(nextLine);
     }
 }`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <pre className="line-numbers language-java">
+            <code>
 {`package behavioral.strategy;
 
 import java.util.Scanner;
@@ -662,65 +669,67 @@ public class Main {
         } while (!command.equals('4'));
     }
 }`}
-                        </code>
-                    </pre>
-                </details>
+            </code>
+          </pre>
+        </details>
 
-                <hr />
+        <hr />
 
-                <h3>🔱 Decorator</h3>
-                <p>
-                    Wzorzec strukturalny Dekorator polega na opakowaniu oryginalnej (bazowej) klasy w nową klasę
-                    "dekorującą". Wykorzystuje się do tego kompozycję. Wzorzec ten jest alternatywą dla dziedziczenia,
-                    które posiada szereg ograniczeń w tym zakresie. Przede wszystkim dekorator pozwala na dekorowanie w
-                    trakcie działania programu, a nie podczas kompilacji. Dodatkowo umożliwia „składanie” dekoratorów, a
-                    więc daje elastyczność w kwestii doboru zestawu nowych funkcjonalności. Ważne w tym wzorcu jest to,
-                    że pierwotne zachowanie klasy, którą dekorujemy pozostaje bez zmian. Pozwala to zachować pełną
-                    kompatybilność z już istniejącym kodem i zapewnia transparentność naszego dekoratora.
-                </p>
+        <h3>🔱 Decorator</h3>
+        <p>
+          Wzorzec strukturalny Dekorator polega na opakowaniu oryginalnej (bazowej) klasy w nową
+          klasę "dekorującą". Wykorzystuje się do tego kompozycję. Wzorzec ten jest alternatywą dla
+          dziedziczenia, które posiada szereg ograniczeń w tym zakresie. Przede wszystkim dekorator
+          pozwala na dekorowanie w trakcie działania programu, a nie podczas kompilacji. Dodatkowo
+          umożliwia „składanie” dekoratorów, a więc daje elastyczność w kwestii doboru zestawu nowych
+          funkcjonalności. Ważne w tym wzorcu jest to, że pierwotne zachowanie klasy, którą
+          dekorujemy pozostaje bez zmian. Pozwala to zachować pełną kompatybilność z już istniejącym
+          kodem i zapewnia transparentność naszego dekoratora.
+        </p>
 
-                <details>
-                    <summary>Przykład</summary>
-                    <p>
-                        Cała „magia” działania dekoratora opiera się o wykorzystanie tego samego interfejsu, z którego
-                        korzysta klasa, którą chcemy dekorować. I tutaj jest już pierwszy warunek wymagany przy tym
-                        wzorcu – istnienie interfejsu dla klasy bazowej. Sam dekorator w najprostszej postaci możemy
-                        wykonać na jednej klasie, która po prostu zaimplementuje ten sam interfejs co klasa bazowa.
-                        Dodatkowo musi ona przyjmować w jakiś sposób klasę, którą dekorujemy – zazwyczaj jest to
-                        wykonywane za pomocą konstruktora. Tak więc zakładamy, że mamy interfejs i implementującą go
-                        klasę, którą używamy w naszym kodzie i chcemy ją wzbogacić o nowe funkcje nie zmieniając jej
-                        implementacji. Dodajemy nową klasę, która również implementuje nasz interfejs. Klasa ta
-                        przyjmuje w konstruktorze obiekt, którego typem jest implementowany interfejs (dzięki temu nie
-                        ograniczamy się do dekorowania jednej klasy, ale całego zbioru. Jest to ogromna zaleta
-                        pozwalająca nakładać dekoratory jeden na drugi). Klasa dekorująca musi w metodach z interfejsu
-                        wywołać takie same metody z obiektu przekazanego w konstruktorze – pozwala to zachować pełną
-                        funkcjonalność klasy dekorowanej. Mając tak przygotowaną konstrukcję możemy dodawać nowe
-                        funkcjonalności. Czy to dodając osobne metody, które użyjemy w naszym kodzie modyfikując za ich
-                        pomocą obiekt, który dostaniemy, albo dokładając efekty uboczne do już istniejących metod.
-                        Dobrym przykładem jest tutaj dodanie logowania wywołania metody z obiektu albo np. modyfikowanie
-                        danych przekazywanych do metod obiektu.
-                    </p>
-                    <pre className='line-numbers language-java'>
-                        <code>
+        <details>
+          <summary>Przykład</summary>
+          <p>
+            Cała „magia” działania dekoratora opiera się o wykorzystanie tego samego interfejsu, z
+            którego korzysta klasa, którą chcemy dekorować. I tutaj jest już pierwszy warunek
+            wymagany przy tym wzorcu – istnienie interfejsu dla klasy bazowej. Sam dekorator w
+            najprostszej postaci możemy wykonać na jednej klasie, która po prostu zaimplementuje ten
+            sam interfejs co klasa bazowa. Dodatkowo musi ona przyjmować w jakiś sposób klasę, którą
+            dekorujemy – zazwyczaj jest to wykonywane za pomocą konstruktora. Tak więc zakładamy, że
+            mamy interfejs i implementującą go klasę, którą używamy w naszym kodzie i chcemy ją
+            wzbogacić o nowe funkcje nie zmieniając jej implementacji. Dodajemy nową klasę, która
+            również implementuje nasz interfejs. Klasa ta przyjmuje w konstruktorze obiekt, którego
+            typem jest implementowany interfejs (dzięki temu nie ograniczamy się do dekorowania
+            jednej klasy, ale całego zbioru. Jest to ogromna zaleta pozwalająca nakładać dekoratory
+            jeden na drugi). Klasa dekorująca musi w metodach z interfejsu wywołać takie same metody
+            z obiektu przekazanego w konstruktorze – pozwala to zachować pełną funkcjonalność klasy
+            dekorowanej. Mając tak przygotowaną konstrukcję możemy dodawać nowe funkcjonalności. Czy
+            to dodając osobne metody, które użyjemy w naszym kodzie modyfikując za ich pomocą obiekt,
+            który dostaniemy, albo dokładając efekty uboczne do już istniejących metod. Dobrym
+            przykładem jest tutaj dodanie logowania wywołania metody z obiektu albo np. modyfikowanie
+            danych przekazywanych do metod obiektu.
+          </p>
+          <pre className="line-numbers language-java">
+            <code>
 {`public interface ICar {
     void assemble();
 }`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <pre className="line-numbers language-java">
+            <code>
 {`public class Car implements ICar{
     @Override
     public void assemble() {
         System.out.println('Basic car ready.');
     }
 }`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <pre className="line-numbers language-java">
+            <code>
 {`public class SportCar implements ICar {
     private Car car;
     
@@ -734,44 +743,45 @@ public class Main {
         System.out.println('Turbo added.');
     }
 }`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <pre className="line-numbers language-java">
+            <code>
 {`public class Main {
     public static void main(String[] args) {
         ICar sportCar = new SportCar(new Car());
         sportCar.assemble();
     }
 }`}
-                        </code>
-                    </pre>
-                </details>
+            </code>
+          </pre>
+        </details>
 
-                <hr />
+        <hr />
 
-                <h3>🔱 Adapter</h3>
-                <p>
-                    Adapter (ang. wrapper) – strukturalny wzorzec projektowy, którego celem jest umożliwienie współpracy
-                    dwóm klasom o niekompatybilnych interfejsach. Adapter zmienia interface klasy B w interface klasy A
-                    który rozumie klasa C. Innym zadaniem omawianego wzorca jest opakowanie istniejącego interfejsu w
-                    nowy. Wzorzec ten szczególnie wykorzystywany jest, gdy chcemy korzystać z zewnętrznych bibliotek,
-                    systemów API i klas, których interfejsy nie są dostosowane do naszej aplikacji. Przy pomocy adaptera
-                    opakowujemy niekompatybilny interfejs takiej biblioteki w nowy i dzięki temu nie musimy modyfikować
-                    naszego kodu. Aby móc skorzystać z adaptera tworzymy klasę “pośrednią” która może działać w jeden z
-                    dwóch sposobów:
-                </p>
+        <h3>🔱 Adapter</h3>
+        <p>
+          Adapter (ang. wrapper) – strukturalny wzorzec projektowy, którego celem jest umożliwienie
+          współpracy dwóm klasom o niekompatybilnych interfejsach. Adapter zmienia interface klasy B
+          w interface klasy A który rozumie klasa C. Innym zadaniem omawianego wzorca jest opakowanie
+          istniejącego interfejsu w nowy. Wzorzec ten szczególnie wykorzystywany jest, gdy chcemy
+          korzystać z zewnętrznych bibliotek, systemów API i klas, których interfejsy nie są
+          dostosowane do naszej aplikacji. Przy pomocy adaptera opakowujemy niekompatybilny interfejs
+          takiej biblioteki w nowy i dzięki temu nie musimy modyfikować naszego kodu. Aby móc
+          skorzystać z adaptera tworzymy klasę “pośrednią” która może działać w jeden z dwóch
+          sposobów:
+        </p>
+        <ul>
+          <li>może dziedziczyć interfejs docelowy i interfejs który adaptuje</li>
+          <li>może dziedziczyć interfejs docelowy i zawierać interfejs który adaptuje (jako pole)
+          </li>
+        </ul>
 
-                <ul>
-                    <li>może dziedziczyć interfejs docelowy i interfejs który adaptuje</li>
-                    <li>może dziedziczyć interfejs docelowy i zawierać interfejs który adaptuje (jako pole)</li>
-                </ul>
-
-                <details>
-                    <summary>Przykład</summary>
-                    <pre className='line-numbers language-java'>
-                        <code>
+        <details>
+          <summary>Przykład</summary>
+          <pre className="line-numbers language-java">
+            <code>
 {`public class Alarm {
     void activateAlarm() {
        System.out.println('Alarm activated!');
@@ -781,11 +791,11 @@ public class Main {
         System.out.println('Alarm deactivated!');
     }
 }`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <pre className="line-numbers language-java">
+            <code>
 {`public class AlarmAdapter implements IComponent {
     private final Alarm alarm;
     
@@ -803,11 +813,11 @@ public class Main {
         alarm.deactivateAlarm();
     }
 }`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <pre className="line-numbers language-java">
+            <code>
 {`public class Lights {
     void turnLightsOn() {
         System.out.println('Lights turned on!');
@@ -817,11 +827,11 @@ public class Main {
         System.out.println('Lights turned off!');
     }
 }`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <pre className="line-numbers language-java">
+            <code>
 {`public class LightsAdapter implements IComponent {
     private final Lights lights;
     
@@ -839,11 +849,11 @@ public class Main {
         lights.turnLightsOff();
     }
 }`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <pre className="line-numbers language-java">
+            <code>
 {`public class Radiator {
     void turnHeatingOn() {
         System.out.println('Heater is on!');
@@ -853,11 +863,11 @@ public class Main {
         System.out.println('Heater is off!');
     }
 }`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <pre className="line-numbers language-java">
+            <code>
 {`public class RadiatorAdapter implements IComponent {
     private final Radiator radiator;
     
@@ -875,21 +885,21 @@ public class Main {
         radiator.turnHeatingOff();
     }
 }`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <pre className="line-numbers language-java">
+            <code>
 {`public interface IComponent {
     void turnDeviceOn();
 
     void turnDeviceOff();
 }`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <pre className="line-numbers language-java">
+            <code>
 {`public class Main {
     public static void main(String[] args) {
         AlarmAdapter alarmAdapter = new AlarmAdapter(new Alarm());
@@ -906,43 +916,43 @@ public class Main {
         // Heater is on!
     }
 }`}
-                        </code>
-                    </pre>
-                </details>
+            </code>
+          </pre>
+        </details>
 
-                <hr />
+        <hr />
 
-                <h3>👷 MVC</h3>
-                <p>
-                    Model MVC (<strong>Model – View – Controller</strong>) wykorzystuje niemal każda aplikacja, a
-                    zwłaszcza aplikacje webowe, (często pod przykrywką jakiegoś frameworka). Odpowiada rozdziałowi
-                    aplikacji na trzy główne moduły:
-                </p>
+        <h3>👷 MVC</h3>
+        <p>
+          Model MVC (<strong>Model – View – Controller</strong>) wykorzystuje niemal każda aplikacja,
+          a zwłaszcza aplikacje webowe, (często pod przykrywką jakiegoś frameworka). Odpowiada
+          rozdziałowi aplikacji na trzy główne moduły:
+        </p>
 
-                <ol>
-                    <li>
-                        <strong>Model</strong> - reprezentuje naszą logikę biznesową. Tutaj znajdują się wszelkie
-                        obiekty, które służą do wykonywania wszelkich operacji związanych z implementacją
-                        funkcjonalności naszej aplikacji. Model jest komputerową reprezentacją rozpatrywanego problemu.
-                        Model nie jest zależny od widoku i aplikacja może posiadać wiele niezależnych widoków dla tego
-                        samego modelu.
-                    </li>
+        <ol>
+          <li>
+            <strong>Model</strong> - reprezentuje naszą logikę biznesową. Tutaj znajdują się wszelkie
+            obiekty, które służą do wykonywania wszelkich operacji związanych z implementacją
+            funkcjonalności naszej aplikacji. Model jest komputerową reprezentacją rozpatrywanego
+            problemu. Model nie jest zależny od widoku i aplikacja może posiadać wiele niezależnych
+            widoków dla tego samego modelu.
+          </li>
 
-                    <li>
-                        <strong>Widok</strong> - warstwa prezentacji. Widok odpowiedzialny jest za prezentację
-                        użytkownikowi wyników działania logiki biznesowej (Modelu).
-                    </li>
+          <li>
+            <strong>Widok</strong> - warstwa prezentacji. Widok odpowiedzialny jest za prezentację
+            użytkownikowi wyników działania logiki biznesowej (Modelu).
+          </li>
 
-                    <li>
-                        <strong>Kontroler</strong> - obsługuje żądania użytkownika. Wszelkie żądania deleguje do
-                        odpowiednich metod Modelu.
-                    </li>
-                </ol>
+          <li>
+            <strong>Kontroler</strong> - obsługuje żądania użytkownika. Wszelkie żądania deleguje do
+            odpowiednich metod Modelu.
+          </li>
+        </ol>
 
-                <details>
-                    <summary>Przykład</summary>
-                    <pre className='line-numbers language-java'>
-                        <code>
+        <details>
+          <summary>Przykład</summary>
+          <pre className="line-numbers language-java">
+            <code>
 {`public class Student {
     private String rollNo;
     private String name;
@@ -963,11 +973,11 @@ public class Main {
         this.name = name;
     }
 }`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <pre className="line-numbers language-java">
+            <code>
 {`public class StudentView {
     public void printStudentDetails(String studentName, String studentRollNo){
         System.out.println('Student: ');
@@ -975,11 +985,11 @@ public class Main {
         System.out.println('Roll No: ' + studentRollNo);
     }
 }`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <pre className="line-numbers language-java">
+            <code>
 {`public class StudentController {
     private Student model;
     private StudentView view;
@@ -1009,11 +1019,11 @@ public class Main {
         view.printStudentDetails(model.getName(), model.getRollNo());
     }
 }`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <pre className='line-numbers language-java'>
-                        <code>
+          <pre className="line-numbers language-java">
+            <code>
 {`public class MVCPatternDemo {
     public static void main(String[] args) {
         // fetch student record based on his roll no from the database
@@ -1039,12 +1049,12 @@ public class Main {
         return student;
     }
 }`}
-                        </code>
-                    </pre>
-                </details>
-            </article>
-        </>
-    );
+            </code>
+          </pre>
+        </details>
+      </article>
+    </>
+  );
 };
 
 export default DesignPatterns;

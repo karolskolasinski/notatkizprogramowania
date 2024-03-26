@@ -19,36 +19,32 @@ const List = () => {
         <h1>List</h1>
 
         <p className="snippets">
-          Aby w tagach <span>&lt;ul&gt;</span> znaczniki nie wychodziły poza obszar diva,
-          należy użyć:
+          Aby w tagach <span>&lt;ul&gt;</span> znaczniki nie wychodziły poza obszar diva, należy
+          użyć:
         </p>
         <pre className="line-numbers language-css">
-                    <code>
+          <code>
 {`ul {
    list-style-position: inside;
 }`}
-                    </code>
-                </pre>
+          </code>
+        </pre>
 
         <p className="snippets">
           <span>list-style-position: inside</span> works great unless your bullet points will need
-          multiple
-          lines on small screens as your text will align with the bullet point rather than where the
-          text
-          begins. Keeping the default <span>text-align: outside</span>, allowing for a small margin
-          and
-          aligning the text to the left to override any centered containers gets around the bullet
-          point
-          alignment problem.
+          multiple lines on small screens as your text will align with the bullet point rather than
+          where the text begins. Keeping the default <span>text-align: outside</span>, allowing for a
+          small margin and aligning the text to the left to override any centered containers gets
+          around the bullet point alignment problem.
         </p>
         <pre className="line-numbers language-css">
-                    <code>
+          <code>
 {`ul, ol {
   margin-left: 0.75em;
   text-align: left;
 }`}
-                    </code>
-                </pre>
+          </code>
+        </pre>
 
         <h4>Źródło:</h4>
         <a
