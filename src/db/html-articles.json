@@ -12,10 +12,16 @@
         "to": "tags"
     },
     {
-        "title": "DOM",
-        "filePath": "./articles/HTML/DOM",
-        "path": "dom/*",
-        "to": "dom"
+        "title": "XML",
+        "filePath": "./articles/HTML/XML",
+        "path": "xml/*",
+        "to": "xml"
+    },
+    {
+        "title": "Image",
+        "filePath": "./articles/HTML/Img",
+        "path": "img/*",
+        "to": "img"
     },
     {
         "title": "Form",
@@ -28,11 +34,5 @@
         "filePath": "./articles/HTML/List",
         "path": "list/*",
         "to": "list"
-    },
-    {
-        "title": "XML",
-        "filePath": "./articles/HTML/XML",
-        "path": "xml/*",
-        "to": "xml"
     }
 ]

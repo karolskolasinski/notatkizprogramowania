@@ -14,13 +14,13 @@ root.render(
       <Header />
       <Routes>
         <Route path="/" element={<main className="main">
-          <article className={"article"}>
+          <article className="article">
             {categories.map(({ title, to, cover }) =>
-              <Link to={to} key={to}>
-                <div className={"category-wrapper"}>
-                  <div className={"category"}
+              <Link to={to} key={to} className="tile">
+                <div className="category-wrapper">
+                  <div className="category"
                     style={{ backgroundImage: `url(${require(`${cover}`)})` }} />
-                  <span className={"title bold"}>{title}</span>
+                  <span className="title bold">{title}</span>
                 </div>
               </Link>
             )}
@@ -30,7 +30,7 @@ root.render(
         {categories.map(({ filePath, path }) =>
           <Route path={path} element={createLazyElement(filePath)} key={path} />)}
 
-        <Route path="*" element={<main className={"main main-404"}><h1>404</h1></main>} />
+        <Route path="*" element={<main className="main main-404"><h1>404</h1></main>} />
       </Routes>
       <Footer />
     </HashRouter>
