@@ -1,8 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.47851bff.css",
-    "main.js": "/static/js/main.1fe804a9.js",
-    "static/js/787.7efd31bd.chunk.js": "/static/js/787.7efd31bd.chunk.js",
+    "main.css": "/static/css/main.dc074740.css",
+    "main.js": "/static/js/main.633c7985.js",
     "static/media/inheritance-and-specificity.mp4": "/static/media/inheritance-and-specificity.69db80cf1e4dc82adeaf.mp4",
     "static/media/css-selectors-cheat-sheet-light.pdf": "/static/media/css-selectors-cheat-sheet-light.fe9c541b67adb65664d5.pdf",
     "static/media/css-selectors-cheat-sheet-dark.pdf": "/static/media/css-selectors-cheat-sheet-dark.e6db5053267ec9920e98.pdf",
@@ -18,7 +17,6 @@
     "static/media/stack-heap.png": "/static/media/stack-heap.d0dd9693b967618f3617.png",
     "static/media/type-conversion.png": "/static/media/type-conversion.a7e7b27340c74f937927.png",
     "static/media/big-o-notation.png": "/static/media/big-o-notation.6430f9a8213ac06bef7b.png",
-    "static/media/dom.png": "/static/media/dom.a45d32f32bbf4e47bae1.png",
     "static/media/cover-english.webp": "/static/media/cover-english.4e2fcbe117a0fda3b943.webp",
     "static/media/event-code-event-key.png": "/static/media/event-code-event-key.f00f1e58b44b09628c68.png",
     "static/media/push-pop-unshift-shift.png": "/static/media/push-pop-unshift-shift.bac893c483c4a8eeb7cb.png",
@@ -36,12 +34,11 @@
     "static/media/github-original.svg": "/static/media/github-original.62c6428a2c816c119d52272189f0ad6c.svg",
     "index.html": "/index.html",
     "static/media/linkedin-original.svg": "/static/media/linkedin-original.15f0337078f13db400acab3639711ec7.svg",
-    "main.47851bff.css.map": "/static/css/main.47851bff.css.map",
-    "main.1fe804a9.js.map": "/static/js/main.1fe804a9.js.map",
-    "787.7efd31bd.chunk.js.map": "/static/js/787.7efd31bd.chunk.js.map"
+    "main.dc074740.css.map": "/static/css/main.dc074740.css.map",
+    "main.633c7985.js.map": "/static/js/main.633c7985.js.map"
   },
   "entrypoints": [
-    "static/css/main.47851bff.css",
-    "static/js/main.1fe804a9.js"
+    "static/css/main.dc074740.css",
+    "static/js/main.633c7985.js"
   ]
 }
