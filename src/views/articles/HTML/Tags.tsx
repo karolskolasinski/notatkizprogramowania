@@ -56,14 +56,6 @@ const Tags = () => {
           </li>
         </ul>
 
-        <h4>Źródło:</h4>
-        <a
-          href="https://info.sice.indiana.edu/~hrosenba/Demo/Demo.html#12"
-          className="article-link"
-        >
-          https://info.sice.indiana.edu/~hrosenba/Demo/Demo.html#12
-        </a>
-
         <hr />
 
         <h1>Elementy blokowe</h1>
@@ -292,116 +284,85 @@ const Tags = () => {
           </li>
 
           <li>
-            <span>&lt;img&gt;</span> korzystanie z atrybutów <span>srcset</span> i{" "}
-            <span>size</span>:
+            <span>&lt;img&gt;</span>
           </li>
-
-          <pre className="line-numbers language-html">
-                        <code>
-{`<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/308367/cat-500.jpg"
-     srcset="https://s3-us-west-2.amazonaws.com/s.cdpn.io/308367/cat-500.jpg 500w,
-             https://s3-us-west-2.amazonaws.com/s.cdpn.io/308367/cat-1000.jpg 1000w"
-     sizes="(min-width: 600px) 50vw, 100vw"
-     alt="cat">`}
-                        </code>
-          </pre>
-
-          <div className="video-container">
-            <iframe
-              src="https://www.youtube.com/embed/2QYpkrX2N48"
-              width="100%"
-              height="315"
-              allowFullScreen
-              title="srcset and sizes attributes"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            />
-          </div>
-
-          <div className="video-container">
-            <iframe
-              src="https://www.youtube.com/embed/fUnGbptARlo"
-              width="100%"
-              height="315"
-              allowFullScreen
-              title="Better HTML Images for Users & Developers | Web Dev Office Hours"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            />
-          </div>
-          <a href="https://austingil.com/better-html-images/" className="article-link">
-            6 Steps to Improve HTML Images
-          </a>
-
-          <p className="pb0">
-            <strong>Image spacing</strong>{" "}
-            - gdy pod obrazkiem jest kilka dodatkowych pixeli, należy dodać do obrazka właściwość
-            CSS:
-          </p>
-
-          <pre className="line-numbers language-css">
-                        <code>
-{`img {
-    display: block;
-}`}
-                        </code>
-          </pre>
 
           <li>
             <span>&lt;input&gt;</span>
           </li>
+
           <li>
             <span>&lt;ins&gt;</span>
           </li>
+
           <li>
             <span>&lt;kbd&gt;</span>
           </li>
+
           <li>
             <span>&lt;label&gt;</span>
           </li>
+
           <li>
             <span>&lt;map&gt;</span>
           </li>
+
           <li>
             <span>&lt;mark&gt;</span>
           </li>
+
           <li>
             <span>&lt;meter&gt;</span>
           </li>
+
           <li>
             <span>&lt;noscript&gt;</span>
           </li>
+
           <li>
             <span>&lt;object&gt;</span>
           </li>
+
           <li>
             <span>&lt;output&gt;</span>
           </li>
+
           <li>
             <span>&lt;picture&gt;</span>
           </li>
+
           <li>
             <span>&lt;progress&gt;</span>
           </li>
+
           <li>
             <span>&lt;q&gt;</span>
           </li>
+
           <li>
             <span>&lt;ruby&gt;</span>
           </li>
+
           <li>
             <span>&lt;s&gt;</span>
           </li>
+
           <li>
             <span>&lt;samp&gt;</span>
           </li>
+
           <li>
             <span>&lt;script&gt;</span>
           </li>
+
           <li>
             <span>&lt;select&gt;</span>
           </li>
+
           <li>
             <span>&lt;slot&gt;</span>
           </li>
+
           <li>
             <span>&lt;small&gt;</span>
           </li>

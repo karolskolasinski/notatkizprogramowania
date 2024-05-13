@@ -6,7 +6,7 @@
         "to": "template"
     },
     {
-        "title": "Tagi HTML",
+        "title": "HTML tags",
         "filePath": "./articles/HTML/Tags",
         "path": "tags/*",
         "to": "tags"
@@ -18,19 +18,19 @@
         "to": "xml"
     },
     {
-        "title": "Image",
+        "title": "img",
         "filePath": "./articles/HTML/Img",
         "path": "img/*",
         "to": "img"
     },
     {
-        "title": "Form",
+        "title": "form",
         "filePath": "./articles/HTML/Form",
         "path": "form/*",
         "to": "form"
     },
     {
-        "title": "List",
+        "title": "ul, ol, dl",
         "filePath": "./articles/HTML/List",
         "path": "list/*",
         "to": "list"

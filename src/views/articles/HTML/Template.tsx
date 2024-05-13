@@ -19,7 +19,7 @@ const Template = () => {
       <article className="article article-content">
         <h1>Uniwersalny template</h1>
         <pre className="line-numbers language-html">
-            <code>
+          <code>
 {`<!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -77,7 +77,7 @@ const Template = () => {
   <footer>FOOTER</footer>
 </body>
 </html>`}
-            </code>
+          </code>
         </pre>
 
         <h3>Meta tags</h3>
@@ -87,7 +87,11 @@ const Template = () => {
             - dokument w formacie HTML5. element ten określa typ bieżącego dokumentu: DTD (Document
             Type Definition). Konieczne jest, aby przeglądarka rozumiała, według jakiego standardu
             HTML ma wyświetlać stronę internetową. Jak widać, jest to jeden z tagów, które nie są
-            sparowane
+            sparowane. Czy używać lower case czy capitalize? Nie ma to znaczenia
+            (<a href="https://stackoverflow.com/questions/7020961/uppercase-or-lowercase-doctype">
+              źródło
+            </a>). In other words is case-insensitively
+            (<a href="https://html.spec.whatwg.org/multipage/syntax.html#the-doctype">źródło</a>).
           </li>
 
           <li>
