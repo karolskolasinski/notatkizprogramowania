@@ -1,5 +1,6 @@
 import React from "react";
 import cover from "../../../img/cover/cover-css.webp";
+import flexbox from "../../../img/css/css-flexbox-poster.png";
 
 const Flexbox = () => {
   return (
@@ -13,8 +14,10 @@ const Flexbox = () => {
 
         <ul>
           <li>
-            <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
-              className="article-link">
+            <a
+              href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+              className="article-link"
+            >
               https://css-tricks.com/snippets/css/a-guide-to-flexbox/
             </a>
           </li>
@@ -26,6 +29,9 @@ const Flexbox = () => {
           </li>
         </ul>
 
+        <div className="article-img-wrapper">
+          <img src={flexbox} alt="flexbox" className="article-img-100" />
+        </div>
       </article>
     </>
   );

@@ -1,14 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import cover from "../../../img/cover/cover-html.webp";
-// @ts-ignore
-import Prism from "prismjs";
-import "prismjs/themes/prism-tomorrow.css";
-import "prismjs/plugins/line-numbers/prism-line-numbers.js";
-import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 
 const Tags = () => {
-  useEffect(() => Prism.highlightAll(), []);
-
   return (
     <>
       <div className="cover-wrapper">

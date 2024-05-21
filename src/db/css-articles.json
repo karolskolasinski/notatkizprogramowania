@@ -12,28 +12,28 @@
         "to": "code-guide"
     },
     {
-        "title": "Properties",
-        "filePath": "./articles/CSS/Properties",
-        "path": "properties/*",
-        "to": "properties"
-    },
-    {
         "title": "Box Model",
         "filePath": "./articles/CSS/BoxModel",
         "path": "box-model/*",
         "to": "box-model"
     },
     {
-        "title": "Input",
-        "filePath": "./articles/CSS/Input",
-        "path": "input/*",
-        "to": "input"
+        "title": "padding & margin",
+        "filePath": "./articles/CSS/PaddingAndMargin",
+        "path": "padding-and-margin/*",
+        "to": "padding-and-margin"
     },
     {
-        "title": "List",
+        "title": "ul",
         "filePath": "./articles/CSS/List",
         "path": "list/*",
         "to": "list"
+    },
+    {
+        "title": "Text",
+        "filePath": "./articles/CSS/Text",
+        "path": "text/*",
+        "to": "text"
     },
     {
         "title": "Reset",

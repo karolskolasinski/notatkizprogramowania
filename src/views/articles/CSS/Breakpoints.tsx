@@ -25,32 +25,40 @@ const Breakpoints = () => {
               <th>Dimensions</th>
             </tr>
           </thead>
+
           <tbody>
             <tr>
               <td>X-Small</td>
-              <td><em>none</em></td>
+              <td>
+                <em>none</em>
+              </td>
               <td>&lt;576px</td>
             </tr>
+
             <tr>
               <td>Small</td>
               <td>sm</td>
               <td>≥576px</td>
             </tr>
+
             <tr>
               <td>Medium</td>
               <td>md</td>
               <td>≥768px</td>
             </tr>
+
             <tr>
               <td>Large</td>
               <td>lg</td>
               <td>≥992px</td>
             </tr>
+
             <tr>
               <td>Extra large</td>
               <td>xl</td>
               <td>≥1200px</td>
             </tr>
+
             <tr>
               <td>Extra extra large</td>
               <td>xxl</td>
@@ -60,8 +68,10 @@ const Breakpoints = () => {
         </table>
 
         <h4>Źródło:</h4>
-        <a href="https://getbootstrap.com/docs/5.0/layout/breakpoints/#available-breakpoints"
-          className="article-link">
+        <a
+          href="https://getbootstrap.com/docs/5.0/layout/breakpoints/#available-breakpoints"
+          className="article-link"
+        >
           https://getbootstrap.com/docs/5.0/layout/breakpoints/#available-breakpoints
         </a>
       </article>

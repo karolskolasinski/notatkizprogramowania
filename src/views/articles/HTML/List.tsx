@@ -95,15 +95,6 @@ A. Third`}
             Gdy konieczne jest nadanie wielu definicji jednemu obiektowi, wybierz listę definicji,
             np.:
           </p>
-          <dl>
-            <dt>Recipe:</dt>
-            <dd>Omelet</dd>
-
-            <dt>Ingredients:</dt>
-            <dd>Eggs</dd>
-            <dd>Milk</dd>
-            <dd>Salt</dd>
-          </dl>
 
           <pre className="line-numbers language-html">
             <code>
@@ -118,6 +109,18 @@ A. Third`}
 </dl>`}
             </code>
           </pre>
+
+          <h3>Wynik:</h3>
+
+          <dl>
+            <dt>Recipe:</dt>
+            <dd>Omelet</dd>
+
+            <dt>Ingredients:</dt>
+            <dd>Eggs</dd>
+            <dd>Milk</dd>
+            <dd>Salt</dd>
+          </dl>
         </ul>
       </article>
     </>

@@ -20,9 +20,10 @@ const BoxModel = () => {
 
         <ul className="snippet-list">
           <li>
-            <span>box-sizing: content-box</span> W poniższym przypadku div ma 100px, ale osobno
-            zostaje do niego dodany <span>padding</span> i <span>border</span>, które w praktyce
-            sprawiają, że całość ma 130px.
+            <span>box-sizing: content-box</span>{" "}
+            W poniższym przypadku div ma 100px, ale osobno zostaje do niego dodany{" "}
+            <span>padding</span> i{" "}
+            <span>border</span>, które w praktyce sprawiają, że całość ma 130px.
           </li>
           <pre className="line-numbers language-css">
             <code>
@@ -37,9 +38,10 @@ const BoxModel = () => {
           </pre>
 
           <li>
-            <span>box-sizing: border-box</span> Tu już jest zupełnie inaczej. Całość ma 100px,
-            a <span>padding</span> oraz <span>border</span> odejmują się od wymiarów diva, przez co
-            ten ma w praktyce 70px szerokości i wysokości.
+            <span>box-sizing: border-box</span> Tu już jest zupełnie inaczej. Całość ma 100px, a
+            {" "}
+            <span>padding</span> oraz <span>border</span>{" "}
+            odejmują się od wymiarów diva, przez co ten ma w praktyce 70px szerokości i wysokości.
           </li>
           <pre className="line-numbers language-css">
             <code>
@@ -54,7 +56,9 @@ const BoxModel = () => {
           </pre>
         </ul>
 
-        <h1>Universal <span className="snippet">box-sizing</span> with inheritance</h1>
+        <h1>
+          Universal <span className="snippet">box-sizing</span> with inheritance
+        </h1>
         <pre className="line-numbers language-css">
           <code>
 {`html {
