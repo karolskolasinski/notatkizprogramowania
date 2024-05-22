@@ -1,24 +1,24 @@
-import React, { useEffect } from 'react';
-import cover from '../../../img/cover/cover-javascript.webp';
+import React, { useEffect } from "react";
+import cover from "../../../img/cover/cover-javascript.webp";
 // @ts-ignore
-import Prism from 'prismjs';
-import 'prismjs/themes/prism-tomorrow.css';
-import 'prismjs/plugins/line-numbers/prism-line-numbers.js';
-import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
+import Prism from "prismjs";
+import "prismjs/themes/prism-tomorrow.css";
+import "prismjs/plugins/line-numbers/prism-line-numbers.js";
+import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 
 const ConsoleLog = () => {
-    useEffect(() => Prism.highlightAll(), []);
+  useEffect(() => Prism.highlightAll(), []);
 
-    return (
-        <>
-            <div className='cover-wrapper'>
-                <img src={cover} alt='html cover' className='cover' />
-            </div>
-            <article className='article article-content'>
-                <h1>console.log();</h1>
-                <pre className='line-numbers language-js'>
-                    <code>
-{`// Variables within the log 
+  return (
+    <>
+      <div className="cover-wrapper">
+        <img src={cover} alt="html cover" className="cover" />
+      </div>
+      <article className="article article-content">
+        <h1>console.log();</h1>
+        <pre className="line-numbers language-js">
+          <code>
+{`// Variables within the log
 console.log("%s is %d years old.", "John", 29);
 
 // Variations of logs
@@ -61,11 +61,11 @@ for (let i = 0; i < 10000; i++) {
     ...
 }
 console.timeEnd("test 1"); // kończy test`}
-                    </code>
-                </pre>
-            </article>
-        </>
-    );
+          </code>
+        </pre>
+      </article>
+    </>
+  );
 };
 
 export default ConsoleLog;

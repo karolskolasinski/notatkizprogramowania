@@ -17,7 +17,7 @@ const CodeGuide = () => {
 
       <article className="article article-content">
         <h1>Properties order</h1>
-        <pre className="line-numbers language-javascript">
+        <pre className="line-numbers language-js">
           <code>
 {`const propertyGroups = [
  {

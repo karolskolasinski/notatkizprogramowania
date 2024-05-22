@@ -1,46 +1,46 @@
-import React, {useEffect} from 'react';
-import cover from '../../../img/cover/cover-javascript.webp';
-import theNodeJsSystem from '../../../img/javascript/the-node.js-system.png';
+import React, { useEffect } from "react";
+import cover from "../../../img/cover/cover-javascript.webp";
+import theNodeJsSystem from "../../../img/javascript/the-node.js-system.png";
 // @ts-ignore
-import Prism from 'prismjs';
-import 'prismjs/themes/prism-tomorrow.css';
-import 'prismjs/plugins/line-numbers/prism-line-numbers.js';
-import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
+import Prism from "prismjs";
+import "prismjs/themes/prism-tomorrow.css";
+import "prismjs/plugins/line-numbers/prism-line-numbers.js";
+import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 
-const VarLet = () => {
-    useEffect(() => Prism.highlightAll(), []);
+const NodeJS = () => {
+  useEffect(() => Prism.highlightAll(), []);
 
-    return (
-        <>
-            <div className='cover-wrapper'>
-                <img src={cover} alt='html cover' className='cover'/>
-            </div>
-            <article className='article article-content'>
-                <h1>Pętla zdarzeń</h1>
-                <ul>
-                    <li>Przykład operacji blokowania:</li>
-                    <pre className='line-numbers language-js'>
-                        <code>
+  return (
+    <>
+      <div className="cover-wrapper">
+        <img src={cover} alt="html cover" className="cover" />
+      </div>
+      <article className="article article-content">
+        <h1>Pętla zdarzeń</h1>
+        <ul>
+          <li>Przykład operacji blokowania:</li>
+          <pre className="line-numbers language-js">
+            <code>
 {`let loop = (i, max) => {
-    while (i < max) i++
-        return i;
+  while (i < max) i++
+    return i;
 }
 
 // This operation will block Node.js
 // Because, it's CPU-bound
 // You should be careful about this kind of code
 loop(0, 1e+12)`}
-                        </code>
-                    </pre>
+            </code>
+          </pre>
 
-                    <li>Nieblokujący przykład operacji we / wy:</li>
-                    <pre className='line-numbers language-js'>
-                        <code>
+          <li>Nieblokujący przykład operacji we / wy:</li>
+          <pre className="line-numbers language-js">
+            <code>
 {`let i = 0
 
 const step = max => {
-    while (i < max) i++
-        console.log('i = %d', i)
+  while (i < max) i++
+    console.log('i = %d', i)
 }
 
 const tick = max => process.nextTick(step, max)
@@ -55,33 +55,37 @@ console.log('this will output before all of tick operations. i = %d', i)
 console.log('because tick operations will be postponed')
 
 tick(1e+8)`}
-                        </code>
-                    </pre>
-                </ul>
+            </code>
+          </pre>
+        </ul>
 
-                <div className='article-img-wrapper'>
-                    <img src={theNodeJsSystem} alt='padding and margin'
-                        className='article-img article-img-desktop'/>
-                </div>
+        <div className="article-img-wrapper">
+          <img
+            src={theNodeJsSystem}
+            alt="padding and margin"
+            className="article-img article-img-desktop"
+          />
+        </div>
 
-                <p>
-                    Mówiąc prościej, Pętla zdarzeń jest jednowątkowym mechanizmem kolejki, który wykonuje kod związany z
-                    procesorem do końca jego wykonania oraz kod związany z operacjami we / wy w sposób nieblokujący.
-                </p>
+        <p>
+          Mówiąc prościej, Pętla zdarzeń jest jednowątkowym mechanizmem kolejki, który wykonuje kod
+          związany z procesorem do końca jego wykonania oraz kod związany z operacjami we / wy w
+          sposób nieblokujący.
+        </p>
 
-                <hr/>
+        <hr />
 
-                <h1>Uwagi dotyczące wydajności</h1>
-                <p>
-                    Operacje nieblokujące nie blokują kolejki i nie wpływają na wydajność pętli. Jednak operacje związane
-                    z procesorem zablokują kolejkę, dlatego należy zachować ostrożność, aby nie wykonywać operacji
-                    związanych z procesorem w kodzie Node.js. Node.js nieblokuje We / Wy, ponieważ odciąża pracę do
-                    jądra systemu operacyjnego, a gdy operacja we / wy dostarcza dane (jako zdarzenie), powiadomi Twój
-                    kod o dostarczonych wywołaniach zwrotnych.
-                </p>
-            </article>
-        </>
-    );
+        <h1>Uwagi dotyczące wydajności</h1>
+        <p>
+          Operacje nieblokujące nie blokują kolejki i nie wpływają na wydajność pętli. Jednak
+          operacje związane z procesorem zablokują kolejkę, dlatego należy zachować ostrożność, aby
+          nie wykonywać operacji związanych z procesorem w kodzie Node.js. Node.js nieblokuje We /
+          Wy, ponieważ odciąża pracę do jądra systemu operacyjnego, a gdy operacja we / wy dostarcza
+          dane (jako zdarzenie), powiadomi Twój kod o dostarczonych wywołaniach zwrotnych.
+        </p>
+      </article>
+    </>
+  );
 };
 
-export default VarLet;
+export default NodeJS;

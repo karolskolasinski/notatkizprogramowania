@@ -1,9 +1,9 @@
 [
     {
-        "title": "Defer",
-        "filePath": "./articles/JavaScript/Defer",
-        "path": "defer/*",
-        "to": "defer"
+        "title": "Connecting JS to HTML",
+        "filePath": "./articles/JavaScript/Script",
+        "path": "script/*",
+        "to": "script"
     },
     {
         "title": "Event Listener",

@@ -59,9 +59,8 @@ const Template = () => {
   <script type="module"
     src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/shoelace.js">
   </script>
-  <script src="/static/js/script.js" />
+  <script src="/static/js/script.js"></script>
 </head>
-<body>
 
 <body>
   <header>
