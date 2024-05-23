@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.c261cec4.css",
-    "main.js": "/static/js/main.3916321f.js",
+    "main.js": "/static/js/main.d4fa540d.js",
     "static/media/inheritance-and-specificity.mp4": "/static/media/inheritance-and-specificity.69db80cf1e4dc82adeaf.mp4",
     "static/media/css-selectors-cheat-sheet-light.pdf": "/static/media/css-selectors-cheat-sheet-light.fe9c541b67adb65664d5.pdf",
     "static/media/css-selectors-cheat-sheet-dark.pdf": "/static/media/css-selectors-cheat-sheet-dark.e6db5053267ec9920e98.pdf",
@@ -36,10 +36,10 @@
     "index.html": "/index.html",
     "static/media/linkedin-original.svg": "/static/media/linkedin-original.15f0337078f13db400acab3639711ec7.svg",
     "main.c261cec4.css.map": "/static/css/main.c261cec4.css.map",
-    "main.3916321f.js.map": "/static/js/main.3916321f.js.map"
+    "main.d4fa540d.js.map": "/static/js/main.d4fa540d.js.map"
   },
   "entrypoints": [
     "static/css/main.c261cec4.css",
-    "static/js/main.3916321f.js"
+    "static/js/main.d4fa540d.js"
   ]
 }
