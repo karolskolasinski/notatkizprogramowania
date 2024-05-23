@@ -16,20 +16,20 @@ const EnglishLevels = () => {
 
           <li>
             Can understand enough native spoken language to hold a conversation, and thus can
-            communicate
-            within the scope of every-day situations (school, work, travel to the country where the
-            language
-            is spoken, asking for directions, etc.)
+            communicate within the scope of every-day situations (school, work, travel to the
+            country where the language is spoken, asking for directions, etc.)
           </li>
 
           <li>Can create simple texts on familiar/every-day subjects</li>
 
           <li>
-            Efficiently communicates with other foreign speakers of the language, within the scope of
-            everyday, familiar subjects
+            Efficiently communicates with other foreign speakers of the language, within the scope
+            of everyday, familiar subjects
           </li>
 
-          <li>Able to express own views, explain simple concepts and inform of plans/past events</li>
+          <li>
+            Able to express own views, explain simple concepts and inform of plans/past events
+          </li>
         </ul>
 
         <hr />
@@ -43,8 +43,7 @@ const EnglishLevels = () => {
 
           <li>
             Speaks with a good degree of fluency, able to hold a spontaneous conversation with both
-            native
-            speakers and other language users on various subjects
+            native speakers and other language users on various subjects
           </li>
 
           <li>
@@ -54,13 +53,12 @@ const EnglishLevels = () => {
 
           <li>
             Expresses own views with more complex reasoning, can debate various subjects whilst
-            analysing
-            information
+            analysing information
           </li>
 
-          <li>Can deal with business situations on a good level, usually has a good knowledge of
-            technical
-            vocabulary within their professional field
+          <li>
+            Can deal with business situations on a good level, usually has a good knowledge of
+            technical vocabulary within their professional field
           </li>
         </ul>
 
@@ -69,11 +67,9 @@ const EnglishLevels = () => {
         <h3>Level C1 - Advanced</h3>
         <ul>
           <li>
-            Understands texts on wide range of subjects, both in their professional field and outside
-            of it;
-            able to draw conclusions and analyse information; can discuss text/ideas freely using
-            abstract
-            terms and understanding the implicit meaning
+            Understands texts on wide range of subjects, both in their professional field and
+            outside of it; able to draw conclusions and analyse information; can discuss text/ideas
+            freely using abstract terms and understanding the implicit meaning
           </li>
 
           <li>
@@ -100,26 +96,22 @@ const EnglishLevels = () => {
         <ul>
           <li>
             Can understand, analyse and discuss any text or a spoken word, with an excellent
-            knowledge of
-            technical vocabulary in their professional field
+            knowledge of technical vocabulary in their professional field
           </li>
 
           <li>
-            Speaks with complete fluency, able to hold conversation with no restrains on any subject,
-            using
-            rich, precise and complex vocabulary
+            Speaks with complete fluency, able to hold conversation with no restrains on any
+            subject, using rich, precise and complex vocabulary
           </li>
 
           <li>
             Has an excellent knowledge of every-day expressions, idioms, proverbs, and cultural
-            nuances
-            (e.g. understatement)
+            nuances (e.g. understatement)
           </li>
 
           <li>
             Can create any text using abstract/advanced vocabulary, analysing and summarising
-            information
-            obtained from various sources
+            information obtained from various sources
           </li>
         </ul>
       </article>
