@@ -51,24 +51,25 @@ const Tests = () => {
         <h3>Cykl życia testów</h3>
         <ul className="snippet-list">
           <li>
-            <strong>@BeforeEach</strong> np. napisanie metody, do której można wydzielić
-            przygotowanie instancji klasy, z której korzystają testy.
+            <strong>@BeforeEach</strong>{" "}
+            np. napisanie metody, do której można wydzielić przygotowanie instancji klasy, z której
+            korzystają testy.
           </li>
 
           <li>
-            <strong>@AfterEach</strong> np. wyczyszczenie, usunięcie jakichś niepotrzebnych danych,
-            aby np. zwolnić zasoby
+            <strong>@AfterEach</strong>{" "}
+            np. wyczyszczenie, usunięcie jakichś niepotrzebnych danych, aby np. zwolnić zasoby
           </li>
 
           <li>
-            <strong>@BeforeAll</strong> (metoda musi być <span>static</span>) np. kod który służy do
-            otwarcia pliku, w którym będziemy zapisywać, albo do zainicjalizowania połączenia z bazą
-            danych
+            <strong>@BeforeAll</strong> (metoda musi być{" "}
+            <span>static</span>) np. kod który służy do otwarcia pliku, w którym będziemy zapisywać,
+            albo do zainicjalizowania połączenia z bazą danych
           </li>
 
           <li>
-            <strong>@AfterAll</strong> (metoda musi być <span>static</span>) np. zamknięcie tego
-            połączenia lub pliku
+            <strong>@AfterAll</strong> (metoda musi być{" "}
+            <span>static</span>) np. zamknięcie tego połączenia lub pliku
           </li>
         </ul>
 
@@ -83,16 +84,18 @@ const Tests = () => {
 
         <ol>
           <li>
-            <strong>//given</strong> - tworzymy założenia wstępne, tworzymy instancje obiektów i ich
-            stan początkowy
+            <strong>//given</strong>{" "}
+            - tworzymy założenia wstępne, tworzymy instancje obiektów i ich stan początkowy
           </li>
 
-          <li><strong>//when</strong> - wykonujemy wywołanie metody, którą chcemy przetestować</li>
+          <li>
+            <strong>//when</strong> - wykonujemy wywołanie metody, którą chcemy przetestować
+          </li>
 
           <li>
-            <strong>//then</strong> - sprawdzamy nasze oczekiwania z rzeczywistymi rezultatami,
-            najczęściej
-            wykorzystując asercje
+            <strong>//then</strong>{" "}
+            - sprawdzamy nasze oczekiwania z rzeczywistymi rezultatami, najczęściej wykorzystując
+            asercje
           </li>
         </ol>
         <p>Ponadto nazywa się testy dokładnie od funkcjonalności jaką dany test ma sprawdzać</p>
@@ -102,12 +105,10 @@ const Tests = () => {
         <h3>Pokrycie kodu (code coverage)</h3>
         <p>
           oznacza ile procent linijek kodu (nie licząc klamer, deklaracji itp.) jest realnie
-          wykonywanych
-          podczas wszystkich testów. Innymi słowy, wyniki wykonania jakiej części kodu weryfikujemy
-          (w
-          teorii). Dobrą wartością jest 70–85% pokrycia (w zależności od technologii, logiki
-          biznesowej,
-          złożoności itp.). Pokrycie poniżej 40% jest z kolei przeważnie bardzo złym sygnałem.
+          wykonywanych podczas wszystkich testów. Innymi słowy, wyniki wykonania jakiej części kodu
+          weryfikujemy (w teorii). Dobrą wartością jest 70–85% pokrycia (w zależności od
+          technologii, logiki biznesowej, złożoności itp.). Pokrycie poniżej 40% jest z kolei
+          przeważnie bardzo złym sygnałem.
         </p>
       </article>
     </>

@@ -11,9 +11,17 @@ const Node = () => {
         <h1>Update Node.js with npm</h1>
 
         <ul className="terminal-list">
-          <li><span>npm cache clean -f</span> - clear the npm cache</li>
-          <li><span>sudo npm install -g n</span> - install n, Node’s version manager</li>
-          <li><span>sudo n stable</span> - install the latest stable version</li>
+          <li>
+            <span>npm cache clean -f</span> - clear the npm cache
+          </li>
+
+          <li>
+            <span>sudo npm install -g n</span> - install n, Node’s version manager
+          </li>
+
+          <li>
+            <span>sudo n stable</span> - install the latest stable version
+          </li>
         </ul>
       </article>
     </>

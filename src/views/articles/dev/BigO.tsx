@@ -4,7 +4,6 @@ import bigONotation from "../../../img/dev/big-o-notation.png";
 import algorithmsComplexity from "../../../img/dev/algorithms-complexity.png";
 import collectionsComplexity from "../../../img/dev/collections-complexity.png";
 
-
 const BigO = () => {
   return (
     <>
@@ -14,12 +13,12 @@ const BigO = () => {
       <article className="article article-content">
         <h1>Big-O</h1>
         <p>
-          Używamy notacji <strong>Big-O</strong> do klasyfikowania algorytmów w zależności od tego,
-          jak ich wymagania dotyczące czasu działania lub miejsca (np. w pamięci lub na dysku) rosną
-          wraz ze wzrostem rozmiaru danych wejściowych. Nie zależy od szczegółów implementacji,
-          takich jak język programowania, system operacyjny, sprzęt lub umiejętności programisty i
-          inne szczegóły implementacji. Złożoność obliczeniowa określa jaka ilość operacji jest
-          potrzebna aby wykonać zadanie.
+          Używamy notacji <strong>Big-O</strong>{" "}
+          do klasyfikowania algorytmów w zależności od tego, jak ich wymagania dotyczące czasu
+          działania lub miejsca (np. w pamięci lub na dysku) rosną wraz ze wzrostem rozmiaru danych
+          wejściowych. Nie zależy od szczegółów implementacji, takich jak język programowania,
+          system operacyjny, sprzęt lub umiejętności programisty i inne szczegóły implementacji.
+          Złożoność obliczeniowa określa jaka ilość operacji jest potrzebna aby wykonać zadanie.
         </p>
 
         <p>
@@ -28,13 +27,15 @@ const BigO = () => {
 
         <ul>
           <li>
-            <b>T(n)</b> jest funkcją złożoności czasowej, która opisuje, jak rośnie czas działania
-            wraz ze wzrostem wielkości wejściowej;
+            <b>T(n)</b>{" "}
+            jest funkcją złożoności czasowej, która opisuje, jak rośnie czas działania wraz ze
+            wzrostem wielkości wejściowej;
           </li>
 
           <li>
-            symbol <b>O</b> oznacza, że gdy dane wejściowe są wystarczająco duże, czas wykonywania
-            rośnie co najwyżej proporcjonalnie do funkcji w nawiasach.
+            symbol <b>O</b>{" "}
+            oznacza, że gdy dane wejściowe są wystarczająco duże, czas wykonywania rośnie co
+            najwyżej proporcjonalnie do funkcji w nawiasach.
           </li>
         </ul>
 
@@ -63,9 +64,9 @@ const BigO = () => {
         <p>
           Złożoność stała, niezależna od liczby danych wejściowych. Mówimy, że problem o złożoności
           Ο(1) możemy rozwiązać w stałym czasie niezależnie od wielkości danych wejściowych.
-          Przykładem może być porównanie dwóch liczb w instrukcji warunkowej lub przypisanie wartości
-          do zmiennej, dostęp do elementu tablicy za pomocą indeksu, obliczenie sumy postępów
-          arytmetycznych za pomocą wzoru, wydrukowanie pojedynczej wartości.
+          Przykładem może być porównanie dwóch liczb w instrukcji warunkowej lub przypisanie
+          wartości do zmiennej, dostęp do elementu tablicy za pomocą indeksu, obliczenie sumy
+          postępów arytmetycznych za pomocą wzoru, wydrukowanie pojedynczej wartości.
         </p>
 
         <h3>O(log(n))</h3>
@@ -90,14 +91,18 @@ const BigO = () => {
           wyszukiwania interpolacyjnego.
         </p>
 
-        <h3>O(n<sup>2</sup>)</h3>
+        <h3>
+          O(n<sup>2</sup>)
+        </h3>
         <p>
           Złożoność kwadratowa. Liczba instrukcji algorytmu rośnie proporcjonalnie do kwadratu
-          rozmiaru danych wejściowych. Przykładem może być sortowanie bąbelkowe lub przez wstawianie.
-          Jest to specyficzny przypadek złożoności wielomianowej.
+          rozmiaru danych wejściowych. Przykładem może być sortowanie bąbelkowe lub przez
+          wstawianie. Jest to specyficzny przypadek złożoności wielomianowej.
         </p>
 
-        <h3>O(2<sup>n</sup>)</h3>
+        <h3>
+          O(2<sup>n</sup>)
+        </h3>
         <p>
           Złożoność wykładnicza. Liczba wymaganych operacji zależy wykładniczo od szybko rosnącego
           rozmiaru danych wejściowych.
@@ -107,23 +112,30 @@ const BigO = () => {
 
         <h1>Złożoności algorytmów</h1>
         <div className="article-img-wrapper">
-          <img src={algorithmsComplexity} alt="padding and margin"
-            className="article-img article-img-desktop" />
+          <img
+            src={algorithmsComplexity}
+            alt="padding and margin"
+            className="article-img article-img-desktop"
+          />
         </div>
 
         <hr />
 
         <h1>Złożoności operacji na kolekcjach</h1>
         <div className="article-img-wrapper">
-          <img src={collectionsComplexity} alt="padding and margin"
-            className="article-img article-img-desktop" />
+          <img
+            src={collectionsComplexity}
+            alt="padding and margin"
+            className="article-img article-img-desktop"
+          />
         </div>
 
         <hr />
 
         <h1>Big-O cheat sheet</h1>
-        <a href="https://www.bigocheatsheet.com/"
-          className="article-link">https://www.bigocheatsheet.com</a>
+        <a href="https://www.bigocheatsheet.com/" className="article-link">
+          https://www.bigocheatsheet.com
+        </a>
       </article>
     </>
   );
