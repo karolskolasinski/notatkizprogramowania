@@ -7,7 +7,7 @@ import "prismjs/plugins/line-numbers/prism-line-numbers.js";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 import "prismjs/components/prism-ignore";
 
-const Git = () => {
+const Docker = () => {
   useEffect(() => Prism.highlightAll(), []);
 
   return (
@@ -28,4 +28,4 @@ const Git = () => {
   );
 };
 
-export default Git;
+export default Docker;

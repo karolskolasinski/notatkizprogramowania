@@ -6,7 +6,7 @@ import "prismjs/themes/prism-tomorrow.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.js";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 
-const Template = () => {
+const XML = () => {
   useEffect(() => Prism.highlightAll(), []);
 
   return (
@@ -115,4 +115,4 @@ const Template = () => {
   );
 };
 
-export default Template;
+export default XML;
