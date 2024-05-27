@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.c261cec4.css",
-    "main.js": "/static/js/main.771c719f.js",
+    "main.js": "/static/js/main.91559871.js",
     "static/media/inheritance-and-specificity.mp4": "/static/media/inheritance-and-specificity.69db80cf1e4dc82adeaf.mp4",
     "static/media/css-selectors-cheat-sheet-light.pdf": "/static/media/css-selectors-cheat-sheet-light.fe9c541b67adb65664d5.pdf",
     "static/media/css-selectors-cheat-sheet-dark.pdf": "/static/media/css-selectors-cheat-sheet-dark.e6db5053267ec9920e98.pdf",
@@ -9,6 +9,7 @@
     "static/media/css-flexbox-poster.png": "/static/media/css-flexbox-poster.b4b4ad572f2f86251716.png",
     "static/media/english-tenses.jpg": "/static/media/english-tenses.97f265a7329ec4c5ab31.jpg",
     "static/media/css-cheat-sheet.pdf": "/static/media/css-cheat-sheet.a9ede2b5c15224c0a22a.pdf",
+    "static/media/em.png": "/static/media/em.14468db92a483941b8aa.png",
     "static/media/czasy-angielskie.jpg": "/static/media/czasy-angielskie.1f67ffebc92adf018275.jpg",
     "static/media/exceptions.png": "/static/media/exceptions.97698533c73eaae80a81.png",
     "static/media/semantic.jpg": "/static/media/semantic.dc26d5b203ec62454840.jpg",
@@ -36,10 +37,10 @@
     "index.html": "/index.html",
     "static/media/linkedin-original.svg": "/static/media/linkedin-original.15f0337078f13db400acab3639711ec7.svg",
     "main.c261cec4.css.map": "/static/css/main.c261cec4.css.map",
-    "main.771c719f.js.map": "/static/js/main.771c719f.js.map"
+    "main.91559871.js.map": "/static/js/main.91559871.js.map"
   },
   "entrypoints": [
     "static/css/main.c261cec4.css",
-    "static/js/main.771c719f.js"
+    "static/js/main.91559871.js"
   ]
 }
