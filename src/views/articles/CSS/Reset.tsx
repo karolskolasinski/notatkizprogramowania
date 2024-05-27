@@ -5,6 +5,7 @@ import Prism from "prismjs";
 import "prismjs/themes/prism-tomorrow.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.js";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
+import em from "../../../img/css/em.png";
 
 const BoxModel = () => {
   useEffect(() => Prism.highlightAll(), []);
@@ -52,6 +53,26 @@ img {
 }`}
           </code>
         </pre>
+
+        <h3>
+          Dlaczego używam <span className="snippet">rem</span> a nie{" "}
+          <span className="snippet">em</span>?
+        </h3>
+        <p>
+          Na przykład w sytuacji gdy chcesz obliczyć odległość od góry, aby wypozycjonować toolbox,
+          nie możesz tego zrobić przy użyciu jednostek <span className="snippet">em</span>
+        </p>
+        <div className="article-img-wrapper">
+          <img src={em} alt="flexbox" className="article-img-100" />
+        </div>
+
+        <p>
+          Header ma wysokość <span className="snippet">4rem</span>, następnie jest nagłówek{" "}
+          <span className="snippet">h1</span>, którego wielkość jest{" "}
+          <span className="snippet">3rem</span>{" "}
+          i który posiada domyślny margin górny i dolny (user agent stylesheet){" "}
+          <span className="snippet">.87em</span>.
+        </p>
       </article>
     </>
   );
