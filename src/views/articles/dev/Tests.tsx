@@ -84,16 +84,16 @@ const Tests = () => {
 
         <ol>
           <li>
-            <strong>//given</strong>{" "}
+            <strong>given</strong>{" "}
             - tworzymy założenia wstępne, tworzymy instancje obiektów i ich stan początkowy
           </li>
 
           <li>
-            <strong>//when</strong> - wykonujemy wywołanie metody, którą chcemy przetestować
+            <strong>when</strong> - wykonujemy wywołanie metody, którą chcemy przetestować
           </li>
 
           <li>
-            <strong>//then</strong>{" "}
+            <strong>then</strong>{" "}
             - sprawdzamy nasze oczekiwania z rzeczywistymi rezultatami, najczęściej wykorzystując
             asercje
           </li>
