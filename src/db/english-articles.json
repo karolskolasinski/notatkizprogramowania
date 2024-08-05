@@ -10,5 +10,11 @@
         "filePath": "./articles/english/EnglishLevels",
         "path": "english-levels/*",
         "to": "english-levels"
+    },
+    {
+        "title": "Dictionary",
+        "filePath": "./articles/english/Dictionary",
+        "path": "dictionary/*",
+        "to": "dictionary"
     }
 ]
