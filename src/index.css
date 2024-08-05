@@ -37,6 +37,10 @@
     --accent-color-1: #8338ec;
 }
 
+[data-color=other] {
+    --accent-color-1: #68c601;
+}
+
 *, ::before, ::after {
     box-sizing: border-box;
 }
@@ -131,6 +135,20 @@ a {
     border-color: var(--accent-color-1);
 }
 
+.link-other {
+    background: linear-gradient(to right, #dc4328, #11dfdf),
+    linear-gradient(to right, #f2672e, #f2bf26, #8338ec);
+    background-size: 100% 3px, 0 3px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+    line-height: 1.2;
+}
+
+.link-other:hover {
+    background-size: 0 3px, 100% 3px;
+}
+
 h1, h2, h3, h4, h5, h6, .bold {
     padding-bottom: .25rem;
     font-family: "Mulish", sans-serif;
@@ -172,7 +190,7 @@ body {
     line-height: 1.8rem;
 }
 
-main {
+.main {
     padding: 0 .25rem;
     display: flex;
     flex-wrap: wrap;
@@ -181,7 +199,7 @@ main {
 
 .block {
     width: fit-content;
-    display:block
+    display: block
 }
 
 /************************************/
@@ -274,6 +292,14 @@ main {
     left: 0;
     height: 2px;
     background: linear-gradient(111.3deg, #00bcd4 9.6%, #9c27b0 93.6%);
+}
+
+.article-other {
+    flex-direction: column !important;
+}
+
+.article-other * {
+    width: fit-content;
 }
 
 .snippet,
@@ -373,7 +399,7 @@ p.snippets span {
 }
 
 @media all and (min-width: 576px) {
-    main {
+    .main {
         padding: 0 1rem;
     }
 
