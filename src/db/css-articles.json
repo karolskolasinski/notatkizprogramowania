@@ -58,5 +58,11 @@
         "filePath": "./articles/CSS/Flexbox",
         "path": "flexbox/*",
         "to": "flexbox"
+    },
+    {
+        "title": "Input",
+        "filePath": "./articles/CSS/Input",
+        "path": "input/*",
+        "to": "input"
     }
 ]
