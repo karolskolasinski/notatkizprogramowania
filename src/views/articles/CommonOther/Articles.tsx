@@ -5,7 +5,7 @@ const Articles = () => {
   return (
     <>
       <div className="cover-wrapper">
-        <img src={cover} alt="css cover" className="cover" />
+        <img src={cover} alt="common other cover" className="cover" />
       </div>
 
       <article className="article article-content">

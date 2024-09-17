@@ -1,8 +1,14 @@
 [
-    {
-        "title": "Interesting articles",
-        "filePath": "./articles/CommonOther/Articles",
-        "path": "articles/*",
-        "to": "articles"
-    }
+  {
+    "title": "Interesting articles",
+    "filePath": "./articles/CommonOther/Articles",
+    "path": "articles/*",
+    "to": "articles"
+  },
+  {
+    "title": "Pomodoro",
+    "filePath": "./articles/CommonOther/Pomodoro",
+    "path": "pomodoro/*",
+    "to": "pomodoro"
+  }
 ]

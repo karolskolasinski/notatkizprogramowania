@@ -1,38 +1,38 @@
 [
-    {
-        "title": "HTML template",
-        "filePath": "./articles/HTML/Template",
-        "path": "template/*",
-        "to": "template"
-    },
-    {
-        "title": "HTML tags",
-        "filePath": "./articles/HTML/Tags",
-        "path": "tags/*",
-        "to": "tags"
-    },
-    {
-        "title": "XML",
-        "filePath": "./articles/HTML/XML",
-        "path": "xml/*",
-        "to": "xml"
-    },
-    {
-        "title": "img",
-        "filePath": "./articles/HTML/Img",
-        "path": "img/*",
-        "to": "img"
-    },
-    {
-        "title": "form",
-        "filePath": "./articles/HTML/Form",
-        "path": "form/*",
-        "to": "form"
-    },
-    {
-        "title": "ul, ol, dl",
-        "filePath": "./articles/HTML/List",
-        "path": "list/*",
-        "to": "list"
-    }
+  {
+    "title": "HTML template",
+    "filePath": "./articles/HTML/Template",
+    "path": "template/*",
+    "to": "template"
+  },
+  {
+    "title": "HTML tags",
+    "filePath": "./articles/HTML/Tags",
+    "path": "tags/*",
+    "to": "tags"
+  },
+  {
+    "title": "XML",
+    "filePath": "./articles/HTML/XML",
+    "path": "xml/*",
+    "to": "xml"
+  },
+  {
+    "title": "img",
+    "filePath": "./articles/HTML/Img",
+    "path": "img/*",
+    "to": "img"
+  },
+  {
+    "title": "form",
+    "filePath": "./articles/HTML/Form",
+    "path": "form/*",
+    "to": "form"
+  },
+  {
+    "title": "ul, ol, dl",
+    "filePath": "./articles/HTML/List",
+    "path": "list/*",
+    "to": "list"
+  }
 ]

@@ -1,58 +1,58 @@
 [
-    {
-        "title": "HTML",
-        "filePath": "./categories/HTML",
-        "path": "/html/*",
-        "to": "/html",
-        "cover": "./img/cover/cover-html.webp"
-    },
-    {
-        "title": "CSS",
-        "filePath": "./categories/CSS",
-        "path": "/css/*",
-        "to": "/css",
-        "cover": "./img/cover/cover-css.webp"
-    },
-    {
-        "title": "JS",
-        "filePath": "./categories/JavaScript",
-        "path": "/javascript/*",
-        "to": "/javascript",
-        "cover": "./img/cover/cover-javascript.webp"
-    },
-    {
-        "title": "dev",
-        "filePath": "./categories/Dev",
-        "path": "/dev/*",
-        "to": "/dev",
-        "cover": "./img/cover/cover-dev.webp"
-    },
-    {
-        "title": "English",
-        "filePath": "./categories/English",
-        "path": "/english/*",
-        "to": "/english",
-        "cover": "./img/cover/cover-english.webp"
-    },
-    {
-        "title": "Java",
-        "filePath": "./categories/Java",
-        "path": "/java/*",
-        "to": "/java",
-        "cover": "./img/cover/cover-java.webp"
-    },
-    {
-        "title": "Template Engines",
-        "filePath": "./categories/TemplateEngines",
-        "path": "/template-engines/*",
-        "to": "/template-engines",
-        "cover": "./img/cover/cover-template-engines.webp"
-    },
-    {
-        "title": "Common Other",
-        "filePath": "./categories/CommonOther",
-        "path": "/common-other/*",
-        "to": "/common-other",
-        "cover": "./img/cover/cover-common-other.png"
-    }
+  {
+    "title": "HTML",
+    "filePath": "./categories/HTML",
+    "path": "/html/*",
+    "to": "/html",
+    "cover": "./img/cover/cover-html.webp"
+  },
+  {
+    "title": "CSS",
+    "filePath": "./categories/CSS",
+    "path": "/css/*",
+    "to": "/css",
+    "cover": "./img/cover/cover-css.webp"
+  },
+  {
+    "title": "JS",
+    "filePath": "./categories/JavaScript",
+    "path": "/javascript/*",
+    "to": "/javascript",
+    "cover": "./img/cover/cover-javascript.webp"
+  },
+  {
+    "title": "dev",
+    "filePath": "./categories/Dev",
+    "path": "/dev/*",
+    "to": "/dev",
+    "cover": "./img/cover/cover-dev.webp"
+  },
+  {
+    "title": "English",
+    "filePath": "./categories/English",
+    "path": "/english/*",
+    "to": "/english",
+    "cover": "./img/cover/cover-english.webp"
+  },
+  {
+    "title": "Java",
+    "filePath": "./categories/Java",
+    "path": "/java/*",
+    "to": "/java",
+    "cover": "./img/cover/cover-java.webp"
+  },
+  {
+    "title": "Template Engines",
+    "filePath": "./categories/TemplateEngines",
+    "path": "/template-engines/*",
+    "to": "/template-engines",
+    "cover": "./img/cover/cover-template-engines.webp"
+  },
+  {
+    "title": "Common Other",
+    "filePath": "./categories/CommonOther",
+    "path": "/common-other/*",
+    "to": "/common-other",
+    "cover": "./img/cover/cover-common-other.png"
+  }
 ]

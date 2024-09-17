@@ -1,20 +1,20 @@
 [
-    {
-        "title": "English Tenses",
-        "filePath": "./articles/english/EnglishTenses",
-        "path": "english-tenses/*",
-        "to": "english-tenses"
-    },
-    {
-        "title": "English Levels",
-        "filePath": "./articles/english/EnglishLevels",
-        "path": "english-levels/*",
-        "to": "english-levels"
-    },
-    {
-        "title": "Dictionary",
-        "filePath": "./articles/english/Dictionary",
-        "path": "dictionary/*",
-        "to": "dictionary"
-    }
+  {
+    "title": "English Tenses",
+    "filePath": "./articles/english/EnglishTenses",
+    "path": "english-tenses/*",
+    "to": "english-tenses"
+  },
+  {
+    "title": "English Levels",
+    "filePath": "./articles/english/EnglishLevels",
+    "path": "english-levels/*",
+    "to": "english-levels"
+  },
+  {
+    "title": "Dictionary",
+    "filePath": "./articles/english/Dictionary",
+    "path": "dictionary/*",
+    "to": "dictionary"
+  }
 ]

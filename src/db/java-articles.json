@@ -1,80 +1,80 @@
 [
-    {
-        "title": "Types",
-        "filePath": "./articles/Java/Types",
-        "path": "types/*",
-        "to": "types"
-    },
-    {
-        "title": "Reference",
-        "filePath": "./articles/Java/Reference",
-        "path": "reference/*",
-        "to": "reference"
-    },
-    {
-        "title": "JVM",
-        "filePath": "./articles/Java/JVM",
-        "path": "jvm/*",
-        "to": "jvm"
-    },
-    {
-        "title": "AccessModifiers",
-        "filePath": "./articles/Java/AccessModifiers",
-        "path": "access-modifiers/*",
-        "to": "access-modifiers"
-    },
-    {
-        "title": "Abstract",
-        "filePath": "./articles/Java/Abstract",
-        "path": "abstract/*",
-        "to": "abstract"
-    },
-    {
-        "title": "Generics",
-        "filePath": "./articles/Java/Generics",
-        "path": "generics/*",
-        "to": "generics"
-    },
-    {
-        "title": "Collections",
-        "filePath": "./articles/Java/Collections",
-        "path": "collections/*",
-        "to": "collections"
-    },
-    {
-        "title": "OOP",
-        "filePath": "./articles/Java/OOP",
-        "path": "oop/*",
-        "to": "oop"
-    },
-    {
-        "title": "Optional",
-        "filePath": "./articles/Java/Optional",
-        "path": "optional/*",
-        "to": "optional"
-    },
-    {
-        "title": "Hash Code",
-        "filePath": "./articles/Java/HashCode",
-        "path": "hash-code/*",
-        "to": "hash-code"
-    },
-    {
-        "title": "Exceptions",
-        "filePath": "./articles/Java/Exceptions",
-        "path": "exceptions/*",
-        "to": "exceptions"
-    },
-    {
-        "title": "Stream",
-        "filePath": "./articles/Java/Stream",
-        "path": "stream/*",
-        "to": "stream"
-    },
-    {
-        "title": "Implementacje",
-        "filePath": "./articles/Java/Implementacje",
-        "path": "implementacje/*",
-        "to": "implementacje"
-    }
+  {
+    "title": "Types",
+    "filePath": "./articles/Java/Types",
+    "path": "types/*",
+    "to": "types"
+  },
+  {
+    "title": "Reference",
+    "filePath": "./articles/Java/Reference",
+    "path": "reference/*",
+    "to": "reference"
+  },
+  {
+    "title": "JVM",
+    "filePath": "./articles/Java/JVM",
+    "path": "jvm/*",
+    "to": "jvm"
+  },
+  {
+    "title": "AccessModifiers",
+    "filePath": "./articles/Java/AccessModifiers",
+    "path": "access-modifiers/*",
+    "to": "access-modifiers"
+  },
+  {
+    "title": "Abstract",
+    "filePath": "./articles/Java/Abstract",
+    "path": "abstract/*",
+    "to": "abstract"
+  },
+  {
+    "title": "Generics",
+    "filePath": "./articles/Java/Generics",
+    "path": "generics/*",
+    "to": "generics"
+  },
+  {
+    "title": "Collections",
+    "filePath": "./articles/Java/Collections",
+    "path": "collections/*",
+    "to": "collections"
+  },
+  {
+    "title": "OOP",
+    "filePath": "./articles/Java/OOP",
+    "path": "oop/*",
+    "to": "oop"
+  },
+  {
+    "title": "Optional",
+    "filePath": "./articles/Java/Optional",
+    "path": "optional/*",
+    "to": "optional"
+  },
+  {
+    "title": "Hash Code",
+    "filePath": "./articles/Java/HashCode",
+    "path": "hash-code/*",
+    "to": "hash-code"
+  },
+  {
+    "title": "Exceptions",
+    "filePath": "./articles/Java/Exceptions",
+    "path": "exceptions/*",
+    "to": "exceptions"
+  },
+  {
+    "title": "Stream",
+    "filePath": "./articles/Java/Stream",
+    "path": "stream/*",
+    "to": "stream"
+  },
+  {
+    "title": "Implementacje",
+    "filePath": "./articles/Java/Implementacje",
+    "path": "implementacje/*",
+    "to": "implementacje"
+  }
 ]

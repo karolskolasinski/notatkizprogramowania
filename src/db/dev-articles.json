@@ -1,56 +1,56 @@
 [
-    {
-        "title": "Regex",
-        "filePath": "./articles/dev/Regex",
-        "path": "regex/*",
-        "to": "regex"
-    },
-    {
-        "title": "Git",
-        "filePath": "./articles/dev/Git",
-        "path": "git/*",
-        "to": "git"
-    },
-    {
-        "title": "Bash",
-        "filePath": "./articles/dev/Bash",
-        "path": "bash/*",
-        "to": "bash"
-    },
-    {
-        "title": "Big-O",
-        "filePath": "./articles/dev/BigO",
-        "path": "big-o/*",
-        "to": "big-o"
-    },
-    {
-        "title": "Design Patterns",
-        "filePath": "./articles/dev/DesignPatterns",
-        "path": "design-patterns/*",
-        "to": "design-patterns"
-    },
-    {
-        "title": "Tests",
-        "filePath": "./articles/dev/Tests",
-        "path": "tests/*",
-        "to": "tests"
-    },
-    {
-        "title": "URL",
-        "filePath": "./articles/dev/URL",
-        "path": "url/*",
-        "to": "url"
-    },
-    {
-        "title": "Docker",
-        "filePath": "./articles/dev/Docker",
-        "path": "docker/*",
-        "to": "docker"
-    },
-    {
-        "title": "Node",
-        "filePath": "./articles/dev/Node",
-        "path": "node/*",
-        "to": "node"
-    }
+  {
+    "title": "Regex",
+    "filePath": "./articles/dev/Regex",
+    "path": "regex/*",
+    "to": "regex"
+  },
+  {
+    "title": "Git",
+    "filePath": "./articles/dev/Git",
+    "path": "git/*",
+    "to": "git"
+  },
+  {
+    "title": "Bash",
+    "filePath": "./articles/dev/Bash",
+    "path": "bash/*",
+    "to": "bash"
+  },
+  {
+    "title": "Big-O",
+    "filePath": "./articles/dev/BigO",
+    "path": "big-o/*",
+    "to": "big-o"
+  },
+  {
+    "title": "Design Patterns",
+    "filePath": "./articles/dev/DesignPatterns",
+    "path": "design-patterns/*",
+    "to": "design-patterns"
+  },
+  {
+    "title": "Tests",
+    "filePath": "./articles/dev/Tests",
+    "path": "tests/*",
+    "to": "tests"
+  },
+  {
+    "title": "URL",
+    "filePath": "./articles/dev/URL",
+    "path": "url/*",
+    "to": "url"
+  },
+  {
+    "title": "Docker",
+    "filePath": "./articles/dev/Docker",
+    "path": "docker/*",
+    "to": "docker"
+  },
+  {
+    "title": "Node",
+    "filePath": "./articles/dev/Node",
+    "path": "node/*",
+    "to": "node"
+  }
 ]
