@@ -52,5 +52,11 @@
     "filePath": "./articles/dev/Node",
     "path": "node/*",
     "to": "node"
+  },
+  {
+    "title": "throttle vs. debounce",
+    "filePath": "./articles/dev/ThrottleDebounce",
+    "path": "throttle-debounce/*",
+    "to": "throttle-debounce"
   }
 ]

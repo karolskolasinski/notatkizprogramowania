@@ -16,7 +16,7 @@ const Regex = () => {
           większości języków programowania.
         </p>
 
-        <p>Składnia:</p>
+        <h3>Składnia:</h3>
         <ul className="snippet-list">
           <li>
             <span>.</span> – dowolny znak
@@ -49,7 +49,7 @@ const Regex = () => {
           </li>
         </ul>
 
-        <p>Wybór liczebników:</p>
+        <h3>Wybór liczebników:</h3>
         <ul className="snippet-list">
           <li>
             <span>?</span> – 0 lub 1 wystąpienie
@@ -76,7 +76,7 @@ const Regex = () => {
           </li>
         </ul>
 
-        <p>Meta znaki:</p>
+        <h3>Meta znaki:</h3>
         <ul className="snippet-list">
           <li>
             <span>\</span> – wskazanie, że interesuje nas konkretny znak (np. szukając kropki:{" "}
