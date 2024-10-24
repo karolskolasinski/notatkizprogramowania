@@ -1,11 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.b48ee6cb.css",
-    "main.js": "/static/js/main.a349877f.js",
+    "main.css": "/static/css/main.290fdd67.css",
+    "main.js": "/static/js/main.a8cc8b21.js",
     "static/media/inheritance-and-specificity.mp4": "/static/media/inheritance-and-specificity.69db80cf1e4dc82adeaf.mp4",
+    "static/media/C_jFk8pIRhW.mp4": "/static/media/C_jFk8pIRhW.91c6f5d0a2b1538a41bb.mp4",
     "static/media/cover-common-other.png": "/static/media/cover-common-other.e9fec37c50d709b38f91.png",
     "static/media/css-selectors-cheat-sheet-light.pdf": "/static/media/css-selectors-cheat-sheet-light.fe9c541b67adb65664d5.pdf",
     "static/media/css-selectors-cheat-sheet-dark.pdf": "/static/media/css-selectors-cheat-sheet-dark.e6db5053267ec9920e98.pdf",
+    "static/media/C_V1emIomQP.mp4": "/static/media/C_V1emIomQP.8336e23e5f038a25415c.mp4",
     "static/media/css-cheat-sheet-pl.pdf": "/static/media/css-cheat-sheet-pl.f7187b786bfb6d891a75.pdf",
     "static/media/css-flexbox-poster.png": "/static/media/css-flexbox-poster.b4b4ad572f2f86251716.png",
     "static/media/english-tenses.jpg": "/static/media/english-tenses.97f265a7329ec4c5ab31.jpg",
@@ -37,11 +39,11 @@
     "static/media/github-original.svg": "/static/media/github-original.62c6428a2c816c119d52272189f0ad6c.svg",
     "index.html": "/index.html",
     "static/media/linkedin-original.svg": "/static/media/linkedin-original.15f0337078f13db400acab3639711ec7.svg",
-    "main.b48ee6cb.css.map": "/static/css/main.b48ee6cb.css.map",
-    "main.a349877f.js.map": "/static/js/main.a349877f.js.map"
+    "main.290fdd67.css.map": "/static/css/main.290fdd67.css.map",
+    "main.a8cc8b21.js.map": "/static/js/main.a8cc8b21.js.map"
   },
   "entrypoints": [
-    "static/css/main.b48ee6cb.css",
-    "static/js/main.a349877f.js"
+    "static/css/main.290fdd67.css",
+    "static/js/main.a8cc8b21.js"
   ]
 }
