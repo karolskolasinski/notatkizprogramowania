@@ -1,6 +1,7 @@
 import React from "react";
 import cover from "../../../img/cover/cover-common-other.png";
-import { InstagramEmbed } from "react-social-media-embed";
+import C_V1emIomQP from "../../../mp4/C_V1emIomQP.mp4";
+import C_jFk8pIRhW from "../../../mp4/C_jFk8pIRhW.mp4";
 
 const Pomodoro = () => {
   return (
@@ -19,11 +20,9 @@ const Pomodoro = () => {
         </p>
 
         <h3>Jak siedzieć przy biurku</h3>
-        <InstagramEmbed
-          url="https://www.instagram.com/p/C_V1emIomQP/"
-          width={"50%"}
-          captioned={false}
-        />
+        <video controls className="mp4 vertical-mp4">
+          <source src={C_V1emIomQP} type="video/mp4" />
+        </video>
 
         <h3>Pomodoro timer</h3>
         <ul>
@@ -72,11 +71,9 @@ const Pomodoro = () => {
           <li>
             <strong>Tap massage</strong> - pobudza przepływ krwi i układ nerwowy
 
-            <InstagramEmbed
-              url="https://www.instagram.com/p/C_jFk8pIRhW/"
-              width={"50%"}
-              captioned={false}
-            />
+            <video controls className="mp4 vertical-mp4">
+              <source src={C_jFk8pIRhW} type="video/mp4" />
+            </video>
           </li>
 
           <li>

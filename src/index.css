@@ -85,6 +85,11 @@ details > summary {
     width: 100%;
 }
 
+.vertical-mp4 {
+    width: 50%;
+    display: block;
+}
+
 /************************************/
 /* HTML ELEMENTS
 /************************************/
