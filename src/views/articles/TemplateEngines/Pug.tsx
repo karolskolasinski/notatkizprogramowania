@@ -24,6 +24,13 @@ const Pug = () => {
 
         <hr />
 
+        <h3>HTML to Pug - Online Converter</h3>
+        <a href="https://html-to-pug.com/" className="article-link">
+          https://html-to-pug.com/
+        </a>
+
+        <hr />
+
         <h3>(double) Loop with "if" example</h3>
         <pre className="line-numbers language-pug">
           <code>
