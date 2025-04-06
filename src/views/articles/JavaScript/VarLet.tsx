@@ -24,7 +24,7 @@ const VarLet = () => {
         <ol className="snippet-list">
           <li>
             Zmienna zadeklarowana za pomocą <span>var</span>{" "}
-            jest dostępna wewnątrz całej funkcji i posiada
+            jest dostępna wewnątrz całej funkcji i posiada{" "}
             <strong>function scope</strong>. Natomiast <span>let</span> ma{" "}
             <strong>block scope</strong>, więc zmienne zadeklarowane za jego pomocą są dostępne
             wewnątrz bloku kodu między nawiasami klamrowymi.
@@ -79,7 +79,7 @@ console.log(name);`}
           </pre>
 
           <li>
-            Kolejna różnica między starszą deklaracją a jej młodszymi braćmi to tak zwany
+            Kolejna różnica między starszą deklaracją a jej młodszymi braćmi to tak zwany{" "}
             <strong>hoisting</strong>. JavaScript lubi pomagać programiście. Jednym z takich
             przypadków pomocy jest niewidoczne dla programisty wynoszenie deklaracji funkcji i
             zmiennych na początek danego zasięgu (kodu lub funkcji). Deklaracja zmiennej{" "}
