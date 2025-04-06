@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Logo } from "./Logo.tsx";
 import github from "../img/icons/github-original.svg";
 import linkedin from "../img/icons/linkedin-original.svg";
 
@@ -6,9 +6,7 @@ const Header = () => {
   return (
     <header className="w-full h-72 bg-black text-white text-2xl p-4 ">
       <div className="max-w-[1200px] mx-auto flex flex-col justify-between h-full">
-        <Link to="/" className="font-bold w-fit">
-          notatki<span className="text-yellow-400">z</span>programowania
-        </Link>
+        <Logo />
 
         <div className="text-base flex items-center justify-between">
           <div>
