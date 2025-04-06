@@ -1,23 +1,25 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
-import { firebase } from "./firebase";
+import { db } from "./firebase";
+import Header from "./components/Header.tsx";
+import Footer from "./components/Footer.tsx";
+import AddCategoryForm from "./components/AddCategoryForm.tsx";
 
 type Category = {
   id: string;
   name: string;
   icon: string;
+  color: string;
 };
 
-import Header from "./components/Header.tsx";
-import Footer from "./components/Footer.tsx";
-
 function Home() {
-  const [categories, setCategories] = useState<Category[]>([{ id: "123", name: "JS", icon: "js" }]);
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     const fetchCategories = async () => {
-      const snapshot = await getDocs(collection(firebase, "categories"));
+      const snapshot = await getDocs(collection(db, "categories"));
       const cats = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() } as Category));
       setCategories(cats);
     };
@@ -40,14 +42,24 @@ function Home() {
               {cat.name}
             </Link>
           ))}
+
           <div
             className="bg-green-200 p-4 rounded hover:bg-green-300 text-center cursor-pointer"
-            onClick={() => alert("Dodaj kategorię")}
+            onClick={() => setShowForm(true)}
           >
             ➕
           </div>
         </div>
       </div>
+
+      {showForm && (
+        <div className="fixed inset-0 bg-black/30 flex justify-center items-center z-10">
+          <AddCategoryForm
+            onClose={() => setShowForm(false)}
+            onSuccess={() => window.location.reload()}
+          />
+        </div>
+      )}
 
       <Footer />
     </div>
