@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-// import { collection, getDocs } from "firebase/firestore";
-// import { db } from "./firebase"; // konfiguracja Firebase
+import { collection, getDocs } from "firebase/firestore";
+import { firebase } from "./firebase";
 
 type Category = {
   id: string;
@@ -15,14 +15,15 @@ import Footer from "./components/Footer.tsx";
 function Home() {
   const [categories, setCategories] = useState<Category[]>([{ id: "123", name: "JS", icon: "js" }]);
 
-  // useEffect(() => {
-  //   const fetchCategories = async () => {
-  //     const snapshot = await getDocs(collection(db, "categories"));
-  //     const cats = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() } as Category));
-  //     setCategories(cats);
-  //   };
-  //   fetchCategories();
-  // }, []);
+  useEffect(() => {
+    const fetchCategories = async () => {
+      const snapshot = await getDocs(collection(firebase, "categories"));
+      const cats = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() } as Category));
+      setCategories(cats);
+    };
+
+    fetchCategories();
+  }, []);
 
   return (
     <div className="flex flex-col min-h-screen">
