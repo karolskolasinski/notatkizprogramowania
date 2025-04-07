@@ -14,12 +14,20 @@ type Category = {
 function Home() {
   const [categories, setCategories] = useState<Category[]>([]);
   const [showForm, setShowForm] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     const fetchCategories = async () => {
-      const snapshot = await getDocs(collection(db, "categories"));
-      const res = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() } as Category));
-      setCategories(res);
+      try {
+        const snapshot = await getDocs(collection(db, "categories"));
+        const docs = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() } as Category));
+        setCategories(docs);
+      } catch (error) {
+        console.error("Error fetching categories: ", error);
+      } finally {
+        setLoading(false);
+      }
     };
 
     fetchCategories();
@@ -29,7 +37,14 @@ function Home() {
     <div className="flex flex-col flex-1">
       <div className="w-full p-4 flex-1">
         <div className="max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
-          {categories.map((c) => (
+          {loading &&
+            (
+              <div className="h-52 rounded-lg cursor-pointer shadow duration-300 hover:shadow-md flex gap-2 items-center justify-center font-bold text-4xl border border-transparent font-logo uppercase text-center">
+                Loading...
+              </div>
+            )}
+
+          {!loading && categories.map((c) => (
             <Link
               key={c.id}
               to={`/${c.id}`}
