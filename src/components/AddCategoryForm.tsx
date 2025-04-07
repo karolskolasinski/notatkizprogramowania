@@ -1,16 +1,21 @@
 import { useEffect, useRef, useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../firebase";
+import { Category } from "../Home.tsx";
 
 type Props = {
   onClose: () => void;
-  onSuccess: () => void;
+  onSuccess: (category: Category) => void;
 };
+
+function getRandomColor() {
+  return "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0");
+}
 
 function AddCategoryForm({ onClose, onSuccess }: Props) {
   const [name, setName] = useState("");
   const [icon, setIcon] = useState("");
-  const [color, setColor] = useState("#000000");
+  const [color, setColor] = useState(getRandomColor());
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
@@ -21,8 +26,13 @@ function AddCategoryForm({ onClose, onSuccess }: Props) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await addDoc(collection(db, "categories"), { name, icon, color });
-    onSuccess();
+    try {
+      const doc = await addDoc(collection(db, "categories"), { name, icon, color });
+      onSuccess({ id: doc.id, name, icon, color });
+    } catch (error) {
+      console.error("Error adding category: ", error);
+    }
+
     onClose();
   };
 

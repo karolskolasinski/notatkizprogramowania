@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "./firebase";
 import AddCategoryForm from "./components/AddCategoryForm.tsx";
+import { Loader } from "./Loader.tsx";
 
-type Category = {
+export type Category = {
   id: string;
   name: string;
   icon: string;
@@ -37,12 +38,7 @@ function Home() {
     <div className="flex flex-col flex-1">
       <div className="w-full p-4 flex-1">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-3xl md:text-4xl font-bold">
-          {loading &&
-            (
-              <div className="h-52 rounded-lg cursor-pointer shadow duration-300 hover:shadow-md flex gap-2 items-center justify-center border border-transparent font-logo uppercase text-center">
-                Loading...
-              </div>
-            )}
+          {loading && Loader()}
 
           {!loading && categories.map((c) => (
             <Link
@@ -66,7 +62,10 @@ function Home() {
           {showForm && (
             <AddCategoryForm
               onClose={() => setShowForm(false)}
-              onSuccess={() => window.location.reload()}
+              onSuccess={(newCategory) => {
+                setCategories((prev) => [...prev, newCategory]);
+                setShowForm(false);
+              }}
             />
           )}
         </div>
