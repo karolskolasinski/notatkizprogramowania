@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, Timestamp } from "firebase/firestore";
 import { db } from "../utils/firebase.ts";
 import { Category } from "../context/CategoryContext.tsx";
 
@@ -27,8 +27,9 @@ const AddCategoryForm = ({ onClose, onSuccess }: Props) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const doc = await addDoc(collection(db, "categories"), { name, icon, color });
-      onSuccess({ id: doc.id, name, icon, color });
+      const toAdd = { name, icon, color, createdAt: Timestamp.fromDate(new Date()) };
+      const doc = await addDoc(collection(db, "categories"), toAdd);
+      onSuccess({ id: doc.id, ...toAdd });
     } catch (error) {
       console.error("Error adding category: ", error);
     }

@@ -1,10 +1,12 @@
 import { createContext, ReactNode, useContext, useState } from "react";
+import { Timestamp } from "firebase/firestore";
 
 export type Category = {
   id: string;
   name: string;
   icon: string;
   color: string;
+  createdAt: Timestamp;
 };
 
 const CategoryContext = createContext<Category[] | null>(null);
