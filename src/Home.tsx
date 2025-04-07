@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "./firebase";
-import Header from "./components/Header.tsx";
-import Footer from "./components/Footer.tsx";
 import AddCategoryForm from "./components/AddCategoryForm.tsx";
 
 type Category = {
@@ -28,9 +26,7 @@ function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <Header />
-
+    <div className="flex flex-col flex-1">
       <div className="w-full p-4 flex-1">
         <div className="max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-3 gap-4">
           {categories.map((cat) => (
@@ -60,8 +56,6 @@ function Home() {
           />
         </div>
       )}
-
-      <Footer />
     </div>
   );
 }
