@@ -36,10 +36,10 @@ function Home() {
   return (
     <div className="flex flex-col flex-1">
       <div className="w-full p-4 flex-1">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-3xl md:text-4xl font-bold">
           {loading &&
             (
-              <div className="h-52 rounded-lg cursor-pointer shadow duration-300 hover:shadow-md flex gap-2 items-center justify-center font-bold text-4xl border border-transparent font-logo uppercase text-center">
+              <div className="h-52 rounded-lg cursor-pointer shadow duration-300 hover:shadow-md flex gap-2 items-center justify-center border border-transparent font-logo uppercase text-center">
                 Loading...
               </div>
             )}
@@ -48,7 +48,7 @@ function Home() {
             <Link
               key={c.id}
               to={`/${c.id}`}
-              className="h-52 rounded-lg cursor-pointer shadow duration-300 hover:shadow-md flex gap-2 items-center justify-center font-bold text-4xl font-logo border border-gray-500 uppercase"
+              className="h-52 rounded-lg cursor-pointer shadow duration-300 hover:shadow-md flex gap-2 items-center justify-center font-logo border border-gray-500 uppercase"
             >
               <img src={c.icon} alt={c.name} className="min-w-12 w-12" />
 
@@ -57,7 +57,7 @@ function Home() {
           ))}
 
           <div
-            className="h-52 rounded-lg cursor-pointer shadow duration-300 hover:shadow-md flex gap-2 items-center justify-center font-bold text-4xl font-logo border border-dashed border-gray-500 uppercase text-center"
+            className="h-52 rounded-lg cursor-pointer shadow duration-300 hover:shadow-md flex gap-2 items-center justify-center font-logo border border-dashed border-gray-500 uppercase text-center"
             onClick={() => setShowForm(true)}
           >
             Dodaj kategorię
