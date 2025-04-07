@@ -8,3 +8,9 @@
     --font-serif: Chonburi, serif;
     --font-logo: Mulish, sans-serif;
 }
+
+/*dialog::backdrop {*/
+/*    height: 100lvh;*/
+/*    background: rgba(0, 0, 0, 0.2);*/
+/*    backdrop-filter: blur(1px);*/
+/*}*/
