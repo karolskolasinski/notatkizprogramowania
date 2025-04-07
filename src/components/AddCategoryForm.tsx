@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../utils/firebase.ts";
-import { Category } from "../pages/Home.tsx";
+import { Category } from "../context/CategoryContext.tsx";
 
 type Props = {
   onClose: () => void;
@@ -12,7 +12,7 @@ function getRandomColor() {
   return "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0");
 }
 
-function AddCategoryForm({ onClose, onSuccess }: Props) {
+const AddCategoryForm = ({ onClose, onSuccess }: Props) => {
   const [name, setName] = useState("");
   const [icon, setIcon] = useState("");
   const [color, setColor] = useState(getRandomColor());
@@ -94,6 +94,6 @@ function AddCategoryForm({ onClose, onSuccess }: Props) {
       </form>
     </dialog>
   );
-}
+};
 
 export default AddCategoryForm;

@@ -1,24 +1,18 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../utils/firebase.ts";
-import AddCategoryForm from "../components/AddCategoryForm.tsx";
-import { Loader } from "../components/Loader.tsx";
-
-export type Category = {
-  id: string;
-  name: string;
-  icon: string;
-  color: string;
-};
+import { db } from "../utils/firebase";
+import AddCategoryForm from "../components/AddCategoryForm";
+import { Loader } from "../components/Loader";
+import { Category, useCategories, useSetCategories } from "../context/CategoryContext";
 
 function Home() {
-  const [categories, setCategories] = useState<Category[]>([]);
+  const categories = useCategories() || [];
+  const setCategories = useSetCategories();
   const [showForm, setShowForm] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
     const fetchCategories = async () => {
       try {
         const snapshot = await getDocs(collection(db, "categories"));
@@ -32,7 +26,7 @@ function Home() {
     };
 
     fetchCategories();
-  }, []);
+  }, [setCategories]);
 
   return (
     <div className="flex flex-col flex-1">
@@ -47,7 +41,6 @@ function Home() {
               className="h-52 rounded-lg cursor-pointer shadow duration-300 hover:shadow-md flex gap-2 items-center justify-center font-logo border border-gray-500 uppercase"
             >
               <img src={c.icon} alt={c.name} className="min-w-12 w-12" />
-
               {c.name}
             </Link>
           ))}
@@ -63,7 +56,7 @@ function Home() {
             <AddCategoryForm
               onClose={() => setShowForm(false)}
               onSuccess={(newCategory) => {
-                setCategories((prev) => [...prev, newCategory]);
+                setCategories([...categories, newCategory]);
                 setShowForm(false);
               }}
             />

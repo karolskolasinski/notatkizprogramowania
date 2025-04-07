@@ -4,20 +4,18 @@ import Category from "./pages/Category.tsx";
 import Header from "./components/Header.tsx";
 import Footer from "./components/Footer.tsx";
 
-function App() {
-  return (
-    <Router>
-      <Header />
+const App = () => (
+  <Router>
+    <Header />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/:categoryId" element={<Category />} />
-        <Route path="/:categoryId/:articleId" element={<div>Artykuł</div>} />
-      </Routes>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/:categoryId" element={<Category />} />
+      <Route path="/:categoryId/:articleId" element={<div>Artykuł</div>} />
+    </Routes>
 
-      <Footer />
-    </Router>
-  );
-}
+    <Footer />
+  </Router>
+);
 
 export default App;
