@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from "./Home";
-import Category from "./Category";
+import Home from "./pages/Home.tsx";
+import Category from "./pages/Category.tsx";
 import Header from "./components/Header.tsx";
 import Footer from "./components/Footer.tsx";
 

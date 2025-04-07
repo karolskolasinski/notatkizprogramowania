@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "./firebase";
-import AddCategoryForm from "./components/AddCategoryForm.tsx";
-import { Loader } from "./Loader.tsx";
+import { db } from "../utils/firebase.ts";
+import AddCategoryForm from "../components/AddCategoryForm.tsx";
+import { Loader } from "../components/Loader.tsx";
 
 export type Category = {
   id: string;
