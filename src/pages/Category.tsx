@@ -1,16 +1,119 @@
-import { useParams } from "react-router-dom";
-import { useCategories } from "../context/CategoryContext.tsx";
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { collection, doc, getDoc, getDocs, orderBy, query, Timestamp } from "firebase/firestore";
+import { db } from "../utils/firebase";
+
+type Article = {
+  id: string;
+  title: string;
+  content: string;
+};
+
+export type Category = {
+  id: string;
+  name: string;
+  icon: string;
+  color: string;
+  createdAt: Timestamp;
+};
 
 function Category() {
   const { categoryId } = useParams();
-  const categories = useCategories();
-  const categoryName = categories?.find((c) => c.id === categoryId)?.name;
+  const [category, setCategory] = useState<Category | null>(null);
+  const [articles, setArticles] = useState<Article[]>([]);
+  // const [newTitle, setNewTitle] = useState("");
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchCategory = async () => {
+      try {
+        const ref = doc(db, "categories", categoryId!);
+        const snap = await getDoc(ref);
+
+        if (snap.exists()) {
+          const category = {
+            id: snap.id,
+            ...snap.data(),
+          } as Category;
+          setCategory(category);
+        }
+      } catch (err) {
+        console.error("Błąd przy pobieraniu kategorii:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (categoryId) {
+      fetchCategory();
+    }
+  }, [categoryId]);
+
+  useEffect(() => {
+    if (!categoryId) return;
+
+    const fetchArticles = async () => {
+      try {
+        const categoriesCollection = collection(db, "articles");
+        const q = query(categoriesCollection, orderBy("createdAt"));
+        const snapshot = await getDocs(q);
+        const docs = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() } as Article));
+
+        setArticles(docs);
+      } catch (error) {
+        console.error("Błąd przy pobieraniu artykułów:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchArticles();
+  }, [categoryId]);
+
+  // const handleAddArticle = async () => {
+  //   if (!newTitle.trim() || !categoryId) return;
+  //
+  //   try {
+  //     const docRef = await addDoc(collection(db, "articles"), {
+  //       title: newTitle.trim(),
+  //       categoryId,
+  //       createdAt: Timestamp.now(),
+  //     });
+  //     setArticles([{ id: docRef.id, title: newTitle.trim() }, ...articles]);
+  //     setNewTitle("");
+  //   } catch (error) {
+  //     console.error("Błąd przy dodawaniu artykułu:", error);
+  //   }
+  // };
+
+  const color = category?.color;
+  const style = { "--hover-color": color } as React.CSSProperties;
+  const className =
+    "relative cursor-pointer border rounded-[2%_6%_5%_4%_/_1%_1%_2%_4%] border-gray-500 text-center p-4 hover:border-[color:var(--hover-color)] font-sans-alt " +
+    "before:content-[''] before:w-full before:h-full before:absolute before:border-l-24 before:left-0 before:top-0 before:border-[color:var(--hover-color)] " +
+    "after:content-[''] after:h-full after:absolute after:border after:block after:left-1/2 after:top-1/2 after:w-full after:-translate-x-1/2 after:-translate-y-1/2 after:scale-[1.015] after:rotate-[.5deg] after:rounded-[1%_1%_2%_4%_/_2%_6%_5%_4%] hover:after:border-[color:var(--hover-color)]";
 
   return (
     <div className="flex flex-col flex-1">
       <div className="w-full p-4 flex-1">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-3xl md:text-4xl font-bold">
-          <h1 className="text-xl font-bold mb-4">{categoryName}</h1>
+        <h1 className="max-w-[1200px] mx-auto text-4xl font-bold mb-4">{category?.name}</h1>
+
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 font-bold">
+          {loading ? <div>Ładowanie...</div> : articles.map((a) => (
+            <Link
+              key={a.id}
+              to={`/${a.id}`}
+              data-color={color}
+              className={className}
+              style={style}
+            >
+              {a.title}
+            </Link>
+          ))}
+
+          <div className={className + " border-dotted after:border-dashed"} style={style}>
+            Nowy artykuł
+          </div>
         </div>
       </div>
     </div>
