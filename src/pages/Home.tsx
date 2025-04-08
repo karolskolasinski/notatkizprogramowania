@@ -50,7 +50,7 @@ function Home() {
             className="h-52 rounded cursor-pointer shadow duration-300 hover:shadow-md flex gap-2 items-center justify-center border border-dashed border-gray-500 uppercase text-center"
             onClick={() => setShowForm(true)}
           >
-            Dodaj kategorię
+            Dodaj
           </div>
 
           {showForm && (

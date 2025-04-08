@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { collection, doc, getDoc, getDocs, orderBy, query, Timestamp } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  orderBy,
+  query,
+  Timestamp,
+  where,
+} from "firebase/firestore";
 import { db } from "../utils/firebase";
-
-type Article = {
-  id: string;
-  title: string;
-  content: string;
-};
+import type { Article } from "./Article.tsx";
 
 export type Category = {
   id: string;
@@ -21,20 +25,16 @@ function Category() {
   const { categoryId } = useParams();
   const [category, setCategory] = useState<Category | null>(null);
   const [articles, setArticles] = useState<Article[]>([]);
-  // const [newTitle, setNewTitle] = useState("");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchCategory = async () => {
       try {
         const ref = doc(db, "categories", categoryId!);
-        const snap = await getDoc(ref);
+        const snapshot = await getDoc(ref);
 
-        if (snap.exists()) {
-          const category = {
-            id: snap.id,
-            ...snap.data(),
-          } as Category;
+        if (snapshot.exists()) {
+          const category = { id: snapshot.id, ...snapshot.data() } as Category;
           setCategory(category);
         }
       } catch (err) {
@@ -54,8 +54,8 @@ function Category() {
 
     const fetchArticles = async () => {
       try {
-        const categoriesCollection = collection(db, "articles");
-        const q = query(categoriesCollection, orderBy("createdAt"));
+        const ref = collection(db, "articles");
+        const q = query(ref, orderBy("createdAt"), where("categoryId", "==", categoryId));
         const snapshot = await getDocs(q);
         const docs = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() } as Article));
 
@@ -69,22 +69,6 @@ function Category() {
 
     fetchArticles();
   }, [categoryId]);
-
-  // const handleAddArticle = async () => {
-  //   if (!newTitle.trim() || !categoryId) return;
-  //
-  //   try {
-  //     const docRef = await addDoc(collection(db, "articles"), {
-  //       title: newTitle.trim(),
-  //       categoryId,
-  //       createdAt: Timestamp.now(),
-  //     });
-  //     setArticles([{ id: docRef.id, title: newTitle.trim() }, ...articles]);
-  //     setNewTitle("");
-  //   } catch (error) {
-  //     console.error("Błąd przy dodawaniu artykułu:", error);
-  //   }
-  // };
 
   const color = category?.color;
   const style = { "--hover-color": color } as React.CSSProperties;
@@ -102,7 +86,7 @@ function Category() {
           {loading ? <div>Ładowanie...</div> : articles.map((a) => (
             <Link
               key={a.id}
-              to={`/${a.id}`}
+              to={`${a.id}`}
               data-color={color}
               className={className}
               style={style}
@@ -111,9 +95,9 @@ function Category() {
             </Link>
           ))}
 
-          <div className={className + " border-dotted after:border-dashed"} style={style}>
+          <Link to="new" className={className + " border-dotted after:border-dashed"} style={style}>
             Nowy artykuł
-          </div>
+          </Link>
         </div>
       </div>
     </div>

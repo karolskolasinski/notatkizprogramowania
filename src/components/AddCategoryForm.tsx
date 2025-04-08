@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { addDoc, collection, Timestamp } from "firebase/firestore";
 import { db } from "../utils/firebase.ts";
-import { Category } from "../context/CategoryContext.tsx";
+import type { Category } from "../pages/Category.tsx";
 
 type Props = {
   onClose: () => void;

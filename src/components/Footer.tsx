@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="max-w-[1200px] mx-auto flex flex-col justify-between h-full">
         <Logo />
 
-        <div className="text-base flex items-center justify-between">
+        <div className="text-base flex items-center justify-between font-sans-alt">
           <div>
             2022-2025 | Created by:{"  "}
             <a
