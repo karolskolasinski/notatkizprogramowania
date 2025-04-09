@@ -18,12 +18,17 @@ const Editor = forwardRef(({ defaultValue }: Props, ref) => {
     const quill = new Quill(editorContainer, {
       theme: "snow",
       modules: {
+        syntax: true,
         toolbar: [
           ["clean"],
           ["bold", "italic"],
           [{ "script": "sub" }, { "script": "super" }],
           [{ "list": "ordered" }, { "list": "bullet" }],
           [{ "header": 1 }, { "header": 2 }, { "header": 3 }, "code-block"],
+          [
+            { "color": ["#FFFFFF", "#000000"] },
+            { "background": ["#434343", "#f0f0f0"] },
+          ],
           ["link", "image", "video"],
         ],
       },

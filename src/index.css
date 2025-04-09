@@ -24,4 +24,8 @@
     .ql-container {
         @apply !border-transparent !p-0;
     }
+
+    span[style*="background-color"] {
+        @apply p-2 rounded-md font-mono;
+    }
 }
