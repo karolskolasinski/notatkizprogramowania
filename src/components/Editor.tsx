@@ -18,9 +18,8 @@ const Editor = forwardRef(({ readOnly, defaultValue }: Props, ref) => {
 
   useEffect(() => {
     const container = containerRef.current;
-    const editorContainer = container.appendChild(
-      container.ownerDocument.createElement("div"),
-    );
+    const editorContainer = container.appendChild(container.ownerDocument.createElement("div"));
+
     const quill = new Quill(editorContainer, {
       theme: "snow",
       modules: {

@@ -7,3 +7,21 @@
     --font-sans-alt: "Open Sans", sans-serif;
     --font-serif: Chonburi, serif;
 }
+
+@layer utilities {
+    .ql-toolbar {
+        @apply !border-transparent !p-0;
+    }
+
+    .ql-toolbar button:hover {
+        @apply !text-black;
+    }
+
+    .ql-editor {
+        @apply text-base !leading-[1.8] !p-0 !py-4;
+    }
+
+    .ql-container {
+        @apply !border-transparent !p-0;
+    }
+}

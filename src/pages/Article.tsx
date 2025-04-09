@@ -85,44 +85,31 @@ function Article() {
         </div>
       )}
 
-      <div className="w-full p-4 flex-1 max-w-[1200px] mx-auto">
-        <h1 className="text-4xl font-bold mb-4">
-          {articleId === "new" ? "Nowy artykuł" : "Edycja artykułu"}
-        </h1>
-
+      <div className="w-full py-8 flex-1 max-w-[1200px] mx-auto">
         {loading ? <div>Ładowanie...</div> : (
-          <div className="flex flex-col gap-4 font-sans-alt">
-            <input
-              type="text"
-              className="border p-2 rounded text-lg"
-              placeholder="Tytuł artykułu"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-            />
+          <div className="font-sans-alt">
+            <div className="flex gap-4 pb-4">
+              <input
+                type="text"
+                className="text-3xl font-bold font-sans w-full"
+                placeholder="Tytuł artykułu"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+              />
+
+              <button
+                className="relative block w-auto px-6 py-3 overflow-hidden text-base font-semibold text-center text-gray-100 rounded-lg bg-purple-600 hover:bg-purple-700 cursor-pointer"
+                onClick={handleSave}
+              >
+                Zapisz
+              </button>
+            </div>
 
             <Editor
               ref={quillRef}
               readOnly={readOnly}
               defaultValue={content ? new Delta(JSON.parse(content)) : new Delta()}
             />
-
-            <div>
-              <label>
-                Read Only:{" "}
-                <input
-                  type="checkbox"
-                  checked={readOnly}
-                  onChange={(e) => setReadOnly(e.target.checked)}
-                />
-              </label>
-            </div>
-
-            <button
-              className="mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"
-              onClick={handleSave}
-            >
-              Zapisz
-            </button>
           </div>
         )}
       </div>
