@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { addDoc, collection, doc, getDoc, setDoc, Timestamp } from "firebase/firestore";
 import { db } from "../utils/firebase";
@@ -16,6 +16,8 @@ export type Article = {
   createdAt: Timestamp;
 };
 
+const PASS = import.meta.env.VITE_SAVE_PASS;
+
 function Article() {
   const { categoryId, articleId } = useParams();
   const [title, setTitle] = useState("");
@@ -25,6 +27,12 @@ function Article() {
   const [showPasswordDialog, setShowPasswordDialog] = useState(false);
   const quillRef = useRef<Quill | null>(null);
   const navigate = useNavigate();
+  const delayMessage = useMemo(() => (message: string) => {
+    setStatusMessage(message);
+    setTimeout(() => {
+      setStatusMessage("");
+    }, 3000);
+  }, []);
 
   useEffect(() => {
     const fetchArticle = async () => {
@@ -54,10 +62,7 @@ function Article() {
 
   const confirmAndSave = async () => {
     if (!categoryId || !quillRef.current || !title.trim()) {
-      setStatusMessage("Błąd");
-      setTimeout(() => {
-        setStatusMessage("");
-      }, 3000);
+      delayMessage("Błąd");
       return;
     }
 
@@ -81,9 +86,7 @@ function Article() {
       console.error("Błąd przy zapisie artykułu:", err);
       setStatusMessage("Błąd");
     } finally {
-      setTimeout(() => {
-        setStatusMessage("");
-      }, 3000);
+      delayMessage("");
     }
   };
 
@@ -91,10 +94,7 @@ function Article() {
     e.preventDefault();
 
     if (!title.trim()) {
-      setStatusMessage("Tytuł jest wymagany");
-      setTimeout(() => {
-        setStatusMessage("");
-      }, 3000);
+      delayMessage("Tytuł jest wymagany");
       return;
     }
 
@@ -107,23 +107,15 @@ function Article() {
 
   const handlePasswordConfirm = (password: string) => {
     setShowPasswordDialog(false);
-    if (password === import.meta.env.VITE_SAVE_PASS) {
-      confirmAndSave();
-    } else {
-      setStatusMessage("Błąd");
-      setTimeout(() => {
-        setStatusMessage("");
-      }, 3000);
-    }
+    password === PASS ? confirmAndSave() : delayMessage("Błąd hasła");
   };
 
-  const handlePasswordCancel = () => {
-    setShowPasswordDialog(false);
-  };
-
-  const buttonClass = statusMessage.length
-    ? "bg-gray-100 text-green-500"
-    : "bg-purple-600 hover:bg-purple-700 text-white cursor-pointer";
+  const buttonClass = useMemo(() => {
+    const isErr = statusMessage.startsWith("Błąd");
+    return statusMessage
+      ? `border border-gray-200 ${isErr ? "text-red-500" : "text-green-500"}`
+      : "bg-purple-600 hover:bg-purple-700 text-white cursor-pointer";
+  }, [statusMessage]);
 
   return (
     <div className="flex flex-col flex-1">
@@ -144,7 +136,7 @@ function Article() {
                 <button
                   type="submit"
                   disabled={statusMessage.length > 0}
-                  className={`px-6 py-2 font-semibold rounded-lg ${buttonClass}`}
+                  className={`px-6 py-2 font-semibold rounded-lg ${buttonClass} whitespace-nowrap`}
                 >
                   {statusMessage.length ? statusMessage : "Zapisz"}
                 </button>
@@ -161,7 +153,7 @@ function Article() {
 
       {showPasswordDialog && (
         <PasswordDialog
-          onCancel={handlePasswordCancel}
+          onCancel={() => setShowPasswordDialog(false)}
           onConfirm={handlePasswordConfirm}
         />
       )}
