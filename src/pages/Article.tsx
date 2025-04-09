@@ -22,7 +22,7 @@ function Article() {
   const navigate = useNavigate();
   const timeoutRef = useRef<number | null>(null);
 
-  const delayMessage = useCallback((message: string) => {
+  const delayMessage = useCallback((message: string, delay: number = 3000) => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
@@ -30,7 +30,7 @@ function Article() {
     timeoutRef.current = window.setTimeout(() => {
       setStatusMessage("");
       timeoutRef.current = null;
-    }, 3000);
+    }, delay);
   }, []);
 
   useEffect(() => {

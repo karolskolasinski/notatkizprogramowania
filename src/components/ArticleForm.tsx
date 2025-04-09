@@ -14,7 +14,7 @@ function ArticleForm(props: Props) {
   const { title, setTitle, handleSave, content, quillRef, statusMessage } = props;
   const isErr = statusMessage.startsWith("Błąd");
   const buttonClass = statusMessage
-    ? `border border-gray-200 ${isErr ? "text-red-500" : "text-green-500"}`
+    ? `border-gray-200 ${isErr ? "text-red-500" : "text-green-500"}`
     : "bg-purple-600 hover:bg-purple-700 text-white cursor-pointer";
 
   return (
@@ -33,7 +33,7 @@ function ArticleForm(props: Props) {
           <button
             type="submit"
             disabled={statusMessage.length > 0}
-            className={`px-6 py-2 font-semibold rounded-lg ${buttonClass} whitespace-nowrap`}
+            className={`px-6 py-2 font-semibold rounded-lg ${buttonClass} whitespace-nowrap border border-transparent`}
           >
             {statusMessage.length ? statusMessage : "Zapisz"}
           </button>
