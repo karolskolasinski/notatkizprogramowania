@@ -6,6 +6,7 @@ import "quill/dist/quill.snow.css";
 import Editor from "../components/Editor";
 import Quill, { Delta } from "quill";
 import PasswordDialog from "../components/PasswordDialog";
+import { useNavigate } from "react-router-dom";
 
 export type Article = {
   id: string;
@@ -20,11 +21,10 @@ function Article() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [loading, setLoading] = useState(true);
-  const [readOnly, setReadOnly] = useState(false);
-  const [showSaveButton, setShowSaveButton] = useState(true);
   const [statusMessage, setStatusMessage] = useState("");
   const [showPasswordDialog, setShowPasswordDialog] = useState(false);
   const quillRef = useRef<Quill | null>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchArticle = async () => {
@@ -55,15 +55,11 @@ function Article() {
   const confirmAndSave = async () => {
     if (!categoryId || !quillRef.current || !title.trim()) {
       setStatusMessage("Błąd");
-      setShowSaveButton(false);
       setTimeout(() => {
         setStatusMessage("");
-        setShowSaveButton(true);
       }, 3000);
       return;
     }
-
-    setShowSaveButton(false);
 
     const content = JSON.stringify(quillRef.current.getContents());
     const data = {
@@ -77,7 +73,8 @@ function Article() {
       if (articleId && articleId !== "new") {
         await setDoc(doc(db, "articles", articleId), data);
       } else {
-        await addDoc(collection(db, "articles"), data);
+        const docRef = await addDoc(collection(db, "articles"), data);
+        navigate(`/${categoryId}/${docRef.id}`);
       }
       setStatusMessage("Zapisano");
     } catch (err) {
@@ -86,7 +83,6 @@ function Article() {
     } finally {
       setTimeout(() => {
         setStatusMessage("");
-        setShowSaveButton(true);
       }, 3000);
     }
   };
@@ -96,10 +92,8 @@ function Article() {
 
     if (!title.trim()) {
       setStatusMessage("Tytuł jest wymagany");
-      setShowSaveButton(false);
       setTimeout(() => {
         setStatusMessage("");
-        setShowSaveButton(true);
       }, 3000);
       return;
     }
@@ -117,10 +111,8 @@ function Article() {
       confirmAndSave();
     } else {
       setStatusMessage("Błąd");
-      setShowSaveButton(false);
       setTimeout(() => {
         setStatusMessage("");
-        setShowSaveButton(true);
       }, 3000);
     }
   };
@@ -128,6 +120,10 @@ function Article() {
   const handlePasswordCancel = () => {
     setShowPasswordDialog(false);
   };
+
+  const buttonClass = statusMessage.length
+    ? "bg-gray-100 text-green-500"
+    : "bg-purple-600 hover:bg-purple-700 text-white cursor-pointer";
 
   return (
     <div className="flex flex-col flex-1">
@@ -145,25 +141,17 @@ function Article() {
                   onChange={(e) => setTitle(e.target.value)}
                 />
 
-                {showSaveButton
-                  ? (
-                    <button
-                      type="submit"
-                      className="px-6 py-2 font-semibold text-white rounded-lg bg-purple-600 hover:bg-purple-700"
-                    >
-                      Zapisz
-                    </button>
-                  )
-                  : (
-                    <div className="px-6 py-2 font-semibold text-center rounded-lg">
-                      {statusMessage}
-                    </div>
-                  )}
+                <button
+                  type="submit"
+                  disabled={statusMessage.length > 0}
+                  className={`px-6 py-2 font-semibold rounded-lg ${buttonClass}`}
+                >
+                  {statusMessage.length ? statusMessage : "Zapisz"}
+                </button>
               </div>
 
               <Editor
                 ref={quillRef}
-                readOnly={readOnly}
                 defaultValue={content ? new Delta(JSON.parse(content)) : new Delta()}
               />
             </form>

@@ -41,7 +41,7 @@ const AddCategoryForm = ({ onClose, onSuccess }: Props) => {
     <dialog
       ref={dialogRef}
       onCancel={onClose}
-      className="top-1/4 mx-auto backdrop:backdrop-blur-[1px] backdrop:backdrop-brightness-90 cursor-default rounded-lg shadow-lg border border-gray-200 w-full md:w-1/2 font-sans-alt"
+      className="top-1/4 mx-auto backdrop:backdrop-blur-[1px] backdrop:backdrop-brightness-90 cursor-default rounded-lg shadow-lg border border-gray-200 w-full md:w-1/2 lg:w-1/3 font-sans-alt"
     >
       <form onSubmit={handleSubmit} className="p-4 text-base font-normal flex flex-col gap-4">
         <h1 className="text-2xl font-bold font-sans">Nowa kategoria</h1>

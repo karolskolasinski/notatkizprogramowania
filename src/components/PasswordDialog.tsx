@@ -22,7 +22,7 @@ export default function PasswordDialog({ onConfirm, onCancel }: Props) {
     <dialog
       ref={dialogRef}
       onCancel={onCancel}
-      className="top-1/4 mx-auto backdrop:backdrop-blur-[1px] backdrop:backdrop-brightness-90 rounded-lg shadow-lg border border-gray-200 w-full md:w-1/2"
+      className="top-1/4 mx-auto backdrop:backdrop-blur-[1px] backdrop:backdrop-brightness-90 rounded-lg shadow-lg border border-gray-200 w-full md:w-1/2 lg:w-1/3"
     >
       <form onSubmit={handleSubmit} className="p-4 flex flex-col gap-4">
         <h2 className="text-lg font-semibold">Podaj hasło</h2>
