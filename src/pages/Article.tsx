@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { addDoc, collection, doc, getDoc, setDoc, Timestamp } from "firebase/firestore";
 import { db } from "../utils/firebase";
@@ -27,10 +27,16 @@ function Article() {
   const [showPasswordDialog, setShowPasswordDialog] = useState(false);
   const quillRef = useRef<Quill | null>(null);
   const navigate = useNavigate();
-  const delayMessage = useMemo(() => (message: string) => {
+  const timeoutRef = useRef<number | null>(null);
+
+  const delayMessage = useCallback((message: string) => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
     setStatusMessage(message);
-    setTimeout(() => {
+    timeoutRef.current = window.setTimeout(() => {
       setStatusMessage("");
+      timeoutRef.current = null;
     }, 3000);
   }, []);
 
@@ -81,28 +87,16 @@ function Article() {
         const docRef = await addDoc(collection(db, "articles"), data);
         navigate(`/${categoryId}/${docRef.id}`);
       }
-      setStatusMessage("Zapisano");
+      delayMessage("Zapisano");
     } catch (err) {
       console.error("Błąd przy zapisie artykułu:", err);
-      setStatusMessage("Błąd");
-    } finally {
-      delayMessage("");
+      delayMessage("Błąd");
     }
   };
 
   const handleSave = (e: React.FormEvent) => {
     e.preventDefault();
-
-    if (!title.trim()) {
-      delayMessage("Tytuł jest wymagany");
-      return;
-    }
-
-    if (articleId && articleId !== "new") {
-      setShowPasswordDialog(true);
-    } else {
-      confirmAndSave();
-    }
+    (articleId && articleId !== "new") ? setShowPasswordDialog(true) : confirmAndSave();
   };
 
   const handlePasswordConfirm = (password: string) => {
@@ -110,12 +104,10 @@ function Article() {
     password === PASS ? confirmAndSave() : delayMessage("Błąd hasła");
   };
 
-  const buttonClass = useMemo(() => {
-    const isErr = statusMessage.startsWith("Błąd");
-    return statusMessage
-      ? `border border-gray-200 ${isErr ? "text-red-500" : "text-green-500"}`
-      : "bg-purple-600 hover:bg-purple-700 text-white cursor-pointer";
-  }, [statusMessage]);
+  const isErr = statusMessage.startsWith("Błąd");
+  const buttonClass = statusMessage
+    ? `border border-gray-200 ${isErr ? "text-red-500" : "text-green-500"}`
+    : "bg-purple-600 hover:bg-purple-700 text-white cursor-pointer";
 
   return (
     <div className="flex flex-col flex-1">
