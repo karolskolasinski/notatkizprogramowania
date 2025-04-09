@@ -41,10 +41,10 @@ const AddCategoryForm = ({ onClose, onSuccess }: Props) => {
     <dialog
       ref={dialogRef}
       onCancel={onClose}
-      className="top-1/4 mx-auto backdrop:backdrop-blur-[1px] backdrop:backdrop-brightness-90 cursor-default rounded-lg shadow-lg border border-gray-200 w-full md:w-1/2"
+      className="top-1/4 mx-auto backdrop:backdrop-blur-[1px] backdrop:backdrop-brightness-90 cursor-default rounded-lg shadow-lg border border-gray-200 w-full md:w-1/2 font-sans-alt"
     >
       <form onSubmit={handleSubmit} className="p-4 text-base font-normal flex flex-col gap-4">
-        <h1 className="text-2xl font-bold">Nowa kategoria</h1>
+        <h1 className="text-2xl font-bold font-sans">Nowa kategoria</h1>
 
         <div className="flex gap-2">
           <input
@@ -80,15 +80,15 @@ const AddCategoryForm = ({ onClose, onSuccess }: Props) => {
           required
         />
 
-        <div className="flex justify-between">
+        <div className="flex justify-end gap-2">
           <button
             onClick={onClose}
-            className="relative block w-auto px-6 py-3 overflow-hidden text-base font-semibold text-center text-gray-800 rounded-lg bg-gray-50 hover:text-black hover:bg-white cursor-pointer"
+            className="relative block w-auto px-6 py-2 overflow-hidden text-base font-semibold text-center text-gray-800 rounded-lg bg-gray-50 hover:text-black hover:bg-white cursor-pointer"
           >
             Anuluj
           </button>
 
-          <button className="relative block w-auto px-6 py-3 overflow-hidden text-base font-semibold text-center text-gray-100 rounded-lg bg-purple-600 hover:bg-purple-700 cursor-pointer">
+          <button className="relative block w-auto px-6 py-2 overflow-hidden text-base font-semibold text-center text-gray-100 rounded-lg bg-purple-600 hover:bg-purple-700 cursor-pointer">
             Zapisz
           </button>
         </div>
