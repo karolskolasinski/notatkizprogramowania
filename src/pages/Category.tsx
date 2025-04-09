@@ -1,25 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import {
-  collection,
-  doc,
-  getDoc,
-  getDocs,
-  orderBy,
-  query,
-  Timestamp,
-  where,
-} from "firebase/firestore";
+import { collection, doc, getDoc, getDocs, orderBy, query, where } from "firebase/firestore";
 import { db } from "../utils/firebase";
-import type { Article } from "./Article.tsx";
-
-export type Category = {
-  id: string;
-  name: string;
-  icon: string;
-  color: string;
-  createdAt: Timestamp;
-};
+import type { Article } from "../types/article.ts";
+import type { Category } from "../types/category.ts";
 
 function Category() {
   const { categoryId } = useParams();

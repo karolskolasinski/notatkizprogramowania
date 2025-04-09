@@ -4,7 +4,7 @@ import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { db } from "../utils/firebase";
 import AddCategoryForm from "../components/AddCategoryForm";
 import { Loader } from "../components/Loader";
-import type { Category } from "./Category.tsx";
+import type { Category } from "../types/category.ts";
 
 function Home() {
   const [categories, setCategories] = useState<Category[]>([]);
