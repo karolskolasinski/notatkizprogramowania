@@ -23,6 +23,16 @@ const Editor = forwardRef(({ readOnly, defaultValue }: Props, ref) => {
     );
     const quill = new Quill(editorContainer, {
       theme: "snow",
+      modules: {
+        toolbar: [
+          ["clean"],
+          ["bold", "italic"],
+          [{ "script": "sub" }, { "script": "super" }],
+          [{ "list": "ordered" }, { "list": "bullet" }],
+          [{ "header": 1 }, { "header": 2 }, { "header": 3 }, "code-block"],
+          ["link", "image", "video"],
+        ],
+      },
     });
 
     ref.current = quill;
