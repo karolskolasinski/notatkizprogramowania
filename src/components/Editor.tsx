@@ -1,6 +1,8 @@
 // @ts-nocheck
 import { forwardRef, useEffect, useRef } from "react";
 import Quill from "quill";
+import hljs from "highlight.js";
+import "highlight.js/styles/monokai-sublime.css";
 
 type Props = {
   defaultValue?: Quill.Delta;
@@ -18,7 +20,7 @@ const Editor = forwardRef(({ defaultValue }: Props, ref) => {
     const quill = new Quill(editorContainer, {
       theme: "snow",
       modules: {
-        syntax: true,
+        syntax: { hljs },
         toolbar: [
           ["clean"],
           ["bold", "italic"],
