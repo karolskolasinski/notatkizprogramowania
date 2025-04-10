@@ -1,37 +1,16 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { collection, doc, getDoc, getDocs, orderBy, query, where } from "firebase/firestore";
+import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import { db } from "../utils/firebase";
 import type { Article } from "../types/article.ts";
-import type { Category } from "../types/category.ts";
+import { useCategory } from "../hooks/useCategory.ts";
+import { FetchArticlesIndicator } from "../components/FetchArticlesIndicator.tsx";
 
 function Category() {
   const { categoryId } = useParams();
-  const [category, setCategory] = useState<Category | null>(null);
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchCategory = async () => {
-      try {
-        const ref = doc(db, "categories", categoryId!);
-        const snapshot = await getDoc(ref);
-
-        if (snapshot.exists()) {
-          const category = { id: snapshot.id, ...snapshot.data() } as Category;
-          setCategory(category);
-        }
-      } catch (err) {
-        console.error("Błąd przy pobieraniu kategorii:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    if (categoryId) {
-      fetchCategory();
-    }
-  }, [categoryId]);
+  const { category, indicatorData } = useCategory({ categoryId: categoryId!, loading, setLoading });
 
   useEffect(() => {
     if (!categoryId) return;
@@ -45,7 +24,7 @@ function Category() {
 
         setArticles(docs);
       } catch (error) {
-        console.error("Błąd przy pobieraniu artykułów:", error);
+        console.error("Error fetching articles: ", error);
       } finally {
         setLoading(false);
       }
@@ -67,7 +46,9 @@ function Category() {
         <h1 className="max-w-[1200px] mx-auto text-4xl font-bold mb-4">{category?.name}</h1>
 
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 font-bold">
-          {loading ? <div>Ładowanie...</div> : articles.map((a) => (
+          <FetchArticlesIndicator indicatorData={indicatorData} />
+
+          {articles.map((a) => (
             <Link
               key={a.id}
               to={`${a.id}`}
@@ -79,7 +60,7 @@ function Category() {
             </Link>
           ))}
 
-          <Link to="new" className={className + " border-dotted after:border-dashed"} style={style}>
+          <Link to="new" className={`${className} border-dotted after:border-dashed`} style={style}>
             Nowy artykuł
           </Link>
         </div>
