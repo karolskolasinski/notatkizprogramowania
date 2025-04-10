@@ -26,8 +26,6 @@ export function useArticle(props: Props) {
 
         if (snap.exists()) {
           const data = snap.data() as Article;
-          // setTitle(data.title);
-          // setContent(data.content);
           setArticle(data);
         }
 
@@ -43,5 +41,5 @@ export function useArticle(props: Props) {
     fetchArticle();
   }, [articleId]);
 
-  return article;
+  return { article, setArticle };
 }
