@@ -1,37 +1,16 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
-import { db } from "../utils/firebase";
-import type { Article } from "../types/article.ts";
 import { useCategory } from "../hooks/useCategory.ts";
 import { FetchArticlesIndicator } from "../components/FetchArticlesIndicator.tsx";
+import { useArticles } from "../hooks/useArticles.ts";
 
 function Category() {
   const { categoryId } = useParams();
-  const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
-  const { category, indicatorData } = useCategory({ categoryId: categoryId!, loading, setLoading });
-
-  useEffect(() => {
-    if (!categoryId) return;
-
-    const fetchArticles = async () => {
-      try {
-        const ref = collection(db, "articles");
-        const q = query(ref, orderBy("createdAt"), where("categoryId", "==", categoryId));
-        const snapshot = await getDocs(q);
-        const docs = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() } as Article));
-
-        setArticles(docs);
-      } catch (error) {
-        console.error("Error fetching articles: ", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchArticles();
-  }, [categoryId]);
+  const [error, setError] = useState<string | null>(null);
+  const hookData = { categoryId: categoryId!, setLoading, setError };
+  const category = useCategory(hookData);
+  const articles = useArticles(hookData);
 
   const color = category?.color;
   const style = { "--hover-color": color } as React.CSSProperties;
@@ -46,7 +25,7 @@ function Category() {
         <h1 className="max-w-[1200px] mx-auto text-4xl font-bold mb-4">{category?.name}</h1>
 
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 font-bold">
-          <FetchArticlesIndicator indicatorData={indicatorData} />
+          <FetchArticlesIndicator loading={loading} error={error} />
 
           {articles.map((a) => (
             <Link

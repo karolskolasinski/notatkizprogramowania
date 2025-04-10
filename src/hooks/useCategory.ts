@@ -5,14 +5,13 @@ import type { Category } from "../types/category.ts";
 
 type Props = {
   categoryId: string;
-  loading: boolean;
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  setError: React.Dispatch<React.SetStateAction<string | null>>;
 };
 
 export function useCategory(props: Props) {
-  const { categoryId, loading, setLoading } = props;
+  const { categoryId, setLoading, setError } = props;
   const [category, setCategory] = useState<Category | null>(null);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchCategory = async () => {
@@ -39,5 +38,5 @@ export function useCategory(props: Props) {
     }
   }, [categoryId]);
 
-  return { category, indicatorData: { loading, error } };
+  return category;
 }

@@ -3,10 +3,14 @@ import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { db } from "../utils/firebase";
 import type { Category } from "../types/category.ts";
 
-export function useCategories() {
+type Props = {
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  setError: React.Dispatch<React.SetStateAction<string | null>>;
+};
+
+export function useCategories(props: Props) {
+  const { setLoading, setError } = props;
   const [categories, setCategories] = useState<Category[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -34,5 +38,5 @@ export function useCategories() {
     setCategories([...categories, newCategory]);
   };
 
-  return { categories, indicatorData: { loading, error }, addCategory };
+  return { categories, addCategory };
 }

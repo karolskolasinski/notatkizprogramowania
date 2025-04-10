@@ -1,12 +1,10 @@
 type Props = {
-  indicatorData: {
-    loading: boolean;
-    error: string | null;
-  };
+  loading: boolean;
+  error: string | null;
 };
 
 export const FetchArticlesIndicator = (props: Props) => {
-  const { loading, error } = props.indicatorData;
+  const { loading, error } = props;
   if (!loading && !error) {
     return null;
   }
