@@ -8,6 +8,7 @@ import PasswordDialog from "../components/PasswordDialog";
 import { useNavigate } from "react-router-dom";
 import { useArticle } from "../hooks/useArticle.ts";
 import Editor from "../components/Editor.tsx";
+import { Status } from "../components/Status.tsx";
 
 const PASS = import.meta.env.VITE_SAVE_PASS;
 
@@ -75,7 +76,11 @@ function Article() {
                 onChange={(e) => setArticle((prev) => ({ ...prev!, title: e.target.value }))}
               />
 
-              <Status />
+              <Status
+                loading={loading}
+                error={error}
+                className="font-semibold whitespace-nowrap"
+              />
 
               <button
                 type="submit"
@@ -104,21 +109,6 @@ function Article() {
       )}
     </div>
   );
-
-  function Status() {
-    if (!loading && !error) {
-      return null;
-    }
-
-    const textColor = error ? "text-red-500" : "text-gray-500";
-    const className = `font-semibold whitespace-nowrap ${textColor}`;
-
-    return (
-      <div className={className}>
-        {error ? error : "Ładowanie..."}
-      </div>
-    );
-  }
 }
 
 export default Article;

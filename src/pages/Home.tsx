@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import AddCategoryForm from "../components/AddCategoryForm.tsx";
-import { FetchCategoriesIndicator } from "../components/FetchCategoriesIndicator.tsx";
 import { useCategories } from "../hooks/useCategories.ts";
+import { Status } from "../components/Status.tsx";
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -14,7 +14,11 @@ function Home() {
     <div className="flex flex-col flex-1">
       <div className="w-full p-4 flex-1">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-3xl md:text-4xl font-bold">
-          <FetchCategoriesIndicator loading={loading} error={error} />
+          <Status
+            loading={loading}
+            error={error}
+            className="h-52 rounded-lg shadow duration-300 hover:shadow-md flex items-center justify-center uppercase text-center border border-gray-200"
+          />
 
           {categories.map((c) => (
             <Link
