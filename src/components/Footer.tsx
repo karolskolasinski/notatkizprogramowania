@@ -5,7 +5,7 @@ import linkedin from "../img/icons/linkedin-original.svg";
 const Footer = () => {
   return (
     <footer className="w-full h-72 bg-black text-white text-2xl p-4 ">
-      <div className="max-w-[1200px] mx-auto flex flex-col justify-between h-full">
+      <div className="max-w-7xl mx-auto flex flex-col justify-between h-full">
         <Logo />
 
         <div className="text-base flex items-center justify-between font-sans-alt">

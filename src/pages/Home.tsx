@@ -13,7 +13,7 @@ function Home() {
   return (
     <div className="flex flex-col flex-1">
       <div className="w-full p-4 flex-1">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-3xl md:text-4xl font-bold">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-3xl md:text-4xl font-bold">
           <Status
             loading={loading}
             error={error}

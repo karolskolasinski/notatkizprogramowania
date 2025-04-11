@@ -25,7 +25,7 @@ export default function ArticleForm(props: Props) {
         e.preventDefault();
         onSubmit();
       }}
-      className="flex flex-col gap-4"
+      className="flex flex-col gap-4 bg-gray-50 rounded-lg py-4 px-2 md:p-4"
     >
       <div className="flex gap-4 items-center">
         <input

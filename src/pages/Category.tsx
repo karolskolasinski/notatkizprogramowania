@@ -30,9 +30,9 @@ function Category() {
   return (
     <div className="flex flex-col flex-1">
       <div className="w-full p-4 flex-1">
-        <h1 className="max-w-[1200px] mx-auto text-4xl font-bold mb-4">{category?.name}</h1>
+        <h1 className="max-w-7xl mx-auto text-4xl font-bold mb-4">{category?.name}</h1>
 
-        <div className="max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 font-bold">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 font-bold">
           <Status loading={loading} error={error} className={STATUS_CLASS} />
 
           {articles.map((a) => (

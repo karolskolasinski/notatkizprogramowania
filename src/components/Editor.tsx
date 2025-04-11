@@ -32,7 +32,7 @@ const Editor = forwardRef(({ defaultValue, readOnly }: Props, ref) => {
           ["bold", "italic"],
           [{ "script": "sub" }, { "script": "super" }],
           [{ "list": "ordered" }, { "list": "bullet" }],
-          [{ "header": 1 }, { "header": 2 }, { "header": 3 }, "code-block"],
+          [{ "header": 1 }, { "header": 2 }, { "header": 3 }, { "header": 4 }, "code-block"],
           [
             { "color": ["#FFFFFF", "#000000"] },
             { "background": ["#434343", "#f0f0f0"] },

@@ -10,7 +10,7 @@
 
 @layer utilities {
     .ql-toolbar {
-        @apply !border-transparent !p-0;
+        @apply !border-transparent !p-0 sticky top-0 z-50 bg-gray-50;
     }
 
     .ql-toolbar button,
@@ -20,7 +20,7 @@
 
     .ql-toolbar button:hover,
     .ql-toolbar span.ql-color-picker:hover {
-        @apply !bg-gray-100 !rounded-md;
+        @apply !bg-slate-100 !rounded-md;
     }
 
     .ql-editor {
@@ -28,18 +28,44 @@
     }
 
     .ql-container {
-        @apply !border-transparent !p-0;
+        @apply !border-transparent !p-0 !font-sans-alt;
     }
 
     .ql-container h1,
     .ql-container h2,
-    .ql-container h3 {
+    .ql-container h3,
+    .ql-container h4 {
         @apply !my-4 font-sans;
+    }
+
+    .ql-container h4 {
+        @apply !m-0;
+    }
+
+    .ql-container img {
+        @apply py-2 w-[35%];
+    }
+
+    .ql-container p:has(img) {
+        @apply flex justify-center;
     }
 
     .ql-container ul,
     .ql-container ol {
         @apply !p-0;
+    }
+
+    .ql-container a {
+        @apply text-cyan-600 relative !no-underline wrap-anywhere;
+    }
+
+    .ql-container a:hover {
+        @apply bg-gradient-to-r from-cyan-500 to-purple-600 bg-clip-text bg-size-[100%] bg-repeat;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .ql-container a:hover::after {
+        @apply bg-gradient-to-r from-cyan-500 to-purple-600 w-full absolute bottom-0 left-0 h-[2px] content-[''];
     }
 
     span[style*="background-color"] {
