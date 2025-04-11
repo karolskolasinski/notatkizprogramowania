@@ -2,6 +2,9 @@ import Quill, { Delta } from "quill";
 import Editor from "./Editor";
 import { Status } from "./Status";
 import { Article } from "../types/article.ts";
+import { useState } from "react";
+import draw from "../img/icons/draw.svg";
+import pen from "../img/icons/pen.svg";
 
 type Props = {
   article: Article | null;
@@ -14,6 +17,8 @@ type Props = {
 
 export default function ArticleForm(props: Props) {
   const { article, setArticle, loading, error, quillRef, onSubmit } = props;
+  const [readOnly, setReadOnly] = useState(true);
+
   return (
     <form
       onSubmit={(e) => {
@@ -26,8 +31,9 @@ export default function ArticleForm(props: Props) {
         <input
           type="text"
           required
-          className="text-3xl font-bold font-sans w-full outline-none"
+          className="text-3xl font-bold font-sans outline-none w-full"
           placeholder="Tytuł artykułu"
+          disabled={readOnly}
           value={article?.title ?? ""}
           onChange={(e) => setArticle((prev) => ({ ...prev!, title: e.target.value }))}
         />
@@ -43,12 +49,43 @@ export default function ArticleForm(props: Props) {
         </button>
       </div>
 
+      <div className="flex gap-2 items-center">
+        <label>
+          {readOnly ? <Icon name="pen" /> : <Icon name="draw" />}
+
+          <input
+            type="checkbox"
+            hidden
+            checked={readOnly}
+            onChange={() => setReadOnly(!readOnly)}
+          />
+        </label>
+
+        {article?.createdAt && new Date(article.createdAt.seconds * 1000).toLocaleString("pl-PL", {
+          dateStyle: "long",
+          timeStyle: "short",
+        })}
+      </div>
+
       {!loading && (
         <Editor
           ref={quillRef}
           defaultValue={new Delta(article?.content && JSON.parse(article.content))}
+          readOnly={readOnly}
         />
       )}
     </form>
   );
+
+  function Icon({ name }: { name: string }) {
+    const isPen = name === "pen";
+    return (
+      <img
+        src={isPen ? pen : draw}
+        alt={isPen ? "edit mode" : "read only"}
+        title={isPen ? "edit mode" : "read only"}
+        className="min-w-7 w-7 hover:bg-gray-100 duration-100 ease-in-out px-[5px] py-[3px] rounded-lg cursor-pointer"
+      />
+    );
+  }
 }

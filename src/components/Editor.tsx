@@ -6,18 +6,24 @@ import "highlight.js/styles/monokai-sublime.css";
 
 type Props = {
   defaultValue?: Quill.Delta;
+  readOnly: boolean;
 };
 
 // Editor is an uncontrolled React component
-const Editor = forwardRef(({ defaultValue }: Props, ref) => {
+const Editor = forwardRef(({ defaultValue, readOnly }: Props, ref) => {
   const containerRef = useRef(null);
   const defaultValueRef = useRef(defaultValue);
+
+  useEffect(() => {
+    ref.current?.enable(!readOnly);
+  }, [ref, readOnly]);
 
   useEffect(() => {
     const container = containerRef.current;
     const editorContainer = container.appendChild(container.ownerDocument.createElement("div"));
 
     const quill = new Quill(editorContainer, {
+      readOnly,
       theme: "snow",
       modules: {
         syntax: { hljs },
