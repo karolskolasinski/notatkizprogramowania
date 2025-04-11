@@ -31,6 +31,17 @@
         @apply !border-transparent !p-0;
     }
 
+    .ql-container h1,
+    .ql-container h2,
+    .ql-container h3 {
+        @apply !my-4 font-sans;
+    }
+
+    .ql-container ul,
+    .ql-container ol {
+        @apply !p-0;
+    }
+
     span[style*="background-color"] {
         @apply px-2 py-1 rounded-md font-mono;
     }
