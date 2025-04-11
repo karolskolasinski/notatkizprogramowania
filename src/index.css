@@ -13,8 +13,14 @@
         @apply !border-transparent !p-0;
     }
 
-    .ql-toolbar button:hover {
-        @apply !text-black;
+    .ql-toolbar button,
+    .ql-toolbar span.ql-color-picker {
+        @apply !transition-colors !duration-100;
+    }
+
+    .ql-toolbar button:hover,
+    .ql-toolbar span.ql-color-picker:hover {
+        @apply !bg-gray-100 !rounded-md;
     }
 
     .ql-editor {
@@ -27,5 +33,9 @@
 
     span[style*="background-color"] {
         @apply p-2 rounded-md font-mono;
+    }
+
+    select.ql-ui {
+        @apply bg-black;
     }
 }
