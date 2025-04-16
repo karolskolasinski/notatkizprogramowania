@@ -85,6 +85,6 @@
     }
 
     .ql-editor td {
-        @apply !border-gray-100 !px-2 !py-1;
+        @apply !border-gray-200 !px-2 !py-1;
     }
 }
