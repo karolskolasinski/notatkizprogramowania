@@ -37,7 +37,7 @@ function Article() {
 
   return (
     <>
-      <div className="w-full md:h-[40rem] absolute top-16 -z-10">
+      <div className="w-full md:h-[40rem] absolute top-16 z-10">
         {randomImage && (
           <img
             src={randomImage}
@@ -46,7 +46,7 @@ function Article() {
           />
         )}
       </div>
-      <article className="flex flex-col flex-1">
+      <article className="flex flex-col flex-1 bg-gray-100">
         <div className="w-full py-8 px-1 md:px-4 xl:px-0 flex-1 max-w-7xl mx-auto font-sans-alt">
           <ArticleForm
             article={article}

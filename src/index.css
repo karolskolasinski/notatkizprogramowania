@@ -10,7 +10,7 @@
 
 @layer utilities {
     .ql-toolbar {
-        @apply !border-transparent !p-0 sticky top-0 z-50 bg-gray-50;
+        @apply !border-transparent !p-0 sticky top-0 z-50 bg-white;
     }
 
     .ql-toolbar button,
@@ -74,5 +74,17 @@
 
     select.ql-ui {
         @apply bg-black;
+    }
+
+    .ql-editor table {
+        @apply !table-auto;
+    }
+
+    .ql-editor table strong {
+        @apply font-sans text-lg;
+    }
+
+    .ql-editor td {
+        @apply !border-gray-100 !px-2 !py-1;
     }
 }
