@@ -87,4 +87,8 @@
     .ql-editor td {
         @apply !border-gray-200 !px-2 !py-1;
     }
+
+    .ql-editor .ql-video {
+        @apply !max-w-[45%] !my-8;
+    }
 }
