@@ -60,7 +60,7 @@
     }
 
     .ql-container a {
-        @apply text-cyan-600 relative !no-underline wrap-anywhere;
+        @apply !text-cyan-600 relative !no-underline wrap-anywhere;
     }
 
     .ql-container a:hover {
