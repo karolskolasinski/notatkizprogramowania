@@ -46,6 +46,10 @@
         @apply py-2 w-[35%];
     }
 
+    .ql-container strong img {
+        @apply py-2 w-full;
+    }
+
     .ql-container p:has(img) {
         @apply flex justify-center;
     }
