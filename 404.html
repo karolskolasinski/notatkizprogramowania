@@ -1,7 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
 <head>
-  <meta http-equiv="refresh" content="0; url=/" />
+  <meta charset="UTF-8" />
+  <title>Redirecting...</title>
+  <script>
+    // Przekieruj do index.html i zachowaj aktualny URL
+    const path = window.location.pathname + window.location.search + window.location.hash;
+    sessionStorage.setItem('redirectPath', path);
+    window.location.replace('/');
+  </script>
 </head>
 <body></body>
 </html>
