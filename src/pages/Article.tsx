@@ -24,7 +24,9 @@ function Article() {
     const formattedNum = randomNum < 10 ? `0${randomNum}` : `${randomNum}`;
 
     try {
-      import(`../img/cover/${formattedNum}.jpg`).then((module) => setRandomImage(module.default));
+      import(`../../public/img/cover/${formattedNum}.jpg`).then((module) =>
+        setRandomImage(module.default)
+      );
     } catch (err) {
       console.error("Nie udało się załadować obrazka:", err);
     }
