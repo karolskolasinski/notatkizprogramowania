@@ -1,8 +1,0 @@
-[
-  {
-    "title": "Pug",
-    "filePath": "./articles/TemplateEngines/Pug",
-    "path": "pug/*",
-    "to": "pug"
-  }
-]
