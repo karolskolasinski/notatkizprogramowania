@@ -3,8 +3,6 @@ import Editor from "./Editor";
 import { Status } from "./Status";
 import { Article } from "../types/article.ts";
 import { useState } from "react";
-import draw from "../img/icons/draw.svg";
-import pen from "../img/icons/pen.svg";
 
 type Props = {
   article: Article | null;
@@ -81,7 +79,7 @@ export default function ArticleForm(props: Props) {
     const isPen = name === "pen";
     return (
       <img
-        src={isPen ? pen : draw}
+        src={isPen ? "/img/icons/pen.svg" : "/img/icons/draw.svg"}
         alt={isPen ? "edit mode" : "read only"}
         title={isPen ? "edit mode" : "read only"}
         className="min-w-7 w-7 hover:bg-gray-100 duration-100 ease-in-out px-[5px] py-[3px] rounded-lg cursor-pointer"

@@ -1,6 +1,4 @@
 import { Logo } from "./Logo.tsx";
-import github from "../img/icons/github-original.svg";
-import linkedin from "../img/icons/linkedin-original.svg";
 
 const Footer = () => {
   return (
@@ -22,7 +20,7 @@ const Footer = () => {
           <div className="flex gap-4">
             <a href="https://github.com/karolskolasinski" title="GitHub">
               <img
-                src={github}
+                src="/img/icons/github-original.svg"
                 alt="github"
                 className="min-w-8 hover:opacity-80 duration-300 ease-in-out"
               />
@@ -30,7 +28,7 @@ const Footer = () => {
 
             <a href="https://www.linkedin.com/in/karolskolasinski/" title="LinkedIn">
               <img
-                src={linkedin}
+                src="/img/icons/linkedin-original.svg"
                 alt="linkedin"
                 className="min-w-8 hover:opacity-80 duration-300 ease-in-out"
               />
