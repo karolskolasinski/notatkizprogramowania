@@ -4,6 +4,7 @@ import Category from "./pages/Category.tsx";
 import Header from "./components/Header.tsx";
 import Footer from "./components/Footer.tsx";
 import Article from "./pages/Article.tsx";
+// import Pomodoro from "./views/articles/CommonOther/Pomodoro.tsx";
 
 const App = () => (
   <Router>
@@ -13,7 +14,7 @@ const App = () => (
       <Route path="/" element={<Home />} />
       <Route path="/:categoryId" element={<Category />} />
       <Route path="/:categoryId/:articleId" element={<Article />} />
-      {/*<Route path="/old" element={<VarLet />} />*/}
+      {/*<Route path="/old" element={<Pomodoro />} />*/}
     </Routes>
 
     <Footer />

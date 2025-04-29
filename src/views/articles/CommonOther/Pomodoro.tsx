@@ -1,15 +1,7 @@
-import React from "react";
-import cover from "../../../img/cover/cover-common-other.png";
-import C_V1emIomQP from "../../../mp4/C_V1emIomQP.mp4";
-import C_jFk8pIRhW from "../../../mp4/C_jFk8pIRhW.mp4";
 
 const Pomodoro = () => {
   return (
     <>
-      <div className="cover-wrapper">
-        <img src={cover} alt="common other cover" className="cover" />
-      </div>
-
       <article className="article article-content">
         <h1>Pomodoro</h1>
         <p>
@@ -20,9 +12,9 @@ const Pomodoro = () => {
         </p>
 
         <h3>Jak siedzieć przy biurku</h3>
-        <video controls className="mp4 vertical-mp4">
-          <source src={C_V1emIomQP} type="video/mp4" />
-        </video>
+        {/*<video controls className="mp4 vertical-mp4">*/}
+        {/*  <source src={C_V1emIomQP} type="video/mp4" />*/}
+        {/*</video>*/}
 
         <h3>Pomodoro timer</h3>
         <ul>
@@ -71,9 +63,9 @@ const Pomodoro = () => {
           <li>
             <strong>Tap massage</strong> - pobudza przepływ krwi i układ nerwowy
 
-            <video controls className="mp4 vertical-mp4">
-              <source src={C_jFk8pIRhW} type="video/mp4" />
-            </video>
+            {/*<video controls className="mp4 vertical-mp4">*/}
+            {/*  <source src={C_jFk8pIRhW} type="video/mp4" />*/}
+            {/*</video>*/}
           </li>
 
           <li>
