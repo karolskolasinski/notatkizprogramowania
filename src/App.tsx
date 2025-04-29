@@ -4,7 +4,6 @@ import Category from "./pages/Category.tsx";
 import Header from "./components/Header.tsx";
 import Footer from "./components/Footer.tsx";
 import Article from "./pages/Article.tsx";
-// import Pomodoro from "./views/articles/CommonOther/Pomodoro.tsx";
 
 const App = () => (
   <Router>
