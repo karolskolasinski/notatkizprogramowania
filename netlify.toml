@@ -1,7 +1,0 @@
-[build]
-  command = "npm run build"
-  publish = "dist"
-
-[build.environment]
-  NODE_VERSION = "22.12.0"
-  SECRETS_SCAN_OMIT_KEYS = "PUBLIC_KEYSTATIC_GITHUB_APP_SLUG"

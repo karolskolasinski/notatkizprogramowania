@@ -5,7 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
 import keystatic from "@keystatic/astro";
 import { loadEnv } from "vite";
-import netlify from "@astrojs/netlify";
+import vercel from "@astrojs/vercel";
 
 const env = loadEnv("", process.cwd(), "PUBLIC_");
 
@@ -45,5 +45,5 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  adapter: netlify(),
+  adapter: vercel(),
 });
