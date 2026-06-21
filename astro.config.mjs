@@ -11,6 +11,7 @@ const env = loadEnv("", process.cwd(), "PUBLIC_");
 
 export default defineConfig({
   site: env.PUBLIC_SITE_URL,
+  output: process.env.NODE_ENV === "production" ? "server" : "static",
 
   redirects: {
     "/admin": "/keystatic",
