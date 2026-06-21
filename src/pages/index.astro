@@ -1,0 +1,65 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
+import { Image } from 'astro:assets';
+
+const categories = (await getCollection('categories')).sort((a, b) =>
+  a.data.name.localeCompare(b.data.name),
+);
+const posts = await getCollection('blog');
+
+const postCount = (categoryId: string) =>
+  posts.filter((post) => post.data.categories.includes(categoryId)).length;
+---
+
+<!doctype html>
+<html lang="pl">
+  <BaseHead title={`Kategorie | ${SITE_TITLE}`} description="Posty według kategorii." />
+
+  <body class="flex flex-col min-h-screen">
+    <Header />
+    <main class="p-4 flex-1">
+      {
+        categories.length === 0 ? (
+          <section class="max-w-5xl mx-auto">Brak kategorii. Dodaj kategorie w CMS.</section>
+        ) : (
+          <section class="max-w-5xl mx-auto">
+            <ul class="grid grid-cols-1 gap-4 p-0 sm:grid-cols-2 md:grid-cols-3">
+              {categories.map((category) => (
+                <li class="list-none">
+                  <a
+                    href={`/categories/${category.id}/`}
+                    class="flex flex-col justify-center h-52 rounded-xl border border-gray-500 p-5 lg:p-10 transition hover:shadow-md"
+                  >
+                    <div class="flex justify-center items-center gap-3">
+                      <Image
+                        src={category.data.icon}
+                        alt={`Ikona kategorii ${category.data.name}`}
+                        class="min-w-12 w-12 h-12 object-contain"
+                      />
+                      <span class="text-4xl font-semibold font-display uppercase">
+                        {category.data.name}
+                      </span>
+                    </div>
+
+                    <div class="mt-4 flex items-center gap-4">
+                      <span class="rounded-full bg-gray-200 px-3 py-1 text-sm text-gray-700">
+                        {postCount(category.id)}
+                      </span>
+
+                      <span class="text-xs text-gray-500">{category.data.description}</span>
+                    </div>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
+    </main>
+    <Footer />
+  </body>
+</html>

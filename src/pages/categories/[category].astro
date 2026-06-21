@@ -1,0 +1,67 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { SITE_TITLE } from '../../consts';
+
+export async function getStaticPaths() {
+  const categories = await getCollection('categories');
+  const posts = await getCollection('blog');
+
+  return categories.map((category) => {
+    const categoryPosts = posts
+      .filter((post) => post.data.categories.includes(category.id))
+      .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+    return {
+      params: { category: category.id },
+      props: { category, posts: categoryPosts },
+    };
+  });
+}
+
+const { category, posts } = Astro.props;
+const style = { '--hover-color': category.data.color };
+---
+
+<!doctype html>
+<html lang="pl">
+  <BaseHead
+    title={`${category.data.name} | ${SITE_TITLE}`}
+    description={category.data.description}
+  />
+
+  <body class="min-h-screen flex flex-col">
+    <Header />
+    <main class="p-4 flex-1">
+      <section class="max-w-5xl mx-auto">
+        <h1 class="mb-2 text-2xl font-bold font-display">{category.data.name}</h1>
+        <p class="mt-0 mb-8 text-gray-700">{category.data.description}</p>
+
+        {
+          posts.length === 0 ? (
+            <section class="max-w-5xl mx-auto">Brak postów w tej kategorii.</section>
+          ) : (
+            <section class="max-w-5xl mx-auto">
+              <ul class="grid grid-cols-1 gap-6 p-0 sm:grid-cols-2 lg:grid-cols-3">
+                {posts.map((post) => (
+                  <li class="flex">
+                    <a
+                      href={`/blog/${post.id}/`}
+                      class="post-tile text-xl font-semibold"
+                      style={style}
+                    >
+                      {post.data.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
