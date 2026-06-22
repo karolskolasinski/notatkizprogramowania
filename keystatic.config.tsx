@@ -117,6 +117,14 @@ export default config({
           },
         }),
 
+        order: fields.number({
+          label: "Kolejność",
+          validation: {
+            isRequired: true,
+            min: 0,
+          },
+        }),
+
         description: fields.text({
           label: "Opis",
           multiline: true,

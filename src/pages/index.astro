@@ -8,9 +8,7 @@ import Header from '../components/Header.astro';
 import { SITE_TITLE } from '../consts';
 import { Image } from 'astro:assets';
 
-const categories = (await getCollection('categories')).sort((a, b) =>
-  a.data.name.localeCompare(b.data.name),
-);
+const categories = (await getCollection('categories')).sort((a, b) => a.data.order - b.data.order);
 const posts = await getCollection('blog');
 
 const postCount = (categoryId: string) =>

@@ -24,6 +24,7 @@ const categories = defineCollection({
   schema: ({ image }) =>
     z.object({
       name: z.string(),
+      order: z.number(),
       description: z.string(),
       color: z.string(),
       icon: image(),
