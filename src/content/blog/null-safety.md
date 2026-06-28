@@ -6,7 +6,7 @@ description: >-
 pubDate: 2026-06-28
 heroImage: '@assets/posts/null-safety/heroImage.jpg'
 categories:
-  - html
+  - java-script
 ---
 ## TypeScript kłamie! Iluzja bezpieczeństwa, czyli dlaczego TypeScript to za mało.
 
