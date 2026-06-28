@@ -241,11 +241,8 @@ const tax = order?.taxRate ?? 0.23;
 
 ```
 
-#### Krok 3: Wykorzystanie kompilatora (`strict: true`)
+##### Krok 3: Wykorzystanie kompilatora (`strict: true`)
 
-W pliku `tsconfig.json` musisz mieć włączoną opcję `"strict": true` (a w szczególności `"strictNullChecks": true`). Wtedy TypeScript sam zmusi Cię do obsłużenia sytuacji, w których coś może być `null` lub `undefined` – ale zmusi Cię do zrobienia tego **świadomie**, a nie na oślep za pomocą `?.`.
+W pliku `tsconfig.json` musisz mieć włączoną opcję `"strict": true` (a w szczególności `"strictNullChecks": true`). Wtedy TypeScript sam zmusi Cię do obsłużenia sytuacji, w których coś może być `null` lub `undefined` – ale zmusi cię do zrobienia tego **świadomie**, a nie na oślep za pomocą `?.`.
 
 Popychanie `?.` w każde miejsce kodu to tak naprawdę powrót do filozofii starego, chaotycznego JavaScriptu, tylko w ładniejszym opakowaniu. Bezpieczny frontend to taki, który głośno i szybko krzyczy, kiedy dane się nie zgadzają, zamiast po cichu renderować puste strony.
-
-
-
