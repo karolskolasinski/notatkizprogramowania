@@ -498,7 +498,7 @@ W Rust **Panic** to bardzo elegancka, bezpieczna procedura nazywana *Stack Unwin
 
 Wywalenie się w TypeScript jest jak wypadnięcie pasażera z jadącego pociągu przez otwarte w biegu drzwi – pociąg jedzie dalej, ale sytuacja jest katastrofalna i nieprzewidywalna. Panic w Rust jest jak natychmiastowe, automatyczne zaciągnięcie hamulca bezpieczeństwa przez komputer pokładowy, gdy tylko czujnik wykryje otwarte drzwi. Pociąg staje w miejscu, nikomu nic się nie dzieje, system jest bezpieczny. Czytelna metafora?
 
-##### Ostatecznie aplikacja i tak się wywali
+#### Ostatecznie aplikacja i tak się wywali
 
 Tak, z perspektywy użytkownika jest w tym 100% racji: **jeśli aplikacja przestaje działać, to dla człowieka przed ekranem nie ma znaczenia, czy stało się to elegancko, czy chaotycznie.** Efekt jest ten sam – program "leży".
 
@@ -506,7 +506,7 @@ Istnieje jednak kolosalna różnica w tym, **jak często** do tego wywalenia doc
 
 Oto dlaczego "wywalenie się" w Rust/OCaml to zupełnie inna klasa bezpieczeństwa niż w TypeScript:
 
-###### 1. W Rust/OCaml wywalenie to twój ŚWIADOMY wybór (możesz go uniknąć)
+##### 1. W Rust/OCaml wywalenie to twój ŚWIADOMY wybór (możesz go uniknąć)
 
 W TypeScript używasz `tablica[10]` i kompilator milczy. Nie wiesz, że ryzykujesz crash, dopóki program nie wybuchnie w runtime.
 
@@ -517,7 +517,7 @@ W Rust masz dwa sposoby na wyciągnięcie danych z tablicy. Kompilator zmusza ci
 
 Większość programistów Rust w produkcyjnym kodzie w ogóle nie używa klamer `[index]`, tylko metody `.get()`. Dzięki temu **aplikacja w Rust po prostu się nie wywala**, podczas gdy w TS wywala się regularnie, bo programista zapomniał, że indeks może być za duży.
 
-###### 2. Izolacja awarii (Crash jednego komponentu nie zabija reszty)
+##### 2. Izolacja awarii (Crash jednego komponentu nie zabija reszty)
 
 Gdy aplikacja frontendowa w TypeScript (np. w React) napotka `TypeError: Cannot read properties of undefined`, bardzo często wywala się cały wątek renderowania. Użytkownik widzi biały ekran (White Screen of Death). Cała aplikacja umiera.
 
@@ -527,7 +527,7 @@ W systemach o pełnym Null Safety (szczególnie w Gleam działającym na platfor
 * Jeśli jeden wątek (np. odpowiedzialny za renderowanie małego widgetu z pogodą) dostanie `Panic` z powodu błędu w tablicy, **umiera tylko ten jeden widget**.
 * Reszta aplikacji (czat, formularz płatności, nawigacja) działa idealnie dalej. System automatycznie restartuje ten jeden zepsuty element do stanu początkowego.
 
-###### 3. Lepiej kontrolowanie spłonąć, niż po cichu kraść dane
+##### 3. Lepiej kontrolowanie spłonąć, niż po cichu kraść dane
 
 W inżynierii oprogramowania istnieje złota zasada: **„Fail-Fast”** (giń szybko).
 
@@ -538,20 +538,9 @@ Najgorszy błąd to taki, który nie wywala aplikacji, ale pozwala jej działać
 
 Rust i OCaml wychodzą z założenia: **Bezpieczniej dla biznesu i użytkownika jest natychmiast zabić program, niż pozwolić mu działać w stanie nieprzewidywalnym.**
 
-### Podsumowanie
+#### Podsumowanie
 
 Różnica jest prosta:
 
 * **W TypeScript** aplikacja wywala się przypadkowo, w niespodziewanych momentach, zacierając ślady błędu i niszcząc stan aplikacji.
 * **W Rust/OCaml** aplikacja wywala się tylko wtedy, gdy programista jawnie zignorował bezpieczne metody (jak `.get()`), a sam crash jest sterylną, bezpieczną procedurą, która chroni system przed chaosem.
-
-
-
-
-
-
-
-
-
-
-
