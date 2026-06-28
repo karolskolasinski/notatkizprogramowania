@@ -204,4 +204,48 @@ Czyli wracamy do punktu wyjścia.
 
 W języku Objective-C (stary język do aplikacji na iPhone'y) istniała dokładnie taka zasada: **wysłanie wiadomości do `nil` (null) nie robiło nic i zwracało `nil` lub `0`.** Efekt? Programy rzadko się crashowały, ale za to działy się w nich rzeczy paranormalne. Klikasz przycisk "Kup", aplikacja nic nie robi, nie sypie błędami, po prostu ignoruje użytkownika, bo gdzieś głęboko pod spodem obiekt koszyka był `nil`. Programiści nienawidzili tego debugować.
 
-..
+#### Jak więc zbudować bezpieczny program w TS?
+
+Skoro już wiemy dlaczego konstrukcja języka nie pozwala pominąć `null`, to zastanówmy się co **realnie** można z tym zrobić? Prawdziwe bezpieczeństwo w TypeScript (tzw. *Type Safety*) osiąga się poprzez kontrolowanie granic aplikacji, a nie maskowanie błędów.
+
+##### Krok 1: Walidacja na wejściu (Parse, don't validate)
+
+Wszystko, co wchodzi do Twojej aplikacji z zewnątrz (API, LocalStorage, formularze), musi zostać sprawdzone **w runtime** zanim trafi do logiki biznesowej. Do tego służą biblioteki takie jak **Zod**.
+
+```typescript
+import { z } from 'zod';
+
+// Definiujesz schemat, jakiego oczekujesz
+const UserSchema = z.object({
+  id: z.string(),
+  email: z.string().email(),
+});
+
+// W momencie pobierania danych:
+const response = await fetch('/api/user');
+const rawData = await response.json();
+
+// Zod sprawdza dane. Jeśli API oszukało, aplikacja wywali się TUTAJ,
+// a nie w losowym miejscu kodu 5 minut później.
+const user = UserSchema.parse(rawData); 
+
+```
+
+##### Krok 2: Jawna obsługa alternatyw (Nullish Coalescing `??`)
+
+Zamiast zostawiać `undefined`, zawsze definiuj wartość bezpieczną (fallback) za pomocą operatora `??`.
+
+```typescript
+// Jeśli nie ma stawki podatku, domyślnie użyj 23%, zamiast psuć matematykę
+const tax = order?.taxRate ?? 0.23;
+
+```
+
+#### Krok 3: Wykorzystanie kompilatora (`strict: true`)
+
+W pliku `tsconfig.json` musisz mieć włączoną opcję `"strict": true` (a w szczególności `"strictNullChecks": true`). Wtedy TypeScript sam zmusi Cię do obsłużenia sytuacji, w których coś może być `null` lub `undefined` – ale zmusi Cię do zrobienia tego **świadomie**, a nie na oślep za pomocą `?.`.
+
+Popychanie `?.` w każde miejsce kodu to tak naprawdę powrót do filozofii starego, chaotycznego JavaScriptu, tylko w ładniejszym opakowaniu. Bezpieczny frontend to taki, który głośno i szybko krzyczy, kiedy dane się nie zgadzają, zamiast po cichu renderować puste strony.
+
+
+
