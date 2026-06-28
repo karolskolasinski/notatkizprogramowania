@@ -103,23 +103,9 @@ console.log(items); // ["hello", "world", 1]
 
 Katastrofa wydarza się chwilę później. Funkcja modyfikuje tablicę za pomocą tej szerszej referencji i dorzuca tam liczbę. Ponieważ tablice w JavaScript są współdzielone w pamięci, oryginalna struktura zostaje bezpowrotnie skażona. Co na to TypeScript? Dla niego zmienna `items` na samym dole pliku to wciąż, niezmiennie i z pełną „gwarancją”... `string[]`.
 
-Kiedy kawałek dalej spróbujesz przejechać po tej tablicy pętlą i odpalić na każdym elemencie metodę `.toUpperCase()`, program wywali się na zbity pysk z błędem `TypeError: item.toUpperCase is not a function`. Kompilator do samego końca będzie przysięgał, że tam są tylko napisy, podczas gdy w pamięci komputera tkwi już podrzucona po cichu liczba.
+Kiedy kawałek dalej spróbujesz przejechać po tej tablicy pętlą i odpalić na każdym elemencie metodę `.toUpperCase()`, program wywali się z błędem `TypeError: item.toUpperCase is not a function`. Kompilator do samego końca będzie przysięgał, że tam są tylko napisy, podczas gdy w pamięci komputera tkwi już podrzucona po cichu liczba.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Podobnych przykładów i "dziur" można podać więcej, ale już widać, że bezpieczeństwo w TS jest słabe, żeby nie powiedzieć żadne (jeżeli chodzi o konstrukcję języka).
 
 
 
