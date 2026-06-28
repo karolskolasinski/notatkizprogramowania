@@ -322,9 +322,7 @@ val length = name.length // BŁĄD KOMPILACJI! Kompilator na to nie pozwoli.
 
 Aby dobrać się do danych, musisz udowodnić kompilatorowi, że sprawdziłeś stan zmiennej. Kompilator analizuje Twój kod linijka po linijce (Flow Analysis):
 
-Kotlin
-
-```
+```kotlin
 if (name != null) {
     // Wewnątrz tego bloku kompilator wie, że name nie jest nullem.
     // Następuje tzw. SMART CAST – tymczasowo zmienia typ z String? na String.
