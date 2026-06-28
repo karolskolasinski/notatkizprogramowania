@@ -333,9 +333,7 @@ if (name != null) {
 
 ### Podejście B: Całkowite usunięcie `null` z języka (Rust, OCaml, Elm)
 
-Języki takie jak Rust poszły jeszcze krok dalej. Tam słowo takie jak `null`, `nil` czy `undefined` **w ogóle nie istnieje**. Nie da się stworzyć pustego wskaźnika.
-
-Jak w takim razie przekazać informację, że „czegoś nie ma” (np. wynik wyszukiwania w bazie danych)? Używa się do tego specjalnego typu wyliczeniowego (Enum / Algebraic Data Type), który nazywa się **`Option`** (w Rust) lub **`Maybe`** (w Elm).
+Języki takie jak Rust poszły jeszcze krok dalej. Tam słowo takie jak `null`, `nil` czy `undefined` **w ogóle nie istnieje**. Nie da się stworzyć pustego wskaźnika. Jak w takim razie przekazać informację, że „czegoś nie ma” (np. wynik wyszukiwania w bazie danych)? Używa się do tego specjalnego typu wyliczeniowego (Enum / Algebraic Data Type), który nazywa się **`Option`** (w Rust) lub **`Maybe`** (w Elm).
 
 ```rust
 // W Rust nie ma null. Jest enum Option, który ma dwa stany:
@@ -362,3 +360,107 @@ match user {
 ```
 
 Kompilator Rusta pilnuje, abyś w instrukcji `match` obsłużył **oba przypadki** (`Some` i `None`). Jeśli zapomnisz o `None`, kod się nie skompiluje. Nie ma fizycznej możliwości zapomnienia o błędzie.
+
+### Problem kłamstwa na granicy aplikacji (Kotlin vs Rust)
+
+**Kompilator jest bezradny, jeśli programista go okłamie.** Jeśli w Kotlinie napiszesz, że dane z API to `String` (nie-nullowalny), a API zwróci `null`, to pojawia się problem. Jednak to, jak języki sobie z tym radzą, różni się diametralnie.
+
+W Kotlinie taka sytuacja miała miejsce, gdy używano starych bibliotek z Javy (np. GSON). GSON potrafił za pomocą magii (refleksji) wstrzyknąć `null` do zmiennej typu `String`. Wtedy program faktycznie wywalał się w runtime przy pierwszej próbie użycia tego stringa.
+
+Nowoczesny Kotlin używa bibliotek takich jak `kotlinx.serialization`. Działają one jak **Zod**:
+
+Jeśli API zwróci `null` tam, gdzie zadeklarowałeś `String`, parser natychmiast rzuci wyjątek **na samej bramce wejściowej** (podczas deserializacji JSON-a). Aplikacja nie dopuści tego `null` do wnętrza twojego kodu.
+
+W Rust sytuacja jest jeszcze bardziej rygorystyczna. W Rust nie da się "ot tak" przypisać JSON-a do struktury danych. Musisz użyć biblioteki (najczęściej `serde`).
+
+Jeśli zadeklarujesz strukturę:
+
+```rust
+struct User {
+    name: String, // To NIE MOŻE być null
+}
+
+```
+
+a z API przyjdzie `{ "name": null }`, to funkcja parsująca `serde_json::from_str()` **zwróci błąd parsowania (Result::Err)**. Kod biznesowy w ogóle się nie wykona. Rust fizycznie uniemożliwia stworzenie w pamięci struktury `User`, która miałaby pusty wskaźnik tam, gdzie oczekiwany jest `String`.
+
+W TypeScript, jeśli zrobisz `await response.json()`, JavaScript daje ci obiekt typu `any`. Możesz udawać, że to jest `String`, a TS ci uwierzy na słowo. **W Rust nie ma typu `any`.**
+
+Gdy robisz zapytanie do API w Rust, funkcja `call_api()` nie zwraca danych z JSON-a. Ona zwraca **surowy ciąg bajtów** (tekst JSON-a zamknięty w obiekcie odpowiedzi).
+
+Jeśli w tym JSON-ie z API znajduje się `{ "name": null }`, to dla Rusta to jest po prostu tekst zawierający literki n-u-l-l. Twoja zmienna nie staje się nullem. Ona trzyma tekst.
+
+Aby dobrać się do pola `name`, **musisz** ten tekst zdeserializować (zamienić na strukturę w pamięci). Robi się to tak:
+
+```rust
+#[derive(Deserialize)]
+struct User {
+    name: String, // Kompilator WYMUSZA, żeby to był prawdziwy String
+}
+
+// Próba parsowania tekstu z API do struktury User
+let user: User = serde_json::from_str(api_response_text).unwrap();
+
+```
+
+Jeśli API przysłało tam `null`, funkcja `from_str` **wywali się w tym dokładnie momencie**. Nie przypisze `null` do zmiennej `name`, bo w pamięci komputera dla typu `String` w Rust nie ma przewidzianego miejsca na `null`.
+
+W Rust nie da się "zapomnieć o Zodzie". W Rust proces parsowania (odpowiednik Zoda) jest **jedyną fizyczną drogą**, aby zamienić surowy tekst z sieci na obiekt, którego możesz użyć w kodzie.
+
+#### Czy da się napisać bibliotekę w Rust, która "zwraca dane jak leci" i oszukuje kompilator?
+
+Wyobraźmy sobie, że ktoś napisał bibliotekę sieciową, która nie bawi się w żadne deseryalizacje (jak Zod czy Serde), tylko bierze surowe bajty z karty sieciowej i rzuca je wprost do twojej zmiennej. Czy wtedy oszukamy kompilator Rusta?
+
+**Nie w bezpiecznym kodzie (Safe Rust).** W Rust każdy kawałek pamięci musi mieć przypisany typ. Jeśli biblioteka sieciowa zwraca dane "jak leci", to zwraca typ `Vec<u8>` (wektor surowych bajtów).
+
+```rust
+// Pobieramy surowe bajty (np. tekst "[1, 2, 3]" albo json)
+let raw_data: Vec<u8> = pobierz_jak_leci();
+
+// Próba oszukania kompilatora: "Hej Rust, udawajmy że to jest struktura User"
+let user: User = raw_data; // BŁĄD KOMPILACJI! Typy się nie zgadzają.
+
+```
+
+#### Jak to wygląda w C/C++ (gdzie da się oszukać)?
+
+W języku C możesz zrobić tzw. *pointer casting*. Mówisz komputerowi: *"Widzisz te bajty w pamięci? Od teraz patrz na nie tak, jakby to była struktura User"*. Jeśli sieć przysłała śmieci, program spróbuje odczytać losowe miejsca w pamięci i natychmiast się skompiluje, a w runtime dostaniesz słynny **Segmentation Fault (Crash)**.
+
+#### A jak to robi Rust?
+
+W Rust, aby zrobić taką niebezpieczną sztuczkę (zinterpretować surową pamięć jako dany typ bez sprawdzania), musisz jawnie użyć słowa-klucza **`unsafe`**:
+
+```
+// To się skompiluje, ale WYMAGA flagi unsafe:
+let user: User = unsafe { std::mem::transmute(raw_data) };
+
+```
+
+Użycie `unsafe` to naciśnięcie czerwonego przycisku atomowego. Mówisz kompilatorowi: *"Wyłączam ochronę, biorę odpowiedzialność na siebie"*. Jeśli dane z sieci były złe, program zaliczy crash (Undefined Behavior).
+
+**Różnica między TS a Rust:** W TypeScript "oszustwo" (np. przez `as User`) robisz codziennie, bez ostrzeżeń, to domyślny styl pisania kodu. W Rust zrobienie tego bez parsowania wymaga celowego wpisania `unsafe`, co w 99% projektów komercyjnych jest całkowicie zakazane na poziomie lintera.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
