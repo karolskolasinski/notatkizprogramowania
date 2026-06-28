@@ -261,3 +261,131 @@ Jeśli wdrożysz duet **TypeScript (w trybie `strict`) + Zod na każdej granicy 
 
 Nie uzyskasz matematycznego "zero runtime exceptions", ale unikniesz 99,9% błędów, zachowując jednocześnie normalną, czytelną składnię, ludzkie ekosystemy (npm) i święty spokój. Na frontendzie obecnie TS + Zod to absolutny złoty standard kompromisu między bezpieczeństwem a produktywnością.
 
+#### Nie używaj TS
+
+A co jeżeli nie chcesz chodzić na kompromisy? Jeżeli chcesz mieć **pewność** bezpieczeństwa, musisz pójść w stronę języków które są null-safe.&#x20;
+
+## 3. Null Safety
+
+Null Safety to jeden z najważniejszych przełomów w projektowaniu języków programowania w ciągu ostatnich 20 lat.
+
+Aby dobrze to zrozumieć, musimy cofnąć się do roku 1965, kiedy brytyjski informatyk Tony Hoare wymyślił koncepcję referencji `null`. Po latach nazwał to swoim **„miliardowym błędem”** (Billion Dollar Mistake), ponieważ ta jedna decyzja doprowadziła do niezliczonych crashy aplikacji, dziur w bezpieczeństwie i miliardów godzin spędzonych na debuggingu na całym świecie.
+
+### Na czym polega problem z "zwykłym" `null`?
+
+W klasycznych językach (jak stara Java, C++ czy tradycyjny JavaScript) zmienna danego typu (np. `String`) to tak naprawdę **wskaźnik do miejsca w pamięci**, gdzie ten tekst leży.
+
+Problem polega na tym, że ten wskaźnik może też pokazywać na „nic” czyli `null`. Dla kompilatora typ `String` i typ `null` były tą samą szufladą.
+
+```java
+// Klasyczna Java (przed wersjami z Null Safety)
+String name = null; 
+int length = name.length(); // CRASH: NullPointerException!
+
+```
+
+Kompilator starej Javy patrzy na to i mówi: *„Wszystko ok, `name` to String, a String ma metodę `.length()`, pozwalam na uruchomienie”*. Dopiero w trakcie działania programu (w runtime), gdy procesor próbuje wejść pod adres pamięci ukryty pod `name` i widzi tam pustkę, aplikacja spektakularnie umiera.
+
+
+
+## Jak działa dogłębnie prawdziwe Null Safety?
+
+Prawdziwe Null Safety (nazywane też *Void Safety*) polega na przesunięciu odpowiedzialności z człowieka na **kompilator**. Kompilator staje się matematycznym strażnikiem, który gwarantuje, że do crashu w runtime dojść nie może.
+
+Odbywa się to na dwa różne sposoby, w zależności od języka.
+
+### Podejście A: Dwa osobne światy typów (Kotlin, Swift, Dart)
+
+W tych językach system typów zostaje rozbity na dwie hierarchie. `String` i `null` nie mają ze sobą nic wspólnego.
+
+1. **Typy nie-nullowalne (Non-Nullable):** Domyślnie każda zmienna **musi** mieć wartość.
+
+   ```kotlin
+   var name: String = "Ania"
+   name = null // BŁĄD KOMPILACJI! Kod nawet się nie uruchomi.
+
+   ```
+2. **Typy nullowalne (Nullable):** Jeśli dopuszczasz brak wartości, musisz to jawnie zadeklarować pytajnikiem `?`. Tworzysz wtedy zupełnie nowy typ: `String?`.
+
+   Kotlin
+
+   ```
+   var name: String? = null // To jest legalne
+
+   ```
+
+#### Magia ukryta w kompilatorze: Smart Casting i Analiza Przepływu (Flow Analysis)
+
+Skoro `name` jest typu `String?`, kompilator traktuje tę zmienną jakby była zamknięta w bezpiecznym pudełku. **Zabrania Ci dotknięcia jakiejkolwiek metody tego obiektu.**
+
+Kotlin
+
+```
+var name: String? = pobierzZApi()
+val length = name.length // BŁĄD KOMPILACJI! Kompilator na to nie pozwoli.
+
+```
+
+Aby dobrać się do danych, musisz udowodnić kompilatorowi, że sprawdziłeś stan zmiennej. Kompilator analizuje Twój kod linijka po linijce (Flow Analysis):
+
+Kotlin
+
+```
+if (name != null) {
+    // Wewnątrz tego bloku kompilator wie, że name nie jest nullem.
+    // Następuje tzw. SMART CAST – tymczasowo zmienia typ z String? na String.
+    val length = name.length // Działa idealnie i bezpiecznie!
+}
+
+```
+
+### Podejście B: Całkowite usunięcie `null` z języka (Rust, Elm)
+
+Języki takie jak Rust poszły jeszcze krok dalej. Tam słowo takie jak `null`, `nil` czy `undefined` **w ogóle nie istnieje**. Nie da się stworzyć pustego wskaźnika.
+
+Jak w takim razie przekazać informację, że „czegoś nie ma” (np. wynik wyszukiwania w bazie danych)? Używa się do tego specjalnego typu wyliczeniowego (Enum / Algebraic Data Type), który nazywa się **`Option`** (w Rust) lub **`Maybe`** (w Elm).
+
+Rust
+
+```
+// W Rust nie ma null. Jest enum Option, który ma dwa stany:
+enum Option<T> {
+    Some(T), // Jest wartość typu T
+    None,    // Nie ma nic
+}
+
+```
+
+Jeśli funkcja może nie znaleźć użytkownika, nie zwraca `User` ani `null`. Zwraca `Option<User>`.
+
+Rust
+
+```
+let user: Option<User> = find_user(123);
+
+// Nie możesz zrobić user.name, bo 'user' to Option, a nie User!
+// Musisz użyć konstrukcji 'match' (pattern matching):
+
+match user {
+    Some(actual_user) => println!("Witaj {}", actual_user.name),
+    None => println!("Nie znaleziono użytkownika"),
+}
+
+```
+
+Kompilator Rusta pilnuje, abyś w instrukcji `match` obsłużył **oba przypadki** (`Some` i `None`). Jeśli zapomnisz o `None`, kod się nie skompiluje. Nie ma fizycznej możliwości zapomnienia o błędzie.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
