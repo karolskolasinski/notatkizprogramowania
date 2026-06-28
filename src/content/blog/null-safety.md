@@ -142,3 +142,46 @@ Gdy program wywala się w runtime z powodu braku właściwości, od razu dostaje
 Wstawiając wszędzie `?.` informujesz kompilator: *"To normalne, że tych danych może nie być"*. Ale czy na pewno?
 
 Czy to normalne, że zalogowany użytkownik nie ma `user.id`? Nie. Jeśli go nie ma, aplikacja powinna natychmiast przerwać działanie, a nie udawać, że wszystko jest w porządku.
+
+#### Null check w metodach języka
+
+Czy nie było by dobrze, gdyby to same metody wykonywane na zmiennych danego typu nie wywalały programu tylko działały w sposób bezpieczny? Mówiąc inaczej: czy dana metoda nie powinna sama sprawdzić czy operacja, którą chce wykonać nie będzie wykonywana na `null`? Ale co wtedy? No właśnie, co miała by wtedy zrobić? Te pytania dotykają bezpośrednio architektury procesorów, teorii typów oraz tego, jak systemy informatyczne komunikują się ze światem zewnętrznym. Rozbijmy to na czynniki pierwsze.
+
+##### Dlaczego metody nie mogą same obsługiwać `null`? ("I co wtedy?")
+
+Zastanówmy się nad tym pomysłem. Wywołujemy `substring()` na obiekcie, który jest `null`. Metoda to wykrywa i... **No właśnie, co ma zrobić?** Są tylko trzy wyjścia i każde jest złe:
+
+* **Opcja A: Metoda zwraca `null`.** Jeśli `substring()` zwróci `null`, to kolejna metoda wywołana na tym wyniku (np. `toUpperCase()`) znowu dostanie `null`. Przesuwamy problem o krok dalej. To jest dokładnie to, co robi operator `?.` w TS.
+* **Opcja B: Metoda zwraca "wartość bezpieczną" (np. pusty string `""`).** Wyobraź sobie system bankowy. Pobierasz z bazy danych numer konta premium dla klienta: `getPremiumAccount()`. Klient nie ma takiego konta, więc system zwraca `null`. Jeśli metoda do wysyłki przelewu przyjmie ten `null` i po cichu zamieni go na pusty string `""`, to system spróbuje wysłać przelew na konto o numerze `""`. To katastrofa logiczna. **Brak danych to nie to samo, co puste dane.**
+* **Opcja C: Metoda rzuca błąd (Crash).** Czyli wracamy do punktu wyjścia.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
