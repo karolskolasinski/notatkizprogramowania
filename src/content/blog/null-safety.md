@@ -286,13 +286,13 @@ int length = name.length(); // CRASH: NullPointerException!
 
 Kompilator starej Javy patrzy na to i mówi: *„Wszystko ok, `name` to String, a String ma metodę `.length()`, pozwalam na uruchomienie”*. Dopiero w trakcie działania programu (w runtime), gdy procesor próbuje wejść pod adres pamięci ukryty pod `name` i widzi tam pustkę, aplikacja spektakularnie umiera.
 
-## Jak działa dogłębnie prawdziwe Null Safety?
+### Jak działa dogłębnie prawdziwe Null Safety?
 
 Prawdziwe Null Safety (nazywane też *Void Safety*) polega na przesunięciu odpowiedzialności z człowieka na **kompilator**. Kompilator staje się matematycznym strażnikiem, który gwarantuje, że do crashu w runtime dojść nie może.
 
 Odbywa się to na dwa różne sposoby, w zależności od języka.
 
-### Podejście A: Dwa osobne światy typów (Kotlin, Swift, Dart)
+#### Podejście A: Dwa osobne światy typów (Kotlin, Swift, Dart)
 
 W tych językach system typów zostaje rozbity na dwie hierarchie. `String` i `null` nie mają ze sobą nic wspólnego.
 
@@ -310,7 +310,7 @@ W tych językach system typów zostaje rozbity na dwie hierarchie. `String` i `n
 
    ```
 
-#### Magia ukryta w kompilatorze: Smart Casting i Analiza Przepływu (Flow Analysis)
+##### Magia ukryta w kompilatorze: Smart Casting i Analiza Przepływu (Flow Analysis)
 
 Skoro `name` jest typu `String?`, kompilator traktuje tę zmienną jakby była zamknięta w bezpiecznym pudełku. **Zabrania ci dotknięcia jakiejkolwiek metody tego obiektu.**
 
@@ -331,7 +331,7 @@ if (name != null) {
 
 ```
 
-### Podejście B: Całkowite usunięcie `null` z języka (Rust, OCaml, Elm)
+#### Podejście B: Całkowite usunięcie `null` z języka (Rust, OCaml, Elm)
 
 Języki takie jak Rust poszły jeszcze krok dalej. Tam słowo takie jak `null`, `nil` czy `undefined` **w ogóle nie istnieje**. Nie da się stworzyć pustego wskaźnika. Jak w takim razie przekazać informację, że „czegoś nie ma” (np. wynik wyszukiwania w bazie danych)? Używa się do tego specjalnego typu wyliczeniowego (Enum / Algebraic Data Type), który nazywa się **`Option`** (w Rust) lub **`Maybe`** (w Elm).
 
@@ -440,19 +440,110 @@ Użycie `unsafe` to naciśnięcie czerwonego przycisku atomowego. Mówisz kompil
 
 **Różnica między TS a Rust:** W TypeScript "oszustwo" (np. przez `as User`) robisz codziennie, bez ostrzeżeń, to domyślny styl pisania kodu. W Rust zrobienie tego bez parsowania wymaga celowego wpisania `unsafe`, co w 99% projektów komercyjnych jest całkowicie zakazane na poziomie lintera.
 
+#### TypeScript: Świadomie nieszczelny
 
+Twórcy TS na swojej oficjalnej stronie piszą wprost: *"TypeScript's type system is unsound by design"*. Pozwolili na dziury dla wygody programistów JS. Przykład z tablicą: `const x = arr[10];` – TS twierdzi, że `x` to np. `number`. W runtime okazuje się, że tablica była krótka i `x` to `undefined`. System typów skłamał.
 
+#### Rust i OCaml: Matematycznie szczelne (w bezpiecznym kodzie)
 
+W safe Rust i w OCamlu **takie dziury nie istnieją**. Kompilatory tych języków są matematycznie spójne.
 
+Co zrobi Rust, jeśli zapytasz o element tablicy, którego nie ma (`arr[10]`)?
 
+1. Kompilator nie pozwoli na to, żeby ta operacja zwróciła po cichu `undefined` (bo w Rust nie ma `undefined`).
+2. W runtime, w ułamku sekundy, program sprawdza długość tablicy. Jeśli indeks jest za duży, program wywołuje tzw. **Panic**. Program jest natychmiast, bezpiecznie zatrzymywany (lub wątek umiera), zanim zdąży zrobić cokolwiek z niepoprawnym typem danych.
 
+W OCamlu w takiej sytuacji dostajesz wyjątek `Index_out_of_bounds`, który również przerywa błędną operację. System typów nigdy cię nie okłamie.
 
+Możesz się zastanawiać: *„Skoro kompilator jest taki mądry, to czemu nie wykrył tego wcześniej?”*. Kompilator nie jest jasnowidzem. Jeśli każesz programowi pobrać `tablica[index]`, gdzie `index` jest wpisywany przez użytkownika w okienku, kompilator nie ma pojęcia, co ten użytkownik wpisze. Musi więc zabezpieczyć program na moment uruchomienia.
 
+Oto jak to dokładnie przebiega i dlaczego to zupełnie co innego niż wywalenie się aplikacji w TypeScript.
 
+#### Kiedy i jak to się dzieje w Rust?
 
+Podczas kompilacji Rust patrzy na Twój kod i tam, gdzie widzi dostęp do tablicy, **samodzielnie dopisuje niewidzialny warunek `if`**.
 
+Gdy program już działa i dochodzi do tej linijki, wykonuje się następujący scenariusz:
 
+1. Procesor sprawdza automatycznie wygenerowany warunek: *Czy żądany indeks jest mniejszy niż długość tablicy?*
+2. Jeśli tak – program działa dalej bez milisekundy opóźnienia.
+3. Jeśli nie (indeks jest za duży) – uruchamia się procedura **Panic**.
 
+#### Czym to się różni od wywalenia się programu w TypeScript?
+
+Różnica tkwi w trzech kluczowych kwestiach: **momencie krachu**, **kłamstwie systemowym** oraz **kontrolowanej demolce**.
+
+##### Różnica I: Moment krachu (natychmiast vs z opóźnieniem)
+
+W TypeScript/JavaScript wyciągnięcie elementu poza tablicą **nie powoduje błędu**. JS po prostu po cichu zwraca `undefined`.
+
+* **W TS:** Błąd nie pojawia się w linijce z tablicą. Pojawia się dopiero później, kiedy próbujesz zrobić coś na tym `undefined` (np. odczytać `user.name`). Program zdążył już wykonać kilka kolejnych operacji, przekazać to `undefined` do innych funkcji i namieszać w stanie aplikacji.
+* **W Rust:** Krach następuje w dokładnie tej samej mikrosekundzie, w której próbujesz dotknąć nielegalnego indeksu. Program nie idzie ani o jedną instrukcję dalej. Nie ma szans na skażenie reszty kodu błędnymi danymi.
+
+##### Różnica II: Kłamstwo w systemie typów
+
+* **W TS:** Mamy do czynienia z oszustwem. TypeScript obiecał Ci na etapie pisania kodu, że zmienna z tablicy to `User`. Ty napisałeś kod pod ten typ, a w runtime dostałeś `undefined`. System typów w TS Cię okłamał, bo ma w tym miejscu wspomnianą nieszczelność (*soundness hole*).
+* **W Rust:** System typów nigdy nie kłamie. Jeśli zmienna ma typ `User`, to kompilator daje głowę, że tam jest `User`. Skoro fizycznie nie da się tam wstawić `User` (bo indeks był za duży), Rust woli natychmiast ubić program, niż pozwolić na to, by w pamięci wylądowało coś niezgodnego z typem.
+
+##### Różnica III: "Kontrolowana demolka" (Stack Unwinding)
+
+Kiedy TypeScript (a dokładniej silnik V8 w przeglądarce) rzuca `Uncaught TypeError`, aplikacja po prostu "pęka". Komponenty Reacta mogą przestać się renderować, zostawiając użytkownika z białą stroną, pamięć może wyciekać, a otwarte połączenia (np. WebSockety) mogą zawisnąć w próżni.
+
+W Rust **Panic** to bardzo elegancka, bezpieczna procedura nazywana *Stack Unwinding* (odwijanie stosu):
+
+1. Program orientuje się, że nastąpił Panic.
+2. Zanim całkowicie się wyłączy, zaczyna systematycznie iść wstecz przez wszystkie uruchomione funkcje.
+3. **Bezpiecznie czyści pamięć**: niszczy zmienne, poprawnie zamyka otwarte pliki, zamyka połączenia sieciowe i zdejmuje blokady (locks) z baz danych, żeby nie uszkodzić plików systemowych.
+4. Dopiero gdy wszystko jest posprzątane, wątek lub cały proces zostaje bezpiecznie zamknięty.
+
+Wywalenie się w TypeScript jest jak wypadnięcie pasażera z jadącego pociągu przez otwarte w biegu drzwi – pociąg jedzie dalej, ale sytuacja jest katastrofalna i nieprzewidywalna. Panic w Rust jest jak natychmiastowe, automatyczne zaciągnięcie hamulca bezpieczeństwa przez komputer pokładowy, gdy tylko czujnik wykryje otwarte drzwi. Pociąg staje w miejscu, nikomu nic się nie dzieje, system jest bezpieczny. Czytelna metafora?
+
+##### Ostatecznie aplikacja i tak się wywali
+
+Tak, z perspektywy użytkownika jest w tym 100% racji: **jeśli aplikacja przestaje działać, to dla człowieka przed ekranem nie ma znaczenia, czy stało się to elegancko, czy chaotycznie.** Efekt jest ten sam – program "leży".
+
+Istnieje jednak kolosalna różnica w tym, **jak często** do tego wywalenia dochodzi oraz **co dzieje się z resztą systemu**.
+
+Oto dlaczego "wywalenie się" w Rust/OCaml to zupełnie inna klasa bezpieczeństwa niż w TypeScript:
+
+###### 1. W Rust/OCaml wywalenie to twój ŚWIADOMY wybór (możesz go uniknąć)
+
+W TypeScript używasz `tablica[10]` i kompilator milczy. Nie wiesz, że ryzykujesz crash, dopóki program nie wybuchnie w runtime.
+
+W Rust masz dwa sposoby na wyciągnięcie danych z tablicy. Kompilator zmusza cię do podjęcia decyzji:
+
+* **Sposób A (Ryzykowny):** `let x = tablica[10];` – mówisz kompilatorowi: *"Jestem pewien na 100%, że ten element tam jest. Jeśli go nie ma, pozwalam na Panic"*.
+* **Sposób B (Bezpieczny):** `let x = tablica.get(10);` – ta metoda **nie wywoła Panic**. Zwróci typ `Option`. Kompilator natychmiast zmusi cię do obsłużenia przypadku `None`. Możesz wtedy wyświetlić komunikat: *"Brak elementu"*, zamiast wywalać aplikację.
+
+Większość programistów Rust w produkcyjnym kodzie w ogóle nie używa klamer `[index]`, tylko metody `.get()`. Dzięki temu **aplikacja w Rust po prostu się nie wywala**, podczas gdy w TS wywala się regularnie, bo programista zapomniał, że indeks może być za duży.
+
+###### 2. Izolacja awarii (Crash jednego komponentu nie zabija reszty)
+
+Gdy aplikacja frontendowa w TypeScript (np. w React) napotka `TypeError: Cannot read properties of undefined`, bardzo często wywala się cały wątek renderowania. Użytkownik widzi biały ekran (White Screen of Death). Cała aplikacja umiera.
+
+W systemach o pełnym Null Safety (szczególnie w Gleam działającym na platformie Erlanga lub w dobrze zaprojektowanym Rust/OCaml):
+
+* Aplikacja jest podzielona na niezależne, izolowane procesy lub wątki.
+* Jeśli jeden wątek (np. odpowiedzialny za renderowanie małego widgetu z pogodą) dostanie `Panic` z powodu błędu w tablicy, **umiera tylko ten jeden widget**.
+* Reszta aplikacji (czat, formularz płatności, nawigacja) działa idealnie dalej. System automatycznie restartuje ten jeden zepsuty element do stanu początkowego.
+
+###### 3. Lepiej kontrolowanie spłonąć, niż po cichu kraść dane
+
+W inżynierii oprogramowania istnieje złota zasada: **„Fail-Fast”** (giń szybko).
+
+Najgorszy błąd to taki, który nie wywala aplikacji, ale pozwala jej działać z uszkodzonymi danymi (jak w TS, gdy `undefined` mutuje w `NaN`). Dlaczego? Ponieważ taki program może:
+
+* Zapisać uszkodzone dane do bazy danych (których naprawa zajmie potem tygodnie).
+* Przesłać błędne parametry do API i np. wysłać komuś niewłaściwą kwotę.
+
+Rust i OCaml wychodzą z założenia: **Bezpieczniej dla biznesu i użytkownika jest natychmiast zabić program, niż pozwolić mu działać w stanie nieprzewidywalnym.**
+
+### Podsumowanie
+
+Różnica jest prosta:
+
+* **W TypeScript** aplikacja wywala się przypadkowo, w niespodziewanych momentach, zacierając ślady błędu i niszcząc stan aplikacji.
+* **W Rust/OCaml** aplikacja wywala się tylko wtedy, gdy programista jawnie zignorował bezpieczne metody (jak `.get()`), a sam crash jest sterylną, bezpieczną procedurą, która chroni system przed chaosem.
 
 
 
