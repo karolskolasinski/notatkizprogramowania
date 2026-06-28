@@ -47,12 +47,8 @@ TypeScript kłamie prosto w oczy, ponieważ **system typów TypeScriptu ma świa
 
 TypeScript domyślnie zakłada, że jeśli wyciągasz coś z tablicy, to to tam jest.
 
-```type
-```
 
-
-
-```typ
+```TS
 // Dane w 100% poprawne
 const topUsers: User[] = [ { name: "Ania" }, { name: "Bartek" } ];
 
