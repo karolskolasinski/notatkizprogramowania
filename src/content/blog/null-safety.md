@@ -286,8 +286,6 @@ int length = name.length(); // CRASH: NullPointerException!
 
 Kompilator starej Javy patrzy na to i mówi: *„Wszystko ok, `name` to String, a String ma metodę `.length()`, pozwalam na uruchomienie”*. Dopiero w trakcie działania programu (w runtime), gdy procesor próbuje wejść pod adres pamięci ukryty pod `name` i widzi tam pustkę, aplikacja spektakularnie umiera.
 
-
-
 ## Jak działa dogłębnie prawdziwe Null Safety?
 
 Prawdziwe Null Safety (nazywane też *Void Safety*) polega na przesunięciu odpowiedzialności z człowieka na **kompilator**. Kompilator staje się matematycznym strażnikiem, który gwarantuje, że do crashu w runtime dojść nie może.
@@ -307,20 +305,16 @@ W tych językach system typów zostaje rozbity na dwie hierarchie. `String` i `n
    ```
 2. **Typy nullowalne (Nullable):** Jeśli dopuszczasz brak wartości, musisz to jawnie zadeklarować pytajnikiem `?`. Tworzysz wtedy zupełnie nowy typ: `String?`.
 
-   Kotlin
-
-   ```
+   ```kotlin
    var name: String? = null // To jest legalne
 
    ```
 
 #### Magia ukryta w kompilatorze: Smart Casting i Analiza Przepływu (Flow Analysis)
 
-Skoro `name` jest typu `String?`, kompilator traktuje tę zmienną jakby była zamknięta w bezpiecznym pudełku. **Zabrania Ci dotknięcia jakiejkolwiek metody tego obiektu.**
+Skoro `name` jest typu `String?`, kompilator traktuje tę zmienną jakby była zamknięta w bezpiecznym pudełku. **Zabrania ci dotknięcia jakiejkolwiek metody tego obiektu.**
 
-Kotlin
-
-```
+```kotlin
 var name: String? = pobierzZApi()
 val length = name.length // BŁĄD KOMPILACJI! Kompilator na to nie pozwoli.
 
@@ -374,18 +368,3 @@ match user {
 ```
 
 Kompilator Rusta pilnuje, abyś w instrukcji `match` obsłużył **oba przypadki** (`Some` i `None`). Jeśli zapomnisz o `None`, kod się nie skompiluje. Nie ma fizycznej możliwości zapomnienia o błędzie.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
