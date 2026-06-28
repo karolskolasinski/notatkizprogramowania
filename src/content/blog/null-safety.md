@@ -246,3 +246,40 @@ const tax = order?.taxRate ?? 0.23;
 W pliku `tsconfig.json` musisz mieć włączoną opcję `"strict": true` (a w szczególności `"strictNullChecks": true`). Wtedy TypeScript sam zmusi Cię do obsłużenia sytuacji, w których coś może być `null` lub `undefined` – ale zmusi cię do zrobienia tego **świadomie**, a nie na oślep za pomocą `?.`.
 
 Popychanie `?.` w każde miejsce kodu to tak naprawdę powrót do filozofii starego, chaotycznego JavaScriptu, tylko w ładniejszym opakowaniu. Bezpieczny frontend to taki, który głośno i szybko krzyczy, kiedy dane się nie zgadzają, zamiast po cichu renderować puste strony.
+
+#### Świat (prawie) idealny: TS + Zod na bramkach
+
+Można postawić następującą hipotezę: **jeśli wszystkie dane wchodzące do aplikacji są parsowane przez Zoda, to wewnątrz aplikacji kompilator TypeScript chroni przed crashami w 100%.**
+
+To jest **w 95% prawda**. Strategia ta nazywa się *"Parse, don't validate"* i jest najlepszym, co możesz zrobić w TypeScript. Tworzysz wtedy tzw. *Safe Haven* (bezpieczną przystań) wewnątrz swojej aplikacji.
+
+Dlaczego jednak zostaje te 5% ryzyka? Ponieważ **system typów TypeScriptu ma świadome "dziury" (soundness holes), o których już mówiliśmy.**&#x20;
+
+#### Podsumowanie wpadek TS
+
+Jeśli wdrożysz duet **TypeScript (w trybie `strict`) + Zod na każdej granicy aplikacji**, twój frontend będzie bezpieczniejszy niż 99% aplikacji w internecie.
+
+Nie uzyskasz matematycznego "zero runtime exceptions", ale unikniesz 99,9% błędów, zachowując jednocześnie normalną, czytelną składnię, ludzkie ekosystemy (npm) i święty spokój. Na frontendzie w 2026 roku TS + Zod to absolutny złoty standard kompromisu między bezpieczeństwem a produktywnością.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
