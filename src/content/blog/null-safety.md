@@ -47,7 +47,7 @@ TypeScript kłamie prosto w oczy, ponieważ **system typów TypeScriptu ma świa
 
 TypeScript domyślnie zakłada, że jeśli wyciągasz coś z tablicy, to to tam jest.
 
-```TS
+```typescript
 // Dane w 100% poprawne
 const topUsers: User[] = [ { name: "Ania" }, { name: "Bartek" } ];
 
@@ -64,7 +64,7 @@ console.log(user.name); // CRASH w runtime: Cannot read properties of undefined
 
 Kompilator jest tak bezpieczny, jak dyscyplina zespołu. W wewnętrznym kodzie deweloperzy często używają "dróg na skróty", kiedy kompilator im marudzi:
 
-```TS
+```typescript
 // Użycie wykrzyknika (Non-null assertion)
 const config = fetchConfig();
 display(config!.theme); // Jeśli config jednak był null, mamy crash.
@@ -77,7 +77,7 @@ const data = unknownInsideJob() as ExplicitType;
 
 Niektóre standardowe funkcje JavaScriptu w ogóle nie współpracują dobrze z typami TS. Klasyczny przykład: `Object.keys()`.
 
-```TS
+```typescript
 const myObject = { a: 1, b: 2 };
 
 // TS zawsze uważa, że klucze obiektów są typu string[], a nie 'a' | 'b'
@@ -90,7 +90,7 @@ Object.keys(myObject).forEach(key => {
 
 TypeScript pozwala przekazać `string[]` do funkcji oczekującej `(string | number)[]`, mimo że taka funkcja może dopisać do tablicy liczbę. W efekcie tablica, która według kompilatora miała zawierać wyłącznie napisy, zostaje zmodyfikowana i traci swoją spójność typów.
 
-```TS
+```typescript
 function mutateArray(items: (number | string)[]) => {
   itemsPush(1);
 } 
@@ -125,7 +125,7 @@ Gdy zamiast wywalenia aplikacji z błędem użyjesz `?.`, JavaScript w przypadku
 
 Wyobraź sobie taki scenariusz w sklepie internetowym:
 
-```ts
+```typescript
 const price = order?.cart?.items?.[0]?.price?.amount;
 const total = price * quantity; 
 
@@ -163,7 +163,7 @@ Wyobraź sobie system bankowy. Pobierasz z bazy danych numer konta premium dla k
 
 Masz funkcję, która czyści sesję lub usuwa tymczasowe dane użytkownika z bazy:
 
-```TS
+```typescript
 function deleteUserToken(userId: string) {
   db.execute(`DELETE FROM tokens WHERE user_id = '${userId}'`);
 }
@@ -203,7 +203,5 @@ Czyli wracamy do punktu wyjścia.
 ##### Język, który tak robił: Objective-C
 
 W języku Objective-C (stary język do aplikacji na iPhone'y) istniała dokładnie taka zasada: **wysłanie wiadomości do `nil` (null) nie robiło nic i zwracało `nil` lub `0`.** Efekt? Programy rzadko się crashowały, ale za to działy się w nich rzeczy paranormalne. Klikasz przycisk "Kup", aplikacja nic nie robi, nie sypie błędami, po prostu ignoruje użytkownika, bo gdzieś głęboko pod spodem obiekt koszyka był `nil`. Programiści nienawidzili tego debugować.
-
-
 
 ..
