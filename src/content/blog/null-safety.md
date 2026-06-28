@@ -151,46 +151,54 @@ Czy nie było by dobrze, gdyby to same metody wykonywane na zmiennych danego typ
 
 Zastanówmy się nad tym pomysłem. Wywołujemy `substring()` na obiekcie, który jest `null`. Metoda to wykrywa i... **No właśnie, co ma zrobić?** Są tylko trzy wyjścia i każde jest złe:
 
-* **Opcja A: Metoda zwraca `null`.** Jeśli `substring()` zwróci `null`, to kolejna metoda wywołana na tym wyniku (np. `toUpperCase()`) znowu dostanie `null`. Przesuwamy problem o krok dalej. To jest dokładnie to, co robi operator `?.` w TS.
-* **Opcja B: Metoda zwraca "wartość bezpieczną" (np. pusty string `""`).** Wyobraź sobie system bankowy. Pobierasz z bazy danych numer konta premium dla klienta: `getPremiumAccount()`. Klient nie ma takiego konta, więc system zwraca `null`. Jeśli metoda do wysyłki przelewu przyjmie ten `null` i po cichu zamieni go na pusty string `""`, to system spróbuje wysłać przelew na konto o numerze `""`. To katastrofa logiczna. **Brak danych to nie to samo, co puste dane.** W przypadku wysyłki przelewu bank zewnętrzny odrzuci numer konta `""`. To optymistyczny scenariusz, bo system zewnętrzny ma własną walidację. Zagrożenie pojawia się wtedy, gdy ta pusta wartość krąży **wewnątrz Twojego systemu** i steruje logiką biznesową. Spójrz na dwa znacznie groźniejsze przykłady:\
-  \
-  **Przykład A Kasowanie danych (Katastrofa)**
+###### Opcja A: Metoda zwraca `null`.&#x20;
 
-  Masz funkcję, która czyści sesję lub usuwa tymczasowe dane użytkownika z bazy:
+Jeśli `substring()` zwróci `null`, to kolejna metoda wywołana na tym wyniku (np. `toUpperCase()`) znowu dostanie `null`. Przesuwamy problem o krok dalej. To jest dokładnie to, co robi operator `?.` w TS.
 
-  ```TS
-  function deleteUserToken(userId: string) {
-    db.execute(`DELETE FROM tokens WHERE user_id = '${userId}'`);
-  }
+###### Opcja B: Metoda zwraca "wartość bezpieczną" (np. pusty string `""`).&#x20;
 
-  ```
+Wyobraź sobie system bankowy. Pobierasz z bazy danych numer konta premium dla klienta: `getPremiumAccount()`. Klient nie ma takiego konta, więc system zwraca `null`. Jeśli metoda do wysyłki przelewu przyjmie ten `null` i po cichu zamieni go na pusty string `""`, to system spróbuje wysłać przelew na konto o numerze `""`. To katastrofa logiczna. **Brak danych to nie to samo, co puste dane.** W przypadku wysyłki przelewu bank zewnętrzny odrzuci numer konta `""`. To optymistyczny scenariusz, bo system zewnętrzny ma własną walidację. Zagrożenie pojawia się wtedy, gdy ta pusta wartość krąży **wewnątrz Twojego systemu** i steruje logiką biznesową. Spójrz na dwa znacznie groźniejsze przykłady:
 
-  Jeśli `userId` z powodu błędu był `null`, a Ty po cichu zamieniłeś go na `""`, baza wykona: `DELETE FROM tokens WHERE user_id = ''`. Jeśli w bazie istnieją jakieś stare rekordy bez przypisanego ID (czyli z pustym stringiem), **właśnie usunąłeś dane innych użytkowników**.
+**Przykład A Kasowanie danych (Katastrofa)**
 
-  **Przykład B: Dziury w bezpieczeństwie (Autoryzacja)**
+Masz funkcję, która czyści sesję lub usuwa tymczasowe dane użytkownika z bazy:
 
-  ```TS
-  const userRole = getUserRole() ?? ""; // Zamiana null na ""
+```TS
+function deleteUserToken(userId: string) {
+  db.execute(`DELETE FROM tokens WHERE user_id = '${userId}'`);
+}
 
-  if (userRole === "admin") {
-      showAdminPanel();
-  } else {
-      showStandardPanel(); // "" wpada tutaj
-  }
+```
 
-  ```
+Jeśli `userId` z powodu błędu był `null`, a Ty po cichu zamieniłeś go na `""`, baza wykona: `DELETE FROM tokens WHERE user_id = ''`. Jeśli w bazie istnieją jakieś stare rekordy bez przypisanego ID (czyli z pustym stringiem), **właśnie usunąłeś dane innych użytkowników**.
 
-  Wygląda bezpiecznie? A co, jeśli inny programista napisze warunek odwrotnie?
+**Przykład B: Dziury w bezpieczeństwie (Autoryzacja)**
 
-  ```TS
-  if (userRole !== "guest") {
-      allowAccessToSecretData(); // "" wpada TUTAJ! Pusty string nie równa się "guest"
-  }
+```TS
+const userRole = getUserRole() ?? ""; // Zamiana null na ""
 
-  ```
+if (userRole === "admin") {
+    showAdminPanel();
+} else {
+    showStandardPanel(); // "" wpada tutaj
+}
 
-  Przez cichą zamianę `null` na `""`, użytkownik bez żadnej roli (bo np. nie udało się jej pobrać) dostaje dostęp do tajnych danych. **Błąd został zamaskowany, zamiast zostać naprawiony.**
-* **Opcja C: Metoda rzuca błąd (Crash).** Czyli wracamy do punktu wyjścia.
+```
+
+Wygląda bezpiecznie? A co, jeśli inny programista napisze warunek odwrotnie?
+
+```typescript
+if (userRole !== "guest") {
+    allowAccessToSecretData(); // "" wpada TUTAJ! Pusty string nie równa się "guest"
+}
+
+```
+
+Przez cichą zamianę `null` na `""`, użytkownik bez żadnej roli (bo np. nie udało się jej pobrać) dostaje dostęp do tajnych danych. **Błąd został zamaskowany, zamiast zostać naprawiony.**
+
+###### **Opcja C: Metoda rzuca błąd (Crash).**&#x20;
+
+Czyli wracamy do punktu wyjścia.
 
 ##### Język, który tak robił: Objective-C
 
