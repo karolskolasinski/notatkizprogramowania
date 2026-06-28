@@ -115,7 +115,7 @@ Bo coś można zrobić, prawda? Tak, coś można, ale trzeba pamiętać, że w T
 
 Optional Chaining (operator `?.`) to składnia w JavaScript i TypeScript, która pozwala bezpiecznie odczytywać zagnieżdżone właściwości obiektu bez sprawdzania, czy każdy element po drodze istnieje. Jeśli obiekt okaże się `null` lub `undefined`, kod zatrzyma się i zwróci `undefined`, zamiast wyrzucić błąd. Czy da się więc zbudować bezpieczny program w TS przez wstawienie `?.` dosłownie wszędzie?
 
-Krótka odpowiedź brzmi: **Nie, sam operator `?.` (Optional Chaining) nie wystarczy, aby zbudować bezpieczny program.** Choć instynktowne wstawianie `?.` wszędzie, gdzie się da, uratuje Cię przed najpopularniejszym błędem ludzkości, czyli `Cannot read properties of undefined (reading '...' )`, to w rzeczywistości tworzy zupełnie nowe, ciche zagrożenia.
+Krótka odpowiedź brzmi: **Nie, sam operator `?.` nie wystarczy, aby zbudować bezpieczny program.** Choć instynktowne wstawianie `?.` wszędzie, gdzie się da, uratuje cię przed najpopularniejszym błędem ludzkości, czyli `Cannot read properties of undefined (reading '...' )`, to w rzeczywistości tworzy zupełnie nowe, ciche zagrożenia.
 
 Oto dlaczego "strategia `?.`" to iluzja bezpieczeństwa:
 
@@ -131,35 +131,14 @@ const total = price * quantity;
 
 ```
 
-Jeśli `price` z jakiegoś powodu będzie pusty, `price` przyjmie wartość `undefined`. Wtedy `undefined * quantity` da Ci **`NaN` (Not a Number)**. Twoja aplikacja nie zgłosi błędu w konsoli, ale użytkownik zobaczy na ekranie, że ma zapłacić `NaN zł`. Program żyje (nie ma crashu), ale jest bezużytecznym "zombie".
+Jeśli `price` z jakiegoś powodu będzie pusty, `price` przyjmie wartość `undefined`. Wtedy `undefined * quantity` da ci `NaN` (Not a Number). Twoja aplikacja nie zgłosi błędu w konsoli, ale użytkownik zobaczy na ekranie, że ma zapłacić `NaN zł`. Program żyje (nie ma crashu), ale jest bezużytecznym "zombie".
 
-### 2. Przenoszenie błędu w czasie (Trudniejszy debugging)
+##### Przenoszenie błędu w czasie (Trudniejszy debugging)
 
-Gdy program wywala się w runtime z powodu braku właściwości, od razu dostajesz *Stack Trace* i wiesz dokładnie, w której linijce stało się coś złego. Jeśli zamaskujesz to przez `?.`, błąd nie znika – on mutuje. `undefined` wędruje przez kolejne funkcje, komponenty i bazy danych, aż w końcu aplikacja zachowa się dziwnie w zupełnie innym miejscu systemu. Znalezienie przyczyny będzie koszmarem.
+Gdy program wywala się w runtime z powodu braku właściwości, od razu dostajesz *Stack Trace* i wiesz dokładnie, w której linijce stało się coś złego. Jeśli zamaskujesz to przez `?.`, błąd nie znika – on **mutuje**. `undefined` wędruje przez kolejne funkcje, komponenty i bazy danych, aż w końcu aplikacja zachowa się dziwnie w zupełnie innym miejscu systemu. Znalezienie przyczyny będzie koszmarem.
 
-### 3. Problem logiczny: Co oznacza "brak"?
+##### Problem logiczny: Co oznacza "brak"?
 
 Wstawiając wszędzie `?.` informujesz kompilator: *"To normalne, że tych danych może nie być"*. Ale czy na pewno?
 
-* Czy to normalne, że zalogowany użytkownik nie ma `user.id`? Nie. Jeśli go nie ma, aplikacja powinna natychmiast przerwać działanie, a nie udawać, że wszystko jest w porządku.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Czy to normalne, że zalogowany użytkownik nie ma `user.id`? Nie. Jeśli go nie ma, aplikacja powinna natychmiast przerwać działanie, a nie udawać, że wszystko jest w porządku.
