@@ -152,36 +152,51 @@ Czy nie było by dobrze, gdyby to same metody wykonywane na zmiennych danego typ
 Zastanówmy się nad tym pomysłem. Wywołujemy `substring()` na obiekcie, który jest `null`. Metoda to wykrywa i... **No właśnie, co ma zrobić?** Są tylko trzy wyjścia i każde jest złe:
 
 * **Opcja A: Metoda zwraca `null`.** Jeśli `substring()` zwróci `null`, to kolejna metoda wywołana na tym wyniku (np. `toUpperCase()`) znowu dostanie `null`. Przesuwamy problem o krok dalej. To jest dokładnie to, co robi operator `?.` w TS.
-* **Opcja B: Metoda zwraca "wartość bezpieczną" (np. pusty string `""`).** Wyobraź sobie system bankowy. Pobierasz z bazy danych numer konta premium dla klienta: `getPremiumAccount()`. Klient nie ma takiego konta, więc system zwraca `null`. Jeśli metoda do wysyłki przelewu przyjmie ten `null` i po cichu zamieni go na pusty string `""`, to system spróbuje wysłać przelew na konto o numerze `""`. To katastrofa logiczna. **Brak danych to nie to samo, co puste dane.**
+* **Opcja B: Metoda zwraca "wartość bezpieczną" (np. pusty string `""`).** Wyobraź sobie system bankowy. Pobierasz z bazy danych numer konta premium dla klienta: `getPremiumAccount()`. Klient nie ma takiego konta, więc system zwraca `null`. Jeśli metoda do wysyłki przelewu przyjmie ten `null` i po cichu zamieni go na pusty string `""`, to system spróbuje wysłać przelew na konto o numerze `""`. To katastrofa logiczna. **Brak danych to nie to samo, co puste dane.** W przypadku wysyłki przelewu bank zewnętrzny odrzuci numer konta `""`. To optymistyczny scenariusz, bo system zewnętrzny ma własną walidację.
+
+  Zagrożenie pojawia się wtedy, gdy ta pusta wartość krąży **wewnątrz Twojego systemu** i steruje logiką biznesową. Spójrz na dwa znacznie groźniejsze przykłady:\
+  Kasowanie danych (Katastrofa)
+
+  Masz funkcję, która czyści sesję lub usuwa tymczasowe dane użytkownika z bazy:
+
+  ```TS
+  function deleteUserToken(userId: string) {
+    db.execute(`DELETE FROM tokens WHERE user_id = '${userId}'`);
+  }
+
+  ```
+
+  Jeśli `userId` z powodu błędu był `null`, a Ty po cichu zamieniłeś go na `""`, baza wykona: `DELETE FROM tokens WHERE user_id = ''`. Jeśli w bazie istnieją jakieś stare rekordy bez przypisanego ID (czyli z pustym stringiem), **właśnie usunąłeś dane innych użytkowników**.
+
+  ### Przykład B: Dziury w bezpieczeństwie (Autoryzacja)
+
+  TypeScript
+
+  ```
+  const userRole = getUserRole() ?? ""; // Zamiana null na ""
+
+  if (userRole === "admin") {
+      showAdminPanel();
+  } else {
+      showStandardPanel(); // "" wpada tutaj
+  }
+
+  ```
+
+  Wygląda bezpiecznie? A co, jeśli inny programista napisze warunek odwrotnie?
+
+  TypeScript
+
+  ```
+  if (userRole !== "guest") {
+      allowAccessToSecretData(); // "" wpada TUTAJ! Pusty string nie równa się "guest"
+  }
+
+  ```
+
+  Przez cichą zamianę `null` na `""`, użytkownik bez żadnej roli (bo np. nie udało się jej pobrać) dostaje dostęp do tajnych danych. **Błąd został zamaskowany, zamiast zostać naprawiony.**
 * **Opcja C: Metoda rzuca błąd (Crash).** Czyli wracamy do punktu wyjścia.
 
+##### Język, który tak robił: Objective-C
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+W języku Objective-C (stary język do aplikacji na iPhone'y) istniała dokładnie taka zasada: **wysłanie wiadomości do `nil` (null) nie robiło nic i zwracało `nil` lub `0`.** Efekt? Programy rzadko się crashowały, ale za to działy się w nich rzeczy paranormalne. Klikasz przycisk "Kup", aplikacja nic nie robi, nie sypie błędami, po prostu ignoruje użytkownika, bo gdzieś głęboko pod spodem obiekt koszyka był `nil`. Programiści nienawidzili tego debugować.
