@@ -331,15 +331,13 @@ if (name != null) {
 
 ```
 
-### Podejście B: Całkowite usunięcie `null` z języka (Rust, Elm)
+### Podejście B: Całkowite usunięcie `null` z języka (Rust, OCaml, Elm)
 
 Języki takie jak Rust poszły jeszcze krok dalej. Tam słowo takie jak `null`, `nil` czy `undefined` **w ogóle nie istnieje**. Nie da się stworzyć pustego wskaźnika.
 
 Jak w takim razie przekazać informację, że „czegoś nie ma” (np. wynik wyszukiwania w bazie danych)? Używa się do tego specjalnego typu wyliczeniowego (Enum / Algebraic Data Type), który nazywa się **`Option`** (w Rust) lub **`Maybe`** (w Elm).
 
-Rust
-
-```
+```rust
 // W Rust nie ma null. Jest enum Option, który ma dwa stany:
 enum Option<T> {
     Some(T), // Jest wartość typu T
@@ -350,9 +348,7 @@ enum Option<T> {
 
 Jeśli funkcja może nie znaleźć użytkownika, nie zwraca `User` ani `null`. Zwraca `Option<User>`.
 
-Rust
-
-```
+```rust
 let user: Option<User> = find_user(123);
 
 // Nie możesz zrobić user.name, bo 'user' to Option, a nie User!
