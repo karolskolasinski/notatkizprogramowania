@@ -91,9 +91,9 @@ Object.keys(myObject).forEach(key => {
 TypeScript pozwala przekazać `string[]` do funkcji oczekującej `(string | number)[]`, mimo że taka funkcja może dopisać do tablicy liczbę. W efekcie tablica, która według kompilatora miała zawierać wyłącznie napisy, zostaje zmodyfikowana i traci swoją spójność typów.
 
 ```typescript
-function mutateArray(items: (number | string)[]) => {
-  itemsPush(1);
-} 
+function mutateArray(items: (number | string)[]) {
+  items.push(1);
+}
 
 const items: string[] = ["hello", "world"];
 mutateArray(items);
