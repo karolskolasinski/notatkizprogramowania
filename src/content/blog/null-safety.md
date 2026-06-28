@@ -320,7 +320,7 @@ val length = name.length // BŁĄD KOMPILACJI! Kompilator na to nie pozwoli.
 
 ```
 
-Aby dobrać się do danych, musisz udowodnić kompilatorowi, że sprawdziłeś stan zmiennej. Kompilator analizuje Twój kod linijka po linijce (Flow Analysis):
+Aby dobrać się do danych, musisz udowodnić kompilatorowi, że sprawdziłeś stan zmiennej. Kompilator analizuje twój kod linijka po linijce (Flow Analysis):
 
 ```kotlin
 if (name != null) {
@@ -461,7 +461,7 @@ Oto jak to dokładnie przebiega i dlaczego to zupełnie co innego niż wywalenie
 
 #### Kiedy i jak to się dzieje w Rust?
 
-Podczas kompilacji Rust patrzy na Twój kod i tam, gdzie widzi dostęp do tablicy, **samodzielnie dopisuje niewidzialny warunek `if`**.
+Podczas kompilacji Rust patrzy na twój kod i tam, gdzie widzi dostęp do tablicy, **samodzielnie dopisuje niewidzialny warunek `if`**.
 
 Gdy program już działa i dochodzi do tej linijki, wykonuje się następujący scenariusz:
 
@@ -482,7 +482,7 @@ W TypeScript/JavaScript wyciągnięcie elementu poza tablicą **nie powoduje bł
 
 ##### Różnica II: Kłamstwo w systemie typów
 
-* **W TS:** Mamy do czynienia z oszustwem. TypeScript obiecał Ci na etapie pisania kodu, że zmienna z tablicy to `User`. Ty napisałeś kod pod ten typ, a w runtime dostałeś `undefined`. System typów w TS Cię okłamał, bo ma w tym miejscu wspomnianą nieszczelność (*soundness hole*).
+* **W TS:** Mamy do czynienia z oszustwem. TypeScript obiecał ci na etapie pisania kodu, że zmienna z tablicy to `User`. Ty napisałeś kod pod ten typ, a w runtime dostałeś `undefined`. System typów w TS Cię okłamał, bo ma w tym miejscu wspomnianą nieszczelność (*soundness hole*).
 * **W Rust:** System typów nigdy nie kłamie. Jeśli zmienna ma typ `User`, to kompilator daje głowę, że tam jest `User`. Skoro fizycznie nie da się tam wstawić `User` (bo indeks był za duży), Rust woli natychmiast ubić program, niż pozwolić na to, by w pamięci wylądowało coś niezgodnego z typem.
 
 ##### Różnica III: "Kontrolowana demolka" (Stack Unwinding)
