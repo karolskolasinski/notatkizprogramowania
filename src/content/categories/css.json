@@ -1,7 +1,7 @@
 {
   "name": "CSS",
   "order": 1,
-  "description": "Wszystko o CSS",
+  "description": "Omówienie mechanizmów CSS, dobre praktyki, wzorce, typowe problemy, niuanse.",
   "color": "#31a9dd",
   "icon": "@assets/categories/css/icon.svg"
 }
