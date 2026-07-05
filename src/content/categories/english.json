@@ -1,0 +1,7 @@
+{
+  "name": "english",
+  "order": 6,
+  "description": "Język angielski w IT – terminologia, komunikacja w zespole i słownictwo przydatne w codziennej pracy deva.",
+  "color": "#2b95ed",
+  "icon": "@assets/categories/english/icon.svg"
+}
