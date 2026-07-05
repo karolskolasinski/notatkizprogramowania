@@ -1,0 +1,7 @@
+{
+  "name": "git",
+  "order": 7,
+  "description": "System kontoli wersji - konfiguracja, gałęzie, cofanie zmian i rozwiązywanie konfliktów.",
+  "color": "#ed553c",
+  "icon": "@assets/categories/git/icon.svg"
+}
