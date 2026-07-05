@@ -1,0 +1,7 @@
+{
+  "name": "flow",
+  "order": 5,
+  "description": "Efektywność w pracy programisty, organizacja czasu, optymalizacja workflow i radzenie sobie z wypaleniem.",
+  "color": "#7F00FF",
+  "icon": "@assets/categories/flow/icon.svg"
+}
