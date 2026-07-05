@@ -1,7 +1,7 @@
 {
   "name": "JavaScript",
   "order": 2,
-  "description": "JavaScript / TypeScript",
+  "description": "JS/TS - metody, operacje na danych, składnia, asynchroniczność, kluczowe koncepty i specyfika działania JS/Node.js.",
   "color": "#f2bf26",
   "icon": "@assets/categories/javascript/icon.svg"
 }
