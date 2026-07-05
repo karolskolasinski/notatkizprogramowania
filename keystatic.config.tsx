@@ -9,11 +9,27 @@ export default config({
        * logo and render it instead)
        */
       mark: () => (
-        <style>{`
-          .kui\\:reset img[src^="blob:"] {
-            width: 100% !important;
-          }
-        `}</style>
+        <>
+          <style>{`
+            .kui\\:reset img[src^="blob:"] {
+              width: 100% !important;
+            }
+          `}</style>
+          <a
+            href="/"
+            style={{
+              fontSize: 14,
+              padding: "4px 10px",
+              borderRadius: 6,
+              background: "#111",
+              color: "#fff",
+              textDecoration: "none",
+              fontFamily: "sans-serif"
+            }}
+          >
+            Blog
+          </a>
+        </>
       ),
     },
   },
@@ -58,15 +74,6 @@ export default config({
         updatedDate: fields.date({
           label: "Data aktualizacji",
           description: "Pozostaw puste, jeśli wpis nie był aktualizowany.",
-        }),
-
-        heroImage: fields.image({
-          label: "Obrazek główny",
-          directory: "src/assets/posts",
-          publicPath: "@assets/posts/",
-          validation: {
-            isRequired: true,
-          },
         }),
 
         categories: fields.array(

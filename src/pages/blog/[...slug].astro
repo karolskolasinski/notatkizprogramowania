@@ -8,6 +8,17 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 
+// Import all cover images eagerly so we can pick one at build time
+const covers = import.meta.glob<{ default: ImageMetadata }>('/src/assets/posts/covers/*.jpg', {
+  eager: true,
+});
+const coverImages = Object.values(covers).map((mod) => mod.default);
+
+function getRandomCover(): ImageMetadata {
+  const index = Math.floor(Math.random() * coverImages.length);
+  return coverImages[index];
+}
+
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   return posts.map((post) => ({
@@ -17,9 +28,9 @@ export async function getStaticPaths() {
 }
 
 const post = Astro.props;
-const { title, description, pubDate, updatedDate, heroImage, categories } = post.data;
+const { title, description, pubDate, updatedDate, categories } = post.data;
 const { Content } = await render(post);
-
+const heroImage = getRandomCover();
 const allCategories = await getCollection('categories');
 const categoryList = categories
   .map((id) => allCategories.find((category) => category.id === id))
@@ -31,19 +42,15 @@ const categoryList = categories
 
   <body class="bg-gray-100 font-sans antialiased min-h-screen flex flex-col">
     <Header />
-    {
-      heroImage && (
-        <div class="w-full h-64 md:h-160 absolute top-16 left-0 z-0">
-          <Image
-            width={1920}
-            height={1080}
-            src={heroImage ?? ''}
-            alt={`Okładka artykułu: ${title}`}
-            class="w-full h-full object-cover"
-          />
-        </div>
-      )
-    }
+    <div class="w-full h-64 md:h-160 absolute top-16 left-0 z-0">
+      <Image
+        width={1920}
+        height={1080}
+        src={heroImage}
+        alt={`Okładka artykułu: ${title}`}
+        class="w-full h-full object-cover"
+      />
+    </div>
 
     <main class="flex-1 relative z-10 pt-20">
       <article class="w-full py-8 px-4 xl:px-0 max-w-5xl mx-auto">
@@ -86,5 +93,17 @@ const categoryList = categories
     </main>
 
     <Footer />
+
+    <script>
+      document
+        .querySelectorAll<HTMLImageElement>('img[data-image-component="true"][alt]:not([alt=""])')
+        .forEach((img) => {
+          const width = img.getAttribute("alt");
+          if (width && !isNaN(Number(width))) {
+            img.style.width = `${width}%`;
+            img.classList.add("block", "mx-auto", "max-md:!w-full");
+          }
+        });
+    </script>
   </body>
 </html>

@@ -5,7 +5,6 @@ description: >-
   strukturą dokumentu oraz krótkim omówieniem najważniejszych elementów sekcji
   <head>.
 pubDate: 2025-11-04
-heroImage: '@assets/posts/html-template/heroImage.jpeg'
 categories:
   - html
 ---
@@ -100,6 +99,8 @@ The Open Graph protocol enables any web page to become a rich object
 ## **Semantic HTML**
 
 A semantic element clearly describes its meaning to both the browser and the developer.
+
+![50](@assets/posts/html-template/image.png)
 
 #### **Źródło:**
 

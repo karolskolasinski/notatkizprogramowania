@@ -4,10 +4,11 @@ description: >-
   Iluzja bezpieczeństwa, czyli dlaczego TypeScript to za mało. Głębokie
   nurkowanie w Null Safety i architekturę błędów
 pubDate: 2026-06-28
-heroImage: '@assets/posts/null-safety/heroImage.jpg'
 categories:
   - javascript
 ---
+![](@assets/posts/null-safety/heroImage.png)
+
 ## TypeScript kłamie! Iluzja bezpieczeństwa, czyli dlaczego TypeScript to za mało.
 
 Współczesny frontend stoi na jednym, potężnym fundamencie: **TypeScript**. Myślimy, że dorzucenie typów do chaotycznego świata JavaScriptu to lek na całe zło. Piszemy interfejsy, konfigurujemy `tsconfig.json`, a kiedy kompilator nie krzyczy, pijemy kawę z poczuciem dobrze spełnionego obowiązku.
