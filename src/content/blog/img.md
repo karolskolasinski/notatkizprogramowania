@@ -1,5 +1,5 @@
 ---
-title: Korzystanie z atrybutów srcset i sizes
+title: img
 description: >-
   Wprowadzenie do responsywnego serwowania obrazów za pomocą atrybutów srcset i
   sizes oraz rozwiązanie problemu niechcianych odstępów pod grafikami.
@@ -25,17 +25,35 @@ optymalizację przesyłu danych i wydajność strony.
 />
 ```
 
-- **`srcset`**: Lista dostępnych wersji obrazu wraz z ich rzeczywistą szerokością w pikselach
-  (oznaczaną sufiksem `w`)[cite: 1].
-- **`sizes`**: Informacja dla przeglądarki o tym, jaką szerokość (w jednostkach CSS lub viewportu)
-  będzie zajmował obraz przy określonych warunkach (media queries)[cite: 1].
-- **`src`**: Wartość domyślna, która służy jako fallback dla przeglądarek nieobsługujących
-  `srcset`[cite: 1].
+- `srcset`: Lista dostępnych wersji obrazu wraz z ich rzeczywistą szerokością w pikselach
+  (oznaczaną sufiksem `w`).
+- `sizes`: Informacja dla przeglądarki o tym, jaką szerokość (w jednostkach CSS lub viewportu)
+  będzie zajmował obraz przy określonych warunkach (media queries).
+- `src`: Wartość domyślna, która służy jako fallback dla przeglądarek nieobsługujących `srcset`.
 
-**Źródła:**
+<iframe
+    class="aspect-video w-full lg:max-w-2/3 pb-8"
+    src="https://www.youtube.com/embed/2QYpkrX2N48"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+</iframe>
 
-[6 Steps to Improve HTML Images](https://www.youtube.com/watch?v=2QYpkrX2N48)[cite: 1]
-[Better HTML Images for Users & Developers](https://www.youtube.com/watch?v=fUnGbptARlo)
+<iframe
+    class="aspect-video w-full lg:max-w-2/3 pb-8"
+    src="https://www.youtube.com/embed/fUnGbptARlo"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+</iframe>
+
+**Źródło:**
+
+
+[6 Steps to Improve HTML Images](https://austingil.com/better-html-images/)
+
 
 ## Image spacing
 
