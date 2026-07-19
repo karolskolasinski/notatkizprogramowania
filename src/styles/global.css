@@ -96,7 +96,7 @@ article figcaption {
 }
 
 article table {
-  @apply w-full my-8 border-collapse overflow-x-auto block;
+  @apply w-full my-8 border-collapse table-auto;
 }
 
 article thead {
