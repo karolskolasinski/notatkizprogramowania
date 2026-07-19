@@ -1,4 +1,4 @@
----
+****---
 title: HTML template
 description: >-
   Kompletny szablon HTML5 z podstawowymi meta tagami, Open Graph, semantyczną

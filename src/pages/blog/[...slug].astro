@@ -96,7 +96,7 @@ const categoryList = categories
 
     <script>
       document
-        .querySelectorAll<HTMLImageElement>('img[data-image-component="true"][alt]:not([alt=""])')
+        .querySelectorAll<HTMLImageElement>('article img[alt]:not([alt=""])')
         .forEach((img) => {
           const width = img.getAttribute("alt");
           if (width && !isNaN(Number(width))) {
