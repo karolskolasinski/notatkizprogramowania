@@ -74,7 +74,7 @@ categories:
 </html>
 ```
 
-### Meta tags
+## Meta tags
 
 - `<!DOCTYPE html>` - dokument w formacie HTML5. Element ten określa typ bieżącego dokumentu: DTD
   (Document Type Definition). Konieczne jest, aby przeglądarka rozumiała, według jakiego standardu
@@ -97,7 +97,7 @@ categories:
 - Dołączając skrypty w HTML4, musieliśmy im ustawiać atrybut `type="text/javascript"`. W nowym HTML
   atrybut ten domyślnie ma taką wartość, więc nie musimy go podawać.
 
-### **Open graph**
+## **Open graph**
 
 The Open Graph protocol enables any web page to become a rich object in a social graph. For
 instance, this is used on Facebook to allow any web page to have the same functionality as any other
@@ -105,7 +105,7 @@ object on Facebook.
 
 - `og:url` The canonical URL of your object that will be used as its permanent ID in the graph.
 
-#### Źródła:
+**Źródła:**
 
 [https://ogp.me/](https://ogp.me/)
 [https://lumo.pl/blog/open-graph/](https://lumo.pl/blog/open-graph/)
@@ -118,6 +118,6 @@ A semantic element clearly describes its meaning to both the browser and the dev
 
 ![50](@assets/posts/html-template/image.png)
 
-#### **Źródło:**
+**Źródło:**
 
 [https://internetingishard.netlify.app/html-and-css/semantic-html/index.html#summary](https://internetingishard.netlify.app/html-and-css/semantic-html/index.html#summary)

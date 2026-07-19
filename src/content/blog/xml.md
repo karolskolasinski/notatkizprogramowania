@@ -1,14 +1,14 @@
 ---
 title: XML
-pubDate: 2025-04-16
-categories:
-  - xml
 description: >-
   Zestawienie najważniejszych znaków specjalnych wraz z ich odpowiednikami w
   formacie XML oraz opisem zastosowania.
+pubDate: 2025-04-16
+categories:
+  - html
 ---
 
-### Znaki specjalne w formacie XML:
+## Znaki specjalne w formacie XML:
 
 | Znak   | Zapis XML | Opis                                       |
 |:-------| :---      | :---                                       |

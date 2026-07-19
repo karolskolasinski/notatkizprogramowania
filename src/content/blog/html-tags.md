@@ -12,7 +12,7 @@ categories:
 
 ---
 
-# **Unpaired tags**
+## **Unpaired tags**
 
 Pierwszą rzeczą do powiedzenia o niesparowanych tagach jest to, że nie zawierają one treści.
 Przeznaczone są do tworzenia graficznych elementów HTML lub symboli na stronie. Dlatego niesparowane
@@ -32,7 +32,7 @@ tagi HTML składają się tylko z tagów początkowych. Często są one nazywane
 
 ---
 
-# **Elementy blokowe**
+## **Elementy blokowe**
 
 Elementy blokowe domyślnie zajmują całą dostępną szerokość linii, tworząc nowy blok w strukturze
 dokumentu. Są one fundamentem układu strony, służąc do organizowania treści w sekcje, akapity czy
@@ -83,13 +83,13 @@ listy.
 - `<table>` Table: Kontener służący do prezentacji danych w układzie tabelarycznym.
 - `<ul>` Unordered list: Tworzy listę nieuporządkowaną, gdzie kolejność elementów nie jest istotna.
 
-#### **Źródło:**
+**Źródło:**
 
 [https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements#Elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements#Elements)
 
 ---
 
-# **Elementy liniowe**
+## **Elementy liniowe**
 
 Mogą zawierać tylko dane i inne elementy wbudowane. Wyjątkiem od tej reguły jest tag `<a>`, który
 może również zawierać elementy blokowe. Przeglądarka nie przerywa linii przed i po tagu. Elementy
@@ -164,6 +164,6 @@ układ blokowy.
 - `<video>`: Osadza pliki wideo na stronie.
 - `<wbr>`: Sugeruje miejsce w długim słowie, w którym przeglądarka może dokonać złamania linii.
 
-#### **Źródło:**
+**Źródło:**
 
 [https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements#Elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements#Elements)
