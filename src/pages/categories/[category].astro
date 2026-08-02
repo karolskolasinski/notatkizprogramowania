@@ -14,7 +14,7 @@ export async function getStaticPaths() {
   return categories.map((category) => {
     const categoryPosts = posts
       .filter((post) => post.data.categories.includes(category.id))
-      .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+      .sort((a, b) => a.data.order - b.data.order);
 
     return {
       params: { category: category.id },
@@ -51,7 +51,7 @@ const style = { '--hover-color': category.data.color };
                   <li class="flex">
                     <a
                       href={`/blog/${post.id}/`}
-                      class="post-tile text-xl font-semibold"
+                      class="post-tile font-semibold"
                       style={style}
                     >
                       {post.data.title}

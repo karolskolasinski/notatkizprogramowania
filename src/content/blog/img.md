@@ -3,6 +3,7 @@ title: img
 description: >-
   Wprowadzenie do responsywnego serwowania obrazów za pomocą atrybutów srcset i
   sizes oraz rozwiązanie problemu niechcianych odstępów pod grafikami.
+order: 4
 pubDate: 2025-07-19
 categories:
   - html

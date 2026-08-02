@@ -24,7 +24,7 @@ export default config({
               background: "#111",
               color: "#fff",
               textDecoration: "none",
-              fontFamily: "sans-serif"
+              fontFamily: "sans-serif",
             }}
           >
             Blog
@@ -34,10 +34,9 @@ export default config({
     },
   },
 
-  storage:
-    process.env.NODE_ENV === "production"
-      ? { kind: "github", repo: "karolskolasinski/notatkizprogramowania" }
-      : { kind: "local" },
+  storage: process.env.NODE_ENV === "production"
+    ? { kind: "github", repo: "karolskolasinski/notatkizprogramowania" }
+    : { kind: "local" },
 
   collections: {
     posts: collection({
@@ -74,6 +73,14 @@ export default config({
         updatedDate: fields.date({
           label: "Data aktualizacji",
           description: "Pozostaw puste, jeśli wpis nie był aktualizowany.",
+        }),
+
+        order: fields.number({
+          label: "Kolejność",
+          validation: {
+            isRequired: true,
+            min: 0,
+          },
         }),
 
         categories: fields.array(

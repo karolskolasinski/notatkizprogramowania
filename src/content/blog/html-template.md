@@ -4,6 +4,7 @@ description: >-
   Kompletny szablon HTML5 z podstawowymi meta tagami, Open Graph, semantyczną
   strukturą dokumentu oraz krótkim omówieniem najważniejszych elementów sekcji
   <head>.
+order: 1
 pubDate: 2025-11-04
 categories:
   - html
@@ -116,7 +117,7 @@ object on Facebook.
 
 A semantic element clearly describes its meaning to both the browser and the developer.
 
-![50](@assets/posts/html-template/image.png)
+![50](@assets/posts/html-template/template.png)
 
 **Źródło:**
 

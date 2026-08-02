@@ -3,6 +3,7 @@ title: XML
 description: >-
   Zestawienie najważniejszych znaków specjalnych wraz z ich odpowiednikami w
   formacie XML oraz opisem zastosowania.
+order: 3
 pubDate: 2025-04-16
 categories:
   - html
