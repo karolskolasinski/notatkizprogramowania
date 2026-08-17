@@ -39,7 +39,7 @@ article h6 {
 }
 
 article p {
-  @apply text-base text-gray-700 wrap-break-word leading-7 py-4;
+  @apply text-base text-gray-700 wrap-break-word leading-7 py-1;
 }
 
 article a:not([data-category]) {
