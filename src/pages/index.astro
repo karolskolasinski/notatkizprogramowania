@@ -23,9 +23,9 @@ const postCount = (categoryId: string) =>
     <main class="p-4 flex-1">
       {
         categories.length === 0 ? (
-          <section class="max-w-5xl mx-auto">Brak kategorii. Dodaj kategorie w CMS.</section>
+          <section class="max-w-6xl mx-auto">Brak kategorii. Dodaj kategorie w CMS.</section>
         ) : (
-          <section class="max-w-5xl mx-auto">
+          <section class="max-w-6xl mx-auto">
             <ul class="grid grid-cols-1 gap-4 p-0 sm:grid-cols-2 md:grid-cols-3">
               {categories.map((category) => (
                 <li class="list-none">

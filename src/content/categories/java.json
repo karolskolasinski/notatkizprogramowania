@@ -1,6 +1,6 @@
 {
   "name": "Java",
-  "order": 8,
+  "order": 3,
   "description": "Podstawy i mechanizmy języka Java – składnia, typy danych, kolekcje oraz nowoczesne API.",
   "color": "#ea2d2e",
   "icon": "@assets/categories/java/icon.svg"

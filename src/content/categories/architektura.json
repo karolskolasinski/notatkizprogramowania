@@ -1,0 +1,7 @@
+{
+  "name": "Architektura",
+  "order": 9,
+  "description": "Projektowanie architektury oprogramowania wg metodyki IDesign oraz inne podejścia i wzorce architektoniczne.",
+  "color": "#4881D3",
+  "icon": "@assets/categories/architektura/icon.svg"
+}
