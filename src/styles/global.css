@@ -68,7 +68,7 @@ article blockquote {
 }
 
 article ul {
-  @apply list-disc pl-6 md:pl-8 mb-6 text-base text-gray-700 leading-7;
+  @apply list-disc pl-6 md:pl-8 mb-1 text-base text-gray-700 leading-7;
 }
 
 article ol {

@@ -3,7 +3,7 @@ title: Null safety
 description: >-
   Iluzja bezpieczeństwa, czyli dlaczego TypeScript to za mało. Głębokie
   nurkowanie w Null Safety i architekturę błędów
-order: 1
+order: 15
 pubDate: 2026-06-28
 categories:
   - javascript
