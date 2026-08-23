@@ -11,10 +11,7 @@ categories:
 
 ## Responsywne obrazy: srcset i sizes
 
-Atrybuty `srcset` i `sizes` pozwalają przeglądarce automatycznie wybrać najbardziej odpowiednią
-wersję obrazu w zależności od rozdzielczości ekranu i szerokości okna przeglądarki. Dzięki temu
-użytkownicy pobierają tylko te zasoby, które są niezbędne dla ich urządzenia, co znacząco wpływa na
-optymalizację przesyłu danych i wydajność strony.
+Atrybuty `srcset` i `sizes` pozwalają przeglądarce automatycznie wybrać najbardziej odpowiednią wersję obrazu w zależności od rozdzielczości ekranu i szerokości okna przeglądarki. Dzięki temu użytkownicy pobierają tylko te zasoby, które są niezbędne dla ich urządzenia, co znacząco wpływa na optymalizację przesyłu danych i wydajność strony.
 
 ```html
 <img
@@ -26,35 +23,30 @@ optymalizację przesyłu danych i wydajność strony.
 />
 ```
 
-- `srcset`: Lista dostępnych wersji obrazu wraz z ich rzeczywistą szerokością w pikselach
-  (oznaczaną sufiksem `w`).
+- `srcset`: Lista dostępnych wersji obrazu wraz z ich rzeczywistą szerokością w pikselach (oznaczaną sufiksem `w`).
 - `sizes`: Informacja dla przeglądarki o tym, jaką szerokość (w jednostkach CSS lub viewportu)
   będzie zajmował obraz przy określonych warunkach (media queries).
 - `src`: Wartość domyślna, która służy jako fallback dla przeglądarek nieobsługujących `srcset`.
 
-<iframe
-    class="aspect-video w-full lg:max-w-2/3 pb-8"
-    src="https://www.youtube.com/embed/2QYpkrX2N48"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
+<iframe class="aspect-video w-full lg:max-w-2/3 pb-8"
+src="https://www.youtube.com/embed/2QYpkrX2N48"
+title="YouTube video player"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen>
 </iframe>
 
-<iframe
-    class="aspect-video w-full lg:max-w-2/3 pb-8"
-    src="https://www.youtube.com/embed/fUnGbptARlo"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
+<iframe class="aspect-video w-full lg:max-w-2/3 pb-8"
+src="https://www.youtube.com/embed/fUnGbptARlo"
+title="YouTube video player"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen>
 </iframe>
 
 **Źródło:**
 
-
 [6 Steps to Improve HTML Images](https://austingil.com/better-html-images/)
-
 
 ## Image spacing
 
@@ -63,6 +55,6 @@ Jeśli pod obrazkiem występują niechciane dodatkowe piksele (częsty problem w
 
 ```css
 img {
-  display: block;
+    display: block;
 }
 ```

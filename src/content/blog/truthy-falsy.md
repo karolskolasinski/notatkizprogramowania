@@ -9,8 +9,7 @@ categories:
 
 ## truthy / falsy
 
-Tworząc warunki, nie musimy porównywać ze sobą dwóch wartości. Wartością false staje się każda z
-poniższych wartości. Są to tak zwane wartości falsy:
+Tworząc warunki, nie musimy porównywać ze sobą dwóch wartości. Wartością false staje się każda z poniższych wartości. Są to tak zwane wartości falsy:
 
 ```javascript
 if (false) {...}
@@ -22,8 +21,7 @@ if ("") {...}
 if (document.all) {...}
 ```
 
-Dla nas oznacza to tyle, że tworząc warunki możemy wykonywać kod w zależności od stanu danej
-zmiennej, ale też wartości wpisanej ręcznie w nawias:
+Dla nas oznacza to tyle, że tworząc warunki możemy wykonywać kod w zależności od stanu danej zmiennej, ale też wartości wpisanej ręcznie w nawias:
 
 ```javascript
 const a = 20;
@@ -70,17 +68,17 @@ Powyższe sprawia, że dość często spotkasz zapisy jak poniżej:
 
 ```javascript
 if (nr) { //kod się wykona jeżeli wartość liczby nr jest różna od falsy
-    ...
+...
 }
 
 const txt = "Ala ma kota";
 if (txt.length) { //sprawdzam długość tekstu. Jeżeli większa od 0 to true
-    ...
+...
 }
 
 const tab = []
 if (tab.length) { //podobnie sprawdzam długość tablicy
-    ...
+...
 }
 ```
 

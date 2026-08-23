@@ -10,9 +10,9 @@ categories:
 ## callback hell:
 
 ```javascript
-get(function () {
-  send(function () {
-    notify(function () {
+get(function() {
+  send(function() {
+    notify(function() {
       // sth to do
     });
   });

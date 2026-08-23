@@ -9,10 +9,7 @@ categories:
 
 ## Pomodoro
 
-Pomodoro to technika zarządzania czasem, która polega na pracy w blokach czasowych, zwykle
-trwających 25 minut, zwanych „pomodoro”. Po każdej sesji pracy następuje krótka przerwa, a po
-czterech takich cyklach – dłuższa przerwa. Celem jest zwiększenie koncentracji i produktywności
-poprzez regularne przerwy.
+Pomodoro to technika zarządzania czasem, która polega na pracy w blokach czasowych, zwykle trwających 25 minut, zwanych „pomodoro”. Po każdej sesji pracy następuje krótka przerwa, a po czterech takich cyklach – dłuższa przerwa. Celem jest zwiększenie koncentracji i produktywności poprzez regularne przerwy.
 
 ### Pomodoro timer
 
@@ -23,8 +20,7 @@ poprzez regularne przerwy.
 - **Krótki spacer** – rozruszaj nogi i dotleń mózg.
 - **Ćwiczenia rozciągające**
 
-<iframe
-    class="aspect-video w-full lg:max-w-2/3 pb-8"
+<iframe class="aspect-video w-full lg:max-w-2/3 pb-8"
     src="https://www.youtube.com/embed/6C-wfV27bzI"
     title="YouTube video player"
     frameborder="0"
@@ -32,8 +28,7 @@ poprzez regularne przerwy.
     allowfullscreen>
 </iframe>
 
-<iframe
-    class="aspect-video w-full lg:max-w-2/3 pb-8"
+<iframe class="aspect-video w-full lg:max-w-2/3 pb-8"
     src="https://www.youtube.com/embed/h3PZZyoXnKU"
     title="YouTube video player"
     frameborder="0"
@@ -50,8 +45,7 @@ poprzez regularne przerwy.
   (mała pozytywna czynność)
 - **Ćwiczenie oddechowe** - 1 min. Breathe Bubble | Breathing Exercise
 
-<iframe
-    class="aspect-video w-full lg:max-w-2/3 pb-8"
+<iframe class="aspect-video w-full lg:max-w-2/3 pb-8"
     src="https://www.youtube.com/embed/_v7nbvdyhtw"
     title="YouTube video player"
     frameborder="0"

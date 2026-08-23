@@ -8,6 +8,7 @@ pubDate: 2026-06-28
 categories:
   - javascript
 ---
+
 ![](@assets/posts/null-safety/heroImage.png)
 
 ## TypeScript kłamie! Iluzja bezpieczeństwa, czyli dlaczego TypeScript to za mało.
@@ -29,9 +30,9 @@ Oto podróż przez „miliardowy błąd” informatyki, nieszczelne systemy typ�
 * "Type Gymnastic" (programowanie typów)\
   Czasami pisanie typów staje się trudniejsze niż napisanie samej logiki biznesowej. Kiedy zaczynasz tworzyć generyki generyków, używać `infer`, `keyof`, `Omit`, `Pick` i warunkowych typów, kod zaczyna przypominać czarną magię, a nie czytelny skrypt. Zamiast dostarczać funkcje, spędzasz dwie godziny na upewnianiu się, że kompilator jest zadowolony.
 * Nie ma nic gorszego niż instalacja świetnej, małej biblioteki z npm, która... nie ma oficjalnych typów. Wtedy zaczyna się zabawa:
-  * Szukanie `@types/biblioteka` (które mogą być nieaktualne).
-  * Pisanie własnych plików `.d.ts`.
-  * Ostatecznie, w akcie desperacji i zmęczenia: `// @ts-ignore` albo rzucenie wszechobecnego `any`.
+    * Szukanie `@types/biblioteka` (które mogą być nieaktualne).
+    * Pisanie własnych plików `.d.ts`.
+    * Ostatecznie, w akcie desperacji i zmęczenia: `// @ts-ignore` albo rzucenie wszechobecnego `any`.
 * TypeScript chroni cię **tylko podczas kompilacji**. Kiedy kod trafia do przeglądarki lub Node.js, to wciąż jest zwykły JavaScript. Jeśli API z backendu zwróci inny obiekt, niż zadeklarowałeś w typach, TypeScript cię przed tym nie uratuje – aplikacja i tak się wywali w runtime.
 * Plik `tsconfig.json` potrafi być koszmarem, zwłaszcza w większych projektach (monorepo). Do tego dochodzi czas kompilacji. Czysty JavaScript działa od razu. W TS musisz czekać, aż `tsc` przemieli cały projekt, co przy ogromnych bazach kodu zauważalnie spowalnia feedback loop podczas developmentu.
 * `any` oraz `unknown`
@@ -51,7 +52,7 @@ TypeScript domyślnie zakłada, że jeśli wyciągasz coś z tablicy, to to tam 
 
 ```typescript
 // Dane w 100% poprawne
-const topUsers: User[] = [ { name: "Ania" }, { name: "Bartek" } ];
+const topUsers: User[] = [{ name: "Ania" }, { name: "Bartek" }];
 
 // Pobieramy trzeciego użytkownika (którego nie ma)
 const user = topUsers[2]; // TS twierdzi, że typ 'user' to: User (błąd!)
@@ -129,7 +130,7 @@ Wyobraź sobie taki scenariusz w sklepie internetowym:
 
 ```typescript
 const price = order?.cart?.items?.[0]?.price?.amount;
-const total = price * quantity; 
+const total = price * quantity;
 
 ```
 
@@ -180,9 +181,9 @@ Jeśli `userId` z powodu błędu był `null`, a Ty po cichu zamieniłeś go na `
 const userRole = getUserRole() ?? ""; // Zamiana null na ""
 
 if (userRole === "admin") {
-    showAdminPanel();
+  showAdminPanel();
 } else {
-    showStandardPanel(); // "" wpada tutaj
+  showStandardPanel(); // "" wpada tutaj
 }
 
 ```
@@ -191,7 +192,7 @@ Wygląda bezpiecznie? A co, jeśli inny programista napisze warunek odwrotnie?
 
 ```typescript
 if (userRole !== "guest") {
-    allowAccessToSecretData(); // "" wpada TUTAJ! Pusty string nie równa się "guest"
+  allowAccessToSecretData(); // "" wpada TUTAJ! Pusty string nie równa się "guest"
 }
 
 ```
@@ -229,8 +230,7 @@ const rawData = await response.json();
 
 // Zod sprawdza dane. Jeśli API oszukało, aplikacja wywali się TUTAJ,
 // a nie w losowym miejscu kodu 5 minut później.
-const user = UserSchema.parse(rawData); 
-
+const user = UserSchema.parse(rawData);
 ```
 
 ##### Krok 2: Jawna obsługa alternatyw (Nullish Coalescing `??`)

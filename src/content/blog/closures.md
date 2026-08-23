@@ -9,8 +9,7 @@ categories:
 
 ## Czym jest closure?
 
-**Closure** to funkcja, która ma dostęp do zmiennych z **zakresu (scope)** innej – otaczającej ją
-funkcji, nawet po zakończeniu działania tej funkcji zewnętrznej.
+**Closure** to funkcja, która ma dostęp do zmiennych z **zakresu (scope)** innej – otaczającej ją funkcji, nawet po zakończeniu działania tej funkcji zewnętrznej.
 
 > Closure = funkcja + dostęp do swojego leksykalnego scope
 
@@ -35,7 +34,7 @@ const greet = outer();
 greet(); // "Cześć, Janek"
 ```
 
-Funkcja inner tworzy **closure**, bo zachowuje dostęp do name mimo że outer() już się zakończyło.
+Funkcja inner tworzy **closure**, bo zachowuje dostęp do name mimo że outer () już się zakończyło.
 
 ## Do czego używa się closures?
 
@@ -68,7 +67,7 @@ Tworzenie wyspecjalizowanych funkcji:
 
 ```javascript
 function makeMultiplier(factor) {
-  return function (x) {
+  return function(x) {
     return x * factor;
   };
 }
@@ -92,6 +91,5 @@ for (let i = 0; i < 3; i++) {
 ## Cechy closures:
 
 - Zachowują **referencję** do zmiennych, nie kopię.
-- Przechowują zamknięty **leksykalny kontekst** (czyli lexical scope, w którym zostały zdefiniowane,
-  nie wywołane).
+- Przechowują zamknięty **leksykalny kontekst** (czyli lexical scope, w którym zostały zdefiniowane, nie wywołane).
 - Wpływają na **zużycie pamięci** – zamknięte zmienne są utrzymywane w pamięci, dopóki closure żyje.

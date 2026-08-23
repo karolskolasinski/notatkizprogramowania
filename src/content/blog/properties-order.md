@@ -16,11 +16,11 @@ const propertyGroups = [
    * Compose rules from other selectors in CSS Modules.
    * @see https://github.com/css-modules/css-modules#composition
    */
-  properties: ['composes'],
+  properties: ['composes']
  },
  {
   // Must be first (unless using the above).
-  properties: ['all'],
+  properties: ['all']
  },
  {
   // Position.
@@ -37,12 +37,12 @@ const propertyGroups = [
    'right',
    'bottom',
    'left',
-   'z-index',
-  ],
+   'z-index'
+  ]
  },
  {
   // Display mode.
-  properties: ['box-sizing', 'display'],
+  properties: ['box-sizing', 'display']
  },
  {
   // Flexible boxes.
@@ -53,8 +53,8 @@ const propertyGroups = [
    'flex-flow',
    'flex-grow',
    'flex-shrink',
-   'flex-wrap',
-  ],
+   'flex-wrap'
+  ]
  },
  {
   // Grid layout.
@@ -76,12 +76,12 @@ const propertyGroups = [
    'grid-auto-flow',
    'grid-gap',
    'grid-row-gap',
-   'grid-column-gap',
-  ],
+   'grid-column-gap'
+  ]
  },
  {
   // Gap.
-  properties: ['gap', 'row-gap', 'column-gap'],
+  properties: ['gap', 'row-gap', 'column-gap']
  },
  {
   // Layout alignment.
@@ -94,12 +94,12 @@ const propertyGroups = [
    'align-self',
    'justify-content',
    'justify-items',
-   'justify-self',
-  ],
+   'justify-self'
+  ]
  },
  {
   // Order.
-  properties: ['order'],
+  properties: ['order']
  },
  {
   // Box model.
@@ -156,8 +156,8 @@ const propertyGroups = [
    'overscroll-behavior-y',
    'clip',
    'clip-path',
-   'clear',
-  ],
+   'clear'
+  ]
  },
  {
   // Typography.
@@ -235,8 +235,8 @@ const propertyGroups = [
    'size-adjust',
    'ascent-override',
    'descent-override',
-   'line-gap-override',
-  ],
+   'line-gap-override'
+  ]
  },
  {
   // Accessibility & Interactions.
@@ -267,8 +267,8 @@ const propertyGroups = [
    'nav-up',
    'nav-right',
    'nav-down',
-   'nav-left',
-  ],
+   'nav-left'
+  ]
  },
  {
   // Images, backgrounds, & borders.
@@ -360,8 +360,8 @@ const propertyGroups = [
    'mix-blend-mode',
    'filter:progid:DXImageTransform.Microsoft.Alpha(Opacity',
    "-ms-filter:\\'progid:DXImageTransform.Microsoft.Alpha",
-   'opacity',
-  ],
+   'opacity'
+  ]
  },
  {
   // Masking.
@@ -381,8 +381,8 @@ const propertyGroups = [
    'mask-clip',
    'mask-origin',
    'mask-size',
-   'mask-composite',
-  ],
+   'mask-composite'
+  ]
  },
  {
   // SVG Presentation Attributes.
@@ -418,8 +418,8 @@ const propertyGroups = [
    'marker-end',
    'shape-rendering',
    'stop-color',
-   'stop-opacity',
-  ],
+   'stop-opacity'
+  ]
  },
  {
   // Transitions & Animation.
@@ -444,10 +444,10 @@ const propertyGroups = [
    'animation-delay',
    'animation-iteration-count',
    'animation-direction',
-   'will-change',
-  ],
- },
-]
+   'will-change'
+  ]
+ }
+];
 ```
 
 **Źródło**:

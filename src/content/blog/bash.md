@@ -66,10 +66,9 @@ categories:
 - `ps` - pokazuje nam jakie procesy są aktualnie wykonywane
 - `kill` - zabija procesy
 - Aby zabić proces na konkretnym porcie:
-  - `fuser 8080/tcp` - will print you PID of process bound on that port
-  - `lsof -i :8000` - to polecenie wyświetli informacje o procesie nasłuchującym na porcie 8000,
-    wraz z identyfikatorem procesu (PID)
-  - `fuser -k 8080/tcp` - will kill that process
+    - `fuser 8080/tcp` - will print you PID of process bound on that port
+    - `lsof -i :8000` - to polecenie wyświetli informacje o procesie nasłuchującym na porcie 8000, wraz z identyfikatorem procesu (PID)
+    - `fuser -k 8080/tcp` - will kill that process
 
 ### Polecenia związane z pomocą
 

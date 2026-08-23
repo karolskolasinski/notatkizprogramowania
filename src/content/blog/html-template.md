@@ -15,63 +15,63 @@ categories:
 ```html
 <!DOCTYPE html>
 <html lang="pl">
-  <head>
-    <title>your_title</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<head>
+  <title>your_title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <meta name="title" content="your_title">
-    <meta name="description" content="your_description">
-    <meta name="keywords" content="your_keywords">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="Polish">
-    <meta name="author" content="Karol Skolasiński">
-    <meta name="copyright" content="Karol Skolasiński">
+  <meta name="title" content="your_title">
+  <meta name="description" content="your_description">
+  <meta name="keywords" content="your_keywords">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="Polish">
+  <meta name="author" content="Karol Skolasiński">
+  <meta name="copyright" content="Karol Skolasiński">
 
-    <meta property="og:title" content="your_og_title">
-    <meta property="og:description" content="your_og_title">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="og-image.webp">
-    <meta property="og:image:type" content="image/webp">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:url" content="https://www.your_site.pl">
-    <meta property="og:locale" content="pl_PL">
-    <meta property="og:site_name" content="your_site_name">
+  <meta property="og:title" content="your_og_title">
+  <meta property="og:description" content="your_og_title">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="og-image.webp">
+  <meta property="og:image:type" content="image/webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://www.your_site.pl">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:site_name" content="your_site_name">
 
-    <!--STYLES-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap"
-    >
-    <link rel="icon" type="image/x-icon" href="./favicon.ico">
-    <link rel="stylesheet" href="./style.css">
+  <!--STYLES-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap"
+  >
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <link rel="stylesheet" href="./style.css">
 
-    <!--SCRIPTS-->
-    <script
-      type="module"
-      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/shoelace.js"
-    >
-    </script>
-    <script src="/static/js/script.js"></script>
-  </head>
+  <!--SCRIPTS-->
+  <script
+    type="module"
+    src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/shoelace.js"
+  >
+  </script>
+  <script src="/static/js/script.js"></script>
+</head>
 
-  <body>
-    <header>
-      <nav>NAV</nav>
-    </header>
+<body>
+  <header>
+    <nav>NAV</nav>
+  </header>
 
-    <main>
-      <aside>ASIDE</aside>
+  <main>
+    <aside>ASIDE</aside>
 
-      <section>SECTION</section>
-    </main>
+    <section>SECTION</section>
+  </main>
 
-    <footer>FOOTER</footer>
-  </body>
+  <footer>FOOTER</footer>
+</body>
 </html>
 ```
 

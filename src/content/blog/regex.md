@@ -9,9 +9,7 @@ categories:
 
 ## **Wyrażenia regularne (regular expressions, regex, regexp)**
 
-Są to wzorce opisujące łańcuchy symboli. Wyrażenie regularne może określać zbiór pasujących
-łańcuchów lub wyszczególniać istotne części łańcucha. Posiadają implementację w większości języków
-programowania.
+Są to wzorce opisujące łańcuchy symboli. Wyrażenie regularne może określać zbiór pasujących łańcuchów lub wyszczególniać istotne części łańcucha. Posiadają implementację w większości języków programowania.
 
 ### **Składnia:**
 

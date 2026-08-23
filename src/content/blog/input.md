@@ -14,18 +14,18 @@ Aby ukryć przycisk inputa typu file, należy napisać selector dla jego pseudoe
 
 ```css
 input[type="file"]::file-selector-button {
-  background-color: #fff;
-  color: #000;
-  border: 0;
-  border-right: 1px solid #e5e5e5;
-  padding: 10px 15px;
-  margin-right: 20px;
-  transition: 0.5s;
+    background-color: #fff;
+    color: #000;
+    border: 0;
+    border-right: 1px solid #e5e5e5;
+    padding: 10px 15px;
+    margin-right: 20px;
+    transition: 0.5s;
 }
 
 input[type="file"]::file-selector-button:hover {
-  background-color: #eee;
-  border: 0;
-  border-right: 1px solid #e5e5e5;
+    background-color: #eee;
+    border: 0;
+    border-right: 1px solid #e5e5e5;
 }
 ```

@@ -6,6 +6,7 @@ order: 7
 categories:
   - css
 ---
+
 Celem resetowania arkusza stylów jest zmniejszenie niespójności przeglądarki w takich kwestiach jak domyślne wysokości linii, marginesy i rozmiary czcionek nagłówków i tak dalej. Resetowanie stylów dość często pojawia się we frameworkach CSS. Istnieją różne resety CSS, najczęściej bazują na [CSS Tools: Reset CSS](https://meyerweb.com/eric/tools/css/reset/).
 
 Osobiście nie polecam żadnego resetowania, oprócz niezbędnych selektorów, ponieważ nic to nie wnosi, a często powoduje braki i problemy, marnowanie czasu na szukanie. Reset marginesu dla nagłówków i paragrafów można wprowadzić opcjonalnie, ale często się przydaje i łatwiej jest ustawić 0 dla konkretnej klasy.

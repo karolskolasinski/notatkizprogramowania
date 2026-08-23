@@ -6,6 +6,7 @@ order: 6
 categories:
   - html
 ---
+
 # **Formularz**
 
 Aby stworzyć swój formularz, powinieneś użyć sparowanego tagu z dość sugestywną nazwą `<form>`. Elementy do wprowadzania informacji są umieszczone wewnątrz tego znacznika. Ma dwie ważne cechy:
@@ -17,29 +18,27 @@ Metody `get` i `post` są wykorzystywane do przekazywania danych z formularza do
 
 `<label>` łączy tekst z elementem formularza. Znacznik nie pokazuje się wizualnie, więc aby zrozumieć, czy jest powiązany, czy nie, kliknij tekst. Jeżeli aktywuje pobliski element formularza, oznacza to, że \<label>działa.
 
-
-
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>HTML Forms</title>
+  <title>HTML Forms</title>
 </head>
 
 <body>
-<form action="[value]" method="post">
+  <form action="[value]" method="post">
     <label>
-        <h1>First Name:</h1>
-        <input type="text" name="firstName">
+      <h1>First Name:</h1>
+      <input type="text" name="firstName">
     </label>
     <label>
-        <h1>Last Name:</h1>
-        <input type="text" name="lastName">
+      <h1>Last Name:</h1>
+      <input type="text" name="lastName">
     </label>
 
     <label>
-        <h1>Password:</h1>
-        <input type="password" name="password">
+      <h1>Password:</h1>
+      <input type="password" name="password">
     </label>
 
     <br>
@@ -63,7 +62,7 @@ Metody `get` i `post` są wykorzystywane do przekazywania danych z formularza do
     <br>
 
     <button type="submit">Submit</button>
-</form>
+  </form>
 </body>
 </html>
 

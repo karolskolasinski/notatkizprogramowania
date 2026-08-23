@@ -6,15 +6,15 @@ order: 1
 categories:
   - git
 ---
+
 ## Git
 
 ### Konfiguracja:
 
-* `git config` - pozwala odczytać i modyfikować zmienne, które kontrolują wszystkie aspekty
-  działania i zachowania git
-  * `--system` - na komputer: `/etc/gitconfig`
-  * `--global` - na użytkownika: `~/.gitconfig`
-  * `--local` - na repozytorium: `.git/config`
+* `git config` - pozwala odczytać i modyfikować zmienne, które kontrolują wszystkie aspekty działania i zachowania git
+    * `--system` - na komputer: `/etc/gitconfig`
+    * `--global` - na użytkownika: `~/.gitconfig`
+    * `--local` - na repozytorium: `.git/config`
 * `git config --global user.name "John Doe"`
 * `git config --global user.email johndoe@domain.com`
 * `git config --list` - pokazuje aktualną konfigurację
@@ -30,31 +30,24 @@ categories:
 
 ### Integrowanie zmian (merge):
 
-* `git merge feature/1` - scalenie zmian z gałęzi feature/1 do aktualnej gałęzi (tworzy się nowy
-  commit)
-* `git rebase develop` - zmiana bazy rewizji, aplikowanie zmian zatwierdzonych w gałęzi develop do
-  aktualnej gałęzi (nie używaj tego polecenia na gałęziach, które są publiczne!
+* `git merge feature/1` - scalenie zmian z gałęzi feature/1 do aktualnej gałęzi (tworzy się nowy commit)
+* `git rebase develop` - zmiana bazy rewizji, aplikowanie zmian zatwierdzonych w gałęzi develop do aktualnej gałęzi (nie używaj tego polecenia na gałęziach, które są publiczne!
 * Jak całkowicie zastąpić gałąź główną master z innej gałęzi np. seotweaks?
 * Use the “ours” merge strategy to overwrite master with seotweaks like this:
-  * `git checkout master`
-  * `git pull`
-  * `git checkout seotweaks`
-  * `git merge -s ours master`
-  * `git checkout master`
-  * `git merge seotweaks`
+    * `git checkout master`
+    * `git pull`
+    * `git checkout seotweaks`
+    * `git merge -s ours master`
+    * `git checkout master`
+    * `git merge seotweaks`
 
 ### Cofanie zmian:
 
-* `git restore` - to polecenie jest przydatne, gdy chcemy cofnąć swoje zmiany lokalne, które
-  istnieją tylko na naszym dysku. Przykładowo skasowałeś pewne pliki przez przypadek i chcesz je
-  odzyskać z repozytorium. Możesz zadeklarować, że chcesz przywrócić tylko jeden konkretny plik. To
-  polecenie nie zrobi nic na danym branchu czy gałęzi. Jeśli więc chcesz cofnąć swoje zmiany na
-  lokalnym dysku, to jest to najlepsze polecenie.
+* `git restore` - to polecenie jest przydatne, gdy chcemy cofnąć swoje zmiany lokalne, które istnieją tylko na naszym dysku. Przykładowo skasowałeś pewne pliki przez przypadek i chcesz je odzyskać z repozytorium. Możesz zadeklarować, że chcesz przywrócić tylko jeden konkretny plik. To polecenie nie zrobi nic na danym branchu czy gałęzi. Jeśli więc chcesz cofnąć swoje zmiany na lokalnym dysku, to jest to najlepsze polecenie.
 
 ### Usunięcie ostatniego commita ze zdalnego repozytorium:
 
-Be careful that this will create an "alternate reality" for people who have already
-fetch/pulled/cloned from the remote repository. But in fact, it's quite simple:
+Be careful that this will create an "alternate reality" for people who have already fetch/pulled/cloned from the remote repository. But in fact, it's quite simple:
 
 * `git reset HEAD^` - remove commit locally
 * `git push origin +HEAD` - force-push the new HEAD commit
@@ -67,9 +60,7 @@ To stop tracking a file, we must remove it from the index:
 * To remove a folder and all files in the folder recursively:
 * `git rm -r --cached <folder>`
 
-The removal of the file from the head revision will happen on the next commit. WARNING: While this
-will not remove the physical file from your local machine, it will remove the files from other
-developers' machines on their next git pull.
+The removal of the file from the head revision will happen on the next commit. WARNING: While this will not remove the physical file from your local machine, it will remove the files from other developers' machines on their next git pull.
 
 ### Changing git commit message after push:
 
@@ -80,9 +71,7 @@ If it is the most recent commit, you can simply do this:
 * `or you can use`
 * `git push --force`
 
-If someone else pushed changes to the same branch, you probably want to avoid destroying those
-changes. The `--force-with-lease` option is the safest, because it will abort if there are any
-upstream changes.
+If someone else pushed changes to the same branch, you probably want to avoid destroying those changes. The `--force-with-lease` option is the safest, because it will abort if there are any upstream changes.
 
 ### Tag
 
@@ -94,6 +83,5 @@ upstream changes.
 2. ściągnij najnowsze zmiany na arcarium, przejdź na docelowego brancha i zrób git rebase arcarium
 3. zobaczysz przy którym commicie są konflikty
 4. jak będziesz chciał kontynuować to `git rebase --continue`
-5. podczas rebase git odtwarza te commity po kolei, więc konflikty w jednym nie znaczą, że w
-   pozostałych nie będzie
+5. podczas rebase git odtwarza te commity po kolei, więc konflikty w jednym nie znaczą, że w pozostałych nie będzie
 6. jak rebase poszedł ok możesz wypchnąć zmiany na tego brancha, ale z `git push --force-with-lease`

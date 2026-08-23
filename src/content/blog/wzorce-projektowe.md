@@ -9,11 +9,7 @@ categories:
 
 ## Wzorce projektowe (design patterns)
 
-Zbiór przemyślanych, uniwersalnych, łatwych do utrzymania i sprawdzonych w praktyce rozwiązań w
-programowaniu obiektowym dla często pojawiających się, powtarzalnych problemów projektowych. Jest
-opisem rozwiązania, a nie jego implementacją. Wzorce projektowe stosowane są w projektach
-wykorzystujących programowanie obiektowe. Dodatkowo wyróżniamy podstawowy podział wzorców na cztery
-kategorie:
+Zbiór przemyślanych, uniwersalnych, łatwych do utrzymania i sprawdzonych w praktyce rozwiązań w programowaniu obiektowym dla często pojawiających się, powtarzalnych problemów projektowych. Jest opisem rozwiązania, a nie jego implementacją. Wzorce projektowe stosowane są w projektach wykorzystujących programowanie obiektowe. Dodatkowo wyróżniamy podstawowy podział wzorców na cztery kategorie:
 
 - **🏗️ creational** - opisują, w jaki sposób obiekty są tworzone
 - **⚙️ behavioral** - opisują zachowanie obiektów
@@ -26,20 +22,15 @@ Dzięki niemu nie musimy pisać konstruktorów N parametrowych.
 
 - pozwala na tworzenie obiektów w których możemy w kolejności ustawiać parametry
 - nie musimy tworzyć kombinacji konstruktorów dla parametrów które są opcjonalne
-- można go wygenerować: dopisać wewnętrzną klasępublic static class Builder \{} i na pełnym
-  konstruktorze klasy wygenerować z IntelliJ (Refactor -> Replace Constructor with Builder)
+- można go wygenerować: dopisać wewnętrzną klasępublic static class Builder \{} i na pełnym konstruktorze klasy wygenerować z IntelliJ (Refactor -> Replace Constructor with Builder)
 
-Budowniczy ma za zadanie rozwiązać pewien powtarzający się problem programistyczny – konkretniej
-zapewnia oddzielenie procesu inicjalizacji obiektu od jego reprezentacji. Decydując się na użycie
-tego wzorca można osiągnąć następujące korzyści:
+Budowniczy ma za zadanie rozwiązać pewien powtarzający się problem programistyczny – konkretniej zapewnia oddzielenie procesu inicjalizacji obiektu od jego reprezentacji. Decydując się na użycie tego wzorca można osiągnąć następujące korzyści:
 
 - logika mówiąca o tym jak obiekt ma być zbudowany będzie oddzielona od implementacji tej logiki
-- spełnia zasadę otwarty na rozbudowę, zamknięty na modyfikacje (open/closed principle) – łatwo
-  dodać do kodu nowych budowniczych
+- spełnia zasadę otwarty na rozbudowę, zamknięty na modyfikacje (open/closed principle) – łatwo dodać do kodu nowych budowniczych
 - spełnia zasadę odwrócenia zależności (dependency inversion principle)
 - sprzyja samodokumentującemu się kodowi (widząc poszczególnych budowniczych wiemy, co dostarczą)
-- daje doskonałą kontrolę nad etapami budowania kompozytu (np. hermetyzacja obsługi błędów dla
-  danego kroku)
+- daje doskonałą kontrolę nad etapami budowania kompozytu (np. hermetyzacja obsługi błędów dla danego kroku)
 
 ```java
 public class Hero {
@@ -147,12 +138,7 @@ public class Main {
 
 ### 🏗️ Abstract Factory
 
-Jest to kreacyjny wzorzec projektowy, którego celem jest dostarczenie interfejsu do tworzenia
-różnych obiektów jednego typu (tej samej rodziny). Pozwala na tworzenie kodu, który będzie
-uzależniony od abstrakcji, a nie od implementacji konkretnych klas. Abstract Factory różni się od
-Buildera tym, że kładzie nacisk na tworzenie produktów z konkretnej rodziny, a Builder kładzie
-nacisk na sposób tworzenia obiektów. Zwróć uwagę na słowo kluczowe abstract oraz na package. Klasa
-Button i ButtonFactory znajdują się w oddzielnym package.
+Jest to kreacyjny wzorzec projektowy, którego celem jest dostarczenie interfejsu do tworzenia różnych obiektów jednego typu (tej samej rodziny). Pozwala na tworzenie kodu, który będzie uzależniony od abstrakcji, a nie od implementacji konkretnych klas. Abstract Factory różni się od Buildera tym, że kładzie nacisk na tworzenie produktów z konkretnej rodziny, a Builder kładzie nacisk na sposób tworzenia obiektów. Zwróć uwagę na słowo kluczowe abstract oraz na package. Klasa Button i ButtonFactory znajdują się w oddzielnym package.
 
 ```java
 package example.abstract_button.button_factory;
@@ -191,21 +177,12 @@ public class Main {
 
 ### 🏗️ Singleton
 
-Jest to kreacyjny wzorzec projektowy, którego celem jest ograniczenie możliwości tworzenia obiektów
-danej klasy do jednej instancji oraz zapewnienie globalnego dostępu do stworzonego obiektu.
-Instancja ma być stworzona w odpowiednim momencie, odpowiednio zainicjalizowana oraz tak, aby nie
-można jej było nadpisać. Każde użycie takiej klasy odnosi się do tej samej instancji. Niektórzy
-programiści uznają go za antywzorzec, ponieważ łamie zasady projektowania obiektowego, często bywa
-nadużywany.
+Jest to kreacyjny wzorzec projektowy, którego celem jest ograniczenie możliwości tworzenia obiektów danej klasy do jednej instancji oraz zapewnienie globalnego dostępu do stworzonego obiektu. Instancja ma być stworzona w odpowiednim momencie, odpowiednio zainicjalizowana oraz tak, aby nie można jej było nadpisać. Każde użycie takiej klasy odnosi się do tej samej instancji. Niektórzy programiści uznają go za antywzorzec, ponieważ łamie zasady projektowania obiektowego, często bywa nadużywany.
 
-Przykład wykorzystania to jedno połączenie z bazą danych. Innym przykładem może być wczytywanie
-pliku konfiguracyjnego. Chcemy aby istniała tylko jedna klasa zajmująca się odczytem lub zapisem do
-takiego pliku. Nie może istnieć więcej niż jeden obiekt, który edytuje ten sam plik, ponieważ np.:
+Przykład wykorzystania to jedno połączenie z bazą danych. Innym przykładem może być wczytywanie pliku konfiguracyjnego. Chcemy aby istniała tylko jedna klasa zajmująca się odczytem lub zapisem do takiego pliku. Nie może istnieć więcej niż jeden obiekt, który edytuje ten sam plik, ponieważ np.:
 
-- kiedy zasób nie będzie zamknięty (edycja pliku), a w tym samym momencie ktoś będzie go chciał
-  usunąć, to pojawi się komunikat systemowy, że plik jest używany i nie można tego zrobić
-- jeżeli dwie instancje zapisywały by coś do pliku, mógłby powstać konflikt i jedna zacznie
-  nadpisywać treść drugiej
+- kiedy zasób nie będzie zamknięty (edycja pliku), a w tym samym momencie ktoś będzie go chciał usunąć, to pojawi się komunikat systemowy, że plik jest używany i nie można tego zrobić
+- jeżeli dwie instancje zapisywały by coś do pliku, mógłby powstać konflikt i jedna zacznie nadpisywać treść drugiej
 
 #### version 1 - eager (tworzy się w momencie załadowania klasy)
 
@@ -332,11 +309,7 @@ public class Main {
 
 ### ⚙️ Observer
 
-Wzorzec obserwator jest wzorcem behawioralnym. Jak sama nazwa mówi jest to wzorzec do
-obserwowania/nasłuchiwania na jakieś zdarzenie (np. zmianę stanu). Jeśli to zdarzenie wystąpi,
-wszystkie obiekty które “zapisały” się do nasłuchiwania na ten event zostaną o tym fakcie
-poinformowane. Tworzy się tu relacja jeden-do-wielu, która łączy ze sobą grupę obiektów, które
-zostaną poinformowane o zmianie stanu.
+Wzorzec obserwator jest wzorcem behawioralnym. Jak sama nazwa mówi jest to wzorzec do obserwowania/nasłuchiwania na jakieś zdarzenie (np. zmianę stanu). Jeśli to zdarzenie wystąpi, wszystkie obiekty które “zapisały” się do nasłuchiwania na ten event zostaną o tym fakcie poinformowane. Tworzy się tu relacja jeden-do-wielu, która łączy ze sobą grupę obiektów, które zostaną poinformowane o zmianie stanu.
 
 ```java
 public class NewsStation {
@@ -393,16 +366,9 @@ public class Main {
 
 ### ⚙️Strategy
 
-Wzorzec ten pochodzi on z grupy wzorców behawioralnych, czyli służy do opisywania konkretnych
-zachowań. Realizuje wszystkie zasady SOLID. W dużym uproszczeniu można powiedzieć, że strategia ma
-za zadanie w zależności od danych/kontekstu wykorzystać odpowiedni proces z puli algorytmów, które
-łączy wspólny interfejs.
+Wzorzec ten pochodzi on z grupy wzorców behawioralnych, czyli służy do opisywania konkretnych zachowań. Realizuje wszystkie zasady SOLID. W dużym uproszczeniu można powiedzieć, że strategia ma za zadanie w zależności od danych/kontekstu wykorzystać odpowiedni proces z puli algorytmów, które łączy wspólny interfejs.
 
-W strategii definiujemy wspólny interfejs, dla obsługiwanych algorytmów, posiadający dozwolone
-metody. W kolejnym kroku implementujemy poszczególne strategie w poszczególnych klasach. Następnie
-budujemy klasę klienta, która będzie pozwalała na określenie strategii (na przykład poprzez jej
-wstrzyknięcie) oraz będzie posiadała referencję do aktualnie wybranej strategii. Klient współpracuje
-z wybraną strategią w celu wykonania określonego zadania.
+W strategii definiujemy wspólny interfejs, dla obsługiwanych algorytmów, posiadający dozwolone metody. W kolejnym kroku implementujemy poszczególne strategie w poszczególnych klasach. Następnie budujemy klasę klienta, która będzie pozwalała na określenie strategii (na przykład poprzez jej wstrzyknięcie) oraz będzie posiadała referencję do aktualnie wybranej strategii. Klient współpracuje z wybraną strategią w celu wykonania określonego zadania.
 
 ```java
 package behavioral.strategy.strategies;
@@ -501,29 +467,10 @@ public class Main {
 ### 🔱 Decorator
 
 Wzorzec strukturalny Dekorator polega na opakowaniu oryginalnej (bazowej) klasy w nową klasę
-"dekorującą". Wykorzystuje się do tego kompozycję. Wzorzec ten jest alternatywą dla dziedziczenia,
-które posiada szereg ograniczeń w tym zakresie. Przede wszystkim dekorator pozwala na dekorowanie w
-trakcie działania programu, a nie podczas kompilacji. Dodatkowo umożliwia „składanie” dekoratorów, a
-więc daje elastyczność w kwestii doboru zestawu nowych funkcjonalności. Ważne w tym wzorcu jest to,
-że pierwotne zachowanie klasy, którą dekorujemy pozostaje bez zmian. Pozwala to zachować pełną
-kompatybilność z już istniejącym kodem i zapewnia transparentność naszego dekoratora.
+"dekorującą". Wykorzystuje się do tego kompozycję. Wzorzec ten jest alternatywą dla dziedziczenia, które posiada szereg ograniczeń w tym zakresie. Przede wszystkim dekorator pozwala na dekorowanie w trakcie działania programu, a nie podczas kompilacji. Dodatkowo umożliwia „składanie” dekoratorów, a więc daje elastyczność w kwestii doboru zestawu nowych funkcjonalności. Ważne w tym wzorcu jest to, że pierwotne zachowanie klasy, którą dekorujemy pozostaje bez zmian. Pozwala to zachować pełną kompatybilność z już istniejącym kodem i zapewnia transparentność naszego dekoratora.
 
-Cała „magia” działania dekoratora opiera się o wykorzystanie tego samego interfejsu, z którego
-korzysta klasa, którą chcemy dekorować. I tutaj jest już pierwszy warunek wymagany przy tym wzorcu –
-istnienie interfejsu dla klasy bazowej. Sam dekorator w najprostszej postaci możemy wykonać na
-jednej klasie, która po prostu zaimplementuje ten sam interfejs co klasa bazowa. Dodatkowo musi ona
-przyjmować w jakiś sposób klasę, którą dekorujemy – zazwyczaj jest to wykonywane za pomocą
-konstruktora. Tak więc zakładamy, że mamy interfejs i implementującą go klasę, którą używamy w
-naszym kodzie i chcemy ją wzbogacić o nowe funkcje nie zmieniając jej implementacji. Dodajemy nową
-klasę, która również implementuje nasz interfejs. Klasa ta przyjmuje w konstruktorze obiekt, którego
-typem jest implementowany interfejs (dzięki temu nie ograniczamy się do dekorowania jednej klasy,
-ale całego zbioru. Jest to ogromna zaleta pozwalająca nakładać dekoratory jeden na drugi). Klasa
-dekorująca musi w metodach z interfejsu wywołać takie same metody z obiektu przekazanego w
-konstruktorze – pozwala to zachować pełną funkcjonalność klasy dekorowanej. Mając tak przygotowaną
-konstrukcję możemy dodawać nowe funkcjonalności. Czy to dodając osobne metody, które użyjemy w
-naszym kodzie modyfikując za ich pomocą obiekt, który dostaniemy, albo dokładając efekty uboczne do
-już istniejących metod. Dobrym przykładem jest tutaj dodanie logowania wywołania metody z obiektu
-albo np. modyfikowanie danych przekazywanych do metod obiektu.
+Cała „magia” działania dekoratora opiera się o wykorzystanie tego samego interfejsu, z którego korzysta klasa, którą chcemy dekorować. I tutaj jest już pierwszy warunek wymagany przy tym wzorcu – istnienie interfejsu dla klasy bazowej. Sam dekorator w najprostszej postaci możemy wykonać na jednej klasie, która po prostu zaimplementuje ten sam interfejs co klasa bazowa. Dodatkowo musi ona przyjmować w jakiś sposób klasę, którą dekorujemy – zazwyczaj jest to wykonywane za pomocą konstruktora. Tak więc zakładamy, że mamy interfejs i implementującą go klasę, którą używamy w naszym kodzie i chcemy ją wzbogacić o nowe funkcje nie zmieniając jej implementacji. Dodajemy nową klasę, która również implementuje nasz interfejs. Klasa ta przyjmuje w konstruktorze obiekt, którego typem jest implementowany interfejs (dzięki temu nie ograniczamy się do dekorowania jednej klasy, ale całego zbioru. Jest to ogromna zaleta pozwalająca nakładać dekoratory jeden na drugi). Klasa dekorująca musi w metodach
+z interfejsu wywołać takie same metody z obiektu przekazanego w konstruktorze – pozwala to zachować pełną funkcjonalność klasy dekorowanej. Mając tak przygotowaną konstrukcję możemy dodawać nowe funkcjonalności. Czy to dodając osobne metody, które użyjemy w naszym kodzie modyfikując za ich pomocą obiekt, który dostaniemy, albo dokładając efekty uboczne do już istniejących metod. Dobrym przykładem jest tutaj dodanie logowania wywołania metody z obiektu albo np. modyfikowanie danych przekazywanych do metod obiektu.
 
 ```java
 public interface ICar {
@@ -558,14 +505,7 @@ public class Main {
 
 ### 🔱 Adapter
 
-Adapter (ang. wrapper) – strukturalny wzorzec projektowy, którego celem jest umożliwienie współpracy
-dwóm klasom o niekompatybilnych interfejsach. Adapter zmienia interface klasy B w interface klasy A
-który rozumie klasa C. Innym zadaniem omawianego wzorca jest opakowanie istniejącego interfejsu w
-nowy. Wzorzec ten szczególnie wykorzystywany jest, gdy chcemy korzystać z zewnętrznych bibliotek,
-systemów API i klas, których interfejsy nie są dostosowane do naszej aplikacji. Przy pomocy adaptera
-opakowujemy niekompatybilny interfejs takiej biblioteki w nowy i dzięki temu nie musimy modyfikować
-naszego kodu. Aby móc skorzystać z adaptera tworzymy klasę “pośrednią” która może działać w jeden z
-dwóch sposobów:
+Adapter (ang. wrapper) – strukturalny wzorzec projektowy, którego celem jest umożliwienie współpracy dwóm klasom o niekompatybilnych interfejsach. Adapter zmienia interface klasy B w interface klasy A który rozumie klasa C. Innym zadaniem omawianego wzorca jest opakowanie istniejącego interfejsu w nowy. Wzorzec ten szczególnie wykorzystywany jest, gdy chcemy korzystać z zewnętrznych bibliotek, systemów API i klas, których interfejsy nie są dostosowane do naszej aplikacji. Przy pomocy adaptera opakowujemy niekompatybilny interfejs takiej biblioteki w nowy i dzięki temu nie musimy modyfikować naszego kodu. Aby móc skorzystać z adaptera tworzymy klasę “pośrednią” która może działać w jeden z dwóch sposobów:
 
 - może dziedziczyć interfejs docelowy i interfejs który adaptuje
 - może dziedziczyć interfejs docelowy i zawierać interfejs który adaptuje (jako pole)
@@ -674,18 +614,11 @@ public class Main {
 
 ### 👷 MVC
 
-Model MVC (**Model – View – Controller**) wykorzystuje niemal każda aplikacja, a zwłaszcza aplikacje
-webowe, (często pod przykrywką jakiegoś frameworka). Odpowiada rozdziałowi aplikacji na trzy główne
-moduły:
+Model MVC (**Model – View – Controller**) wykorzystuje niemal każda aplikacja, a zwłaszcza aplikacje webowe, (często pod przykrywką jakiegoś frameworka). Odpowiada rozdziałowi aplikacji na trzy główne moduły:
 
-1. **Model** - reprezentuje naszą logikę biznesową. Tutaj znajdują się wszelkie obiekty, które służą
-   do wykonywania wszelkich operacji związanych z implementacją funkcjonalności naszej aplikacji.
-   Model jest komputerową reprezentacją rozpatrywanego problemu. Model nie jest zależny od widoku i
-   aplikacja może posiadać wiele niezależnych widoków dla tego samego modelu.
-2. **Widok** - warstwa prezentacji. Widok odpowiedzialny jest za prezentację użytkownikowi wyników
-   działania logiki biznesowej (Modelu).
-3. **Kontroler** - obsługuje żądania użytkownika. Wszelkie żądania deleguje do odpowiednich metod
-   Modelu.
+1. **Model** - reprezentuje naszą logikę biznesową. Tutaj znajdują się wszelkie obiekty, które służą do wykonywania wszelkich operacji związanych z implementacją funkcjonalności naszej aplikacji. Model jest komputerową reprezentacją rozpatrywanego problemu. Model nie jest zależny od widoku i aplikacja może posiadać wiele niezależnych widoków dla tego samego modelu.
+2. **Widok** - warstwa prezentacji. Widok odpowiedzialny jest za prezentację użytkownikowi wyników działania logiki biznesowej (Modelu).
+3. **Kontroler** - obsługuje żądania użytkownika. Wszelkie żądania deleguje do odpowiednich metod Modelu.
 
 ```java
 public class Student {

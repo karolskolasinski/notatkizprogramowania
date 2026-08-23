@@ -1,0 +1,7 @@
+{
+  "name": "Java",
+  "order": 8,
+  "description": "Java",
+  "color": "#ea2d2e",
+  "icon": "@assets/categories/java/icon.svg"
+}

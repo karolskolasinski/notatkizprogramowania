@@ -6,6 +6,7 @@ order: 6
 categories:
   - dev
 ---
+
 # **Testy**
 
 ### **Dlaczego pisze się testy?**
@@ -19,16 +20,16 @@ categories:
 ### **Podział testów**
 
 * jednostkowe
-  * testujemy izolowany element (np. metoda, klasa) bez zależności
-  * tylko jedno potencjalne miejsce awarii
-  * szybkie wykonanie testów (\<1s)
-  * nie wymagają jakiejkolwiek konfiguracji
-  * może być świetną dokumentacją
-  * znacznie ułatwiają refactoring codu
+    * testujemy izolowany element (np. metoda, klasa) bez zależności
+    * tylko jedno potencjalne miejsce awarii
+    * szybkie wykonanie testów (\<1s)
+    * nie wymagają jakiejkolwiek konfiguracji
+    * może być świetną dokumentacją
+    * znacznie ułatwiają refactoring codu
 * integracyjne
-  * testują wytworzone oprogramowanie poprzez weryfikację zachowania kompletnej aplikacji pod kątem wymagań biznesowych za pomocą różnego rodzaju interfejsu udostępnianego użytkownikom.
-  * pisane często z wykorzystaniem np. selenium lub j-meter
-  * tworzone aby symulować zachowanie aplikacji w rzeczywistym środowisku
+    * testują wytworzone oprogramowanie poprzez weryfikację zachowania kompletnej aplikacji pod kątem wymagań biznesowych za pomocą różnego rodzaju interfejsu udostępnianego użytkownikom.
+    * pisane często z wykorzystaniem np. selenium lub j-meter
+    * tworzone aby symulować zachowanie aplikacji w rzeczywistym środowisku
 
 ### **Cykl życia testów**
 

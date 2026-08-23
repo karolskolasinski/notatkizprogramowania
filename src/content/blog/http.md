@@ -6,6 +6,7 @@ order: 8
 categories:
   - dev
 ---
+
 HTTP to protokół używany do komunikacji między klientem a serwerem w sieci. W ramach tego protokołu zdefiniowanych jest kilka metod (czasem nazywanych "czasownikami"), które określają, jak klient chce oddziaływać na dane na serwerze. Oto krótki przegląd najważniejszych metod HTTP:
 
 ### Co to znaczy idempotent?
@@ -23,8 +24,6 @@ Metoda idempotentna to taka, która przy wielokrotnym wykonaniu daje ten sam efe
 * **OPTIONS** – zwraca możliwe metody dla zasobu
 * **TRACE** – pokazuje, co serwer otrzymał (debugowanie)
 * **CONNECT** – używana do tworzenia tunelu (np. HTTPS przez proxy)
-
-
 
 #### GET
 

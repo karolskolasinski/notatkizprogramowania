@@ -10,9 +10,9 @@ categories:
 
 ```javascript
 document.addEventListener("keydown", (event) => {
-    if (event.code === "AltRight") {
-        console.log(event);
-    }
+  if (event.code === "AltRight") {
+    console.log(event);
+  }
 });
 
 ```

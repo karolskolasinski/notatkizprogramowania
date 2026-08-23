@@ -9,12 +9,9 @@ categories:
 
 # var vs. let
 
-We wcześniejszych wersjach JavaScript zmienne były deklarowane jako `var`. Jednak dzisiaj ta metoda
-jest uważana za przestarzała. Różnice:
+We wcześniejszych wersjach JavaScript zmienne były deklarowane jako `var`. Jednak dzisiaj ta metoda jest uważana za przestarzała. Różnice:
 
-1. Zmienna zadeklarowana za pomocą `var` jest dostępna wewnątrz całej funkcji i posiada **function
-   scope**. Natomiast `let` ma **block scope**, więc zmienne zadeklarowane za jego pomocą są dostępne
-   wewnątrz bloku kodu między nawiasami klamrowymi.
+1. Zmienna zadeklarowana za pomocą `var` jest dostępna wewnątrz całej funkcji i posiada **function scope**. Natomiast `let` ma **block scope**, więc zmienne zadeklarowane za jego pomocą są dostępne wewnątrz bloku kodu między nawiasami klamrowymi.
 
 ```javascript
 function someFunc() {
@@ -55,13 +52,8 @@ let name = "Karol"; // błąd = Identifier "name" has already been declared
 console.log(name);
 ```
 
-3. Kolejna różnica między starszą deklaracją a jej młodszymi braćmi to tak zwany **hoisting**.
-   JavaScript lubi pomagać programiście. Jednym z takich przypadków pomocy jest niewidoczne dla
-   programisty wynoszenie deklaracji funkcji i zmiennych na początek danego zakresu (kodu lub
-   funkcji). Deklaracja zmiennej `var` (bez wartości) wynoszona jest automatycznie na początek danego
-   kodu (a w zasadzie na początek danego zakresu - np. na początek danej funkcji). W przypadku
-   `let`/`const` hoisting także istnieje, ale nie jesteśmy w stanie używać zmiennych przed ich
-   zadeklarowaniem.
+3. Kolejna różnica między starszą deklaracją a jej młodszymi braćmi to tak zwany **hoisting**. JavaScript lubi pomagać programiście. Jednym z takich przypadków pomocy jest niewidoczne dla programisty wynoszenie deklaracji funkcji i zmiennych na początek danego zakresu (kodu lub funkcji). Deklaracja zmiennej `var` (bez wartości) wynoszona jest automatycznie na początek danego kodu (a w zasadzie na początek danego zakresu - np. na początek danej funkcji). W przypadku
+   `let`/`const` hoisting także istnieje, ale nie jesteśmy w stanie używać zmiennych przed ich zadeklarowaniem.
 
 ```javascript
 var a; // js przeniósł tutaj deklarację zmiennej ale bez jej wartości!
@@ -73,9 +65,7 @@ let b = 20;
 console.log(b); // ta linia się nie wykona z powodu błędu wyżej
 ```
 
-4. Ostatnią różnicą - dość mało znaną - jest to, że deklarując zmienną globalną `var` (poza ciałem
-   funkcji), dodawana jest ona jako właściwość obiektu `window`. W przypadku `let` nic takiego się nie
-   dzieje:
+4. Ostatnią różnicą - dość mało znaną - jest to, że deklarując zmienną globalną `var` (poza ciałem funkcji), dodawana jest ona jako właściwość obiektu `window`. W przypadku `let` nic takiego się nie dzieje:
 
 ```javascript
 var a = 20;

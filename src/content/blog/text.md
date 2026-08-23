@@ -6,6 +6,7 @@ order: 8
 categories:
   - css
 ---
+
 # text-shadow
 
 Właściwość `text-shadow` może przyjąć następujące wartości parametrów:
