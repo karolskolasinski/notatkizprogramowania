@@ -1,7 +1,7 @@
 ---
 title: Implementacje
 description: Implementacje własnych struktur danych (ArrayList, Stack, BST) oraz algorytmów sortowania w języku Java
-pubDate: 2026-08-23
+pubDate: 2020-08-22
 order: 7
 categories:
   - java

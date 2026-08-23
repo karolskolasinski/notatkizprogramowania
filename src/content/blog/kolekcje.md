@@ -1,7 +1,7 @@
 ---
 title: Kolekcje
 description: Kolekcje w języku Java (List, Set, Map, Queue)
-pubDate: 2026-08-23
+pubDate: 2020-08-22
 order: 3
 categories:
   - java

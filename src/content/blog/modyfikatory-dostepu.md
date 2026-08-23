@@ -3,7 +3,7 @@ title: Modyfikatory dostępu
 description: >-
   Modyfikatory dostępu w języku Java (public, protected, package-private,
   private)
-pubDate: 2026-08-23
+pubDate: 2020-08-23
 order: 2
 categories:
   - java

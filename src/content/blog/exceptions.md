@@ -1,7 +1,7 @@
 ---
 title: Exceptions
 description: Rodzaje, hierarchia i obsługa wyjątków w języku Java
-pubDate: 2026-08-23
+pubDate: 2020-08-23
 order: 4
 categories:
   - java

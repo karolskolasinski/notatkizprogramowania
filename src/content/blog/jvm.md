@@ -3,7 +3,7 @@ title: JVM
 description: >-
   Architektura wirtualnej maszyny Javy, środowiska uruchomieniowego oraz zestawu
   programisty
-pubDate: 2026-08-23
+pubDate: 2020-08-22
 order: 8
 categories:
   - java
