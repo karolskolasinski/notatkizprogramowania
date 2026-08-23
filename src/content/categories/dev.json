@@ -2,6 +2,6 @@
   "name": "dev",
   "order": 3,
   "description": "Przekrój przez inżynierię oprogramowania: algorytmy, bazy danych, narzędzia devopsowe i dobre praktyki.",
-  "color": "#aacc00",
+  "color": "#f92672",
   "icon": "@assets/categories/dev/icon.svg"
 }

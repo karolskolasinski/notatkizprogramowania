@@ -84,7 +84,7 @@ article hr {
 }
 
 article img {
-  @apply rounded-xl my-8 w-full;
+  @apply rounded-md my-8 w-full;
 }
 
 article figure {
