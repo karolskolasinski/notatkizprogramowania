@@ -3,137 +3,83 @@ title: Chapter 1. The Method.
 description: |
   Chapter 1. The Method.
 pubDate: 2026-08-30
-order: 2
+order: 3
 categories:
   - architektura
 ---
-# Chapter 1. The Method.
+## The Method
 
-## What Is The Method.
+Początkujący architekt widzi wiele możliwych rozwiązań. Doświadczony architekt wie, że dobrych rozwiązań jest niewiele, a często tylko jedno.
 
-The Method jest metodologią projektowania systemów. Jej celem nie jest samo tworzenie diagramów, wybieranie technologii ani dzielenie systemu na klasy, projekty czy mikroserwisy. Chodzi o podejmowanie **świadomych decyzji projektowych**, które prowadzą do systemu bezpiecznego, łatwego w utrzymaniu, rozszerzalnego, wielokrotnego użytku i możliwego do rozwijania bez niekontrolowanego wzrostu złożoności.
+**The Method** zamienia doświadczenie architektoniczne w powtarzalny proces projektowania systemu i projektu potrzebnego do jego zbudowania.
 
-Projektowanie nie polega na wymyślaniu architektury od zera. Jest procesem analizy problemu, identyfikowania ograniczeń, podejmowania decyzji i sprawdzania ich konsekwencji. The Method dostarcza struktury, która prowadzi przez ten proces.
+## What Is The Method?
 
-Najważniejszą zasadą jest traktowanie projektu jako **inżynierskiego problemu decyzyjnego**. Każdy element architektury powinien istnieć z konkretnego powodu i rozwiązywać konkretny problem. Projekt nie powinien być zbiorem technologii, wzorców i komponentów wybranych dlatego, że są modne lub znane zespołowi.
+**The Method = System Design + Project Design**
 
-The Method obejmuje zarówno **projekt systemu**, jak i sposób prowadzenia projektu. Dobra architektura i dobry proces realizacji są ze sobą bezpośrednio związane.
+**System Design** określa architekturę: podział systemu na małe, modularne komponenty oraz sposób ich współpracy.
 
----
+**Project Design** określa, jak system zbudować, poprzez warianty czasu, kosztu i ryzyka.
 
-## Design Validation.
+Project Design ma większy wpływ na sukces niż sama architektura. Świetnego systemu nie da się uratować, jeśli projekt nie ma wystarczających zasobów, czasu lub akceptowalnego ryzyka.
 
-Projekt należy nie tylko stworzyć, ale również **zweryfikować**.
+## Design Validation
 
-Największym problemem wielu decyzji architektonicznych jest to, że wyglądają rozsądnie w chwili ich podejmowania. Diagram może być elegancki, komponenty mogą mieć dobre nazwy, a technologia może być sprawdzona — i mimo tego cały projekt może być błędny.
+Przed rozpoczęciem implementacji trzeba zwalidować:
 
-Dlatego projekt musi zostać poddany walidacji poprzez pytania o jego zachowanie w rzeczywistych warunkach:
+* czy architektura spełnia wymagania,
+* czy organizacja jest w stanie ją zbudować.
 
-* Co się stanie, gdy wymagania się zmienią?
-* Co będzie wymagało modyfikacji?
-* Jak daleko rozprzestrzeni się zmiana?
-* Czy można zmienić jeden obszar bez przebudowy pozostałych?
-* Czy komponent rzeczywiście może być używany niezależnie?
-* Czy system można rozszerzyć bez naruszania istniejącej architektury?
+Błędna architektura odkryta po rozpoczęciu implementacji staje się bardzo kosztowna. Projekt systemu i projektu musi zostać zweryfikowany możliwie wcześnie.
 
-Dobry projekt nie jest więc tym, który dobrze obsługuje **dzisiejsze wymagania**. Dzisiejsze wymagania można zazwyczaj obsłużyć niemal dowolną architekturą. Prawdziwy test projektu następuje wtedy, gdy pojawia się zmiana.
+Celem jest usunięcie **design jako ryzyka projektu**.
 
-Walidacja projektu polega na sprawdzaniu, czy architektura zachowuje swoje właściwości również wtedy, gdy rzeczywistość przestaje odpowiadać pierwotnym założeniom.
+## Time Crunch
 
----
+Projektowanie powinno być szybkie — zazwyczaj kilka dni, nie tygodnie.
 
-## Time Crunch.
+Presja czasu wymusza koncentrację i decyzje. Więcej czasu często prowadzi do projektowania zbędnych elementów, które zwiększają złożoność i koszt systemu.
 
-Projektowanie zawsze odbywa się pod presją czasu.
+## Eliminating Analysis-Paralysis
 
-To prowadzi do jednego z najbardziej niebezpiecznych założeń w projektach: że skrócenie czasu przeznaczonego na projektowanie przyspiesza realizację systemu.
+Paraliż analityczny wynika przede wszystkim z podejmowania decyzji w niewłaściwej kolejności.
 
-W rzeczywistości czas zaoszczędzony na początku często wraca później jako:
+### Design Decisions Tree
 
-* przebudowa,
-* poprawianie błędnych decyzji,
-* rosnąca złożoność,
-* problemy z integracją,
-* trudności z testowaniem,
-* opóźnienia,
-* kosztowna zmiana architektury.
+Projekt składa się z hierarchicznego drzewa decyzji. Późniejsze decyzje zależą od wcześniejszych.
 
-Presja czasu nie jest argumentem za pominięciem projektowania. Jest argumentem za **skutecznym projektowaniem**.
+Podejmowanie decyzji poza właściwą kolejnością powoduje, że nowe odkrycia unieważniają wcześniejsze decyzje i wymuszają ciągłe powtarzanie pracy.
 
-Nie można poświęcać nieograniczonej ilości czasu na analizę, ale równie niebezpieczne jest rozpoczęcie implementacji zanim podstawowe decyzje projektowe zostaną podjęte i zweryfikowane.
+### Software System Design Decision Tree
 
-The Method ma umożliwić znalezienie właściwej równowagi: wystarczająco dużo analizy, aby uniknąć fundamentalnych błędów, ale nie tyle, aby projektowanie samo stało się przeszkodą.
+The Method prowadzi przez właściwe drzewo decyzji:
 
----
+**najpierw System Design, potem Project Design.**
 
-## Eliminating Analysis-Paralysis.
+Ograniczenia stopniowo zawężają liczbę możliwych rozwiązań, aż projekt konwerguje do właściwej decyzji.
 
-Można popełnić dwa przeciwne błędy.
+## Communication
 
-Pierwszy to **zbyt szybkie rozpoczęcie implementacji** bez wystarczającego projektu.
+Architektura musi zostać zrozumiana przez ludzi, którzy ją implementują.
 
-Drugi to **analysis-paralysis** — niekończąca się analiza, w której kolejne możliwości, wyjątki i hipotetyczne scenariusze uniemożliwiają podjęcie decyzji.
+The Method daje wspólną strukturę, semantykę i język do komunikowania:
 
-Celem nie jest przewidzenie całej przyszłości.
+* architektury programistom,
+* projektu managementowi,
+* decyzji innym architektom.
 
-Nie da się znać wszystkich przyszłych wymagań ani zaprojektować systemu idealnego dla każdego możliwego scenariusza. Próba zrobienia tego prowadzi do nadmiernie skomplikowanej architektury.
+Review ma wykrywać odchylenia od projektu. Nie zastąpi jednak zrozumienia i akceptacji jego intencji przez zespół.
 
-Należy podejmować decyzje na podstawie dostępnej wiedzy, identyfikować rzeczywiste ryzyka i obszary zmienności, a następnie projektować system tak, aby **przyszła zmiana była możliwa do obsłużenia**.
+## What The Method Is Not
 
-Nie trzeba wiedzieć, jaka dokładnie zmiana nastąpi.
+The Method nie jest automatycznym przepisem na sukces.
 
-Trzeba rozpoznać, **gdzie zmiana może nastąpić**.
+Nie zastępuje odpowiedzialności architekta za:
 
-To pozwala zakończyć analizę w odpowiednim momencie. Projekt nie musi znać przyszłości. Musi być przygotowany na jej konsekwencje.
+* właściwe zrozumienie systemu,
+* podjęcie właściwych decyzji,
+* komunikację architektury,
+* utrzymanie projektu podczas implementacji,
+* stworzenie realistycznego Project Design.
 
----
-
-## Communication.
-
-Projektowanie systemu nie odbywa się w izolacji.
-
-Architektura jest wynikiem komunikacji pomiędzy ludźmi posiadającymi różne perspektywy:
-
-* klientami,
-* użytkownikami,
-* menedżerami,
-* analitykami,
-* programistami,
-* architektami,
-* zespołami odpowiedzialnymi za różne części systemu.
-
-Problem polega na tym, że każda z tych grup opisuje system inaczej.
-
-Biznes mówi o funkcjach. Użytkownik mówi o tym, co chce zrobić. Programista myśli o kodzie i technologii. Architekt musi przekształcić te różne perspektywy w spójny projekt.
-
-The Method zapewnia wspólny sposób myślenia i komunikowania decyzji projektowych.
-
-Dobra architektura musi być możliwa do wyjaśnienia. Jeśli projekt można zrozumieć wyłącznie poprzez studiowanie ogromnego diagramu albo kodu, komunikacja wokół architektury już zawiodła.
-
-Decyzje powinny mieć jasne uzasadnienie: **jaki problem rozwiązują, jakie ryzyko ograniczają i dlaczego dany podział systemu istnieje**.
-
----
-
-## What The Method Is Not.
-
-The Method nie jest gotową architekturą.
-
-Nie mówi, że każdy system powinien używać konkretnych:
-
-* technologii,
-* frameworków,
-* wzorców projektowych,
-* typów baz danych,
-* stylów architektonicznych,
-* liczby warstw,
-* liczby serwisów.
-
-Nie jest również receptą polegającą na mechanicznym wykonywaniu kolejnych kroków.
-
-Metodologia nie zastępuje myślenia. Dostarcza narzędzi i zasad, które pomagają podejmować właściwe decyzje, ale nie może podjąć ich automatycznie za projektanta.
-
-The Method nie gwarantuje także sukcesu przez samo zastosowanie jej terminologii. Można mówić o architekturze, modułach, enkapsulacji i zmienności, a mimo to stworzyć zły system.
-
-Najważniejsza jest zdolność do **analizowania problemu, rozpoznawania jego rzeczywistych źródeł złożoności i podejmowania decyzji, które ograniczają skutki przyszłych zmian**.
-
-The Method jest więc sposobem myślenia o projektowaniu. Nie dostarcza jednego uniwersalnego systemu do skopiowania — dostarcza narzędzi potrzebnych do zaprojektowania właściwego systemu dla konkretnego problemu.
+The Method działa tylko wtedy, gdy jest stosowana uczciwie, na podstawie rzeczywistych informacji i rzeczywistych ograniczeń.
