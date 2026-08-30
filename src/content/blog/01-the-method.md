@@ -1,5 +1,5 @@
 ---
-title: Chapter 1. The Method.
+title: 01 - The Method
 description: |
   Chapter 1. The Method.
 pubDate: 2026-08-30
