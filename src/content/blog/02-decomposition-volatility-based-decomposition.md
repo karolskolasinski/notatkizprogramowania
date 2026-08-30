@@ -1,6 +1,6 @@
 ---
-title: 'Decomposition: Volatility-Based Decomposition'
-description: 'Decomposition: Volatility-Based Decomposition'
+title: '02 - Decomposition: Volatility-Based Decomposition'
+description: '02 - Decomposition: Volatility-Based Decomposition'
 pubDate: 2026-08-30
 order: 5
 categories:
