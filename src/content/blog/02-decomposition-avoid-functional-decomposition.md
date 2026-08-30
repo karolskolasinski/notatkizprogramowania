@@ -1,6 +1,6 @@
 ---
-title: 'Decomposition: Avoid Functional Decomposition'
-description: 'Decomposition: Avoid Functional Decomposition'
+title: '02 - Decomposition: Avoid Functional Decomposition'
+description: '02 - Decomposition: Avoid Functional Decomposition'
 pubDate: 2026-08-30
 order: 4
 categories:
