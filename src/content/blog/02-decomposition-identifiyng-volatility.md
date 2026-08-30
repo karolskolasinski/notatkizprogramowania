@@ -1,6 +1,6 @@
 ---
-title: 'Decomposition: Identyfikowanie zmienności'
-description: 'Decomposition: Identyfikowanie zmienności'
+title: '02 - Decomposition: Identifiyng Volatility'
+description: '02 - Decomposition: Identifiyng Volatility'
 pubDate: 2026-08-30
 order: 6
 categories:
