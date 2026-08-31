@@ -120,3 +120,236 @@ W systemie transakcyjnym potencjalna lista zmienności może obejmować:
 * **Zmienność źródła danych rynkowych** — dane mogą pochodzić od różnych dostawców, mieć różne formaty, koszty, częstotliwość aktualizacji i protokoły. Źródłem może być również system wewnętrzny generujący dane symulowane na potrzeby testów lub badań.
 
 Kluczowa zasada pozostaje taka sama: **najpierw identyfikować zmienność, dopiero później projektować komponenty, które ją hermetyzują**. Nie należy traktować funkcjonalności zapisanych w wymaganiach jako gotowych granic architektury.
+
+## A Key Observation
+
+Lista obszarów zmienności nie ma być kompletna. Jej celem jest nauczenie sposobu myślenia: zauważania tego, **co może się zmienić**.
+
+Nie każda zidentyfikowana zmienność musi ostatecznie znaleźć się w zakresie projektu. Część może zostać uznana za mało prawdopodobną, a część może dotyczyć samej natury biznesu. Warto jednak możliwie wcześnie nazwać potencjalne obszary zmienności i uwzględnić je w dekompozycji.
+
+Samo wyznaczenie miejsca dla komponentu w architekturze praktycznie nic nie kosztuje. Dopiero później trzeba zdecydować, czy warto inwestować w jego pełne zaprojektowanie i implementację. Najważniejsze jest to, że system ma już określone miejsce, w którym można obsłużyć daną zmianę.
+
+## System Decomposition
+
+Po zidentyfikowaniu obszarów zmienności należy hermetyzować je w komponentach architektury.
+
+Przejście od listy zmienności do komponentów prawie nigdy nie jest relacją jeden do jednego:
+
+* jeden komponent może hermetyzować kilka obszarów zmienności,
+* niektóre zmienności mogą być obsługiwane przez mechanizmy operacyjne, takie jak kolejki czy publikowanie zdarzeń,
+* inne mogą zostać hermetyzowane przez usługi zewnętrzne.
+
+Projektowanie należy zaczynać od najprostszych i najbardziej oczywistych decyzji. Każda z nich ogranicza przestrzeń kolejnych decyzji i ułatwia dalsze projektowanie.
+
+### Zmienność przechowywania danych
+
+Zmienność przechowywania danych można hermetyzować za komponentami dostępu do danych.
+
+Istotna jest abstrakcja **Storage**, a nie **Database**. Aktualna implementacja może używać lokalnej bazy danych, ale architektura nie powinna zakładać, że baza danych jest jedyną możliwością. Przechowywanie może zostać zastąpione systemem plików, pamięcią podręczną lub rozwiązaniem chmurowym.
+
+Zmiana sposobu przechowywania powinna dotyczyć odpowiedniego komponentu dostępu, na przykład `Trades Access`, bez wpływu na pozostałe elementy systemu.
+
+### Zmienność powiadomień
+
+Zmienność związana z powiadamianiem użytkowników może zostać hermetyzowana w komponencie **Notification**.
+
+Komponent odpowiada za:
+
+* sposób dostarczania powiadomień,
+* określenie odbiorców,
+* subskrypcje zdarzeń,
+* reguły biznesowe dotyczące rodzaju i charakteru komunikacji.
+
+W prostych przypadkach wystarczający może być ogólny mechanizm publikowania i subskrypcji zdarzeń (**Pub/Sub**). Jeśli jednak powiadomienia mają własne reguły biznesowe, dedykowany komponent może wykorzystywać Pub/Sub jedynie jako szczegół implementacyjny.
+
+### Zmienność przepływu transakcji
+
+Zmienność przepływu transakcji można hermetyzować w komponencie **Trade Workflow**.
+
+Może on obejmować między innymi:
+
+* rodzaj przedmiotu transakcji,
+* kroki kupna i sprzedaży,
+* różnice pomiędzy lokalnymi rynkami,
+* wymagania dotyczące raportów,
+* zmiany w samym procesie transakcyjnym.
+
+Nawet jeśli przedmiot transakcji pozostaje stały, sam proces realizacji transakcji może się zmieniać.
+
+Przechowywanie definicji i instancji workflow dodatkowo pozwala hermetyzować kilka rodzajów zmienności:
+
+* różne instrumenty mogą mieć różne przepływy,
+* różne lokalizacje mogą mieć różne procesy,
+* workflow może trwać przez wiele sesji i urządzeń.
+
+System nie musi rozróżniać, czy kolejne wywołania następują po kilku sekundach czy kilku dniach. Za każdym razem może odtworzyć stan workflow i wykonać następny krok.
+
+Krótka, połączona sesja oraz długotrwała, rozproszona transakcja mogą być obsługiwane w ten sam sposób. **Symetria i spójność są wartościowymi właściwościami architektury.**
+
+Ten sam wzorzec można zastosować do innych procesów, na przykład analizy transakcji. Dedykowany **Analysis Workflow** może hermetyzować zmienność procesów analitycznych i korzystać z tego samego mechanizmu przechowywania workflow.
+
+### Zmienność danych rynkowych
+
+Dostęp do danych rynkowych można podzielić na dwa obszary:
+
+* **Feed Access** hermetyzuje sposób dostępu do źródła oraz różnicę między źródłami wewnętrznymi i zewnętrznymi,
+* **Feed Transformation** hermetyzuje różnice w formatach i znaczeniu danych pochodzących z różnych źródeł.
+
+Pozostałe komponenty otrzymują dzięki temu jednolity interfejs i format danych niezależnie od ich rzeczywistego pochodzenia.
+
+### Zmienność bezpieczeństwa
+
+Komponent **Security** hermetyzuje różne sposoby:
+
+* uwierzytelniania,
+* autoryzacji,
+* przechowywania i sprawdzania poświadczeń.
+
+Wewnątrz może korzystać z lokalnego magazynu użytkowników albo z zewnętrznego, rozproszonego dostawcy tożsamości.
+
+### Zmienność aplikacji klienckich
+
+System może być używany przez różne aplikacje:
+
+* aplikację tradera,
+* aplikację mobilną,
+* portal klienta końcowego.
+
+Każda aplikacja kliencka hermetyzuje sposób prezentowania informacji i dostosowanie interfejsu do konkretnego urządzenia oraz użytkownika.
+
+Mapowanie zmienności na architekturę na tym etapie może być jeszcze dość swobodne. Bardziej deterministyczne zasady i struktura są potrzebne, aby proces ten wykonywać konsekwentnie.
+
+## Resist The Siren Song
+
+Brak komponentu w architekturze może być równie ważny jak jego obecność.
+
+Jeżeli raportowanie nie zostało zidentyfikowane jako obszar zmienności, nie ma automatycznego powodu, aby tworzyć komponent **Reporting**. Dodanie go tylko dlatego, że „każdy system ma moduł raportowania”, byłoby przejawem dekompozycji funkcjonalnej.
+
+Największym zagrożeniem są wcześniejsze nawyki. Jeśli architekt przez lata dzielił systemy według funkcjonalności, będzie automatycznie dostrzegał znajome komponenty:
+
+* Reporting,
+* Orders,
+* Users,
+* Payments,
+* i inne bloki odpowiadające nazwom funkcji.
+
+Nie należy dodawać komponentu dlatego, że istniał w poprzednich systemach albo dlatego, że istnieje gotowa implementacja, którą można wykorzystać.
+
+Metafora Odyseusza i Syren pokazuje różnicę między zespołem wykonującym pracę a architektem odpowiedzialnym za decyzje. Programiści mogą po prostu implementować przyjęty projekt, natomiast architekt musi być świadomy wszystkich możliwości i jednocześnie posiadać mechanizm, który nie pozwoli mu wrócić do starych nawyków.
+
+**Dekompozycja oparta na zmienności jest takim mechanizmem.**
+
+## Volatility And The Business
+
+Nie wszystko, co może się zmienić, powinno być hermetyzowane.
+
+Najważniejszym przykładem jest **natura biznesu**. System istnieje po to, aby realizować określoną wartość biznesową, a sama ta wartość zazwyczaj pozostaje stosunkowo stabilna.
+
+Firma zajmująca się dostarczaniem przesyłek może teoretycznie wejść w branżę medyczną, ale architektura systemu dostarczania przesyłek nie powinna przygotowywać się na taką transformację.
+
+Podczas dekompozycji trzeba więc identyfikować zarówno:
+
+* zmienności, które należy hermetyzować,
+* rzeczy, których hermetyzować nie należy.
+
+Istnieją dwa główne wskaźniki, że potencjalna zmiana należy raczej do natury biznesu:
+
+### 1. Zmiana jest bardzo rzadka
+
+Coś może być teoretycznie możliwe, ale prawdopodobieństwo jego wystąpienia może być tak małe, że przygotowywanie systemu na tę możliwość nie ma sensu.
+
+### 2. Nie można dobrze hermetyzować tej zmiany rozsądnym kosztem
+
+Jeżeli właściwe przygotowanie systemu na zmianę wymaga ogromnych inwestycji, a mimo to rozwiązanie pozostaje niepraktyczne, prawdopodobnie nie jest to zmienność, którą należy obsługiwać.
+
+Przykładem jest dom jednorodzinny projektowany tak, aby w przyszłości można było przekształcić go w pięćdziesięciopiętrowy wieżowiec. Fundamenty, instalacja elektryczna, wodociągi i kanalizacja musiałyby od początku obsługiwać skalę ogromnego budynku.
+
+Koszt przygotowania takiego domu byłby absurdalny w stosunku do małego prawdopodobieństwa zmiany.
+
+Przekształcenie domu jednorodzinnego w wieżowiec nie jest zwykłą zmianą systemu. Jest zmianą **natury biznesu**. W takim przypadku bardziej sensowne może być zniszczenie starego rozwiązania i rozpoczęcie od początku.
+
+Natura biznesu może być rozumiana na różnych poziomach:
+
+* całej firmy,
+* działu lub jednostki organizacyjnej,
+* konkretnej aplikacji i dostarczanej przez nią wartości.
+
+Zmian na tych poziomach nie należy próbować hermetyzować.
+
+## Speculative Design
+
+Dekompozycję opartą na zmienności można również doprowadzić do absurdu.
+
+Gdy zaczyna się dostrzegać potencjalne zmiany wszędzie, łatwo wpaść w pułapkę hermetyzowania wszystkiego. Rezultatem będzie ogromna liczba komponentów, co samo w sobie jest oznaką złego projektu.
+
+Projektowanie na podstawie bardzo mało prawdopodobnych scenariuszy prowadzi do **speculative design**.
+
+Problem polega na próbie stworzenia jednego rozwiązania dla dwóch całkowicie różnych zastosowań. Takie rozwiązanie zazwyczaj nie radzi sobie dobrze z żadnym z nich.
+
+Dobra architektura nie polega na przygotowaniu systemu na każdą teoretycznie możliwą przyszłość. Polega na identyfikowaniu zmian, które są rzeczywiście prawdopodobne i istotne w okresie życia systemu.
+
+## Design For Your Competitors
+
+Przydatną techniką identyfikowania zmienności jest zaprojektowanie systemu tak, jakby miał być używany przez konkurenta albo inną jednostkę organizacyjną.
+
+Należy zadać pytanie:
+
+> Czy konkurent mógłby używać naszego systemu bez jego przebudowy?
+
+Jeżeli odpowiedź brzmi „nie”, warto znaleźć wszystkie przeszkody stojące na drodze do takiego wykorzystania.
+
+Dwie firmy mogą realizować tę samą ogólną usługę, ale wykonywać ją inaczej. Jeśli na przykład dwie firmy kurierskie inaczej planują trasy przesyłek, planowanie tras prawdopodobnie jest obszarem zmienności.
+
+Jeżeli istnieją dwa różne sposoby realizacji czegoś, prawdopodobnie mogą istnieć również kolejne. Taki obszar należy hermetyzować.
+
+Jeśli natomiast wszystkie firmy wykonują jakąś czynność dokładnie tak samo i nie ma realistycznej alternatywy, nie ma powodu tworzyć dla niej osobnego komponentu. Taki element prawdopodobnie reprezentuje naturę biznesu, a nie zmienność.
+
+## Volatility And Longevity
+
+Zmienność jest bezpośrednio związana z przewidywanym czasem życia systemu.
+
+Im dłużej organizacja wykonuje coś w ten sam sposób, tym większe prawdopodobieństwo, że nadal będzie tak działać. Jednocześnie historia zmian daje wskazówkę dotyczącą przyszłości.
+
+Można stosować prostą heurystykę:
+
+> Organizacje, rynki i firmy mają mniej więcej stałą zdolność do wprowadzania i absorbowania zmian.
+
+Organizacja konserwatywna będzie zmieniać systemy rzadziej niż szybko rozwijający się startup.
+
+Jeżeli firma zmienia system płac średnio co dwa lata, a projektowany system ma działać przez pięć lat i integrować się z systemem płac, należy zakładać, że ta zmiana nastąpi w trakcie życia systemu. Zmienność systemu płac powinna więc zostać hermetyzowana, nawet jeśli nikt nie zapisał tego jako wymagania.
+
+Dobrym punktem wyjścia jest spojrzenie na przewidywany okres życia systemu i zapytanie:
+
+* co zmieniło się w domenie w ciągu ostatnich tylu lat?
+* które z tych zmian mogą powtórzyć się w podobnym okresie?
+
+Jeżeli system ERP zmienia się średnio co dziesięć lat, ostatnia zmiana miała miejsce osiem lat temu, a nowy system ma działać przez pięć lat, istnieje duże prawdopodobieństwo, że ERP zostanie wymieniony w trakcie jego życia.
+
+Architektura powinna przygotowywać się przede wszystkim na zmiany, które prawdopodobnie nastąpią **w okresie istnienia systemu**.
+
+## The Importance Of Practicing
+
+Identyfikowanie zmienności jest umiejętnością praktyczną.
+
+Jeżeli architekt zajmuje się pełną dekompozycją systemu tylko przez niewielki procent swojego czasu, nie osiągnie wysokiej skuteczności wyłącznie dzięki inteligencji czy znajomości teorii.
+
+Nie można raz na kilka lat stanąć przy tablicy, narysować kilku komponentów i oczekiwać, że architektura będzie poprawna.
+
+Każdy profesjonalny zawód wymaga treningu. Piloci ćwiczą latami, lekarze zdobywają doświadczenie pod nadzorem, a inni specjaliści wielokrotnie wykonują swoją pracę, zanim osiągną biegłość.
+
+Tak samo jest z dekompozycją opartą na zmienności.
+
+Najlepszym sposobem nauki jest praktykowanie na różnych systemach:
+
+* analizowanie znanych systemów, takich jak bank, sklep internetowy czy aplikacja mobilna,
+* analizowanie własnych wcześniejszych projektów i rzeczywistych problemów, które w nich wystąpiły,
+* sprawdzanie, jakie zmiany powodowały efekt domina,
+* zastanawianie się, czy wcześniejsze hermetyzowanie zmienności ograniczyłoby skutki tych zmian,
+* analizowanie obecnych projektów i próba ich uratowania przed funkcjonalną dekompozycją,
+* analizowanie systemów fizycznych, takich jak rower, laptop czy dom.
+
+Po przeanalizowaniu kilku systemów zaczyna być widoczny ogólny sposób myślenia.
+
+Tej umiejętności nie da się jednak opanować wyłącznie przez czytanie lub obserwowanie innych. Podobnie jak jazdy na rowerze, trzeba jej nauczyć się przez własne próby i błędy.
+
+Lepiej popełniać te błędy podczas ćwiczeń niż podczas projektowania rzeczywistego systemu.
