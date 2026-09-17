@@ -4,12 +4,11 @@ description: >-
   Kompletny szablon HTML5 z podstawowymi meta tagami, Open Graph, semantyczną
   strukturą dokumentu oraz krótkim omówieniem najważniejszych elementów sekcji
   <head>.
-order: 1
 pubDate: 2025-11-04
+order: 1
 categories:
   - html
 ---
-
 ## Uniwersalny template
 
 ```html
@@ -77,25 +76,25 @@ categories:
 
 ## Meta tags
 
-- `<!DOCTYPE html>` - dokument w formacie HTML5. Element ten określa typ bieżącego dokumentu: DTD
+* `<!DOCTYPE html>` - dokument w formacie HTML5. Element ten określa typ bieżącego dokumentu: DTD
   (Document Type Definition). Konieczne jest, aby przeglądarka rozumiała, według jakiego standardu
   HTML ma wyświetlać stronę internetową. Jak widać, jest to jeden z tagów, które nie są sparowane.
   Czy używać lower case czy capitalize? Nie ma to znaczenia
   ([źródło](https://stackoverflow.com/questions/7020961/uppercase-or-lowercase-doctype)). In other
   words is case-insensitively
   ([źródło](https://html.spec.whatwg.org/multipage/syntax.html#the-doctype)).
-- `<html>` - znacznik wskazuje, że jest to dokument HTML.
-- `lang="pl"` - używany przez stronę język.
-- `<head>` - znacznik jest przeznaczony do przechowywania elementów, które pomagają przeglądarkom i
+* `<html>` - znacznik wskazuje, że jest to dokument HTML.
+* `lang="pl"` - używany przez stronę język.
+* `<head>` - znacznik jest przeznaczony do przechowywania elementów, które pomagają przeglądarkom i
   wyszukiwarkom w pracy z danymi.
-- `charset="UTF-8"` - zestaw znaków używany na stronie, sposób kodowania znaków (zapis index.html
+* `charset="UTF-8"` - zestaw znaków używany na stronie, sposób kodowania znaków (zapis index.html
   bez BOM). Jeśli atrybut nie zostanie określony, niektóre przeglądarki mogą wyświetlać niejasne
   znaki zamiast tekstu.
-- `name="description"` - opis strony w wyszukiwarce (150 - 160 znaków).
-- `name="keywords"` - słowa kluczowe.
-- `http-equiv="X-UA-Compatible" content="IE=edge"` - prawidłowe wyświetlanie w przeglądarkach IE
+* `name="description"` - opis strony w wyszukiwarce (150 - 160 znaków).
+* `name="keywords"` - słowa kluczowe.
+* `http-equiv="X-UA-Compatible" content="IE=edge"` - prawidłowe wyświetlanie w przeglądarkach IE
   ([źródło](https://stackoverflow.com/questions/6771258/what-does-meta-http-equiv-x-ua-compatible-content-ie-edge-do)).
-- Dołączając skrypty w HTML4, musieliśmy im ustawiać atrybut `type="text/javascript"`. W nowym HTML
+* Dołączając skrypty w HTML4, musieliśmy im ustawiać atrybut `type="text/javascript"`. W nowym HTML
   atrybut ten domyślnie ma taką wartość, więc nie musimy go podawać.
 
 ## **Open graph**
@@ -104,7 +103,7 @@ The Open Graph protocol enables any web page to become a rich object in a social
 instance, this is used on Facebook to allow any web page to have the same functionality as any other
 object on Facebook.
 
-- `og:url` The canonical URL of your object that will be used as its permanent ID in the graph.
+* `og:url` The canonical URL of your object that will be used as its permanent ID in the graph.
 
 **Źródła:**
 
@@ -122,3 +121,7 @@ A semantic element clearly describes its meaning to both the browser and the dev
 **Źródło:**
 
 [https://internetingishard.netlify.app/html-and-css/semantic-html/index.html#summary](https://internetingishard.netlify.app/html-and-css/semantic-html/index.html#summary)
+
+## HTML boilerplate in 2026
+
+[https://www.matuzo.at/blog/2026/html-boilerplate](https://www.matuzo.at/blog/2026/html-boilerplate)
