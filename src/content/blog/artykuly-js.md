@@ -6,5 +6,8 @@ order: 12
 categories:
   - javascript
 ---
+1. [React.js Performance Guide](https://blog.sentry.io/react-js-performance-guide/?utm_source=reactstatus\&utm_medium=paid-community\&utm_campaign=general-fy26q2-traceblog\&utm_content=newsletter-s-read)
 
-1. [React.js Performance Guide](https://blog.sentry.io/react-js-performance-guide/?utm_source=reactstatus&utm_medium=paid-community&utm_campaign=general-fy26q2-traceblog&utm_content=newsletter-s-read)
+
+
+\<span style="color: red">REDDDDD\<span>
